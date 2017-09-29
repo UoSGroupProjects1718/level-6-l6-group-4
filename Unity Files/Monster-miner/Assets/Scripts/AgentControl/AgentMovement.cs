@@ -15,6 +15,7 @@ public class AgentMovement : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        UnitSelection.UnitList.Add(this.transform);
 
     }
 
