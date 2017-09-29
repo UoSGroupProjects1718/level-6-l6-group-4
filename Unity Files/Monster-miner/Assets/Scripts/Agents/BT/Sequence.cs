@@ -6,17 +6,25 @@ namespace MonsterMiner
         [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Sequence")]
         public class Sequence : Composite
         {
-            protected BehaviourBase currentChild;
+            
 
             public override void onInitialise()
             {
-                currentChild = Children[0];  
+                for (int i = 0; i < Children.Count; i++)
+                {
+                    Children[i].OnInstantiate();
+                }
+
             }
             public override Status Update()
             {
                 //loop through all children
                 for (int i = 0; i < Children.Count; i++)
                 {
+                    if (Children[i].GetStatus() == Status.SUCCESS)
+                    {
+                        continue;
+                    }
                     //and execute their tick function
                     Status childStatus = Children[i].tick();
                     //if they are running, return that
@@ -31,6 +39,7 @@ namespace MonsterMiner
                     }
                 }
                 //if neither of these are true, then they have succeeded, we are at the end of the list of children and the sequencer may return success
+                onInitialise();
                 return Status.SUCCESS;
             }
 

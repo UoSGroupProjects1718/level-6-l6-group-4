@@ -8,7 +8,6 @@ namespace MonsterMiner
         public class RepeatDecorator : Decorator
         {
             protected int Limit;
-            protected int Counter;
 
             public void setCount(int count)
             {
@@ -16,24 +15,22 @@ namespace MonsterMiner
             }
             public override void onInitialise()
             {
-                Counter = 0;
+                
             }
+
             public override Status Update()
             {
-                for (int counter = Counter; counter < Limit; counter++)
+                for (int counter = 0; counter < Limit; counter++)
                 {
-                    Counter = counter;
                     Child.tick();
-                    if (Child.GetStatus() == Status.RUNNING) break;
-                    if (Child.GetStatus() == Status.FAILURE) return Status.FAILURE;
-                    if (Counter == Limit) return Status.SUCCESS;
+                    
+                    if (Child.GetStatus() == Status.FAILURE)
+                        return Status.FAILURE;
+                    if (counter == Limit-1)
+                        return Status.SUCCESS;
                 }
                 return Status.INVALID;
             }
-
-
-
-
         }
     }
 }

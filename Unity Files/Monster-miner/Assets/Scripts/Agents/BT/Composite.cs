@@ -14,9 +14,11 @@ namespace MonsterMiner
                 if(Children == null)
                 {
                     Children = new List<BehaviourBase>();
-
-                    Children.Add(child);
+                    
                 }
+                BehaviourBase tempChild = child;
+
+                Children.Add(tempChild);
             }
 
             public void RemoveChild(BehaviourBase child) { Children.Remove(child); }
