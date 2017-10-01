@@ -12,7 +12,7 @@ public class PrototypeBehaviour : MonoBehaviour {
         Flee
     }
     public float range = 10;
-    public float radaius = 5;
+    public float radius = 5;
 
     public State currentState = State.Wander;
 
@@ -21,7 +21,7 @@ public class PrototypeBehaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         navMeshAgent = GetComponent<NavMeshAgent>();
-	}
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -57,7 +57,6 @@ public class PrototypeBehaviour : MonoBehaviour {
         return true;
     }
 
-
     void Flee(Transform agentPosition)
     {
         Vector3 Target = 2* transform.position - new Vector3(agentPosition.position.x,agentPosition.position.y,agentPosition.position.z);
@@ -68,21 +67,28 @@ public class PrototypeBehaviour : MonoBehaviour {
     {
         circleCentre = transform.forward.normalized * 5 + transform.position;
         float Angle = Random.Range(0, 2*Mathf.PI);
-        Vector3 Target = new Vector3(circleCentre.x + radaius * Mathf.Sin(Angle), circleCentre.y, radaius * circleCentre.z + Mathf.Cos(Angle));
+        Target = new Vector3(circleCentre.x + radius * Mathf.Sin(Angle), circleCentre.y, circleCentre.z +radius * Mathf.Cos(Angle));
         MoveToPoint(Target);
-        Debug.Log(Target);
-            }
+
+       // transform.position = transform.position + Target.normalized * 0.2f;
+        Debug.Log(transform.forward.normalized);
+    }
 
     public void MoveToPoint(Vector3 point)
     {
         navMeshAgent.SetDestination(point);
     }
 
-    Vector3 circleCentre;
+    Vector3 circleCentre, Target;
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(circleCentre, radaius);
+        Gizmos.DrawWireSphere(circleCentre, radius);
         Gizmos.DrawLine(transform.position, transform.position + transform.forward);
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(Target, 1f);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, range);
+
     }
 }
