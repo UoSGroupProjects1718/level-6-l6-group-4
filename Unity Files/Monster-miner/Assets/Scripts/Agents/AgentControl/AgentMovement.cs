@@ -9,7 +9,6 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AgentMovement : MonoBehaviour
 {
-
     NavMeshAgent navMeshAgent;
     // Use this for initialization
     void Start()
@@ -22,6 +21,7 @@ public class AgentMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(Input.GetKeyDown(Keybinds.Instance.SecondaryActionKey))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

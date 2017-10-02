@@ -1,4 +1,3 @@
-
 using UnityEngine;
 namespace MonsterMiner
 {
@@ -7,26 +6,26 @@ namespace MonsterMiner
         [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/RepeatDecorator")]
         public class RepeatDecorator : Decorator
         {
+            [SerializeField]
             protected int Limit;
-
-            public void setCount(int count)
-            {
-                Limit = count;
-            }
-            public override void onInitialise()
-            {
-                
-            }
-
-            public override Status Update()
+            
+            public override Status UpdateFunc(ColonistController Colonist)
             {
                 for (int counter = 0; counter < Limit; counter++)
                 {
-                    Child.tick();
-                    
-                    if (Child.GetStatus() == Status.FAILURE)
-                        return Status.FAILURE;
+                    Child.tick(Colonist);
                     if (counter == Limit-1)
+                        return Status.SUCCESS;
+                }
+                return Status.INVALID;
+            }
+
+            public override Status UpdateFunc(MonsterController Monster)
+            {
+                for (int counter = 0; counter < Limit; counter++)
+                {
+                    Child.tick(Monster);
+                    if (counter == Limit - 1)
                         return Status.SUCCESS;
                 }
                 return Status.INVALID;
