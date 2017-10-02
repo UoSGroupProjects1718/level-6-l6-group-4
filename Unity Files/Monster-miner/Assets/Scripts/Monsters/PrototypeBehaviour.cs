@@ -69,9 +69,6 @@ public class PrototypeBehaviour : MonoBehaviour {
         float Angle = Random.Range(0, 2*Mathf.PI);
         Target = new Vector3(circleCentre.x + radius * Mathf.Sin(Angle), circleCentre.y, circleCentre.z +radius * Mathf.Cos(Angle));
         MoveToPoint(Target);
-
-       // transform.position = transform.position + Target.normalized * 0.2f;
-        Debug.Log(transform.forward.normalized);
     }
 
     public void MoveToPoint(Vector3 point)
