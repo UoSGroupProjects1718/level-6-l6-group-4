@@ -9,4 +9,5 @@ public class BlacksmithFunction : BuildingFunction {
     {
         //building function logic is written here
     }
+    
 }

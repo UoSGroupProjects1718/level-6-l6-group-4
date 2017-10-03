@@ -3,7 +3,7 @@ namespace MonsterMiner
 {
     namespace BehaviourTree
     {
-        [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/RepeatDecorator")]
+        [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Decorators/Repeat")]
         public class RepeatDecorator : Decorator
         {
             [SerializeField]

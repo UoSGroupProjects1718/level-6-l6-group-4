@@ -18,7 +18,7 @@ public class BuildingManager : SingletonClass<BuildingManager>
 
     private BuildingFunction SelectedBuildingFunction;
     private GameObject CurrentlySelectedBuilding;
-    private BuildJob currentJob;
+    private Job currentJob;
 
     private bool hasPlaced;
 
@@ -33,7 +33,7 @@ public class BuildingManager : SingletonClass<BuildingManager>
             //instantiate a new button under the parent object, which holds a grid layout group
             GameObject button = Instantiate(ButtonPrefab, BuildingUIParent) as GameObject;
             //change the text component of the button (until we get an actual button to use as a prefab)
-            button.GetComponentInChildren<Text>().text = ((BuildJob)Buildings[i]).Building.name;
+            button.GetComponentInChildren<Text>().text = (Buildings[i]).InteractionObject.name;
             //then add an onclick event to the button using a delegate
             button.GetComponent<Button>().onClick.AddListener(delegate { BuildingOnClick(button.transform.GetSiblingIndex()); });
         }
@@ -42,51 +42,57 @@ public class BuildingManager : SingletonClass<BuildingManager>
 
     private void Update()
     {
-        
-        if(CurrentlySelectedBuilding && !hasPlaced)
+
+        if (CurrentlySelectedBuilding && !hasPlaced)
         {
+            //if we are mousing over ui, return
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
+
             CurrentlySelectedBuilding.transform.position = BuildingLastPlaceHovered;
+
             //modify mouse position to world space
-            Ray mousePos =  Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray mousePos = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit mouseCastHit;
-            if(Physics.Raycast(mousePos,out mouseCastHit,CreationDistance ,FloorLayerMask.value))
+            if (Physics.Raycast(mousePos, out mouseCastHit, CreationDistance, FloorLayerMask.value))
             {
                 BuildingLastPlaceHovered = mouseCastHit.point;
             }
-          
+
             ///building rotation
-            if(Input.GetKeyDown(Keybinds.Instance.BuildingRotationKey))
+            if (Input.GetKeyDown(Keybinds.Instance.BuildingRotationKey))
             {
-                CurrentlySelectedBuilding.transform.Rotate(new Vector3(0,90,0));
+                CurrentlySelectedBuilding.transform.Rotate(new Vector3(0, 90, 0));
             }
 
             ///cancel selection
-            if(Input.GetKeyDown(Keybinds.Instance.CancelButton))
+            if (Input.GetKeyDown(Keybinds.Instance.CancelButton))
             {
                 ResetBuildingSelections();
             }
 
             ///placement
             //if the primary action key is pressed
-            if(Input.GetKeyDown(Keybinds.Instance.PrimaryActionKey) && IsLegalPosition())
+            if (Input.GetKeyDown(Keybinds.Instance.PrimaryActionKey) && IsLegalPosition())
             {
-                    //stop the building from following the mouse
-                    hasPlaced = true;
-                    //and then we queue a job
-                    JobManager.Instance.QueueJob(Instantiate(currentJob));   
-                }
-
+                //stop the building from following the mouse
+                hasPlaced = true;
+                //and then we queue a job
+                Job job = Instantiate(currentJob);
+                job.jobLocation = CurrentlySelectedBuilding.transform.position;
+                job.InteractionObject = CurrentlySelectedBuilding;
+                JobManager.Instance.QueueJob(job);
             }
-            
+
         }
+
+    }
     public void BuildingOnClick(int BuildingIndex)
     {
             hasPlaced = false;
-            CurrentlySelectedBuilding = Instantiate(((BuildJob)Buildings[BuildingIndex]).Building);
+            CurrentlySelectedBuilding = Instantiate(Buildings[BuildingIndex].InteractionObject);
             SelectedBuildingFunction = CurrentlySelectedBuilding.GetComponent<BuildingFunction>();
-            currentJob = (BuildJob)Buildings[BuildingIndex];
+            currentJob = Buildings[BuildingIndex];
     }
     
     public bool IsLegalPosition()

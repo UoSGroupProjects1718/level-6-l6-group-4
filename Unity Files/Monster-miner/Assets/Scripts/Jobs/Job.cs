@@ -10,8 +10,8 @@ public enum JobType
     Building,
     Hunter,
 }
-
-public abstract class Job : ScriptableObject {
+[CreateAssetMenu(menuName = "Scriptable Objects/Job")]
+public class Job : ScriptableObject {
 
     public string jobName;
     [SerializeField]
@@ -25,7 +25,8 @@ public abstract class Job : ScriptableObject {
     [HideInInspector]
     public Vector3 jobLocation;
 
-    public abstract void OnJobComplete();
+    public GameObject InteractionObject;
+
 
     public void Awake()
     {

@@ -37,7 +37,6 @@ public class UnitSelection : MonoBehaviour {
             endClick=GetPoint();
             //Draw a rect from start to end. add all agents to list
             AddAgentsToList();
-            Debug.Log(UnitsSelected);
         }	
 	}
 

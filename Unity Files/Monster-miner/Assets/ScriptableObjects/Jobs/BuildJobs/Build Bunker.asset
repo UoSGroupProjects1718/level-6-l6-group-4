@@ -8,7 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0665fe6d9f7f98f489d5472c226090e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bf58bc5ef18cc84db00ea6fe36fe85e, type: 3}
   m_Name: Build Bunker
   m_EditorClassIdentifier: 
   jobName: Build Bunker
@@ -16,4 +16,5 @@ MonoBehaviour:
   currentWorkAmount: 0
   jobType: 3
   jobLocation: {x: 0, y: 0, z: 0}
-  Building: {fileID: 1683974480959124, guid: 5f0db336cf2c3024fb4144e2f4f6f2e0, type: 2}
+  InteractionObject: {fileID: 1683974480959124, guid: 5f0db336cf2c3024fb4144e2f4f6f2e0,
+    type: 2}

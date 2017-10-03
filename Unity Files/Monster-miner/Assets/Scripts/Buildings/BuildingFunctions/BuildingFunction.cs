@@ -5,6 +5,8 @@ using UnityEngine;
 
 public abstract class BuildingFunction : MonoBehaviour {
 
+    [HideInInspector]
+    public bool Built;
     public List<Collider> colliders = new List<Collider>();
 
 
@@ -21,6 +23,13 @@ public abstract class BuildingFunction : MonoBehaviour {
         if(collision.collider.tag == "Building")
         {
             colliders.Remove(collision.collider);
+        }
+    }
+    public virtual void OnMouseDown()
+    {
+        if (Built)
+        {
+            Function();
         }
     }
     public abstract void Function();
