@@ -10,8 +10,8 @@ public class BehaviourTreeManager : MonoBehaviour
     [SerializeField]
     private BehaviourBase MonsterTree;
 
-    public List<ColonistController> Colonists = new List<ColonistController>();
-    public List<MonsterController> Monsters = new List<MonsterController>();
+    static public List<ColonistController> Colonists = new List<ColonistController>();
+    static public List<MonsterController> Monsters = new List<MonsterController>();
 
     public void Awake()
     {
@@ -24,11 +24,10 @@ public class BehaviourTreeManager : MonoBehaviour
             ColonistTree.UpdateFunc(Colonists[i]);
         }
 
-        //uncomment when monsters have a tree
-        //for (int i = 0; i < Monsters.Count; i++)
-        //{
-        //    MonsterTree.UpdateFunc(Monsters[i]);
-        //}
+        for (int i = 0; i < Monsters.Count; i++)
+        {
+            MonsterTree.UpdateFunc(Monsters[i]);
+        }
     }
 
 

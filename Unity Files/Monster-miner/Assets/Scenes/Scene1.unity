@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 668568086}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.8973292
+  m_Size: 0.7677783
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -914,9 +914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColonistTree: {fileID: 11400000, guid: 3e98cb684d7619e4facc57d15243517b, type: 2}
-  MonsterTree: {fileID: 0}
-  Colonists: []
-  Monsters: []
+  MonsterTree: {fileID: 11400000, guid: f83e1019613212a4087727cd8694b4ee, type: 2}
 --- !u!1 &847930260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1162,7 @@ GameObject:
   - component: {fileID: 1132741039}
   - component: {fileID: 1132741038}
   - component: {fileID: 1132741037}
+  - component: {fileID: 1132741043}
   m_Layer: 0
   m_Name: Dino
   m_TagString: Untagged
@@ -1179,12 +1178,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1132741036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f378082a6e491a4c8e8f3b8c951b2d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1875284b705f0d74b83337a34f767f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10.03
-  radius: 2.99
   currentState: 0
+  currentTarget: {fileID: 0}
+  MonsterName: Tony
+  MonsterSpeed: 1
+  Movement: {fileID: 0}
 --- !u!195 &1132741038
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1270,6 +1271,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1132741043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1132741036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3a8a73532941b46907a56a8fbd5904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10
+  radius: 5
 --- !u!1 &1271023070
 GameObject:
   m_ObjectHideFlags: 0

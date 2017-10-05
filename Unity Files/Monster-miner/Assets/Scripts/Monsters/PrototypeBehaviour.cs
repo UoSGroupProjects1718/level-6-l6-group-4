@@ -39,10 +39,12 @@ public class PrototypeBehaviour : MonoBehaviour {
     {
         Transform ClosestEnemy = null;
         float Close = float.MaxValue;
-        for(int i=0; i<UnitSelection.UnitList.Count; i++){
+        for (int i = 0; i < UnitSelection.UnitList.Count; i++)
+        {
             float dist = (UnitSelection.UnitList[i].position - transform.position).magnitude;
-            
-            if(dist < range && dist < Close) {
+
+            if (dist < range && dist < Close)
+            {
                 ClosestEnemy = UnitSelection.UnitList[i];
                 Close = dist;
             }

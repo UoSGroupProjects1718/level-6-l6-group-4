@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 572105fe6d1afe146b100b9e69b53c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Built: 0
   colliders: []
 --- !u!208 &208720927884913684
 NavMeshObstacle:
