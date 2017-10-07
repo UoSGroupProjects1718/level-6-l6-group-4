@@ -16,8 +16,6 @@ namespace MonsterMiner
                 //just in case it sneaks through
                 if (Colonist.currentJob == null)
                     return Status.FAILURE;
-                //get a circle around the building to calculate a radius 
-                float radius = Mathf.Max(Colonist.currentJob.InteractionObject.transform.localScale.x, Colonist.currentJob.InteractionObject.transform.localScale.y);
 
                 RaycastHit hit = new RaycastHit();
                 Debug.DrawRay(Colonist.transform.position, Colonist.currentJob.jobLocation - Colonist.transform.position,Color.red);

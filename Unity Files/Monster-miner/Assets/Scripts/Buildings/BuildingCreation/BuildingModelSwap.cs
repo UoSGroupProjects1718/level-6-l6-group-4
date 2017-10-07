@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,14 +11,15 @@ public class BuildingModelSwap : MonoBehaviour {
     {
         //Instantiate(newObject, transform);
 
-        Mesh oldmesh = GetComponent<MeshFilter>().mesh;
-        oldmesh.Clear();
-        oldmesh.triangles = newObject.triangles;
-        oldmesh.uv = newObject.uv;
-        oldmesh.RecalculateNormals();
+        //Mesh oldmesh = GetComponent<MeshFilter>().mesh;
+        //oldmesh.Clear();
+        //oldmesh.triangles = newObject.triangles;
+        //oldmesh.uv = newObject.uv;
+        //oldmesh.RecalculateNormals();
 
-        GetComponent<MeshFilter>().mesh = oldmesh;
+        //GetComponent<MeshFilter>().mesh = oldmesh;
 
+        transform.GetChild(0).GetComponent<MeshFilter>().mesh = Instantiate(newObject);
 
 
 
