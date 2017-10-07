@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ public class MonsterController : MonoBehaviour {
 
     public enum MovementState
     {
-        Wonder,
+        Wander,
         Flee,
         Chase,
         Still
@@ -23,7 +23,7 @@ public class MonsterController : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         BehaviourTreeManager.Monsters.Add(this);
-        currentState = MovementState.Wonder;
+        currentState = MovementState.Wander;
         Movement = GetComponent<MonsterMovement>();
     }
 }

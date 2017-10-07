@@ -13,10 +13,7 @@ public class BehaviourTreeManager : MonoBehaviour
     static public List<ColonistController> Colonists = new List<ColonistController>();
     static public List<MonsterController> Monsters = new List<MonsterController>();
 
-    public void Awake()
-    {
-     
-    }
+
     public void FixedUpdate()
     {
         for(int i = 0; i < Colonists.Count; i++)

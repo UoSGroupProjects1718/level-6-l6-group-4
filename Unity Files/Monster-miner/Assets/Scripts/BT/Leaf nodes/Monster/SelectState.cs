@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
@@ -21,7 +21,7 @@ public class SelectState : BehaviourBase {
         }
 
         if (Closest==null || Dist > Monster.Movement.range) {
-            Monster.currentState = MonsterController.MovementState.Wonder;
+            Monster.currentState = MonsterController.MovementState.Wander;
             return Status.SUCCESS;
         }
 

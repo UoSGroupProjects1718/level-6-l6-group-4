@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
@@ -11,7 +11,7 @@ public class Movement : BehaviourBase
     {
         switch (Monster.currentState)
         {
-            case MonsterController.MovementState.Wonder:
+            case MonsterController.MovementState.Wander:
                 Monster.Movement.MoveToPoint(Wonder(Monster.transform));
                 break;
             case MonsterController.MovementState.Flee:
