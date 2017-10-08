@@ -14,10 +14,10 @@ namespace MonsterMiner
                 if (Colonist.currentJob == null)
                     return Status.FAILURE;
 
-                if(Colonist.currentJob.currentWorkAmount <= 0)
+                if (Colonist.currentJob.currentWorkAmount <= 0)
                 {
                     Colonist.currentJob.InteractionObject.GetComponent<BuildingFunction>().Built = true;
-                  //uncomment when model swapping for all buildings is correctly implemented + the scaffolding scale is correct
+                    //uncomment when model swapping for all buildings is correctly implemented + the scaffolding scale is correct
                     //  Colonist.currentJob.InteractionObject.GetComponent<BuildingModelSwap>().UpdateObject();
                     Debug.Log("Building Completed: " + Colonist.currentJob.InteractionObject.name);
                     Colonist.currentJob = null;

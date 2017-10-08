@@ -10,8 +10,10 @@ public abstract class ItemInfo : ScriptableObject {
     public float decaySpeed;
     [Range(0,200)]
     public float maxItemDurability;
+    [HideInInspector]
     public float currentItemDurability;
     public int maxStackAmount;
+    public int currentStackAmount;
     public Mesh itemMesh;
 
     private void Awake()

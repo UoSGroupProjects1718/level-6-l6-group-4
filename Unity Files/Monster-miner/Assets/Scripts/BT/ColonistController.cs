@@ -12,6 +12,13 @@ public class ColonistController : MonoBehaviour {
     public JobType ColonistJob;
     public Job currentJob;
 
+
+    public Weapon ColonistWeapon;
+
+    public float Health = 100;
+
+    public MonsterController target;
+
     [HideInInspector]
     public bool hasPath;
 
@@ -23,6 +30,12 @@ public class ColonistController : MonoBehaviour {
         BehaviourTreeManager.Colonists.Add(this);
         agentMovement = GetComponent<AgentMovement>();
         gameObject.GetComponent<NavMeshAgent>().speed = ColonistSpeed;
+    }
+
+    public void OnDrawGizmos()
+    {
+        if(ColonistWeapon != null)
+        Gizmos.DrawWireSphere(transform.position, ColonistWeapon.Range);
     }
 
 

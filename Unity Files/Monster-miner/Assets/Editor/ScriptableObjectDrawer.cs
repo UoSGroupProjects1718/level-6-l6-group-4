@@ -5,9 +5,12 @@ using UnityEditor;
 //https://forum.unity.com/threads/editor-tool-better-scriptableobject-inspector-editing.484393/
 //sadly when trying to serialise lists it seems to fail in some circumstances (it has only failed with the behaviour tree so far
 
-[CustomPropertyDrawer(typeof(ItemInfo), true)]
+[CustomPropertyDrawer(typeof(ScriptableObject), true)]
 public class ScriptableObjectDrawer : PropertyDrawer
 {
+    // Static foldout dictionary
+    private static Dictionary<System.Type, bool> foldoutByType = new Dictionary<System.Type, bool>();
+
     // Cached scriptable object editor
     private Editor editor = null;
 
@@ -17,13 +20,20 @@ public class ScriptableObjectDrawer : PropertyDrawer
         EditorGUI.PropertyField(position, property, label, true);
 
         // Draw foldout arrow
+        bool foldout = false;
         if (property.objectReferenceValue != null)
         {
-            property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, GUIContent.none);
+            // Store foldout values in a dictionary per object type
+            bool foldoutExists = foldoutByType.TryGetValue(property.objectReferenceValue.GetType(), out foldout);
+            foldout = EditorGUI.Foldout(position, foldout, GUIContent.none);
+            if (foldoutExists)
+                foldoutByType[property.objectReferenceValue.GetType()] = foldout;
+            else
+                foldoutByType.Add(property.objectReferenceValue.GetType(), foldout);
         }
 
         // Draw foldout properties
-        if (property.isExpanded)
+        if (foldout)
         {
             // Make child fields be indented
             EditorGUI.indentLevel++;

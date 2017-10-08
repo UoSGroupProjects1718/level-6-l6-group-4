@@ -21,12 +21,18 @@ namespace MonsterMiner
                 Debug.DrawRay(Colonist.transform.position, Colonist.currentJob.jobLocation - Colonist.transform.position,Color.red);
                 if(Physics.Raycast(Colonist.transform.position,Colonist.currentJob.jobLocation - Colonist.transform.position,out hit, MinDistForPathSuccess) /*&& hit.collider.GetInstanceID() == Colonist.currentJob.InteractionObject.GetInstanceID()*/)
                 {
+                    if(hit.collider.gameObject == Colonist.currentJob.InteractionObject)
+                    {
+
                     Debug.Log("You have reached your destination");
+                    Colonist.hasPath = false;
                     return Status.SUCCESS;
+                    }
                 }
                 if(Colonist.hasPath == false)
                 {
                     Colonist.agentMovement.MoveToPoint(Colonist.currentJob.jobLocation);
+                    Colonist.hasPath = true;
                     return Status.RUNNING;
                 }
                 return Status.RUNNING;

@@ -9,11 +9,23 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AgentMovement : MonoBehaviour
 {
-    NavMeshAgent navMeshAgent;
+    NavMeshAgent agent;
+
+    public NavMeshAgent navMeshAgent
+    {
+        get
+        {
+            return agent;
+        }
+        private set
+        {
+            agent = value;
+        }
+    }
     // Use this for initialization
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         UnitSelection.UnitList.Add(this.transform);
 
     }
