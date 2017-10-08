@@ -22,22 +22,25 @@ public class MonsterController : MonoBehaviour {
     public float Damage;
 
     public MonsterMovement Movement;
+    [HideInInspector]
+    public new Collider collider;
 
     // Use this for initialization
     void Awake () {
         BehaviourTreeManager.Monsters.Add(this);
         currentState = MovementState.Wander;
         Movement = GetComponent<MonsterMovement>();
+        collider = GetComponent<Collider>();
     }
 
-    public void takeDamage(float damage)
+     public void takeDamage(float damage)
     {
         Health -= damage;
         if (checkDead())
             Death();
     }
 
-    bool checkDead()
+    public bool checkDead()
     {
         if (Health < 0)
             return true;
@@ -45,6 +48,6 @@ public class MonsterController : MonoBehaviour {
     }
 
     void Death() {
-
+        Debug.Log(MonsterName + " has died.");
     }
 }

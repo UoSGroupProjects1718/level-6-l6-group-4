@@ -21,15 +21,19 @@ namespace MonsterMiner
 
             private MonsterController FindClosest(Transform colonist)
             {
+                //find the closest target, once we have looped through all monsters we then return the one we found to be the closest
                 MonsterController currentClosest = null;
                 float lowestDist = float.MaxValue;
                 foreach (MonsterController monster in BehaviourTreeManager.Monsters)
                 {
                     float dist = Vector3.Distance(colonist.position, monster.transform.position);
-                    if (dist < lowestDist)
+                    if (!monster.checkDead())
                     {
-                        lowestDist = dist;
-                        currentClosest = monster;
+                        if (dist < lowestDist)
+                        {
+                            lowestDist = dist;
+                            currentClosest = monster;
+                        }
                     }
                 }
                 return currentClosest;

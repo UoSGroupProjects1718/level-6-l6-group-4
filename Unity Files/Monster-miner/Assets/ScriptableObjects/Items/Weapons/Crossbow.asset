@@ -15,10 +15,10 @@ MonoBehaviour:
   itemDescription: A slow firing weapon which fires a bolt at high speed
   decaySpeed: 1
   maxItemDurability: 100
-  currentItemDurability: 0
+  currentItemDurability: 100
   maxStackAmount: 1
   currentStackAmount: 1
   itemMesh: {fileID: 0}
-  Range: 30
-  AttackSpeed: 0.5
   Damage: 30
+  Range: 30
+  AttackSpeed: 2

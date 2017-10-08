@@ -5,9 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/ Weapon")]
 public class Weapon : ItemInfo {
 
-    public float Range;
-    public float AttackSpeed;
     public float Damage;
-
+    [Header("Range in unity units")]
+    public float Range;
+    [Header("Seconds between attacks")]
+    public float AttackSpeed;
 
 }
