@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
@@ -9,6 +9,9 @@ public class TargetDistance : BehaviourBase {
 
     public override Status UpdateFunc(MonsterController Monster)
     {
+        if (Monster.currentState != MonsterController.MovementState.Chase)
+            return Status.FAILURE;
+
         if (getDistance(Monster) && getAngle(Monster))
             return Status.SUCCESS;
         return Status.FAILURE;
