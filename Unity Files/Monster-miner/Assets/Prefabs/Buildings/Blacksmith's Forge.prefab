@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 54544672978004452}
   - component: {fileID: 65027647376849904}
   - component: {fileID: 114847661239081106}
+  - component: {fileID: 114998424086659430}
   m_Layer: 0
   m_Name: Blacksmith's Forge
   m_TagString: Building
@@ -159,6 +160,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Built: 0
   colliders: []
+--- !u!114 &114998424086659430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207041932570270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scafoldingMesh: {fileID: 4300000, guid: 516af43761a3b0644842f46fe222c9c8, type: 3}
 --- !u!208 &208720927884913684
 NavMeshObstacle:
   m_ObjectHideFlags: 1

@@ -17,6 +17,9 @@ public class MonsterController : MonoBehaviour {
 
     public string MonsterName;
     public float MonsterSpeed;
+    public float Health;
+    public float combatRange;
+    public float Damage;
 
     public MonsterMovement Movement;
 
@@ -25,5 +28,23 @@ public class MonsterController : MonoBehaviour {
         BehaviourTreeManager.Monsters.Add(this);
         currentState = MovementState.Wander;
         Movement = GetComponent<MonsterMovement>();
+    }
+
+    public void takeDamage(float damage)
+    {
+        Health -= damage;
+        if (checkDead())
+            Death();
+    }
+
+    bool checkDead()
+    {
+        if (Health < 0)
+            return true;
+        return false;
+    }
+
+    void Death() {
+
     }
 }

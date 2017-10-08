@@ -3,36 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingModelSwap : MonoBehaviour {
-    public KeyCode key;
-    public Mesh newObject;
-    public MeshFilter Rend;
+    
+    public Mesh scafoldingMesh;
+    MeshFilter Rend;
+    Mesh currentMesh;
 
-    void UpdateObject()
+    private void Awake()
     {
-        //Instantiate(newObject, transform);
-
-        //Mesh oldmesh = GetComponent<MeshFilter>().mesh;
-        //oldmesh.Clear();
-        //oldmesh.triangles = newObject.triangles;
-        //oldmesh.uv = newObject.uv;
-        //oldmesh.RecalculateNormals();
-
-        //GetComponent<MeshFilter>().mesh = oldmesh;
-
-        transform.GetChild(0).GetComponent<MeshFilter>().mesh = Instantiate(newObject);
-
-
-
-
+        currentMesh = transform.GetChild(0).GetComponent<MeshFilter>().mesh;
+        transform.GetChild(0).GetComponent<MeshFilter>().mesh = Instantiate(scafoldingMesh);
+        scafoldingMesh = null;
     }
 
-    private void Update()
+    public void UpdateObject()
     {
-        if (Input.GetKeyDown(key))
-        {
-            Debug.Log("AAAAAAAAAAAAAAA");
-            UpdateObject();
-        }
-    }
+        transform.GetChild(0).GetComponent<MeshFilter>().mesh = Instantiate(currentMesh);
 
+    }
 }

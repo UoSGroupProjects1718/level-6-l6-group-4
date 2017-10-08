@@ -80,7 +80,7 @@ public class TimeManager : SingletonClass<TimeManager> {
     private void Update()
     {
         string timeOfDay = (Time.hours > 12) ? " pm" : " am";
-        dateText.text = Time.hours + " : " + Time.minutes + timeOfDay + "\n " + Time.Date.x + ", " + Time.Date.y + ", " + Time.Date.z;
+        dateText.text = Time.hours + " : " + Mathf.RoundToInt(Time.minutes) + timeOfDay + "\n " + Time.Date.x + ", " + Time.Date.y + ", " + Time.Date.z;
     }
 
 }
