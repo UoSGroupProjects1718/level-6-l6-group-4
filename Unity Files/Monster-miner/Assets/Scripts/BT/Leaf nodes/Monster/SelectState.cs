@@ -7,6 +7,12 @@ public class SelectState : BehaviourBase {
 
 	public override Status UpdateFunc(MonsterController Monster)
     {
+
+        if(Monster.checkDead())
+        {
+            Monster.currentState = MonsterController.MovementState.Still;
+            return Status.SUCCESS;
+        }
         Transform pos = Monster.transform;
         float Dist = float.MaxValue;
         Transform Closest = null;

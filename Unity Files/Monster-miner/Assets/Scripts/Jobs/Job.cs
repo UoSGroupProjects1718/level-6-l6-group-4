@@ -15,9 +15,9 @@ public class Job : ScriptableObject {
 
     public string jobName;
     [SerializeField]
-    private float maxWorkAmount;
+    public float maxWorkAmount;
 
-    [HideInInspector]
+//    [HideInInspector]
     public float currentWorkAmount;
 
     public JobType jobType;

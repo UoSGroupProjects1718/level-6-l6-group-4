@@ -20,7 +20,6 @@ namespace MonsterMiner
                     {
                         Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
                         JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
-                        Debug.Log("Have found job: " + Colonist.currentJob.jobName);
                         return Status.SUCCESS;
                     }
                 }

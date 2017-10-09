@@ -23,8 +23,6 @@ namespace MonsterMiner
                 {
                     if(hit.collider.gameObject == Colonist.currentJob.InteractionObject)
                     {
-
-                    Debug.Log("You have reached your destination");
                     Colonist.hasPath = false;
                     return Status.SUCCESS;
                     }

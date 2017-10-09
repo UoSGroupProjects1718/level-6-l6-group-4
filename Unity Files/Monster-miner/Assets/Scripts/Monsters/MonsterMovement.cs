@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,7 +8,20 @@ using UnityEngine.AI;
 public class MonsterMovement : MonoBehaviour {
     public float range = 10;
     public float radius = 5;
-    NavMeshAgent navMeshAgent;
+    NavMeshAgent meshAgent;
+
+    public NavMeshAgent navMeshAgent
+    {
+        get
+        {
+            return meshAgent;
+        }
+        private set
+        {
+            meshAgent = value;
+        }
+    }
+
 
     // Use this for initialization
     void Awake () {

@@ -11,13 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab38b72aaa3b0bd4aa0b91bb45d74cd4, type: 3}
   m_Name: Meat
   m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
+  itemName: Tasty Meat
+  itemDescription: A nutritious snack for colonists to eat
   decaySpeed: 25
   maxItemDurability: 100
-  currentItemDurability: 50
-  maxStackAmount: 0
-  itemMesh: {fileID: 0}
-  nutrition: 1
+  currentItemDurability: 100
+  maxStackAmount: 100
+  currentStackAmount: 0
+  itemMesh: {fileID: 4300002, guid: 3dbcd84831cb2a245a439ce840457fc7, type: 3}
   minDropAmount: 2
   maxDropAmount: 20

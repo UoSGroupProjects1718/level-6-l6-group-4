@@ -34,6 +34,8 @@ namespace MonsterMiner
                             Colonist.target.takeDamage(Colonist.ColonistWeapon.Damage);
                             if(Colonist.target.checkDead())
                             {
+                                Colonist.target.GetComponent<MeshRenderer>().material.color = Color.red;
+                                CreateJob(JobType.Scout, 100, Colonist.target.gameObject, Colonist.target.transform.position, "Harvest" + Colonist.target.MonsterName);
                                 Colonist.target = null;
                             }
                             return Status.SUCCESS;
@@ -41,6 +43,17 @@ namespace MonsterMiner
                     }
                 }
                 return Status.FAILURE;
+            }
+            private void CreateJob(JobType jobType, int MaxWorkAmount, GameObject interactionObject, Vector3 jobLocation, string JobName)
+            {
+                Job newJob = (Job)CreateInstance("Job");
+                newJob.jobName = JobName;
+                newJob.InteractionObject = interactionObject;
+                newJob.maxWorkAmount = MaxWorkAmount;
+                newJob.jobLocation = jobLocation;
+                newJob.jobType = jobType;
+
+                JobManager.Instance.QueueJob(newJob);
             }
         }
     }

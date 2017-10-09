@@ -24,6 +24,7 @@ public class MonsterController : MonoBehaviour {
     public MonsterMovement Movement;
     [HideInInspector]
     public new Collider collider;
+    public DropTable dropTable;
 
     // Use this for initialization
     void Awake () {

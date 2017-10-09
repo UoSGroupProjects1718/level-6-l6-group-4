@@ -1161,8 +1161,9 @@ MonoBehaviour:
   ColonistWorkSpeed: 50
   ColonistJob: 4
   currentJob: {fileID: 0}
-  ColonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
   Health: 100
+  ColonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  nextAttack: 0
   target: {fileID: 0}
   hasPath: 0
   agentMovement: {fileID: 0}
@@ -1208,6 +1209,7 @@ MonoBehaviour:
   Damage: 0
   Movement: {fileID: 0}
   collider: {fileID: 0}
+  dropTable: {fileID: 11400000, guid: 4afb46ab6e6ee5d4abe365894bf699f0, type: 2}
 --- !u!195 &1132741038
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1360,6 +1362,7 @@ MonoBehaviour:
   Damage: 0
   Movement: {fileID: 0}
   collider: {fileID: 0}
+  dropTable: {fileID: 11400000, guid: 4afb46ab6e6ee5d4abe365894bf699f0, type: 2}
 --- !u!195 &1263753742
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1778,8 +1781,9 @@ MonoBehaviour:
   ColonistWorkSpeed: 50
   ColonistJob: 3
   currentJob: {fileID: 0}
-  ColonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
   Health: 100
+  ColonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  nextAttack: 0
   target: {fileID: 0}
   hasPath: 0
   agentMovement: {fileID: 0}
@@ -2270,10 +2274,11 @@ MonoBehaviour:
   ColonistName: Bob Jones III
   ColonistSpeed: 4
   ColonistWorkSpeed: 50
-  ColonistJob: 3
+  ColonistJob: 1
   currentJob: {fileID: 0}
-  ColonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
   Health: 100
+  ColonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  nextAttack: 0
   target: {fileID: 0}
   hasPath: 0
   agentMovement: {fileID: 0}
