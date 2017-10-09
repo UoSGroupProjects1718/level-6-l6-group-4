@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEditor;
 
 //https://forum.unity.com/threads/editor-tool-better-scriptableobject-inspector-editing.484393/
-//sadly when trying to serialise lists it seems to fail in some circumstances (it has only failed with the behaviour tree so far
+//sadly when trying to serialise lists it seems to fail in some circumstances (it has only failed with the behaviour tree so far)
 
 [CustomPropertyDrawer(typeof(ScriptableObject), true)]
 public class ScriptableObjectDrawer : PropertyDrawer

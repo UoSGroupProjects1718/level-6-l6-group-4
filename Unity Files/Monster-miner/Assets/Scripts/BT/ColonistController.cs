@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(AgentMovement))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class ColonistController : MonoBehaviour {
 
     public string ColonistName;
@@ -30,12 +30,30 @@ public class ColonistController : MonoBehaviour {
     public new Collider collider;
 
 
+    NavMeshAgent agent;
+
+    public NavMeshAgent navMeshAgent
+    {
+        get
+        {
+            return agent;
+        }
+        private set
+        {
+            agent = value;
+        }
+    }
+
+
+
+
     private void Awake()
     {
         BehaviourTreeManager.Colonists.Add(this);
         agentMovement = GetComponent<AgentMovement>();
         gameObject.GetComponent<NavMeshAgent>().speed = ColonistSpeed;
         collider = gameObject.GetComponent<Collider>();
+        agent = GetComponent<NavMeshAgent>();
       
     }
 

@@ -49,16 +49,16 @@ public class CameraController : MonoBehaviour
         #endregion
         #region camera movement
         //translation
-        if (Input.GetKey(Keybinds.Instance.MoveCameraUp) || Input.mousePosition.y >= Screen.height - CameraScreenBorder)
+        if (Input.GetKey(Keybinds.Instance.MoveCameraUp) )//|| Input.mousePosition.y >= Screen.height - CameraScreenBorder)
             CamPosition += (transform.up * panSpeed) * Time.deltaTime;
 
-        if (Input.GetKey(Keybinds.Instance.MoveCameraDown) || Input.mousePosition.y <= CameraScreenBorder)
+        if (Input.GetKey(Keybinds.Instance.MoveCameraDown))// || Input.mousePosition.y <= CameraScreenBorder)
             CamPosition -= (transform.up *  panSpeed)* Time.deltaTime;
 
-        if (Input.GetKey(Keybinds.Instance.MoveCameraLeft) || Input.mousePosition.x <= CameraScreenBorder)
+        if (Input.GetKey(Keybinds.Instance.MoveCameraLeft))// || Input.mousePosition.x <= CameraScreenBorder)
             CamPosition -= (transform.right * panSpeed)* Time.deltaTime;
 
-        if (Input.GetKey(Keybinds.Instance.MoveCameraRight) || Input.mousePosition.x >= Screen.width - CameraScreenBorder)
+        if (Input.GetKey(Keybinds.Instance.MoveCameraRight))// || Input.mousePosition.x >= Screen.width - CameraScreenBorder)
             CamPosition += (transform.right * panSpeed) * Time.deltaTime;
 
 

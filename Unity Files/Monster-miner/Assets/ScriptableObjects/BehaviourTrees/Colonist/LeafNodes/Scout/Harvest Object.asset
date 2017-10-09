@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edbaf07d5c227a469a905441e1f362a, type: 3}
   m_Name: Harvest Object
   m_EditorClassIdentifier: 
-  ItemPrefab: {fileID: 1886588511682000, guid: 42df5e56edc14fe479bbfd51bb74dc08, type: 2}
+  ItemPrefab: {fileID: 1821821615303488, guid: 42df5e56edc14fe479bbfd51bb74dc08, type: 2}

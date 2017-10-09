@@ -9,9 +9,8 @@ public class Item : MonoBehaviour {
     private GameTime timeSpawned;
 
     //do item related stuff
-    private void Awake()
+    private void Start()
     {
-        item = Instantiate(item);
         if(item.itemMesh != null)
             GetComponent<MeshFilter>().mesh = Instantiate(item.itemMesh);
         timeSpawned = TimeManager.Time;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Build Blacksmith
   m_EditorClassIdentifier: 
   jobName: Build Blacksmith
-  maxWorkAmount: 50
+  maxWorkAmount: 100
   currentWorkAmount: 50
   jobType: 3
   jobLocation: {x: 0, y: 0, z: 0}

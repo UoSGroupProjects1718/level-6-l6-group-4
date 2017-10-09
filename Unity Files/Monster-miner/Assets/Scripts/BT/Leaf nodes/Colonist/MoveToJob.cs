@@ -17,23 +17,39 @@ namespace MonsterMiner
                 if (Colonist.currentJob == null)
                     return Status.FAILURE;
 
-                RaycastHit hit = new RaycastHit();
+               // RaycastHit hit = new RaycastHit();
                 Debug.DrawRay(Colonist.transform.position, Colonist.currentJob.jobLocation - Colonist.transform.position,Color.red);
-                if(Physics.Raycast(Colonist.transform.position,Colonist.currentJob.jobLocation - Colonist.transform.position,out hit, MinDistForPathSuccess) /*&& hit.collider.GetInstanceID() == Colonist.currentJob.InteractionObject.GetInstanceID()*/)
-                {
-                    if(hit.collider.gameObject == Colonist.currentJob.InteractionObject)
-                    {
-                    Colonist.hasPath = false;
-                    return Status.SUCCESS;
-                    }
-                }
+                //if(Physics.Raycast(Colonist.transform.position,Colonist.currentJob.jobLocation - Colonist.transform.position,out hit, MinDistForPathSuccess ) || Vector3.Distance(Colonist.transform.position,Colonist.currentJob.jobLocation) < 0.5f)
+                   // if(hit.collider.gameObject == Colonist.currentJob.InteractionObject)
+                    //{
+                   // }
                 if(Colonist.hasPath == false)
                 {
-                    Colonist.agentMovement.MoveToPoint(Colonist.currentJob.jobLocation);
+                    Colonist.navMeshAgent.SetDestination(Colonist.currentJob.jobLocation);
+                }
+                if(!Colonist.navMeshAgent.pathPending)
+                {
                     Colonist.hasPath = true;
-                    return Status.RUNNING;
+                    if(pathComplete(Colonist))
+                    {
+                        if(!Colonist.navMeshAgent.hasPath || Colonist.navMeshAgent.velocity.sqrMagnitude == 0f)
+                        {
+                            Colonist.hasPath = false;
+                            return Status.SUCCESS;
+                        }
+                    }
                 }
                 return Status.RUNNING;
+            }
+
+            private bool pathComplete(ColonistController colonist)
+            {
+                    if(Vector3.Distance(colonist.navMeshAgent.destination,colonist.transform.position) <= colonist.navMeshAgent.stoppingDistance)
+                    {
+                        if (!colonist.navMeshAgent.hasPath || colonist.navMeshAgent.velocity.sqrMagnitude == 0f)
+                            return true;
+                    }
+                return false;
             }
             
         }

@@ -1,0 +1,19 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Unity Files",
+    "\\Unity Files\\Monster-miner",
+    "\\Unity Files\\Monster-miner\\Assets",
+    "\\Unity Files\\Monster-miner\\Assets\\ScriptableObjects",
+    "\\Unity Files\\Monster-miner\\Assets\\ScriptableObjects\\BehaviourTrees",
+    "\\Unity Files\\Monster-miner\\Assets\\ScriptableObjects\\BehaviourTrees\\Colonist",
+    "\\Unity Files\\Monster-miner\\Assets\\ScriptableObjects\\BehaviourTrees\\Colonist\\LeafNodes",
+    "\\Unity Files\\Monster-miner\\Assets\\ScriptableObjects\\BehaviourTrees\\Colonist\\LeafNodes\\Scout",
+    "\\Unity Files\\Monster-miner\\Assets\\Scripts",
+    "\\Unity Files\\Monster-miner\\Assets\\Scripts\\BT",
+    "\\Unity Files\\Monster-miner\\Assets\\Scripts\\BT\\Leaf nodes",
+    "\\Unity Files\\Monster-miner\\Assets\\Scripts\\BT\\Leaf nodes\\Colonist",
+    "\\Unity Files\\Monster-miner\\Assets\\Scripts\\BT\\Leaf nodes\\Colonist\\Gathering"
+  ],
+  "PreviewInSolutionExplorer": false
+}

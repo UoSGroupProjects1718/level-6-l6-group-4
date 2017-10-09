@@ -18,6 +18,6 @@ MonoBehaviour:
   currentItemDurability: 100
   maxStackAmount: 100
   currentStackAmount: 0
-  itemMesh: {fileID: 4300002, guid: 3dbcd84831cb2a245a439ce840457fc7, type: 3}
+  itemMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   minDropAmount: 2
   maxDropAmount: 20
