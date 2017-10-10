@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: IsBuilderDecorator
   m_EditorClassIdentifier: 
   Child: {fileID: 11400000, guid: 7644ce39991791e4e8d7839b82a1fc06, type: 2}
-  WorkerType: 3
+  WorkerType: 1

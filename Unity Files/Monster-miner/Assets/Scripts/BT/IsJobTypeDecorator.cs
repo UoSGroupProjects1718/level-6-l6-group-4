@@ -10,7 +10,7 @@ namespace MonsterMiner
         public class IsJobTypeDecorator : Decorator
         {
             [SerializeField]
-            private JobType WorkerType;
+            private ColonistJobType WorkerType;
 
             public override Status UpdateFunc(ColonistController Colonist)
             {

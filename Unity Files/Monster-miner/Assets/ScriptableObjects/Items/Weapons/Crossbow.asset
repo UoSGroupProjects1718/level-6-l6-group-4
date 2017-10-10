@@ -19,6 +19,7 @@ MonoBehaviour:
   maxStackAmount: 1
   currentStackAmount: 1
   itemMesh: {fileID: 0}
+  type: 2
   Damage: 30
   Range: 30
   AttackSpeed: 2

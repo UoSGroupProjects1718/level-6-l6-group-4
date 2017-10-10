@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum ColonistJobType
+{
+    Hunter,
+    Builder,
+    Scout,
+}
+
 [RequireComponent(typeof(NavMeshAgent))]
 public class ColonistController : MonoBehaviour {
 
     public string ColonistName;
     public float ColonistSpeed;
     public float ColonistWorkSpeed;
-    public JobType ColonistJob;
+    public ColonistJobType ColonistJob;
     public Job currentJob;
 
 
@@ -29,10 +36,12 @@ public class ColonistController : MonoBehaviour {
     [HideInInspector]
     public new Collider collider;
 
+    [HideInInspector]
+    public GameObject GathererStockpile;
 
     NavMeshAgent agent;
 
-    public NavMeshAgent navMeshAgent
+    public NavMeshAgent NavMeshAgent
     {
         get
         {
@@ -59,7 +68,7 @@ public class ColonistController : MonoBehaviour {
 
     public void OnDrawGizmos()
     {
-        if(ColonistWeapon != null && ColonistJob == JobType.Hunter)
+        if(ColonistWeapon != null && ColonistJob == ColonistJobType.Hunter)
         Gizmos.DrawWireSphere(transform.position, ColonistWeapon.Range);
     }
 

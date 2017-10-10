@@ -8,6 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db9eb9aa57788c469107194bbb74a83, type: 3}
-  m_Name: FindJob
+  m_Script: {fileID: 11500000, guid: 1205682d57118054e9d23e6ac791bfd6, type: 3}
+  m_Name: ScoutRoot
   m_EditorClassIdentifier: 
+  Children:
+  - {fileID: 11400000, guid: b8bebe2ab21859d47959446e77db35ba, type: 2}
+  - {fileID: 11400000, guid: 36de333b742af3647b65b80e06cab2bd, type: 2}

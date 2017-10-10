@@ -9,24 +9,24 @@ public class StockpileFunction : BuildingFunction
     private GameObject itemPrefab;
 
     [SerializeField]
-    private List<Resource> inventory;
+    private List<ItemInfo> inventory;
     [SerializeField]
     private int inventorySpace;
 
 
     public void Awake()
     {
-        inventory = new List<Resource>();
+        inventory = new List<ItemInfo>();
     }
     public override void Function()
     {
         //show ui elements on click
     }
 
-    public void AddItem(Resource newItem)
+    public void AddItem(ItemInfo newItem)
     {
         //loop through each item in the list to see if we can place our new item's stack within another item's stack
-        foreach (Resource item in inventory)
+        foreach (ItemInfo item in inventory)
         {
             if (item.itemName == newItem.itemName && item.currentStackAmount != item.maxStackAmount)
             {
@@ -44,7 +44,7 @@ public class StockpileFunction : BuildingFunction
         }
     }
 
-    public GameObject RemoveItem(Resource item, int amount)
+    public GameObject RemoveItem(ItemInfo item, int amount)
     {
         for (int i = 0; i < inventory.Count; i++)
         {
@@ -53,7 +53,7 @@ public class StockpileFunction : BuildingFunction
                 //if the items current stack - amount does not go below 0 and equals 0
                 if (inventory[i].currentStackAmount - amount == 0 && inventory[i].currentStackAmount - amount > -1)
                 {
-                    Resource obj = Instantiate(inventory[i]);
+                    ItemInfo obj = Instantiate(inventory[i]);
                     obj.currentStackAmount = amount;
                     inventory.Remove(inventory[i]);
                     Item newItem = Instantiate(itemPrefab).GetComponent<Item>();

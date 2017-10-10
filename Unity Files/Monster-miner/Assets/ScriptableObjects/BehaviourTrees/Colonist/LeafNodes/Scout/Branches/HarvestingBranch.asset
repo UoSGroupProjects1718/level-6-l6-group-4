@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c128e5712dc8cea43b354fe68ed3e8e0, type: 3}
-  m_Name: ScoutRoot
+  m_Name: HarvestingBranch
   m_EditorClassIdentifier: 
   Children:
-  - {fileID: 11400000, guid: bf59cda8420f8f94c954e53c25c4bc54, type: 2}
+  - {fileID: 11400000, guid: 95cbd0746e5e5514d97e030f2addcd84, type: 2}
   - {fileID: 11400000, guid: fa23e7485ad79a64aadc655b0a2c5de2, type: 2}
   - {fileID: 11400000, guid: 21f040c4f8be7754ebeb53a8e863dd8f, type: 2}

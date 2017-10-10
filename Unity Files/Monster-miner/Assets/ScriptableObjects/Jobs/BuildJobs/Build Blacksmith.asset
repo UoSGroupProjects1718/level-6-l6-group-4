@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jobName: Build Blacksmith
   maxWorkAmount: 100
-  currentWorkAmount: 50
-  jobType: 3
+  currentWorkAmount: 100
+  jobType: 4
   jobLocation: {x: 0, y: 0, z: 0}
   InteractionObject: {fileID: 1207041932570270, guid: 6b10c66753c3f2145b862a885d30c64e,
     type: 2}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jobName: Build Bunker
   maxWorkAmount: 50
-  currentWorkAmount: 0
-  jobType: 3
+  currentWorkAmount: 50
+  jobType: 4
   jobLocation: {x: 0, y: 0, z: 0}
   InteractionObject: {fileID: 1683974480959124, guid: 5f0db336cf2c3024fb4144e2f4f6f2e0,
     type: 2}

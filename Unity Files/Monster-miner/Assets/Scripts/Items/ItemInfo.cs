@@ -2,7 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ItemInfo : ScriptableObject {
+
+public enum ItemType
+{
+    Resource,
+    Nutrition,
+    Weapon,
+    Armour,
+}
+[CreateAssetMenu(menuName = "Items/ Item")]
+public class ItemInfo : ScriptableObject {
 
     public string itemName;
     [TextArea]
@@ -15,7 +24,13 @@ public abstract class ItemInfo : ScriptableObject {
     public int maxStackAmount;
     public int currentStackAmount;
     public Mesh itemMesh;
+    public ItemType type;
 
+    public float nutrition;
+    [Range(0, 100)]
+    public int minDropAmount;
+    [Range(0, 100)]
+    public int maxDropAmount;
     private void Awake()
     {
         currentItemDurability = maxItemDurability;

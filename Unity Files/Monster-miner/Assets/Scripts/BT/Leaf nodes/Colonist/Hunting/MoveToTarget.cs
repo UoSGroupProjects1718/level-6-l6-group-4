@@ -25,12 +25,12 @@ namespace MonsterMiner
 
                 if(InRange(Colonist,Colonist.target))
                 {
-                    Colonist.navMeshAgent.destination = Colonist.transform.position;
+                    Colonist.NavMeshAgent.destination = Colonist.transform.position;
                     return Status.SUCCESS;
                 }
                else
                 {
-                    Colonist.navMeshAgent.SetDestination(Colonist.target.transform.position);
+                    Colonist.NavMeshAgent.SetDestination(Colonist.target.transform.position);
                 }
                 return Status.RUNNING;
             }

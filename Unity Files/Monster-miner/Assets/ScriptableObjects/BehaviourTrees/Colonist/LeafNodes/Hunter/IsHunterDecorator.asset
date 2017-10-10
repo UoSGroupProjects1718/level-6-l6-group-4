@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: IsHunterDecorator
   m_EditorClassIdentifier: 
   Child: {fileID: 11400000, guid: 9460e6aeb647e334a90ec5252bdad214, type: 2}
-  WorkerType: 4
+  WorkerType: 0

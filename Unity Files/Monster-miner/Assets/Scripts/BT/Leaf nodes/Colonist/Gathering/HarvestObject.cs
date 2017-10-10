@@ -30,15 +30,31 @@ namespace MonsterMiner
                 Colonist.currentJob.currentWorkAmount -= Colonist.ColonistWorkSpeed * Time.deltaTime;
                 return Status.RUNNING;
             }
+
             private void SpawnDrops(Job job,DropTable drops)
             {
                 for(int i = 0; i < drops.Drops.Length; i++)
                 {
                     GameObject newItem = Instantiate(ItemPrefab,job.InteractionObject.transform.position,Quaternion.identity);
+                    Item Item = newItem.GetComponent<Item>();
                     newItem.transform.localScale = new Vector3(1, 1, 1);
                     newItem.GetComponent<MeshRenderer>().material.color = Color.white;
-                    newItem.GetComponent<Item>().item = Instantiate(drops.Drops[i]);
+                    Item.item = Instantiate(drops.Drops[i]);
+                    CreateJob(JobType.Gathering, 20, newItem, newItem.transform.position, "Gather " + Item.item.name);
+                    Item.UpdateMesh();
+                    
                 }
+            }
+            private void CreateJob(JobType jobType, int MaxWorkAmount, GameObject interactionObject, Vector3 jobLocation, string JobName)
+            {
+                Job newJob = (Job)CreateInstance("Job");
+                newJob.jobName = JobName;
+                newJob.InteractionObject = interactionObject;
+                newJob.maxWorkAmount = MaxWorkAmount;
+                newJob.jobLocation = jobLocation;
+                newJob.jobType = jobType;
+
+                JobManager.Instance.QueueJob(newJob);
             }
         }
     }

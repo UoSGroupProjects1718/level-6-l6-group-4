@@ -13,6 +13,8 @@ public class BehaviourTreeManager : MonoBehaviour
     static public List<ColonistController> Colonists = new List<ColonistController>();
     static public List<MonsterController> Monsters = new List<MonsterController>();
 
+    static public List<GranaryFunction> Granaries = new List<GranaryFunction>();
+    static public List<StockpileFunction> Stockpiles = new List<StockpileFunction>();
 
     public void FixedUpdate()
     {
@@ -26,6 +28,7 @@ public class BehaviourTreeManager : MonoBehaviour
             MonsterTree.UpdateFunc(Monsters[i]);
         }
     }
+
 
 
 }
