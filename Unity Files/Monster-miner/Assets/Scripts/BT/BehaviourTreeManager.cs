@@ -16,7 +16,14 @@ public class BehaviourTreeManager : MonoBehaviour
     static public List<GranaryFunction> Granaries = new List<GranaryFunction>();
     static public List<StockpileFunction> Stockpiles = new List<StockpileFunction>();
 
-    public void FixedUpdate()
+
+    private void Start()
+    {
+        StartCoroutine(BehaviourTrees());
+    }
+
+
+    IEnumerator BehaviourTrees()
     {
         for(int i = 0; i < Colonists.Count; i++)
         {
@@ -27,6 +34,7 @@ public class BehaviourTreeManager : MonoBehaviour
         {
             MonsterTree.UpdateFunc(Monsters[i]);
         }
+        yield return new WaitForFixedUpdate();
     }
 
 

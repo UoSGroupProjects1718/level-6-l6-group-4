@@ -25,7 +25,6 @@ public class Movement : BehaviourBase
                 break;
             default:
                 return Status.INVALID;
-                break;
         }
         return Status.SUCCESS;
 

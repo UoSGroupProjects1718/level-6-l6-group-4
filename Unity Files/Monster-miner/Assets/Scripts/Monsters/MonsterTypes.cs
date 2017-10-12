@@ -8,17 +8,39 @@ public class MonsterTypes : SingletonClass<MonsterController> {
         TypeOne,
         TypeTwo
     }
-    public const int numberOfMonsters=0;
 
-    float[] Health = new float[numberOfMonsters];
-
-    Mesh[] MonsterMesh = new Mesh[numberOfMonsters];
-
-    float[] Damage = new float[numberOfMonsters];
+    [SerializeField]
+    const int numberOfMonsters=0; 
+    [SerializeField]
+    public float[] Health = new float[numberOfMonsters];
+    [SerializeField]
+    public float[] Speed = new float[numberOfMonsters];
+    [SerializeField]
+    public float[] Damage = new float[numberOfMonsters];
+    [SerializeField]
+    public float[] CombatRange = new float[numberOfMonsters];
+    [SerializeField]
+    public float[] AttackSpeed = new float[numberOfMonsters];
+    [SerializeField]
+    public Mesh[] MonsterMesh = new Mesh[numberOfMonsters];
+    [SerializeField]
+    DropTable[] Drops = new DropTable[numberOfMonsters];
 
     
-    public float getDamage(MonsterType type) {
-        return Damage[getType(type)];
+
+    public void getMonsterData(MonsterType Type,
+        out float returnHealth, out float returnSpeed, out float returnDamage, out float returnCombatRange, out float returnAttackSpeed ,out Mesh returnMesh,
+        out DropTable returnDropTable
+        ) {
+        int type = getType(Type);
+        returnHealth = Health[type];
+        returnSpeed = Speed[type];
+        returnDamage = Damage[type];
+        returnCombatRange = CombatRange[type];
+        returnAttackSpeed = AttackSpeed[type];
+        returnMesh = MonsterMesh[type];
+        returnDropTable = Drops[type];
+        return;
     }
 
     int getType(MonsterType type) {

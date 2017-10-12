@@ -15,6 +15,7 @@ public class MonsterController : MonoBehaviour {
     public MovementState currentState;
     public Transform currentTarget;
 
+    public int MonsterType;
     public string MonsterName;
     public float MonsterSpeed;
     public float Health;
