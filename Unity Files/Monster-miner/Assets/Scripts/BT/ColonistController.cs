@@ -13,15 +13,14 @@ public enum ColonistJobType
 [RequireComponent(typeof(NavMeshAgent))]
 public class ColonistController : MonoBehaviour {
 
+    #region Variables
     public string ColonistName;
     public float ColonistSpeed;
     public float ColonistWorkSpeed;
     public ColonistJobType ColonistJob;
     public Job currentJob;
 
-
     public float Health = 100;
-
 
     public Weapon ColonistWeapon;
     public float nextAttack;
@@ -53,8 +52,7 @@ public class ColonistController : MonoBehaviour {
         }
     }
 
-
-
+    #endregion
 
     private void Awake()
     {

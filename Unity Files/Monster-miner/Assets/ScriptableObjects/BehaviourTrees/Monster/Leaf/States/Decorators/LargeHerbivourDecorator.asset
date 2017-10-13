@@ -8,6 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d41a75e287b21d543acd0461cc6e9d67, type: 3}
-  m_Name: SelectState
+  m_Script: {fileID: 11500000, guid: 68cf3d5975ac452468eae4139042df29, type: 3}
+  m_Name: LargeHerbivourDecorator
   m_EditorClassIdentifier: 
+  Child: {fileID: 0}
+  Types: 

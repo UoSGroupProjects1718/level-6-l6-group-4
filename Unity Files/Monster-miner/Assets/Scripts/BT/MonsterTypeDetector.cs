@@ -10,7 +10,7 @@ public class MonsterTypeDetector : Decorator  {
 
     public override Status UpdateFunc(MonsterController Monster)
     {
-        if (Types.Contains(Monster.MonsterType))
+        if (Types.Contains(Monster.monsterType))
         {
             Child.tick(Monster);
             return Status.SUCCESS;

@@ -12,22 +12,29 @@ public class MonsterController : MonoBehaviour {
         Still
     }
 
+    #region Variables
+
     public MovementState currentState;
     public Transform currentTarget;
 
-    public int MonsterType;
-    public string MonsterName;
-    public float MonsterSpeed;
-    public float Health;
+    public int monsterType;
+    public string monsterName;
+    public float monsterSpeed;
+    public float health;
+    public float maxHealth;
     public float combatRange;
-    public float Damage;
+    public float viewRange;
+    public float damage;
+    public float attackSpeed;
+    public float nextAttack;
 
     public MonsterMovement Movement;
     [HideInInspector]
     public new Collider collider;
     public DropTable dropTable;
 
-    // Use this for initialization
+    #endregion
+
     void Awake () {
         BehaviourTreeManager.Monsters.Add(this);
         currentState = MovementState.Wander;
@@ -37,19 +44,19 @@ public class MonsterController : MonoBehaviour {
 
      public void takeDamage(float damage)
     {
-        Health -= damage;
+        health -= damage;
         if (checkDead())
             Death();
     }
 
     public bool checkDead()
     {
-        if (Health < 0)
+        if (health < 0)
             return true;
         return false;
     }
 
     void Death() {
-        Debug.Log(MonsterName + " has died.");
+        Debug.Log(monsterName + " has died.");
     }
 }

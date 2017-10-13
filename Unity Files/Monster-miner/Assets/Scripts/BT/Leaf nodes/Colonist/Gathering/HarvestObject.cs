@@ -22,7 +22,7 @@ namespace MonsterMiner
                 if(Colonist.currentJob.currentWorkAmount <= 0)
                 {
                     SpawnDrops(Colonist.currentJob,Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable);
-                    Debug.Log("Finished harvesting" + Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().MonsterName);
+                    Debug.Log("Finished harvesting" + Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().monsterName);
                     Destroy(Colonist.currentJob.InteractionObject);
                     Colonist.currentJob = null;
                     return Status.SUCCESS;

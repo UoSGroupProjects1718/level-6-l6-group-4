@@ -21,8 +21,6 @@ namespace MonsterMiner
                 }
                 return Status.FAILURE;
             }
-
-
         }
     }
 }

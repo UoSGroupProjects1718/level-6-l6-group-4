@@ -35,7 +35,7 @@ namespace MonsterMiner
                             if(Colonist.target.checkDead())
                             {
                                 Colonist.target.GetComponent<MeshRenderer>().material.color = Color.red;
-                                CreateJob(JobType.Harvesting, 50, Colonist.target.gameObject, Colonist.target.transform.position, "Harvest" + Colonist.target.MonsterName);
+                                CreateJob(JobType.Harvesting, 50, Colonist.target.gameObject, Colonist.target.transform.position, "Harvest" + Colonist.target.monsterName);
                                 Colonist.target.Movement.navMeshAgent.isStopped = true;
                                 Colonist.target.collider.enabled = false;
                                 BehaviourTreeManager.Monsters.Remove(Colonist.target);
@@ -55,7 +55,6 @@ namespace MonsterMiner
                 newJob.maxWorkAmount = MaxWorkAmount;
                 newJob.jobLocation = jobLocation;
                 newJob.jobType = jobType;
-
                 JobManager.Instance.QueueJob(newJob);
             }
         }

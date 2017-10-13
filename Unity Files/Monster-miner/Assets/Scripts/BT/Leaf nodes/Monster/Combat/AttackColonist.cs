@@ -8,8 +8,15 @@ public class AttackColonist : BehaviourBase
 {
     public override Status UpdateFunc(MonsterController Monster)
     {
-        //Uncomment when takeDamage is 
-        //Monster.currentTarget.GetComponent<ColonistController>().takeDamage(Monster.Damage);
-        return Status.SUCCESS;
+        if (Monster.currentState == MonsterController.MovementState.Chase)
+        {
+            if (Time.time > Monster.nextAttack)
+            {
+                Monster.nextAttack = Time.time + Monster.attackSpeed;
+                Monster.currentTarget.GetComponent<ColonistController>().takeDamage(Monster.damage);
+                return Status.SUCCESS;
+            }
+        }
+        return Status.FAILURE;
     }
 }
