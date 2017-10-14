@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -108,48 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 23800000, guid: dece355862c203943a2dc81da4ddb1cd, type: 2}
---- !u!1001 &444045053
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4984222804164894, guid: b602f64080432ff4082e2a3cadc25668, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -54.932426
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984222804164894, guid: b602f64080432ff4082e2a3cadc25668, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3.1214663e-17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984222804164894, guid: b602f64080432ff4082e2a3cadc25668, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 42.173504
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984222804164894, guid: b602f64080432ff4082e2a3cadc25668, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984222804164894, guid: b602f64080432ff4082e2a3cadc25668, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984222804164894, guid: b602f64080432ff4082e2a3cadc25668, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984222804164894, guid: b602f64080432ff4082e2a3cadc25668, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984222804164894, guid: b602f64080432ff4082e2a3cadc25668, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: b602f64080432ff4082e2a3cadc25668, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &568394396
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +284,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &668568085
 GameObject:
@@ -427,7 +385,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -455,11 +413,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 763570063}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -40.5, y: 51, z: 28.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &789471251
 GameObject:
@@ -594,7 +552,7 @@ Transform:
   m_Children:
   - {fileID: 1917627483}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &824090726
 MonoBehaviour:
@@ -787,7 +745,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1121599495
 MonoBehaviour:
@@ -802,7 +760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColonistName: Bob Jones
   ColonistSpeed: 4
-  ColonistWorkSpeed: 50
+  ColonistWorkSpeed: 4
   ColonistJob: 0
   currentJob: {fileID: 0}
   Health: 100
@@ -848,7 +806,7 @@ MonoBehaviour:
   currentState: 0
   currentTarget: {fileID: 0}
   monsterType: 0
-  monsterName: 
+  monsterName: Tony
   monsterSpeed: 0
   health: 0
   maxHealth: 100
@@ -943,7 +901,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1132741043
 MonoBehaviour:
@@ -1006,7 +964,7 @@ MonoBehaviour:
   currentState: 0
   currentTarget: {fileID: 0}
   monsterType: 0
-  monsterName: 
+  monsterName: Tony II
   monsterSpeed: 0
   health: 0
   maxHealth: 100
@@ -1101,7 +1059,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1271023070
 GameObject:
@@ -1225,7 +1183,7 @@ RectTransform:
   - {fileID: 789471252}
   - {fileID: 1744796962}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1330,7 +1288,7 @@ GameObject:
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!23 &1654114280
 MeshRenderer:
@@ -1396,7 +1354,7 @@ Transform:
   m_LocalScale: {x: 30, y: 1, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1704022090
 GameObject:
@@ -1554,7 +1512,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1744796961
 GameObject:
@@ -1929,7 +1887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColonistName: Bob Jones III
   ColonistSpeed: 4
-  ColonistWorkSpeed: 50
+  ColonistWorkSpeed: 4
   ColonistJob: 2
   currentJob: {fileID: 0}
   Health: 100
@@ -2050,5 +2008,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
