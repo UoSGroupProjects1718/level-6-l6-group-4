@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026d743d0ba98dd448f3edad518f8b40, type: 3}
   m_Name: IsScoutDecorator
   m_EditorClassIdentifier: 
-  Child: {fileID: 11400000, guid: 36de333b742af3647b65b80e06cab2bd, type: 2}
-  WorkerType: 1
+  Child: {fileID: 11400000, guid: d152e267acb64244091c2158205785ab, type: 2}
+  WorkerType: 2

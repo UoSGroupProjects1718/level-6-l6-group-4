@@ -25,25 +25,31 @@ namespace MonsterMiner
 
                 if(InRange(Colonist,Colonist.target))
                 {
-                    Colonist.navMeshAgent.destination = Colonist.transform.position;
+                    Colonist.NavMeshAgent.destination = Colonist.transform.position;
                     return Status.SUCCESS;
                 }
                else
                 {
-                    Colonist.navMeshAgent.SetDestination(Colonist.target.transform.position);
+                    Colonist.NavMeshAgent.SetDestination(Colonist.target.transform.position);
                 }
                 return Status.RUNNING;
             }
             private bool InRange(ColonistController Colonist, MonsterController monster)
             {
-                RaycastHit hit = new RaycastHit();
-                if (Physics.Raycast(Colonist.transform.position,monster.transform.position - Colonist.transform.position, out hit, Colonist.ColonistWeapon.Range, monsterLayer))
+
+                if(Vector3.Distance(Colonist.transform.position,monster.transform.position) < Colonist.ColonistWeapon.Range - 1)
                 {
-                    if(hit.collider.gameObject == monster.gameObject)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
+                //RaycastHit hit = new RaycastHit();
+                //Debug.DrawRay(Colonist.transform.position, Colonist.target.transform.position - Colonist.transform.position);
+                //if (Physics.Raycast(Colonist.transform.position,monster.transform.position - Colonist.transform.position, out hit, Colonist.ColonistWeapon.Range, monsterLayer))
+                //{
+                //    if(hit.collider.gameObject == monster.gameObject)
+                //    {
+                //        return true;
+                //    }
+                //}
                 return false;
             }
         }

@@ -25,18 +25,15 @@ namespace MonsterMiner
                    // }
                 if(Colonist.hasPath == false)
                 {
-                    Colonist.navMeshAgent.SetDestination(Colonist.currentJob.jobLocation);
+                    Colonist.NavMeshAgent.SetDestination(Colonist.currentJob.jobLocation);
                 }
-                if(!Colonist.navMeshAgent.pathPending)
+                if(!Colonist.NavMeshAgent.pathPending)
                 {
                     Colonist.hasPath = true;
                     if(pathComplete(Colonist))
                     {
-                        if(!Colonist.navMeshAgent.hasPath || Colonist.navMeshAgent.velocity.sqrMagnitude == 0f)
-                        {
                             Colonist.hasPath = false;
                             return Status.SUCCESS;
-                        }
                     }
                 }
                 return Status.RUNNING;
@@ -44,9 +41,9 @@ namespace MonsterMiner
 
             private bool pathComplete(ColonistController colonist)
             {
-                    if(Vector3.Distance(colonist.navMeshAgent.destination,colonist.transform.position) <= colonist.navMeshAgent.stoppingDistance)
+                    if(Mathf.RoundToInt(Vector3.Distance(colonist.NavMeshAgent.destination,colonist.transform.position)) <= colonist.NavMeshAgent.stoppingDistance)
                     {
-                        if (!colonist.navMeshAgent.hasPath || colonist.navMeshAgent.velocity.sqrMagnitude == 0f)
+                        if (!colonist.NavMeshAgent.hasPath || colonist.NavMeshAgent.velocity.sqrMagnitude == 0f)
                             return true;
                     }
                 return false;

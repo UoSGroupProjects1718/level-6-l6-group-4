@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c128e5712dc8cea43b354fe68ed3e8e0, type: 3}
+  m_Name: GatheringBranch
+  m_EditorClassIdentifier: 
+  Children:
+  - {fileID: 11400000, guid: bf59cda8420f8f94c954e53c25c4bc54, type: 2}
+  - {fileID: 11400000, guid: fa23e7485ad79a64aadc655b0a2c5de2, type: 2}
+  - {fileID: 11400000, guid: 1e22b4f073b94054aa2960e1f25f4271, type: 2}
+  - {fileID: 11400000, guid: 7994771832712914c91113aa9ffa582d, type: 2}
+  - {fileID: 11400000, guid: fa23e7485ad79a64aadc655b0a2c5de2, type: 2}
+  - {fileID: 11400000, guid: 65ef2011fc0288646a756640aeae321d, type: 2}

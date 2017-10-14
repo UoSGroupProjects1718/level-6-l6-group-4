@@ -26,7 +26,7 @@ public class SelectState : BehaviourBase {
             }
         }
 
-        if (Closest==null || Dist > Monster.Movement.range) {
+        if (Closest==null || Dist > Monster.combatRange) {
             Monster.currentState = MonsterController.MovementState.Wander;
             return Status.SUCCESS;
         }

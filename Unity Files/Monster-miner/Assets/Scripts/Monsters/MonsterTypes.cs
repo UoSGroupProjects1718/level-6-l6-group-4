@@ -1,36 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class MonsterTypes : SingletonClass<MonsterController> {
-    public enum MonsterType
-    {
-        TypeOne,
-        TypeTwo
-    }
-    public const int numberOfMonsters=0;
-
-    float[] Health = new float[numberOfMonsters];
-
-    Mesh[] MonsterMesh = new Mesh[numberOfMonsters];
-
-    float[] Damage = new float[numberOfMonsters];
+    
+    MonsterType[] Monsters = new MonsterType[0];
 
     
-    public float getDamage(MonsterType type) {
-        return Damage[getType(type)];
+
+    public void getMonsterData(string Type,
+        out float returnHealth, out float returnSpeed, out float returnDamage, out float returnCombatRange, out float returnAttackSpeed ,out Mesh returnMesh,
+        out DropTable returnDropTable
+        ) {
+        int type = getType(Type);
+        returnHealth = Monsters[type].health;
+        returnSpeed = Monsters[type].monsterSpeed;
+        returnDamage = Monsters[type].damage;
+        returnCombatRange = Monsters[type].combatRange;
+        returnAttackSpeed = Monsters[type].attackSpeed;
+        returnMesh = Monsters[type].monsterMesh;
+        returnDropTable = Monsters[type].dropTable;
+        return;
     }
 
-    int getType(MonsterType type) {
-        switch (type)
+    int getType(string Name) {
+        for (int i = 0; i < Monsters.Length; i++)
         {
-            case MonsterType.TypeOne:
-                return 0;
-            case MonsterType.TypeTwo:
-                return 1;
-            default:
-                return 0;
+            if (Monsters[i].monsterName == Name)
+            {
+                return i;
+            }
+      
         }
+        Debug.Log("This wasnt meant to happen. Monster does not exist");
+        return 0;
     }
 	
 }

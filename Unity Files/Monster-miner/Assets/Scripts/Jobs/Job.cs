@@ -5,7 +5,8 @@ using UnityEngine;
 public enum JobType
 {
     Farmer,
-    Scout,
+    Gathering,
+    Harvesting,
     Crafting,
     Building,
     Hunter,

@@ -24,29 +24,44 @@ namespace MonsterMiner
 
                 if(Time.time > Colonist.nextAttack)
                 {
-                    RaycastHit hit = new RaycastHit();
-                    Colonist.nextAttack = Time.time + Colonist.ColonistWeapon.AttackSpeed;
-                    //raycast to see if we have hit the target, if we have then make it take damage, if it dies set the target to null
-                    if(Physics.Raycast(Colonist.transform.position,Colonist.target.transform.position - Colonist.transform.position,out hit,Colonist.ColonistWeapon.Range,monsterLayerMask))
+                    if(HasHit(Colonist))
                     {
-                        if(hit.collider == Colonist.target.collider)
+                        Colonist.nextAttack = Time.time + Colonist.ColonistWeapon.AttackSpeed;
+                        Colonist.target.takeDamage(Colonist.ColonistWeapon.Damage);
+                        if (Colonist.target.checkDead())
                         {
-                            Colonist.target.takeDamage(Colonist.ColonistWeapon.Damage);
-                            if(Colonist.target.checkDead())
-                            {
-                                Colonist.target.GetComponent<MeshRenderer>().material.color = Color.red;
-                                CreateJob(JobType.Scout, 50, Colonist.target.gameObject, Colonist.target.transform.position, "Harvest" + Colonist.target.MonsterName);
-                                Colonist.target.Movement.navMeshAgent.isStopped = true;
-                                Colonist.target.collider.enabled = false;
-                                BehaviourTreeManager.Monsters.Remove(Colonist.target);
-                                Colonist.target = null;
-                            }
-                            return Status.SUCCESS;
+                            Colonist.target.GetComponent<MeshRenderer>().material.color = Color.red;
+                            CreateJob(JobType.Harvesting, 50, Colonist.target.gameObject, Colonist.target.transform.position, "Harvest" + Colonist.target.monsterName);
+                            Colonist.target.Movement.navMeshAgent.isStopped = true;
+                            Colonist.target.collider.enabled = false;
+                            BehaviourTreeManager.Monsters.Remove(Colonist.target);
+                            Colonist.target = null;
                         }
                     }
+                    //RaycastHit hit = new RaycastHit();
+                    //Colonist.nextAttack = Time.time + Colonist.ColonistWeapon.AttackSpeed;
+                    ////raycast to see if we have hit the target, if we have then make it take damage, if it dies set the target to null
+                    //if(Physics.Raycast(Colonist.transform.position,Colonist.target.transform.position - Colonist.transform.position,out hit,Colonist.ColonistWeapon.Range,monsterLayerMask))
+                    //{
+                    //    if(hit.collider == Colonist.target.collider)
+                    //    {
+                    //        Colonist.target.takeDamage(Colonist.ColonistWeapon.Damage);
+                    //        if(Colonist.target.checkDead())
+                    //        {
+                    //            Colonist.target.GetComponent<MeshRenderer>().material.color = Color.red;
+                    //            CreateJob(JobType.Harvesting, 50, Colonist.target.gameObject, Colonist.target.transform.position, "Harvest" + Colonist.target.monsterName);
+                    //            Colonist.target.Movement.navMeshAgent.isStopped = true;
+                    //            Colonist.target.collider.enabled = false;
+                    //            BehaviourTreeManager.Monsters.Remove(Colonist.target);
+                    //            Colonist.target = null;
+                    //        }
+                    //        return Status.SUCCESS;
+                    //    }
+                    //}
                 }
                 return Status.FAILURE;
             }
+            //make this a function in the job manager when it is not half past midnight
             private void CreateJob(JobType jobType, int MaxWorkAmount, GameObject interactionObject, Vector3 jobLocation, string JobName)
             {
                 Job newJob = (Job)CreateInstance("Job");
@@ -55,8 +70,13 @@ namespace MonsterMiner
                 newJob.maxWorkAmount = MaxWorkAmount;
                 newJob.jobLocation = jobLocation;
                 newJob.jobType = jobType;
-
                 JobManager.Instance.QueueJob(newJob);
+            }
+            private bool HasHit(ColonistController Colonist)
+            {
+                float hitChance = Random.Range(0, 100);
+                return (hitChance <= Colonist.ColonistWeapon.Accuracy);
+
             }
         }
     }

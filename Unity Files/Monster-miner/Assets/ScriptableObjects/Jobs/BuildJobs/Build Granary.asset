@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jobName: Build Granary
   maxWorkAmount: 50
-  currentWorkAmount: 0
-  jobType: 3
+  currentWorkAmount: 50
+  jobType: 4
   jobLocation: {x: 0, y: 0, z: 0}
   InteractionObject: {fileID: 1429845595509982, guid: b602f64080432ff4082e2a3cadc25668,
     type: 2}

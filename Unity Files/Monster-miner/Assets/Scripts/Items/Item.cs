@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 [RequireComponent(typeof(MeshRenderer),typeof(MeshFilter))]
 public class Item : MonoBehaviour {
+
 
     public ItemInfo item;
     private GameTime timeSpawned;
@@ -11,8 +14,6 @@ public class Item : MonoBehaviour {
     //do item related stuff
     private void Start()
     {
-        if(item.itemMesh != null)
-            GetComponent<MeshFilter>().mesh = Instantiate(item.itemMesh);
         timeSpawned = TimeManager.Time;
     }
 
@@ -27,6 +28,11 @@ public class Item : MonoBehaviour {
                 Debug.Log("item has decayed");
             }
         }
+    }
+    public void UpdateMesh()
+    {
+        if (item.itemMesh != null)
+            GetComponent<MeshFilter>().mesh = Instantiate(item.itemMesh);
     }
 
 
