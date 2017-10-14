@@ -10,5 +10,7 @@ public class Weapon : ItemInfo {
     public float Range;
     [Header("Seconds between attacks")]
     public float AttackSpeed;
+    [Range(1,100)]
+    public float Accuracy;
 
 }

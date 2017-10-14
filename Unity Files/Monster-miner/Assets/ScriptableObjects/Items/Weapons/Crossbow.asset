@@ -20,6 +20,10 @@ MonoBehaviour:
   currentStackAmount: 1
   itemMesh: {fileID: 0}
   type: 2
+  nutrition: 0
+  minDropAmount: 0
+  maxDropAmount: 0
   Damage: 30
   Range: 30
   AttackSpeed: 2
+  Accuracy: 87

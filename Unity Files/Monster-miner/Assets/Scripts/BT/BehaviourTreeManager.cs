@@ -25,16 +25,19 @@ public class BehaviourTreeManager : MonoBehaviour
 
     IEnumerator BehaviourTrees()
     {
-        for(int i = 0; i < Colonists.Count; i++)
+        while (true)
         {
-            ColonistTree.UpdateFunc(Colonists[i]);
-        }
+            for (int i = 0; i < Colonists.Count; i++)
+            {
+                ColonistTree.UpdateFunc(Colonists[i]);
+            }
 
-        for (int i = 0; i < Monsters.Count; i++)
-        {
-            MonsterTree.UpdateFunc(Monsters[i]);
+            for (int i = 0; i < Monsters.Count; i++)
+            {
+                MonsterTree.UpdateFunc(Monsters[i]);
+            }
+            yield return new WaitForFixedUpdate();
         }
-        yield return new WaitForFixedUpdate();
     }
 
 

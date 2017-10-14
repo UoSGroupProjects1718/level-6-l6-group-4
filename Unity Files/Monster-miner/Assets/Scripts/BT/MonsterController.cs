@@ -20,6 +20,7 @@ public class MonsterController : MonoBehaviour {
     public int monsterType;
     public string monsterName;
     public float monsterSpeed;
+    //[HideInInspector]
     public float health;
     public float maxHealth;
     public float combatRange;
@@ -40,6 +41,7 @@ public class MonsterController : MonoBehaviour {
         currentState = MovementState.Wander;
         Movement = GetComponent<MonsterMovement>();
         collider = GetComponent<Collider>();
+        health = maxHealth;
     }
 
      public void takeDamage(float damage)

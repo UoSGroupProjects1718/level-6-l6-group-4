@@ -26,7 +26,7 @@ public class TimeManager : SingletonClass<TimeManager> {
     }
     public void Start()
     {
-        IngameTime.Date = new Vector3(0, 1, 1492);
+        IngameTime.Date = new Vector3(1, 1, 1492);
        StartCoroutine("PassTime");
     }
     
@@ -64,7 +64,7 @@ public class TimeManager : SingletonClass<TimeManager> {
                     {
 
                         IngameTime.Date.y += 1;
-                        IngameTime.Date.x = 0;
+                        IngameTime.Date.x = 1;
                         //if we get to 1 year
                         if (IngameTime.Date.y >= 12)
                         {
