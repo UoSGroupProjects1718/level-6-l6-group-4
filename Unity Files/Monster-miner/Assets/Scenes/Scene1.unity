@@ -1906,7 +1906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColonistName: Bob Jones III
   ColonistSpeed: 4
-  ColonistWorkSpeed: 4
+  ColonistWorkSpeed: 15
   ColonistJob: 2
   currentJob: {fileID: 0}
   Health: 100

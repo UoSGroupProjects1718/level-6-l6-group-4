@@ -19,16 +19,13 @@ namespace MonsterMiner
                 if (Colonist.currentJob == null || Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable == null)
                     return Status.FAILURE;
 
-                if(Colonist.currentJob.currentWorkAmount <= 0)
-                {
+
                     SpawnDrops(Colonist.currentJob,Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable);
                     Debug.Log("Finished harvesting" + Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().monsterName);
                     Destroy(Colonist.currentJob.InteractionObject);
                     Colonist.currentJob = null;
                     return Status.SUCCESS;
-                }
-                Colonist.currentJob.currentWorkAmount -= Colonist.ColonistWorkSpeed * Time.deltaTime;
-                return Status.RUNNING;
+   
             }
 
             private void SpawnDrops(Job job,DropTable drops)
@@ -46,7 +43,8 @@ namespace MonsterMiner
                     }
                     else
                         Item.item.currentStackAmount = 1;
-                    JobManager.Instance.CreateJob(JobType.Gathering, 20, newItem, newItem.transform.position, "Gather " + Item.item.name);
+                    int WorkAmount = Item.item.currentStackAmount * (Item.item as Resource).GatherWorkPerItem;
+                    JobManager.Instance.CreateJob(JobType.Gathering, WorkAmount, newItem, newItem.transform.position, "Gather " + Item.item.name);
                     Item.UpdateMesh();
                     
                 }

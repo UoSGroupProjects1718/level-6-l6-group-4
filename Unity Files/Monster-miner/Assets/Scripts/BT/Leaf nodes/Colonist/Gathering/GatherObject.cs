@@ -14,15 +14,10 @@ namespace MonsterMiner
                 if (Colonist.currentJob == null || Colonist.currentJob.jobType != JobType.Gathering)
                     return Status.FAILURE;
 
-                if (Colonist.currentJob.currentWorkAmount <= 0)
-                { 
-                   Colonist.currentJob.InteractionObject.GetComponent<MeshRenderer>().enabled = false;
-                   return Status.SUCCESS;
-                }
-                Colonist.currentJob.currentWorkAmount -= Colonist.ColonistWorkSpeed * Time.deltaTime;
-                return Status.RUNNING;
-            }
 
-        }	
-	}
+                Colonist.currentJob.InteractionObject.GetComponent<MeshRenderer>().enabled = false;
+                return Status.SUCCESS;
+            }
+        }
+    }
 }

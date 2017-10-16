@@ -37,6 +37,13 @@ public class TimeManager : SingletonClass<TimeManager> {
             return IngameTime;
         }
     }
+    public float DeltaTime
+    {
+        get
+        {
+            return timeDelta;
+        }
+    }
 
     private IEnumerator PassTime()
     {

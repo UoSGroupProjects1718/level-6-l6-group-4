@@ -26,6 +26,7 @@ public class ColonistController : MonoBehaviour {
     public float nextAttack;
     public MonsterController target;
 
+    public GameTime lastWorked;
 
     [HideInInspector]
     public bool hasPath;
@@ -61,6 +62,7 @@ public class ColonistController : MonoBehaviour {
         gameObject.GetComponent<NavMeshAgent>().speed = ColonistSpeed;
         collider = gameObject.GetComponent<Collider>();
         agent = GetComponent<NavMeshAgent>();
+        lastWorked = TimeManager.Time;
       
     }
 
