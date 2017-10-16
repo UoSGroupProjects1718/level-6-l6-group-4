@@ -1,5 +1,6 @@
 //Oliver
 using System.Collections.Generic;
+using UnityEngine;
 
 public class JobManager : SingletonClass<JobManager>
 {
@@ -15,5 +16,16 @@ public class JobManager : SingletonClass<JobManager>
     public void QueueJob(Job jobToAdd)
     {
         JobDocket.Add(jobToAdd);
+    }
+    public void CreateJob(JobType jobType, int MaxWorkAmount, GameObject interactionObject, Vector3 jobLocation, string JobName)
+    {
+        Job newJob = ScriptableObject.CreateInstance("Job") as Job;
+        newJob.jobName = JobName;
+        newJob.InteractionObject = interactionObject;
+        newJob.maxWorkAmount = MaxWorkAmount;
+        newJob.jobLocation = jobLocation;
+        newJob.jobType = jobType;
+
+        JobManager.Instance.QueueJob(newJob);
     }
 }

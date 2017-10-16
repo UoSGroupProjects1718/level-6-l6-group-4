@@ -10,19 +10,21 @@ namespace MonsterMiner
         {
             public override Status UpdateFunc(ColonistController Colonist)
             {
-                if(Colonist.currentJob.InteractionObject.GetComponent<Item>().item.type == ItemType.Nutrition)
-                {
+                //if(Colonist.currentJob.InteractionObject.GetComponent<Item>().item.type == ItemType.Nutrition)
+                //{
+                Colonist.currentJob.InteractionObject.transform.position = Colonist.transform.position;
                 
-                   Colonist.GathererStockpile.GetComponent<GranaryFunction>().AddItem(Colonist.currentJob.InteractionObject.GetComponent<Item>().item);
-                    Colonist.currentJob = null;
-                    Colonist.GathererStockpile = null;
-                }
-                else
-                {
-                    Colonist.GathererStockpile.GetComponent<StockpileFunction>().AddItem(Colonist.currentJob.InteractionObject.GetComponent<Item>().item);
-                    Colonist.currentJob = null;
-                    Colonist.GathererStockpile = null;
-                }
+                Stockpile.Instance.AddItem(Colonist.currentJob.InteractionObject.GetComponent<Item>().item as Resource);
+                Destroy(Colonist.currentJob.InteractionObject);
+                Colonist.currentJob = null;
+                Colonist.GathererStockpile = null;
+               // }
+                //else
+                //{
+                //    Colonist.GathererStockpile.GetComponent<StockpileFunction>().AddItem(Colonist.currentJob.InteractionObject.GetComponent<Item>().item);
+                //    Colonist.currentJob = null;
+                //    Colonist.GathererStockpile = null;
+                //}
                 return Status.SUCCESS;
             }
         }

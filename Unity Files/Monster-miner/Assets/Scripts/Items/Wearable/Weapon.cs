@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Items/ Weapon")]
-public class Weapon : ItemInfo {
+public class Weapon : Wearable {
 
     public float Damage;
     [Header("Range in unity units")]

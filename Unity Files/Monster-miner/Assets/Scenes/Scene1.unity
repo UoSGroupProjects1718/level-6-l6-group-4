@@ -184,7 +184,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 668568086}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.7151482
+  m_Size: 0.947935
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -533,6 +533,7 @@ GameObject:
   - component: {fileID: 824090727}
   - component: {fileID: 824090728}
   - component: {fileID: 824090729}
+  - component: {fileID: 824090730}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -613,6 +614,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21fe4bf1c397a7a429ce7f961ba7b039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &824090730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 824090724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9375f6bdfc66d0a4c9d3e7b04fbd2d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 0}
+  NutritionInventorySpace: 100
+  NutritionInventoryItemCount: 0
+  ResourceInventorySpace: 100
+  ResourceInventoryItemCount: 0
+  WearableInventorySpace: 100
+  WearableInventoryItemCount: 0
 --- !u!1 &1121599487
 GameObject:
   m_ObjectHideFlags: 0

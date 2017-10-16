@@ -40,22 +40,18 @@ namespace MonsterMiner
                     newItem.transform.localScale = new Vector3(1, 1, 1);
                     newItem.GetComponent<MeshRenderer>().material.color = Color.white;
                     Item.item = Instantiate(drops.Drops[i]);
-                    CreateJob(JobType.Gathering, 20, newItem, newItem.transform.position, "Gather " + Item.item.name);
+                    if (Item.item.type == ItemType.Nutrition || Item.item.type == ItemType.Resource)
+                    {
+                        Item.item.currentStackAmount = Random.Range((drops.Drops[i] as Resource).minDropAmount, (drops.Drops[i] as Resource).maxDropAmount);
+                    }
+                    else
+                        Item.item.currentStackAmount = 1;
+                    JobManager.Instance.CreateJob(JobType.Gathering, 20, newItem, newItem.transform.position, "Gather " + Item.item.name);
                     Item.UpdateMesh();
                     
                 }
             }
-            private void CreateJob(JobType jobType, int MaxWorkAmount, GameObject interactionObject, Vector3 jobLocation, string JobName)
-            {
-                Job newJob = (Job)CreateInstance("Job");
-                newJob.jobName = JobName;
-                newJob.InteractionObject = interactionObject;
-                newJob.maxWorkAmount = MaxWorkAmount;
-                newJob.jobLocation = jobLocation;
-                newJob.jobType = jobType;
-
-                JobManager.Instance.QueueJob(newJob);
-            }
+            
         }
     }
 }
