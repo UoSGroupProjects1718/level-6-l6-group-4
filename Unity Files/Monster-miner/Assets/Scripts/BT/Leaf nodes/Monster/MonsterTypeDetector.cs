@@ -6,7 +6,7 @@ using MonsterMiner.BehaviourTree;
 public class MonsterTypeDetector : Decorator  {
 
     [SerializeField]
-    List<int> Types;
+    List<MonsterTypes.TypeOfMonster> Types;
 
     public override Status UpdateFunc(MonsterController Monster)
     {

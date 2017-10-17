@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cf3d5975ac452468eae4139042df29, type: 3}
   m_Name: LargeHerbivourDecorator
   m_EditorClassIdentifier: 
-  Child: {fileID: 0}
-  Types: 
+  Child: {fileID: 11400000, guid: 85494c55fff4c624b89490aa64ac242c, type: 2}
+  Types: 03000000

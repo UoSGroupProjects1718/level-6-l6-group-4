@@ -5,7 +5,7 @@ using UnityEngine;
 public class MonsterType : ScriptableObject {
 
     public string monsterName;
-    public int monsterType;
+    public MonsterTypes.TypeOfMonster monsterType;
     
     public float monsterSpeed;
     public float health;

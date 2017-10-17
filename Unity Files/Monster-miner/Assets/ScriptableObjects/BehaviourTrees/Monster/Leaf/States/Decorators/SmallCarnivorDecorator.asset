@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cf3d5975ac452468eae4139042df29, type: 3}
   m_Name: SmallCarnivorDecorator
   m_EditorClassIdentifier: 
-  Child: {fileID: 0}
-  Types: 00000000
+  Child: {fileID: 11400000, guid: ad816cd392da26145a2ffd5663483310, type: 2}
+  Types: 02000000

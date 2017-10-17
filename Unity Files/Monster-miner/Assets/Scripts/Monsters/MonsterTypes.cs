@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 public class MonsterTypes : SingletonClass<MonsterController> {
+
+    public enum TypeOfMonster
+    {
+        SmallCarnivore,
+        SmallHerbivore,
+        LargeCarnivore,
+        LargeHerbivore
+    }
     
     MonsterType[] Monsters = new MonsterType[0];
 
@@ -29,7 +37,6 @@ public class MonsterTypes : SingletonClass<MonsterController> {
             {
                 return i;
             }
-      
         }
         Debug.Log("This wasnt meant to happen. Monster does not exist");
         return 0;
