@@ -15,13 +15,14 @@ public class Item : MonoBehaviour {
     private void Start()
     {
         timeSpawned = TimeManager.Time;
+        item.attachedGameObject = gameObject;
     }
 
     private void FixedUpdate()
     {
        if(timeSpawned.hours != TimeManager.Time.hours)
         {
-            item.currentItemDurability -= item.decaySpeed;
+            item.currentItemDurability -= item.decayPerHour;
             timeSpawned = TimeManager.Time;
             if(item.currentItemDurability <= 0)
             {

@@ -17,7 +17,7 @@ public class MonsterController : MonoBehaviour {
     public MovementState currentState;
     public Transform currentTarget;
 
-    public int monsterType;
+    public MonsterTypes.TypeOfMonster monsterType;
     public string monsterName;
     public float monsterSpeed;
     //[HideInInspector]
@@ -60,5 +60,22 @@ public class MonsterController : MonoBehaviour {
 
     void Death() {
         Debug.Log(monsterName + " has died.");
+    }
+
+    void GetMonster()
+    {
+        Mesh tempMesh = null;
+        FindObjectOfType<MonsterTypes>().getMonsterData(
+            GetMonsterName(),out health, out attackSpeed, out damage, 
+            out combatRange, out attackSpeed, out tempMesh, out dropTable);
+        maxHealth = health;
+        Instantiate(tempMesh);
+        tempMesh = null;
+        //MAke a spawn point
+    }
+
+    string GetMonsterName()
+    {
+        return "";
     }
 }

@@ -14,25 +14,20 @@ namespace MonsterMiner
                 if (Colonist.currentJob == null)
                     return Status.FAILURE;
 
-                if (Colonist.currentJob.currentWorkAmount <= 0)
+                Colonist.currentJob.InteractionObject.GetComponent<BuildingFunction>().Built = true;
+                //uncomment when model swapping for all buildings is correctly implemented + the scaffolding scale is correct
+                //  Colonist.currentJob.InteractionObject.GetComponent<BuildingModelSwap>().UpdateObject();
+                Debug.Log("Building Completed: " + Colonist.currentJob.InteractionObject.name);
+                if (Colonist.currentJob.jobName == "Build Granary")
                 {
-                    Colonist.currentJob.InteractionObject.GetComponent<BuildingFunction>().Built = true;
-                    //uncomment when model swapping for all buildings is correctly implemented + the scaffolding scale is correct
-                    //  Colonist.currentJob.InteractionObject.GetComponent<BuildingModelSwap>().UpdateObject();
-                    Debug.Log("Building Completed: " + Colonist.currentJob.InteractionObject.name);
-                    if (Colonist.currentJob.jobName == "Build Granary")
-                    {
-                        BehaviourTreeManager.Granaries.Add(Colonist.currentJob.InteractionObject.GetComponent<GranaryFunction>());
-                    }
-                    else if (Colonist.currentJob.jobName == "Build Stockpile")
-                    {
-                        //add the stockpile here
-                    }
-                    Colonist.currentJob = null;
-                    return Status.SUCCESS;
+                    BehaviourTreeManager.Granaries.Add(Colonist.currentJob.InteractionObject.GetComponent<GranaryFunction>());
                 }
-                Colonist.currentJob.currentWorkAmount -= Colonist.ColonistWorkSpeed * Time.deltaTime;
-                return Status.RUNNING;
+                else if (Colonist.currentJob.jobName == "Build Stockpile")
+                {
+                    //add the stockpile here
+                }
+                Colonist.currentJob = null;
+                return Status.SUCCESS;
             }
         }
     }

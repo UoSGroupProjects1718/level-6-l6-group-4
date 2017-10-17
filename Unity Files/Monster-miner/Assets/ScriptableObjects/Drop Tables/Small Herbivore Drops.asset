@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: Small Herbivore Drops
   m_EditorClassIdentifier: 
   Drops:
-  - {fileID: 11400000, guid: c09042011221b7743984727d5028b3e5, type: 2}
+  - {fileID: 11400000, guid: 7e86d8907b88d74449b673beb6ff1fcc, type: 2}
