@@ -19,7 +19,8 @@ public class TargetDistance : BehaviourBase {
 
     bool getDistance(MonsterController Monster)
     {
-        return ((Monster.currentTarget.position - Monster.transform.position).magnitude < Monster.combatRange);
+        bool bob =  ((Monster.currentTarget.position - Monster.transform.position).magnitude < Monster.combatRange);
+        return bob;
     }
 
     bool getAngle(MonsterController Monster)

@@ -614,6 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21fe4bf1c397a7a429ce7f961ba7b039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Monsters: []
 --- !u!114 &824090730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,13 +827,13 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   monsterType: 0
   monsterName: Tony
-  monsterSpeed: 0
-  health: 0
-  maxHealth: 100
-  combatRange: 0
-  viewRange: 0
-  damage: 0
-  attackSpeed: 0
+  monsterSpeed: 5
+  health: 100
+  maxHealth: 1e+10
+  combatRange: 5
+  viewRange: 50.13
+  damage: 20
+  attackSpeed: 0.5
   nextAttack: 0
   Movement: {fileID: 0}
   collider: {fileID: 0}
@@ -984,13 +985,13 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   monsterType: 0
   monsterName: Tony II
-  monsterSpeed: 0
-  health: 0
-  maxHealth: 100
-  combatRange: 0
-  viewRange: 0
-  damage: 0
-  attackSpeed: 0
+  monsterSpeed: 5
+  health: 100
+  maxHealth: 1e+10
+  combatRange: 5
+  viewRange: 50.13
+  damage: 20
+  attackSpeed: 0.5
   nextAttack: 0
   Movement: {fileID: 0}
   collider: {fileID: 0}

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
+
 [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Monster/Movement")]
 public class Movement : BehaviourBase
 {
     public float WonderRadius;
+
+    
 
     public override Status UpdateFunc(MonsterController Monster)
     {

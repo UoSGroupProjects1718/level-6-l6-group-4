@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MonsterController : MonoBehaviour {
 
     public enum MovementState
@@ -58,7 +59,7 @@ public class MonsterController : MonoBehaviour {
         return false;
     }
 
-    void Death() {
+    public void Death() {
         Debug.Log(monsterName + " has died.");
     }
 
@@ -77,5 +78,10 @@ public class MonsterController : MonoBehaviour {
     string GetMonsterName()
     {
         return "";
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, viewRange);
     }
 }

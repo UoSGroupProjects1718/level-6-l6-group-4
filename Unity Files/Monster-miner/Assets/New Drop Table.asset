@@ -8,9 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1205682d57118054e9d23e6ac791bfd6, type: 3}
-  m_Name: CombatSequencer
+  m_Script: {fileID: 11500000, guid: 5b643a7686370814dbfea0cdb6fa10b4, type: 3}
+  m_Name: New Drop Table
   m_EditorClassIdentifier: 
-  Children:
-  - {fileID: 11400000, guid: eb62cd7a762a4f54a8d2a659d1d8718c, type: 2}
-  - {fileID: 11400000, guid: a651ce0298d6f8d44b0490d0a587a662, type: 2}
+  Drops:
+  - {fileID: 11400000, guid: 5a0c4778600b8444689a69eadc95be61, type: 2}

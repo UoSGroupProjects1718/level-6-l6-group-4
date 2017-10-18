@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: MonsterBTHead
   m_EditorClassIdentifier: 
   Children:
-  - {fileID: 11400000, guid: 67e71c74983f2aa42aeced021916563a, type: 2}
+  - {fileID: 11400000, guid: c913fa18f92ab3b459bc8b8ac54b905f, type: 2}
   - {fileID: 11400000, guid: 0f4830865d09f4a468ebcac86ed20b32, type: 2}
   - {fileID: 11400000, guid: 400c6637117f0f7489aa6e5e79b7d83d, type: 2}

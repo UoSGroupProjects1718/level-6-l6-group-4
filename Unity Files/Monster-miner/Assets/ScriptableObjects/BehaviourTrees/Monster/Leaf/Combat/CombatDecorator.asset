@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cf3d5975ac452468eae4139042df29, type: 3}
   m_Name: CombatDecorator
   m_EditorClassIdentifier: 
-  Child: {fileID: 11400000, guid: ff03865f509a60b43bd73ad08145a9f0, type: 2}
+  Child: {fileID: 11400000, guid: 4566174a5dbff414db732c21d248c017, type: 2}
   Types: 000000000200000003000000

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: SmallHerbivourDecorator
   m_EditorClassIdentifier: 
   Child: {fileID: 11400000, guid: da5aacb840aed154aa4cabb81857fae6, type: 2}
-  Types: 03000000
+  Types: 01000000

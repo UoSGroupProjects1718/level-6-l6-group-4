@@ -11,6 +11,7 @@ public class SmallCarnivorState : BehaviourBase
         if (Monster.checkDead())
         {
             Monster.currentState = MonsterController.MovementState.Still;
+            Monster.Death();
             return Status.SUCCESS;
         }
         Transform pos = Monster.transform;
@@ -43,5 +44,5 @@ public class SmallCarnivorState : BehaviourBase
         Monster.currentState = MonsterController.MovementState.Chase;
         return Status.SUCCESS;
 
-    }
+    }    
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: SmallCarnivorDecorator
   m_EditorClassIdentifier: 
   Child: {fileID: 11400000, guid: ad816cd392da26145a2ffd5663483310, type: 2}
-  Types: 02000000
+  Types: 00000000
