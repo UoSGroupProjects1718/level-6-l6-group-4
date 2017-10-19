@@ -31,11 +31,12 @@ namespace MonsterMiner
                         if (Colonist.target.checkDead())
                         {
                             Colonist.target.GetComponent<MeshRenderer>().material.color = Color.red;
-                            JobManager.Instance.CreateJob(JobType.Harvesting, 50, Colonist.target.gameObject, Colonist.target.transform.position, "Harvest" + Colonist.target.monsterName);
+                            JobManager.CreateJob(JobType.Harvesting, 50, Colonist.target.gameObject, Colonist.target.transform.position, "Harvest" + Colonist.target.monsterName);
                             Colonist.target.Movement.navMeshAgent.isStopped = true;
                             Colonist.target.collider.enabled = false;
                             BehaviourTreeManager.Monsters.Remove(Colonist.target);
                             Colonist.target = null;
+                            Colonist.currentJob = null;
                         }
                     }
                    

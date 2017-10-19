@@ -78,6 +78,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColour: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.43382353, g: 0.41787413, b: 0.42646226, a: 1}
+    - _Color: {r: 0.2205882, g: 0.21410032, b: 0.21759379, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GridColour: {r: 0, g: 0, b: 0, a: 1}

@@ -22,6 +22,7 @@ namespace MonsterMiner
                 {
                     if (JobManager.Instance.JobDocket[i].jobType == DesiredJob)
                     {
+                        //if there are no granaries or stockpiles then dont pick it up
                         if (DesiredJob == JobType.Gathering && JobManager.Instance.JobDocket[i].InteractionObject.GetComponent<Item>().item.type == ItemType.Nutrition)
                         {
                             if (BehaviourTreeManager.Granaries.Count > 0)
@@ -37,9 +38,16 @@ namespace MonsterMiner
                             JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
                             return Status.SUCCESS;
                         }
+                        else if(DesiredJob == JobType.Hunter)
+                        {
+                            Colonist.currentJob = (JobManager.Instance.JobDocket[i]);
+                            JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
+                            Colonist.target = Colonist.currentJob.InteractionObject.GetComponent<MonsterController>();
+                            return Status.SUCCESS;
+                        }
                         else
                         {
-                            Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
+                            Colonist.currentJob = (JobManager.Instance.JobDocket[i]);
                             JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
                             return Status.SUCCESS;
                         }

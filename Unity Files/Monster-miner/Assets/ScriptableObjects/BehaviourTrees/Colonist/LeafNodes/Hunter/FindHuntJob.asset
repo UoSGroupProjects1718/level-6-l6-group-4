@@ -8,8 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b643a7686370814dbfea0cdb6fa10b4, type: 3}
-  m_Name: New Drop Table
+  m_Script: {fileID: 11500000, guid: 3db9eb9aa57788c469107194bbb74a83, type: 3}
+  m_Name: FindHuntJob
   m_EditorClassIdentifier: 
-  Drops:
-  - {fileID: 11400000, guid: 5a0c4778600b8444689a69eadc95be61, type: 2}
+  DesiredJob: 5

@@ -26,28 +26,28 @@ public class AgentMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        UnitSelection.UnitList.Add(this.transform);
+       // UnitSelection.UnitList.Add(this.transform);
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
         
-        if(Input.GetKeyDown(Keybinds.Instance.SecondaryActionKey))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit = new RaycastHit();
-            if(Physics.Raycast(ray,out hit))
-            {
-                if(hit.collider.tag == "Floor")
-                {
-                    Debug.Log("hit: " + hit.collider.name);
-                    MoveToPoint(hit.point);
-                }
-            }
-        }
-    }
+    //    if(Input.GetKeyDown(Keybinds.Instance.SecondaryActionKey))
+    //    {
+    //        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //        RaycastHit hit = new RaycastHit();
+    //        if(Physics.Raycast(ray,out hit))
+    //        {
+    //            if(hit.collider.tag == "Floor")
+    //            {
+    //                Debug.Log("hit: " + hit.collider.name);
+    //                MoveToPoint(hit.point);
+    //            }
+    //        }
+    //    }
+    //}
 
     public void MoveToPoint(Vector3 point)
     {

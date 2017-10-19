@@ -44,7 +44,7 @@ namespace MonsterMiner
                     else
                         Item.item.currentStackAmount = 1;
                     int WorkAmount = Item.item.currentStackAmount * (Item.item as Resource).GatherWorkPerItem;
-                    JobManager.Instance.CreateJob(JobType.Gathering, WorkAmount, newItem, newItem.transform.position, "Gather " + Item.item.name);
+                    JobManager.CreateJob(JobType.Gathering, WorkAmount, newItem, newItem.transform.position, "Gather " + Item.item.name);
                     Item.UpdateMesh();
                     
                 }

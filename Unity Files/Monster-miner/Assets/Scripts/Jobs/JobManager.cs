@@ -17,7 +17,7 @@ public class JobManager : SingletonClass<JobManager>
     {
         JobDocket.Add(jobToAdd);
     }
-    public void CreateJob(JobType jobType, int MaxWorkAmount, GameObject interactionObject, Vector3 jobLocation, string JobName)
+    public static void CreateJob(JobType jobType, int MaxWorkAmount, GameObject interactionObject, Vector3 jobLocation, string JobName)
     {
         Job newJob = ScriptableObject.CreateInstance("Job") as Job;
         newJob.jobName = JobName;
@@ -26,6 +26,6 @@ public class JobManager : SingletonClass<JobManager>
         newJob.jobLocation = jobLocation;
         newJob.jobType = jobType;
 
-        JobManager.Instance.QueueJob(newJob);
+        Instance.QueueJob(newJob);
     }
 }

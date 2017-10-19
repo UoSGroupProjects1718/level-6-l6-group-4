@@ -35,6 +35,12 @@ public class MonsterController : MonoBehaviour {
     public new Collider collider;
     public DropTable dropTable;
 
+    [HideInInspector]
+    public bool selected;
+    public bool beingHunted;
+    [Header("Selection Circle must be first child")]
+    public Projector SelectionCircle;
+
     #endregion
 
     void Awake () {
@@ -43,6 +49,9 @@ public class MonsterController : MonoBehaviour {
         Movement = GetComponent<MonsterMovement>();
         collider = GetComponent<Collider>();
         health = maxHealth;
+
+        //set the selection cirlce
+        SelectionCircle = transform.GetChild(0).GetComponent<Projector>();
     }
 
      public void takeDamage(float damage)

@@ -41,6 +41,12 @@ public class ColonistController : MonoBehaviour {
 
     NavMeshAgent agent;
 
+    [HideInInspector]
+    public bool selected;
+
+    [Header("Selection Circle must be first child")]
+    public Projector SelectionCircle;
+
     public NavMeshAgent NavMeshAgent
     {
         get
@@ -63,6 +69,9 @@ public class ColonistController : MonoBehaviour {
         collider = gameObject.GetComponent<Collider>();
         agent = GetComponent<NavMeshAgent>();
         lastWorked = TimeManager.Time;
+
+        //set the selection cirlce
+        SelectionCircle = transform.GetChild(0).GetComponent<Projector>();
       
     }
 

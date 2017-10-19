@@ -1,88 +1,107 @@
-//Daniel
+//Oliver
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
+//http://hyunkell.com/blog/rts-style-unit-selection-in-unity-5/
 
 public class UnitSelection : MonoBehaviour {
 
-    public static List<GameObject> UnitsSelected;
-    public static List<Transform> UnitList;
-    public Vector3 Place;
-    Vector3 startClick;
-    Vector3 endClick;
+    bool isSelecting = false;
+    Vector3 mousePosition1;
 
-    void Awake()
+    public static List<ColonistController> SelectedColonists = new List<ColonistController>();
+    public static List<MonsterController> SelectedMonsters = new List<MonsterController>();
+    private void Start()
     {
-        UnitsSelected = new List<GameObject>();
-        UnitList = new List<Transform>();
+        for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
+        {
+            BehaviourTreeManager.Colonists[i].SelectionCircle.enabled = false;
+            BehaviourTreeManager.Colonists[i].selected = false;
+        }
+        for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
+        {
+            BehaviourTreeManager.Monsters[i].SelectionCircle.enabled = false;
+            BehaviourTreeManager.Monsters[i].selected = false;
+        }
     }
-    void Update () {
-        
-        if (Input.GetKeyDown(Keybinds.Instance.PrimaryActionKey)) {
 
-            startClick = GetPoint();
+    private void Update()
+    {
 
-            if (!Input.GetKey(Keybinds.Instance.UnitMiltiSelect) && startClick != new Vector3(0,0,0))//if not pressing multiselect
-            {
-                if(UnitsSelected.Count > 0)
-                    UnitsSelected.Clear();//clear list
-            }
-            
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+        if (Input.GetKeyDown(Keybinds.Instance.PrimaryActionKey))
+        {
+            isSelecting = true;
+            mousePosition1 = Input.mousePosition;
+            SelectedColonists.Clear();
+            SelectedMonsters.Clear();
 
+        }
 
-        } 
         if (Input.GetKeyUp(Keybinds.Instance.PrimaryActionKey))
         {
-            endClick=GetPoint();
-            //Draw a rect from start to end. add all agents to list
-            AddAgentsToList();
-        }	
-	}
-
-    Vector3 GetPoint()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        RaycastHit hit;
-
-        if(Physics.Raycast(ray, out hit))
-        {
-            Debug.Log(hit.point);
-            return hit.point;
+            isSelecting = false;
         }
-
-        return new Vector3(0, 0, 0);
-    }
-
-    void AddAgentsToList()
-    {
-        if(startClick==new Vector3(0,0,0) || endClick == new Vector3(0, 0, 0))//if either point is invalid
+        //check both lists, if the unit is within the bounds, select them.
+        if (isSelecting)
         {
-            return;
-        }
-
-        float lowx, lowz, highx, highz;
-
-        lowx = Mathf.Min(startClick.x, endClick.x);
-        lowz = Mathf.Min(startClick.z, endClick.z);
-
-        highx = Mathf.Max(startClick.x, endClick.x);
-        highz = Mathf.Max(startClick.z, endClick.z);
-
-        for (int i = 0; i < UnitList.Count; i++)
-        {
-            Transform thisUnit = UnitList[i];
-            if (
-                lowx < thisUnit.position.x && thisUnit.position.x < highx &&
-                lowz < thisUnit.position.z && thisUnit.position.z < highz &&
-                !UnitsSelected.Contains(thisUnit.gameObject)
-                )
+            for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
             {
-                UnitsSelected.Add(thisUnit.gameObject);
+                if (IsWithinBounds(BehaviourTreeManager.Colonists[i].gameObject))
+                {
+                    BehaviourTreeManager.Colonists[i].SelectionCircle.enabled = true;
+                    BehaviourTreeManager.Colonists[i].selected = true;
+                    if(!SelectedColonists.Contains(BehaviourTreeManager.Colonists[i]))
+                        SelectedColonists.Add(BehaviourTreeManager.Colonists[i]);
+                }
+                else
+                {
+                    BehaviourTreeManager.Colonists[i].SelectionCircle.enabled = false;
+                    BehaviourTreeManager.Colonists[i].selected = false;
+                    if (SelectedColonists.Contains(BehaviourTreeManager.Colonists[i]))
+                        SelectedColonists.Remove(BehaviourTreeManager.Colonists[i]);
+                }
+            }
+            for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
+            {
+                if (IsWithinBounds(BehaviourTreeManager.Monsters[i].gameObject))
+                {
+                    BehaviourTreeManager.Monsters[i].SelectionCircle.enabled = true;
+                    BehaviourTreeManager.Monsters[i].selected = true;
+                    if(!SelectedMonsters.Contains(BehaviourTreeManager.Monsters[i]))
+                        SelectedMonsters.Add(BehaviourTreeManager.Monsters[i]);
+                }
+                else
+                {
+                    BehaviourTreeManager.Monsters[i].SelectionCircle.enabled = false;
+                    BehaviourTreeManager.Monsters[i].selected = false;
+                    if(SelectedMonsters.Contains(BehaviourTreeManager.Monsters[i]))
+                        SelectedMonsters.Remove(BehaviourTreeManager.Monsters[i]);
+                }
             }
         }
     }
+    public bool IsWithinBounds(GameObject gameObject)
+    {
+        if (!isSelecting)
+            return false;
+        var camera = Camera.main;
+        var viewportBounds = Utils.GetViewportBounds(camera, mousePosition1, Input.mousePosition);
 
-    
+        return viewportBounds.Contains(camera.WorldToViewportPoint(gameObject.transform.position));
+    }
+
+    private void OnGUI()
+    {
+        if(isSelecting)
+        {
+            var rect = Utils.GetScreenRect(mousePosition1, Input.mousePosition);
+            Utils.DrawScreenRect(rect, new Color(.8f, .8f, .95f, .25f));
+            Utils.DrawScreenRectBorder(rect, 2, new Color(.8f, .8f, .95f));
+        }
+    }
+
 }

@@ -1,6 +1,8 @@
 //Oliver
 using UnityEngine;
 
+//make this a public static class when we read keybinds in from file
+
 public class Keybinds : SingletonClass<Keybinds>
 {
     [Header("Camera Movement")]
