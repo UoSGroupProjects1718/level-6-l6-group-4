@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 65735845800262374}
   - component: {fileID: 54387253479518590}
   - component: {fileID: 114176009841562338}
+  - component: {fileID: 114919396105104824}
   m_Layer: 0
   m_Name: Building Granary T1
   m_TagString: Untagged
@@ -53,13 +54,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399755252251502}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 799.538, y: 799.538, z: 30.876476}
   m_Children: []
   m_Father: {fileID: 4984222804164894}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4984222804164894
 Transform:
   m_ObjectHideFlags: 1
@@ -156,6 +157,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Built: 0
   colliders: []
+--- !u!114 &114919396105104824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429845595509982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scafoldingMesh: {fileID: 4300000, guid: 516af43761a3b0644842f46fe222c9c8, type: 3}
 --- !u!208 &208676760748278588
 NavMeshObstacle:
   m_ObjectHideFlags: 1

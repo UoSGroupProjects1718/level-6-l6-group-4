@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class MonsterTypes : SingletonClass<MonsterController> {
@@ -12,7 +12,7 @@ public class MonsterTypes : SingletonClass<MonsterController> {
     }
     
     public MonsterType[] Monsters = new MonsterType[0];
-    Dictionary<string, MonsterType> Mons;
+    public Dictionary<string, MonsterType> Mons;
 
 
     private void Start()

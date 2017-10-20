@@ -165,6 +165,8 @@ MonoBehaviour:
   agentMovement: {fileID: 0}
   collider: {fileID: 0}
   GathererStockpile: {fileID: 0}
+  selected: 0
+  SelectionCircle: {fileID: 0}
 --- !u!119 &119210537368258424
 Projector:
   m_ObjectHideFlags: 1
