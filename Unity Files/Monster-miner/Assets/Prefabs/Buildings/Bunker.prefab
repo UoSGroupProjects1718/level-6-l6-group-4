@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 54574391375284578}
   - component: {fileID: 65869016641492102}
   - component: {fileID: 114101341988057298}
+  - component: {fileID: 114096496554432178}
   m_Layer: 0
   m_Name: Bunker
   m_TagString: Building
@@ -114,7 +115,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1921329119772452}
-  m_Mesh: {fileID: 4300000, guid: 309f43b99670a9744bcfdb6f9ea425c2, type: 3}
+  m_Mesh: {fileID: 4300000, guid: f9925f3950a3b754cac9aab3420fa3f5, type: 3}
 --- !u!54 &54574391375284578
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -142,6 +143,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.18, y: 2.8, z: 10.54}
   m_Center: {x: 0, y: 1.48, z: 0}
+--- !u!114 &114096496554432178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1683974480959124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scafoldingMesh: {fileID: 4300000, guid: 516af43761a3b0644842f46fe222c9c8, type: 3}
 --- !u!114 &114101341988057298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26324ab93feea164cb94b43dacd77ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Built: 0
   colliders: []
 --- !u!208 &208996134399509370
 NavMeshObstacle:

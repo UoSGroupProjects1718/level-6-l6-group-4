@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ea25971e2835e5545bdc52fbac650e59
-timeCreated: 1508489881
+guid: 2547d159ef7391c42b55c856df67c2ff
+timeCreated: 1508581520
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Barracks T3
   materials:
     importMaterials: 1
     materialName: 0

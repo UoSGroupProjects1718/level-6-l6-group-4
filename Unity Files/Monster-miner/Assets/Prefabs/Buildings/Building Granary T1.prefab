@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429845595509982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9851446, y: 7.1261077, z: 51.098484}
+  m_LocalPosition: {x: 55.29187, y: 5.4308477e-17, z: -73.375084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4344466104956158}
@@ -116,7 +116,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399755252251502}
-  m_Mesh: {fileID: 4300000, guid: 935aa157c6b1f3b409f8359551f28563, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 4d3ebe788d7c90e4e8892860c263ac3b, type: 3}
 --- !u!54 &54387253479518590
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -142,8 +142,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.61, y: 5.58, z: 15.67}
-  m_Center: {x: -0.1, y: 3.07, z: 0}
+  m_Size: {x: 11.133957, y: 5.58, z: 10.16684}
+  m_Center: {x: 0.13782883, y: 3.0699997, z: 0.42151642}
 --- !u!114 &114176009841562338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scafoldingMesh: {fileID: 4300000, guid: 516af43761a3b0644842f46fe222c9c8, type: 3}
+  scafoldingMesh: {fileID: 4300000, guid: 4ddab662048c5c546b9395ade95ae5a3, type: 3}
 --- !u!208 &208676760748278588
 NavMeshObstacle:
   m_ObjectHideFlags: 1

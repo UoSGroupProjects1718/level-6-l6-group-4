@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 29ba050a7d328f4488fdaacdb4677a8d
-timeCreated: 1508489927
+guid: 65f5fdf6f4d42d24489630c83734eeed
+timeCreated: 1508581521
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Forge T3
   materials:
     importMaterials: 1
     materialName: 0
