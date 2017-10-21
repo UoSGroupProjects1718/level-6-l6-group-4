@@ -12,14 +12,12 @@ public class BarracksPanelUI : MonoBehaviour {
 		for(int i = 0; i < monsterTypes.Length; i++)
         {
             GameObject newElement =  Instantiate(Content, ContentParent) as GameObject;
+            newElement.transform.GetComponent<BarracksJobPanel>().monster = monsterTypes[i];
             //when added
             //newElement.transform.GetChild(0).GetComponent<Image>().sprite = monsterTypes[i].UISprite;
             newElement.transform.GetChild(1).GetComponent<Text>().text = monsterTypes[i].monsterName;
+           
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
