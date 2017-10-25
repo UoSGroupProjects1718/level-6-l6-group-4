@@ -11,7 +11,16 @@ public class SmallCarnivorState : BehaviourBase
         if (Monster.checkDead())
         {
             Monster.currentState = MonsterController.MovementState.Still;
-            Monster.Death();
+            if (Monster.deathCount == 0)
+            {
+                Monster.deathCount = 200;
+                Monster.Death();
+            }
+            else if (Monster.deathCount-- == 1)
+            {
+                Monster.GetMonster();
+            }
+            
             return Status.SUCCESS;
         }
         Transform pos = Monster.transform;

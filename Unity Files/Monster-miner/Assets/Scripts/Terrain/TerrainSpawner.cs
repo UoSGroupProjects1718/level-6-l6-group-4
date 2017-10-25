@@ -18,8 +18,10 @@ public class TerrainSpawner : MonoBehaviour {
     // Use this for initialization
 
     MapTileList[,] map;
-	
-	IEnumerator SpawnWorld()
+
+    List<Vector2> NextSpawn = new List<Vector2>();
+
+    IEnumerator SpawnWorld()
     {
         //Set Variables
         int SmallAreaLayers = Random.Range(MinSmallArea, MaxSmallArea);
@@ -33,6 +35,21 @@ public class TerrainSpawner : MonoBehaviour {
         map = new MapTileList[ArraySize,ArraySize];
         
         SpawnSpawn(ForLoopLimit+1);
+        AddNeighboursToList(ForLoopLimit + 1, ForLoopLimit + 1);
+        while (NextSpawn.Count > 0)
+        {
+            SpawnTile(NextSpawn[0]);
+            NextSpawn.RemoveAt(0);
+
+        }
+
+
+        
+
+
+
+        /*
+
         for (int i = 0; i < ForLoopLimit; i++)
         {
             SpawnEdges(i);
@@ -46,16 +63,40 @@ public class TerrainSpawner : MonoBehaviour {
                 }
             }
         }
+        */
         SpawnTiles = null;
         map = null;
         return null;
+    }
+
+    void AddNeighboursToList(int x, int y) {
+        NextSpawn.Add(new Vector2(x+1, y));
+        NextSpawn.Add(new Vector2(x-1, y));
+        NextSpawn.Add(new Vector2(x, y-1));
+        NextSpawn.Add(new Vector2(x, y+1));
     }
 
     void SpawnSpawn(int Middle)
     {
         map[Middle, Middle] = Instantiate(SpawnTiles[Random.Range(0, SpawnTiles.Length - 1)], new Vector3(0, 0, 0), transform.rotation).GetComponent<MapTileList>();
     }
-    void SpawnTile(int x, int y) {
+
+    void SpawnTile(Vector2 gridPos) {
+        int x = (int)gridPos.x;
+        int y = (int)gridPos.y;
+        try
+        {
+            if (map[x, y] != null)
+            {
+                return;
+            }
+        }
+
+        catch
+        {
+            return;
+        }
+
         List<GameObject> UpList, DownList, LeftList, RightList;
         UpList = DownList = LeftList = RightList = new List<GameObject>();
         try
@@ -79,8 +120,8 @@ public class TerrainSpawner : MonoBehaviour {
 
         List<GameObject> PossibleList = GetPossibleList(UpList, DownList, LeftList, RightList);
 
-        
 
+        AddNeighboursToList(x, y);
 
     }
 
@@ -88,18 +129,13 @@ public class TerrainSpawner : MonoBehaviour {
 
 
     List<GameObject> GetPossibleList(List<GameObject> Up, List<GameObject> Down, List<GameObject> Left, List<GameObject> Right) {
-        List<GameObject> ReturnList;
+        List<GameObject> ReturnList = new List<GameObject>();
         
 
         return ReturnList;
 
     }
 
-    void SpawnEdges(int edge) {
-        SpawnTile(0, edge);
-        SpawnTile(0, -edge);
-        SpawnTile(edge,0);
-        SpawnTile(-edge,0);
-    }
+
     
 }
