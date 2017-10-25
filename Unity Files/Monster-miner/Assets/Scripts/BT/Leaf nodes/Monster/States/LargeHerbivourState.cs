@@ -11,6 +11,15 @@ public class LargeHerbivourState : BehaviourBase
         if (Monster.checkDead())
         {
             Monster.currentState = MonsterController.MovementState.Still;
+            if (Monster.deathCount == 0)
+            {
+                Monster.deathCount = 200;
+                Monster.Death();
+            }
+            else if (Monster.deathCount-- == 1)
+            {
+                Monster.GetMonster();
+            }
             return Status.SUCCESS;
         }
 

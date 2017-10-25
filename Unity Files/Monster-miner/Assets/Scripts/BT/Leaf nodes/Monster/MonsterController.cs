@@ -34,7 +34,8 @@ public class MonsterController : MonoBehaviour {
     [HideInInspector]
     public new Collider collider;
     public DropTable dropTable;
-
+    [HideInInspector]
+    public int deathCount;
     [HideInInspector]
     public bool selected;
     public bool beingHunted;
@@ -72,7 +73,7 @@ public class MonsterController : MonoBehaviour {
         Debug.Log(monsterName + " has died.");
     }
 
-    void GetMonster()
+    public void GetMonster()
     {
         Mesh tempMesh = null;
         FindObjectOfType<MonsterTypes>().getMonsterData(
