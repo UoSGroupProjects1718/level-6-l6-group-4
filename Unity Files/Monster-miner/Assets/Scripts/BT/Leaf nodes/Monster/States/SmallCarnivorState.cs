@@ -8,19 +8,10 @@ public class SmallCarnivorState : BehaviourBase
     public override Status UpdateFunc(MonsterController Monster)
     {
 
-        if (Monster.checkDead())
+        if (Monster.isDead)
         {
             Monster.currentState = MonsterController.MovementState.Still;
-            if (Monster.deathCount == 0)
-            {
-                Monster.deathCount = 200;
-                Monster.Death();
-            }
-            else if (Monster.deathCount-- == 1)
-            {
-                Monster.GetMonster();
-            }
-            
+                       
             return Status.SUCCESS;
         }
         Transform pos = Monster.transform;

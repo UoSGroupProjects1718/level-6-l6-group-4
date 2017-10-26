@@ -35,7 +35,7 @@ public class MonsterController : MonoBehaviour {
     public new Collider collider;
     public DropTable dropTable;
     [HideInInspector]
-    public int deathCount;
+    public bool isDead;
     [HideInInspector]
     public bool selected;
     public bool beingHunted;
@@ -58,23 +58,25 @@ public class MonsterController : MonoBehaviour {
      public void takeDamage(float damage)
     {
         health -= damage;
-        if (checkDead())
-            Death();
     }
 
     public bool checkDead()
     {
-        if (health < 0)
+        if (health < 0) { 
+            Death();
             return true;
+        }
         return false;
     }
 
     public void Death() {
+        isDead = true;
         Debug.Log(monsterName + " has died.");
     }
 
     public void GetMonster()
     {
+        isDead = false;
         Mesh tempMesh = null;
         FindObjectOfType<MonsterTypes>().getMonsterData(
             GetMonsterName(),out health, out attackSpeed, out damage, 

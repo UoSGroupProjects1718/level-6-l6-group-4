@@ -49,7 +49,7 @@ public class Stockpile : SingletonClass<Stockpile>
                     foreach (Resource nutrition in NutritionInventory)
                     {
                         if (nutrition.itemName == newItem.itemName)
-                        {
+                        {   
                             nutrition.currentStackAmount += newItem.currentStackAmount;
                             NutritionInventoryItemCount += newItem.currentStackAmount;
                             return;
