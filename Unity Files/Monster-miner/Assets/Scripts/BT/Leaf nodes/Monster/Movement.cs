@@ -26,6 +26,9 @@ public class Movement : BehaviourBase
             case MonsterController.MovementState.Still:
                 Monster.Movement.MoveToPoint(Monster.transform.position);
                 break;
+            case MonsterController.MovementState.MakeLove:
+                Monster.Movement.MoveToPoint(new Vector3(Monster.currentTarget.position.x, Monster.currentTarget.position.y, Monster.currentTarget.position.z));
+                break;
             default:
                 return Status.INVALID;
         }

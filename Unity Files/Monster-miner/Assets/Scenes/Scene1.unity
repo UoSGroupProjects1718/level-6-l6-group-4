@@ -1088,6 +1088,8 @@ MonoBehaviour:
   damage: 20
   attackSpeed: 0.5
   nextAttack: 0
+  lastMatingTime: 0
+  matingCooldown: 0
   Movement: {fileID: 0}
   collider: {fileID: 0}
   dropTable: {fileID: 11400000, guid: 4afb46ab6e6ee5d4abe365894bf699f0, type: 2}
@@ -1251,6 +1253,8 @@ MonoBehaviour:
   damage: 20
   attackSpeed: 0.5
   nextAttack: 0
+  lastMatingTime: 0
+  matingCooldown: 0
   Movement: {fileID: 0}
   collider: {fileID: 0}
   dropTable: {fileID: 11400000, guid: 4afb46ab6e6ee5d4abe365894bf699f0, type: 2}
@@ -2561,6 +2565,21 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224254716737287964, guid: b705929e526266b4086d23f4dbdd32f2,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224254716737287964, guid: b705929e526266b4086d23f4dbdd32f2,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224254716737287964, guid: b705929e526266b4086d23f4dbdd32f2,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b705929e526266b4086d23f4dbdd32f2, type: 2}

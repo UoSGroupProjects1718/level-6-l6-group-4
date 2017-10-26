@@ -27,8 +27,8 @@ public class MonsterTypes : SingletonClass<MonsterController> {
        
     }
     public void getMonsterData(string Type,
-        out float returnHealth, out float returnSpeed, out float returnDamage, out float returnCombatRange, out float returnAttackSpeed ,out Mesh returnMesh,
-        out DropTable returnDropTable
+        out float returnHealth, out float returnSpeed, out float returnDamage, out float returnCombatRange, out float returnAttackSpeed, out Mesh returnMesh,
+        out DropTable returnDropTable, out float returnMatingCooldown
         ) {
         returnHealth = Mons[Type].health;
         returnSpeed = Mons[Type].monsterSpeed;
@@ -37,6 +37,7 @@ public class MonsterTypes : SingletonClass<MonsterController> {
         returnAttackSpeed = Mons[Type].attackSpeed;
         returnMesh = Mons[Type].monsterMesh;
         returnDropTable = Mons[Type].dropTable;
+        returnMatingCooldown = Mons[Type].matingCooldown;
         return;
     }
 

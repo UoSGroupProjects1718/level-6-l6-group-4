@@ -10,7 +10,8 @@ public class MonsterController : MonoBehaviour {
         Wander,
         Flee,
         Chase,
-        Still
+        Still,
+        MakeLove
     }
 
     #region Variables
@@ -29,6 +30,8 @@ public class MonsterController : MonoBehaviour {
     public float damage;
     public float attackSpeed;
     public float nextAttack;
+    public float lastMatingTime;
+    public float matingCooldown;
 
     public MonsterMovement Movement;
     [HideInInspector]
@@ -50,6 +53,7 @@ public class MonsterController : MonoBehaviour {
         Movement = GetComponent<MonsterMovement>();
         collider = GetComponent<Collider>();
         health = maxHealth;
+        lastMatingTime = Time.time;
 
         //set the selection cirlce
         SelectionCircle = transform.GetChild(0).GetComponent<Projector>();
@@ -80,8 +84,9 @@ public class MonsterController : MonoBehaviour {
         Mesh tempMesh = null;
         FindObjectOfType<MonsterTypes>().getMonsterData(
             GetMonsterName(),out health, out attackSpeed, out damage, 
-            out combatRange, out attackSpeed, out tempMesh, out dropTable);
+            out combatRange, out attackSpeed, out tempMesh, out dropTable, out matingCooldown);
         maxHealth = health;
+        lastMatingTime = Time.time;
         Instantiate(tempMesh);
         tempMesh = null;
         //MAke a spawn point

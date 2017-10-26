@@ -32,6 +32,11 @@ public class LargeHerbivourState : BehaviourBase
 
             if (Closest == null || Dist > Monster.viewRange)//if not near enemy, then Wander
             {
+                if (Time.time - Monster.lastMatingTime < Monster.matingCooldown)
+                {
+                    Monster.currentState = MonsterController.MovementState.MakeLove;
+                    return Status.SUCCESS;
+                }
                 Monster.currentState = MonsterController.MovementState.Wander;
                 return Status.SUCCESS;
             }
