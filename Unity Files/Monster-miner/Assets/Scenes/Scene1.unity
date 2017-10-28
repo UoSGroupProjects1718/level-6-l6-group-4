@@ -236,7 +236,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 2
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -334,8 +334,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 668568087}
   m_HandleRect: {fileID: 668568086}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.66666675
+  m_Value: 0.9999997
+  m_Size: 0.6666667
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -431,7 +431,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 2
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColonistName: Bob Jones II
   ColonistSpeed: 4
-  ColonistWorkSpeed: 15
+  ColonistWorkSpeed: 50
   ColonistJob: 1
   currentJob: {fileID: 0}
   Health: 100
@@ -3070,7 +3070,7 @@ Prefab:
     - target: {fileID: 114826635343093472, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 2
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 114826635343093472, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
@@ -3085,7 +3085,7 @@ Prefab:
     - target: {fileID: 114327254115219448, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 2
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 114327254115219448, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
@@ -3155,7 +3155,7 @@ Prefab:
     - target: {fileID: 114401408117482002, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 2
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 114401408117482002, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
