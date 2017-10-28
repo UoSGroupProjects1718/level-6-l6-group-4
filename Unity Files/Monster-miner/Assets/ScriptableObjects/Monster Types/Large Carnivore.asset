@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: Large Carnivore
   m_EditorClassIdentifier: 
   monsterName: t
-  monsterType: 0
+  monsterType: 2
+  numHuntersRequired: 1
   monsterSpeed: 0
   health: 0
   maxHealth: 0
@@ -21,5 +22,6 @@ MonoBehaviour:
   damage: 0
   attackSpeed: 0
   nextAttack: 0
-  monsterMesh: {fileID: 0}
-  dropTable: {fileID: 0}
+  matingCooldown: 0
+  monsterMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  dropTable: {fileID: 11400000, guid: 4afb46ab6e6ee5d4abe365894bf699f0, type: 2}

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class MonsterTypes : SingletonClass<MonsterController> {
+public class MonsterTypes : SingletonClass<MonsterTypes> {
 
     public enum TypeOfMonster
     {
@@ -12,23 +12,27 @@ public class MonsterTypes : SingletonClass<MonsterController> {
     }
     
     public MonsterType[] Monsters = new MonsterType[0];
-    public Dictionary<string, MonsterType> Mons;
+    public Dictionary<TypeOfMonster, MonsterType> Mons;
 
 
-    private void Start()
+    public override void Awake()
     {
-        Mons = new Dictionary<string, MonsterType>();
+        base.Awake();
+        Mons = new Dictionary<TypeOfMonster, MonsterType>();
         for (int i = 0; i < Monsters.Length; i++)
         {
-            Mons.Add(Monsters[i].monsterName, Monsters[i]);
+            //ONLY FOR EASE OF DEBUGGING//
+            Monsters[i].numHuntersRequired = 1;
+            /////////////////////////////////////////
+            Mons.Add(Monsters[i].monsterType, Monsters[i]);
         }
         Monsters = null;
 
        
     }
-    public void getMonsterData(string Type,
+    public void getMonsterData(TypeOfMonster Type,
         out float returnHealth, out float returnSpeed, out float returnDamage, out float returnCombatRange, out float returnAttackSpeed, out Mesh returnMesh,
-        out DropTable returnDropTable, out float returnMatingCooldown
+        out DropTable returnDropTable, out float returnMatingCooldown, out int numHunters
         ) {
         returnHealth = Mons[Type].health;
         returnSpeed = Mons[Type].monsterSpeed;
@@ -38,9 +42,13 @@ public class MonsterTypes : SingletonClass<MonsterController> {
         returnMesh = Mons[Type].monsterMesh;
         returnDropTable = Mons[Type].dropTable;
         returnMatingCooldown = Mons[Type].matingCooldown;
+        numHunters = Mons[Type].numHuntersRequired;
         return;
     }
-
+    public void getNumHunters(TypeOfMonster Type, out int numHunters)
+    {
+        numHunters = Mons[Type].numHuntersRequired;
+    }
     int getType(string Name) {
         for (int i = 0; i < Monsters.Length; i++)
         {

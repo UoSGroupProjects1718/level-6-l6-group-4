@@ -15,8 +15,13 @@ public class UIButtons : MonoBehaviour
         {
             if(!UnitSelection.SelectedMonsters[i].beingHunted)
             {
-                JobManager.CreateJob(JobType.Hunter, 0, UnitSelection.SelectedMonsters[i].gameObject, UnitSelection.SelectedMonsters[i].transform.position, "Hunt" + UnitSelection.SelectedMonsters[i].monsterName);
-                UnitSelection.SelectedMonsters[i].beingHunted = true;
+                MonsterTypes.Instance.getNumHunters(UnitSelection.SelectedMonsters[i].monsterType, out UnitSelection.SelectedMonsters[i].numHunters);
+                for(int j = 0; j < UnitSelection.SelectedMonsters[i].numHunters; j++)
+                {
+                    JobManager.CreateJob(JobType.Hunter, 0, UnitSelection.SelectedMonsters[i].gameObject, UnitSelection.SelectedMonsters[i].transform.position, "Hunt" + UnitSelection.SelectedMonsters[i].monsterName);
+                }
+             
+                    UnitSelection.SelectedMonsters[i].beingHunted = true;
             }
         }
     }

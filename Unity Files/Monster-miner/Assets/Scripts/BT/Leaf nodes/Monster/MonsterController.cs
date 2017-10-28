@@ -21,6 +21,9 @@ public class MonsterController : MonoBehaviour {
 
     public MonsterTypes.TypeOfMonster monsterType;
     public string monsterName;
+
+    public int numHunters;
+
     public float monsterSpeed;
     //[HideInInspector]
     public float health;
@@ -42,6 +45,7 @@ public class MonsterController : MonoBehaviour {
     [HideInInspector]
     public bool selected;
     public bool beingHunted;
+
     [Header("Selection Circle must be first child")]
     public Projector SelectionCircle;
 
@@ -52,9 +56,9 @@ public class MonsterController : MonoBehaviour {
         currentState = MovementState.Wander;
         Movement = GetComponent<MonsterMovement>();
         collider = GetComponent<Collider>();
-        health = maxHealth;
         lastMatingTime = Time.time;
-
+        GetMonster();
+        health = maxHealth;
         //set the selection cirlce
         SelectionCircle = transform.GetChild(0).GetComponent<Projector>();
     }
@@ -77,14 +81,14 @@ public class MonsterController : MonoBehaviour {
         isDead = true;
         Debug.Log(monsterName + " has died.");
     }
-
+    
     public void GetMonster()
     {
         isDead = false;
         Mesh tempMesh = null;
-        FindObjectOfType<MonsterTypes>().getMonsterData(
-            GetMonsterName(),out health, out attackSpeed, out damage, 
-            out combatRange, out attackSpeed, out tempMesh, out dropTable, out matingCooldown);
+        MonsterTypes.Instance.getMonsterData(
+            monsterType,out health, out attackSpeed, out damage, 
+            out combatRange, out attackSpeed, out tempMesh, out dropTable, out matingCooldown, out numHunters);
         maxHealth = health;
         lastMatingTime = Time.time;
         Instantiate(tempMesh);
