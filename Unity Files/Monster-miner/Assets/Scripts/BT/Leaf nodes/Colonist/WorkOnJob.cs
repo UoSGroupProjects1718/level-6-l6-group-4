@@ -17,9 +17,9 @@ namespace MonsterMiner
                 {
                     return Status.SUCCESS;
                 }
-                if(Colonist.lastWorked.minutes != TimeManager.Time.minutes)
+                if(Colonist.lastWorked.minutes != TimeManager.IngameTime.minutes)
                 {
-                    Colonist.lastWorked = TimeManager.Time;
+                    Colonist.lastWorked = TimeManager.IngameTime;
                     Colonist.currentJob.currentWorkAmount -= (Colonist.ColonistWorkSpeed / TimeManager.Instance.DeltaTime);
                 }
                 return Status.RUNNING;

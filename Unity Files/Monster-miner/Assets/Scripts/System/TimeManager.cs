@@ -10,7 +10,7 @@ public class TimeManager : SingletonClass<TimeManager> {
 
     private float timeDelta;
 
-    static GameTime IngameTime;
+    static GameTime IngameTimeDisplay;
 
     [SerializeField]
     private Text dateText;
@@ -18,7 +18,7 @@ public class TimeManager : SingletonClass<TimeManager> {
     public override void Awake()
     {
         base.Awake();
-        IngameTime = new GameTime();
+        IngameTimeDisplay = new GameTime();
         //the amount of ingame minutes per second to inccrease the minute counter by
         //the amount of in game days to pass per real time hour multiplied by the amount of hours in the day, divided by the amount of minutes in an hour
         timeDelta = (( DaysPerHour * 24) / 60);
@@ -26,15 +26,16 @@ public class TimeManager : SingletonClass<TimeManager> {
     }
     public void Start()
     {
-        IngameTime.Date = new Vector3(1, 1, 1492);
+        IngameTimeDisplay.Date = new Vector3(1, 1, 1492);
        StartCoroutine("PassTime");
+       // StartCoroutine(PassTime());
     }
     
-    public static GameTime Time
+    public static GameTime IngameTime
     {
         get
         {
-            return IngameTime;
+            return IngameTimeDisplay;
         }
     }
     public float DeltaTime
@@ -47,36 +48,38 @@ public class TimeManager : SingletonClass<TimeManager> {
 
     private IEnumerator PassTime()
     {
+        yield return null;
         while(true)
         {
         //pass one second
-        yield return new WaitForSeconds(1f);
-        IngameTime.minutes += timeDelta;
+        yield return new WaitForSeconds(0f);
+            IngameTimeDisplay.minutes += timeDelta *Time.deltaTime;
+            IngameTimeDisplay.timeSinceStart += timeDelta * Time.deltaTime;
 
             //if the minutes counter has passed 60
-            if (IngameTime.minutes >= 60)
+            if (IngameTimeDisplay.minutes >= 60)
             {
                 //find the delta
-                float timeOverMinute = IngameTime.minutes - 60;
-                IngameTime.hours += 1;
+                float timeOverMinute = IngameTimeDisplay.minutes - 60;
+                IngameTimeDisplay.hours += 1;
                 //revert the minutes counter to whatever amount exceeded 60
-                IngameTime.minutes = timeOverMinute;
+                IngameTimeDisplay.minutes = timeOverMinute;
                 //if the amount of hours gets to one day
-                if (IngameTime.hours >= 24)
+                if (IngameTimeDisplay.hours >= 24)
                 {
-                    IngameTime.Date.x += 1;
-                    IngameTime.hours = 0;
+                    IngameTimeDisplay.Date.x += 1;
+                    IngameTimeDisplay.hours = 0;
                     //using a lunar month of 28 days for simplicity's sake
-                    if (IngameTime.Date.x >= 28)
+                    if (IngameTimeDisplay.Date.x >= 28)
                     {
 
-                        IngameTime.Date.y += 1;
-                        IngameTime.Date.x = 1;
+                        IngameTimeDisplay.Date.y += 1;
+                        IngameTimeDisplay.Date.x = 1;
                         //if we get to 1 year
-                        if (IngameTime.Date.y >= 12)
+                        if (IngameTimeDisplay.Date.y >= 12)
                         {
-                            IngameTime.Date.z += 1;
-                            IngameTime.Date.y = 1;
+                            IngameTimeDisplay.Date.z += 1;
+                            IngameTimeDisplay.Date.y = 1;
                         }
                     }
                 }
@@ -86,8 +89,8 @@ public class TimeManager : SingletonClass<TimeManager> {
 
     private void Update()
     {
-        string timeOfDay = (Time.hours > 12) ? " pm" : " am";
-        dateText.text = Time.hours + " : " + Mathf.RoundToInt(Time.minutes) + timeOfDay + "\n " + Time.Date.x + ", " + Time.Date.y + ", " + Time.Date.z;
+        string timeOfDay = (IngameTime.hours > 12) ? " pm" : " am";
+        dateText.text = IngameTime.hours + " : " + Mathf.RoundToInt(IngameTime.minutes) + timeOfDay + "\n " + IngameTime.Date.x + ", " + IngameTime.Date.y + ", " + IngameTime.Date.z;
     }
 
 }
@@ -97,4 +100,5 @@ public struct GameTime
     public Vector3 Date;
     public float minutes;
     public int hours;
+    public double timeSinceStart;
 }

@@ -14,16 +14,16 @@ public class Item : MonoBehaviour {
     //do item related stuff
     private void Start()
     {
-        timeSpawned = TimeManager.Time;
+        timeSpawned = TimeManager.IngameTime;
         item.attachedGameObject = gameObject;
     }
 
     private void FixedUpdate()
     {
-       if(timeSpawned.hours != TimeManager.Time.hours)
+       if(timeSpawned.hours != TimeManager.IngameTime.hours)
         {
             item.currentItemDurability -= item.decayPerHour;
-            timeSpawned = TimeManager.Time;
+            timeSpawned = TimeManager.IngameTime;
             if(item.currentItemDurability <= 0)
             {
                 Debug.Log("item has decayed");

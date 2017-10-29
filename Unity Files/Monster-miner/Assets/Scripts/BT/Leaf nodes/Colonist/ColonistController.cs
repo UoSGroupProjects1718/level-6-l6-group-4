@@ -68,7 +68,7 @@ public class ColonistController : MonoBehaviour {
         gameObject.GetComponent<NavMeshAgent>().speed = ColonistSpeed;
         collider = gameObject.GetComponent<Collider>();
         agent = GetComponent<NavMeshAgent>();
-        lastWorked = TimeManager.Time;
+        lastWorked = TimeManager.IngameTime;
 
         //set the selection cirlce
         SelectionCircle = transform.GetChild(0).GetComponent<Projector>();
