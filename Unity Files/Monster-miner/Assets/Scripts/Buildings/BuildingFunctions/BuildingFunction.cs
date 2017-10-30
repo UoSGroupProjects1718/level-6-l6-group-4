@@ -7,6 +7,7 @@ public abstract class BuildingFunction : MonoBehaviour {
 
     [HideInInspector]
     public bool Built;
+    
     public List<Collider> colliders = new List<Collider>();
 
 

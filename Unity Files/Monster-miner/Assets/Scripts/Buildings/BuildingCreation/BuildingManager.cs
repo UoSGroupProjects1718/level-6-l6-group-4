@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+
 public class BuildingManager : SingletonClass<BuildingManager>
 {
     [SerializeField]
@@ -82,6 +83,8 @@ public class BuildingManager : SingletonClass<BuildingManager>
                 job.jobLocation = CurrentlySelectedBuilding.transform.position;
                 job.InteractionObject = CurrentlySelectedBuilding;
                 JobManager.Instance.QueueJob(job);
+                CurrentlySelectedBuilding.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled = true;
+                CurrentlySelectedBuilding.GetComponent<Collider>().enabled = true;
             }
 
         }
@@ -89,10 +92,12 @@ public class BuildingManager : SingletonClass<BuildingManager>
     }
     public void BuildingOnClick(int BuildingIndex)
     {
-            hasPlaced = false;
-            CurrentlySelectedBuilding = Instantiate(Buildings[BuildingIndex].InteractionObject);
-            SelectedBuildingFunction = CurrentlySelectedBuilding.GetComponent<BuildingFunction>();
-            currentJob = Buildings[BuildingIndex];
+        hasPlaced = false;
+        CurrentlySelectedBuilding = Instantiate(Buildings[BuildingIndex].InteractionObject);
+        SelectedBuildingFunction = CurrentlySelectedBuilding.GetComponent<BuildingFunction>();
+        CurrentlySelectedBuilding.GetComponent<Collider>().enabled = false;
+        CurrentlySelectedBuilding.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled = false;
+        currentJob = Buildings[BuildingIndex];
     }
     
     public bool IsLegalPosition()
