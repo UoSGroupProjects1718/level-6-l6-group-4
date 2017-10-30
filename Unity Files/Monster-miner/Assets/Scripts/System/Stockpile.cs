@@ -18,7 +18,6 @@ public class Stockpile : SingletonClass<Stockpile>
     public override void Awake()
     {
         base.Awake();
-
     }
 
     public bool AddResource(Resource res)
@@ -129,7 +128,7 @@ public class Stockpile : SingletonClass<Stockpile>
         return false;
     }
     
-    public void RemoveResource(ItemType ResourceType, int amount)
+    public int RemoveResource(ItemType ResourceType, int amount)
     {
         switch (ResourceType)
         {
@@ -138,89 +137,89 @@ public class Stockpile : SingletonClass<Stockpile>
                 {
                     InventoryDictionary[ItemType.Wood] -= amount;
                     CurrResourceAmount -= amount;
+                    return amount;
                 }
                 else
                 {
-                    int difference = InventoryDictionary[ItemType.Wood] - amount;
-                    int AmountAvailable = amount - difference;
-                    InventoryDictionary[ItemType.Wood] -= AmountAvailable;
-                    CurrResourceAmount -= AmountAvailable;
+                    return ReturnAmountAvailable(ItemType.Wood, amount);
                 }
-                break;
             case ItemType.Stone:
                 if (InventoryDictionary[ItemType.Stone] - amount >= 0)
                 {
                     InventoryDictionary[ItemType.Stone] -= amount;
                     CurrResourceAmount -= amount;
+                    return amount;
                 }
                 else
                 {
-                    int difference = InventoryDictionary[ItemType.Stone] - amount;
-                    int AmountAvailable = amount - difference;
-                    InventoryDictionary[ItemType.Stone] -= AmountAvailable;
-                    CurrResourceAmount -= AmountAvailable;
+                    return ReturnAmountAvailable(ItemType.Stone, amount);
                 }
-                break;
+                
             case ItemType.Iron:
                 if (InventoryDictionary[ItemType.Iron] - amount >= 0)
                 {
                     InventoryDictionary[ItemType.Iron] -= amount;
                     CurrResourceAmount -= amount;
+                    return amount;
                 }
                 else
                 {
-                    int difference = InventoryDictionary[ItemType.Iron] - amount;
-                    int AmountAvailable = amount - difference;
-                    InventoryDictionary[ItemType.Iron] -= AmountAvailable;
-                    CurrResourceAmount -= AmountAvailable;
+                    return ReturnAmountAvailable(ItemType.Iron, amount);
                 }
-                break;
+
             case ItemType.Bone:
                 if (InventoryDictionary[ItemType.Bone] - amount >= 0)
                 {
                     InventoryDictionary[ItemType.Bone] -= amount;
                     CurrResourceAmount -= amount;
+                    return amount;
                 }
                 else
                 {
-                    int difference = InventoryDictionary[ItemType.Bone] - amount;
-                    int AmountAvailable = amount - difference;
-                    InventoryDictionary[ItemType.Bone] -= AmountAvailable;
-                    CurrResourceAmount -= AmountAvailable;
+                    return ReturnAmountAvailable(ItemType.Bone, amount);
                 }
-                break;
             case ItemType.Crystal:
                 if (InventoryDictionary[ItemType.Crystal] - amount >= 0)
                 {
                     InventoryDictionary[ItemType.Crystal] -= amount;
                     CurrResourceAmount -= amount;
+                    return amount;
                 }
                 else
                 {
-                    int difference = InventoryDictionary[ItemType.Crystal] - amount;
-                    int AmountAvailable = amount - difference;
-                    InventoryDictionary[ItemType.Crystal] -= AmountAvailable;
-                    CurrResourceAmount -= AmountAvailable;
+                    return ReturnAmountAvailable(ItemType.Crystal, amount);
                 }
-                break;
             case ItemType.Nutrition:
                 if (InventoryDictionary[ItemType.Nutrition] - amount >= 0)
                 {
                     InventoryDictionary[ItemType.Nutrition] -= amount;
                     CurrResourceAmount -= amount;
+                    return amount;
                 }
                 else
                 {
-                    int difference = InventoryDictionary[ItemType.Nutrition] - amount;
-                    int AmountAvailable = amount - difference;
-                    InventoryDictionary[ItemType.Nutrition] -= AmountAvailable;
+                    return ReturnAmountAvailable(ItemType.Nutrition, amount); 
                 }
-                break;
 
             default:
                 Debug.LogError("Resource being added is wearable, This Should not have happend");
                 break;
         }
+        return 0;
+    }
+    private int ReturnAmountAvailable(ItemType itemType, int amount)
+    {
+        int difference = InventoryDictionary[itemType] - amount;
+        int AmountAvailable = amount - Mathf.Abs(difference);
+        InventoryDictionary[itemType] -= AmountAvailable;
+
+        if(itemType < ItemType.Nutrition)
+        {
+            CurrResourceAmount -= AmountAvailable;
+            CurrResourceAmount = Mathf.Clamp(CurrResourceAmount, 0, ResourceSpace);
+        }
+
+        return AmountAvailable;
     }
 
 }

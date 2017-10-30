@@ -51,6 +51,22 @@ namespace MonsterMiner
                             Colonist.target = Colonist.currentJob.InteractionObject.GetComponent<MonsterController>();
                             return Status.SUCCESS;
                         }
+                        else if(DesiredJob == JobType.Building)
+                        {
+                            for(int j = 0; j <  JobManager.Instance.JobDocket[j].RequiredItems.Length; j++)
+                            {
+                                if(Stockpile.Instance.InventoryDictionary[JobManager.Instance.JobDocket[i].RequiredItems[j].resource] <= 0)
+                                {
+                                    return Status.FAILURE;
+                                }
+                                else
+                                {
+                                    Colonist.currentJob = (JobManager.Instance.JobDocket[i]);
+                                    JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
+                                    return Status.SUCCESS;
+                                }
+                            }
+                        }
                         else
                         {
                             Colonist.currentJob = (JobManager.Instance.JobDocket[i]);

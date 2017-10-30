@@ -16,8 +16,7 @@ public enum JobType
 public struct RequiredItem
 {
     public ItemType resource;
-    public int amount;
-
+    public int requiredAmount;
 }
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Job")]

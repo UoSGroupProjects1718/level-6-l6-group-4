@@ -20,4 +20,4 @@ MonoBehaviour:
     type: 2}
   RequiredItems:
   - resource: 0
-    amount: 15
+    requiredAmount: 15

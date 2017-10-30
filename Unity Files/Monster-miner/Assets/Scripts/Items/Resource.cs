@@ -7,9 +7,8 @@ using UnityEngine;
 public class Resource : ItemInfo
 {
     public int GatherWorkPerItem;
-    public int Nutrition;
-    [Range(0, 100)]
+    [Range(0, 1000)]
     public int minDropAmount;
-    [Range(0, 100)]
+    [Range(0, 1000)]
     public int maxDropAmount;
 }
