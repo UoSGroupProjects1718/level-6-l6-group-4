@@ -11,18 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece5e7d9d29505845aae30f8927a643d, type: 3}
   m_Name: Crossbow
   m_EditorClassIdentifier: 
+  attachedGameObject: {fileID: 0}
   itemName: Crossbow
   itemDescription: A slow firing weapon which fires a bolt at high speed
-  decaySpeed: 1
+  decayPerHour: 0
   maxItemDurability: 100
   currentItemDurability: 100
   maxStackAmount: 1
   currentStackAmount: 1
   itemMesh: {fileID: 0}
-  type: 2
-  nutrition: 0
-  minDropAmount: 0
-  maxDropAmount: 0
+  type: 6
+  WalkSpeedModifier: 0
+  WorkSpeedModifier: 0
   Damage: 30
   Range: 30
   AttackSpeed: 2

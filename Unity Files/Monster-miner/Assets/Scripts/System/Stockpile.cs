@@ -4,149 +4,223 @@ using UnityEngine;
 
 public class Stockpile : SingletonClass<Stockpile>
 {
-    [SerializeField]
-    private GameObject itemPrefab;
 
-    private static List<Resource> NutritionInventory;
-    [SerializeField]
-    private int NutritionInventorySpace;
-    [SerializeField]
-    private int NutritionInventoryItemCount;
 
-    private static List<Resource> ResourceInventory;
+    public ResourceTypeDictionary InventoryDictionary;
     [SerializeField]
-    private int ResourceInventorySpace;
+    int CurrResourceAmount;
     [SerializeField]
-    private int ResourceInventoryItemCount;
-
-    private static List<Wearable> WearableInventory;
+    int ResourceSpace;
     [SerializeField]
-    private int WearableInventorySpace;
-    [SerializeField]
-    private int WearableInventoryItemCount;
-
+    int NutritionSpace;
+   
 
     public override void Awake()
     {
         base.Awake();
-        NutritionInventory = new List<Resource>();
-        ResourceInventory = new List<Resource>();
-        WearableInventory = new List<Wearable>();
+
     }
 
-    public void AddItem(Resource newItem)
+    public bool AddResource(Resource res)
     {
-        //the list we wish to add to will be different based on which item type it is but the code is essentially the same
-        if (newItem.type == ItemType.Nutrition)
+        
+        switch (res.type)
         {
-            //first we check that wecan put something in there
-            if (NutritionInventoryItemCount < NutritionInventorySpace)
-            {
-                //then we check to see if we can put all of it in there
-                if (NutritionInventoryItemCount + newItem.currentStackAmount <= NutritionInventorySpace)
+            case ItemType.Wood:
+                //if we can add the resource given the space we have, increase the amount of the resource and the current amount of resources
+                if(CurrResourceAmount + res.currentStackAmount <= ResourceSpace)
                 {
-                    //then we see if the item is already in the stockpile and add to its current stack amount
-                    foreach (Resource nutrition in NutritionInventory)
-                    {
-                        if (nutrition.itemName == newItem.itemName)
-                        {   
-                            nutrition.currentStackAmount += newItem.currentStackAmount;
-                            NutritionInventoryItemCount += newItem.currentStackAmount;
-                            return;
-                        }
-                    }
-                    //otherwise just add it
-                    NutritionInventoryItemCount += newItem.currentStackAmount;
-                    NutritionInventory.Add(newItem);
-                    return;
-                }
-                //if we cant put it all in then we need to find the amount we can add we change the old object's stack amount
-                else
-                {
-                    int difference = NutritionInventoryItemCount + newItem.currentStackAmount - NutritionInventorySpace;
-                    foreach (Resource nutrition in NutritionInventory)
-                    {
-                        if (nutrition.itemName == newItem.itemName)
-                        {
-                            nutrition.currentStackAmount += newItem.currentStackAmount - difference;
-                            newItem.currentStackAmount = difference;
-                            newItem.attachedGameObject.GetComponent<MeshRenderer>().enabled = true;
-                            return;
-                        }
-                    }
-                }
-            }
-        }
-        else if (newItem.type == ItemType.Resource)
-        {
-            if (ResourceInventoryItemCount < ResourceInventorySpace)
-            {
-                if (ResourceInventoryItemCount + newItem.currentStackAmount <= ResourceInventorySpace)
-                {
-                    foreach (Resource resource in ResourceInventory)
-                    {
-                        if (resource.itemName == newItem.itemName)
-                        {
-                            resource.currentStackAmount += newItem.currentStackAmount;
-                            return;
-                        }
-                    }
-                    ResourceInventoryItemCount += newItem.currentStackAmount;
-                    ResourceInventory.Add(newItem);
-                    return;
+                    InventoryDictionary[ItemType.Wood] += res.currentStackAmount;
+                    CurrResourceAmount += res.currentStackAmount;
+                    return true;
                 }
                 else
                 {
-                    int difference = ResourceInventoryItemCount + newItem.currentStackAmount - ResourceInventorySpace;
-                    foreach (Resource resource in ResourceInventory)
-                    {
-                        if (resource.itemName == newItem.itemName)
-                        {
-                            resource.currentStackAmount += newItem.currentStackAmount - difference;
-                            newItem.currentStackAmount = difference;
-                            newItem.attachedGameObject.GetComponent<MeshRenderer>().enabled = true;
-                            return;
-                        }
-                    }
+                    int AmountAvailable = ResourceSpace - CurrResourceAmount;
+                    InventoryDictionary[ItemType.Wood] += AmountAvailable;
+                    CurrResourceAmount += AmountAvailable;
+                    res.currentStackAmount -= AmountAvailable;
+                    return false;
                 }
-            }
-        }
-    }
-    public void AddItem(Wearable newItem)
-    {
-        if (WearableInventoryItemCount < WearableInventorySpace)
-        {
-            if (WearableInventoryItemCount + newItem.currentStackAmount <= WearableInventorySpace)
-            {
-                foreach (Wearable wearable in WearableInventory)
-                {
-                    if (wearable.itemName == newItem.itemName)
-                    {
-                        wearable.currentStackAmount += newItem.currentStackAmount;
-                        return;
-                    }
-                }
-                WearableInventoryItemCount += newItem.currentStackAmount;
-                WearableInventory.Add(newItem);
-                return;
-            }
-            else
-            {
-                int difference = ResourceInventoryItemCount + newItem.currentStackAmount - ResourceInventorySpace;
-                foreach (Wearable wearable in WearableInventory)
-                {
-                    if (wearable.itemName == newItem.itemName)
-                    {
-                        wearable.currentStackAmount += newItem.currentStackAmount - difference;
-                        newItem.currentStackAmount = difference;
-                        newItem.attachedGameObject.GetComponent<MeshRenderer>().enabled = true;
-                        return;
-                    }
-                }
-            }
-        }
-    }
 
-    //add code for removing when we get to it
+            case ItemType.Stone:
+                if (CurrResourceAmount + res.currentStackAmount <= ResourceSpace)
+                {
+                    InventoryDictionary[ItemType.Stone] += res.currentStackAmount;
+                    CurrResourceAmount += res.currentStackAmount;
+                    return true;
+                }
+                else
+                {
+                    int AmountAvailable = ResourceSpace - CurrResourceAmount;
+                    InventoryDictionary[ItemType.Stone] += AmountAvailable;
+                    CurrResourceAmount += AmountAvailable;
+                    res.currentStackAmount -= AmountAvailable;
+                    return false;
+                }
+
+            case ItemType.Iron:
+                if (CurrResourceAmount + res.currentStackAmount <= ResourceSpace)
+                {
+                    InventoryDictionary[ItemType.Iron] += res.currentStackAmount;
+                    CurrResourceAmount += res.currentStackAmount;
+                    return true;
+                }
+                else
+                {
+                    int AmountAvailable = ResourceSpace - CurrResourceAmount;
+                    InventoryDictionary[ItemType.Iron] += AmountAvailable;
+                    CurrResourceAmount += AmountAvailable;
+                    res.currentStackAmount -= AmountAvailable;
+                    return false;
+                }
+
+            case ItemType.Bone:
+                if (CurrResourceAmount + res.currentStackAmount <= ResourceSpace)
+                {
+                    InventoryDictionary[ItemType.Bone] += res.currentStackAmount;
+                    CurrResourceAmount += res.currentStackAmount;
+                    return true;
+                }
+                else
+                {
+                    int AmountAvailable = ResourceSpace - CurrResourceAmount;
+                    InventoryDictionary[ItemType.Bone] += AmountAvailable;
+                    CurrResourceAmount += AmountAvailable;
+                    res.currentStackAmount -= AmountAvailable;
+                    return false;
+                }
+
+            case ItemType.Crystal:
+                if (CurrResourceAmount + res.currentStackAmount <= ResourceSpace)
+                {
+                    InventoryDictionary[ItemType.Crystal] += res.currentStackAmount;
+                    CurrResourceAmount += res.currentStackAmount;
+                    return true;
+                }
+                else
+                {
+                    int AmountAvailable = ResourceSpace - CurrResourceAmount;
+                    InventoryDictionary[ItemType.Crystal] += AmountAvailable;
+                    CurrResourceAmount += AmountAvailable;
+                    res.currentStackAmount -= AmountAvailable;
+                    return false;
+                }
+
+            case ItemType.Nutrition:
+                if (InventoryDictionary[ItemType.Nutrition] + res.currentStackAmount <= NutritionSpace)
+                {
+                    InventoryDictionary[ItemType.Nutrition] += res.currentStackAmount;
+                    return true;
+                }
+                else
+                {
+                    int AmountAvailable = NutritionSpace - InventoryDictionary[ItemType.Nutrition];
+                    InventoryDictionary[ItemType.Nutrition] += AmountAvailable;
+                    res.currentStackAmount -= AmountAvailable;
+                    return false;
+                }
+             
+          
+            default:
+                Debug.LogError("Resource being added is wearable, This Should not have happend");
+                break;
+        }
+        return false;
+    }
+    
+    public void RemoveResource(ItemType ResourceType, int amount)
+    {
+        switch (ResourceType)
+        {
+            case ItemType.Wood:
+                if(InventoryDictionary[ItemType.Wood] - amount >= 0)
+                {
+                    InventoryDictionary[ItemType.Wood] -= amount;
+                    CurrResourceAmount -= amount;
+                }
+                else
+                {
+                    int difference = InventoryDictionary[ItemType.Wood] - amount;
+                    int AmountAvailable = amount - difference;
+                    InventoryDictionary[ItemType.Wood] -= AmountAvailable;
+                    CurrResourceAmount -= AmountAvailable;
+                }
+                break;
+            case ItemType.Stone:
+                if (InventoryDictionary[ItemType.Stone] - amount >= 0)
+                {
+                    InventoryDictionary[ItemType.Stone] -= amount;
+                    CurrResourceAmount -= amount;
+                }
+                else
+                {
+                    int difference = InventoryDictionary[ItemType.Stone] - amount;
+                    int AmountAvailable = amount - difference;
+                    InventoryDictionary[ItemType.Stone] -= AmountAvailable;
+                    CurrResourceAmount -= AmountAvailable;
+                }
+                break;
+            case ItemType.Iron:
+                if (InventoryDictionary[ItemType.Iron] - amount >= 0)
+                {
+                    InventoryDictionary[ItemType.Iron] -= amount;
+                    CurrResourceAmount -= amount;
+                }
+                else
+                {
+                    int difference = InventoryDictionary[ItemType.Iron] - amount;
+                    int AmountAvailable = amount - difference;
+                    InventoryDictionary[ItemType.Iron] -= AmountAvailable;
+                    CurrResourceAmount -= AmountAvailable;
+                }
+                break;
+            case ItemType.Bone:
+                if (InventoryDictionary[ItemType.Bone] - amount >= 0)
+                {
+                    InventoryDictionary[ItemType.Bone] -= amount;
+                    CurrResourceAmount -= amount;
+                }
+                else
+                {
+                    int difference = InventoryDictionary[ItemType.Bone] - amount;
+                    int AmountAvailable = amount - difference;
+                    InventoryDictionary[ItemType.Bone] -= AmountAvailable;
+                    CurrResourceAmount -= AmountAvailable;
+                }
+                break;
+            case ItemType.Crystal:
+                if (InventoryDictionary[ItemType.Crystal] - amount >= 0)
+                {
+                    InventoryDictionary[ItemType.Crystal] -= amount;
+                    CurrResourceAmount -= amount;
+                }
+                else
+                {
+                    int difference = InventoryDictionary[ItemType.Crystal] - amount;
+                    int AmountAvailable = amount - difference;
+                    InventoryDictionary[ItemType.Crystal] -= AmountAvailable;
+                    CurrResourceAmount -= AmountAvailable;
+                }
+                break;
+            case ItemType.Nutrition:
+                if (InventoryDictionary[ItemType.Nutrition] - amount >= 0)
+                {
+                    InventoryDictionary[ItemType.Nutrition] -= amount;
+                    CurrResourceAmount -= amount;
+                }
+                else
+                {
+                    int difference = InventoryDictionary[ItemType.Nutrition] - amount;
+                    int AmountAvailable = amount - difference;
+                    InventoryDictionary[ItemType.Nutrition] -= AmountAvailable;
+                }
+                break;
+
+            default:
+                Debug.LogError("Resource being added is wearable, This Should not have happend");
+                break;
+        }
+    }
 
 }

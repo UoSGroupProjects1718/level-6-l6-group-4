@@ -906,13 +906,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9375f6bdfc66d0a4c9d3e7b04fbd2d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 0}
-  NutritionInventorySpace: 100
-  NutritionInventoryItemCount: 0
-  ResourceInventorySpace: 100
-  ResourceInventoryItemCount: 0
-  WearableInventorySpace: 100
-  WearableInventoryItemCount: 0
+  InventoryDictionary:
+    _Buckets: 050000000400000003000000020000000100000000000000ffffffff
+    _HashCodes: 05000000040000000300000002000000010000000000000000000000
+    _Next: ffffffffffffffffffffffffffffffffffffffffffffffff00000000
+    _Count: 6
+    _Version: 18
+    _FreeList: -1
+    _FreeCount: 0
+    _Keys: 05000000040000000300000002000000010000000000000000000000
+    _Values: 00000000000000000000000000000000000000000000000000000000
+  CurrResourceAmount: 0
+  ResourceSpace: 200
+  NutritionSpace: 200
 --- !u!114 &824090731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,7 +1104,7 @@ MonoBehaviour:
   matingCooldown: 0
   Movement: {fileID: 0}
   collider: {fileID: 0}
-  dropTable: {fileID: 11400000, guid: 4afb46ab6e6ee5d4abe365894bf699f0, type: 2}
+  dropTable: {fileID: 0}
   isDead: 0
   selected: 0
   beingHunted: 0
@@ -1264,7 +1270,7 @@ MonoBehaviour:
   matingCooldown: 0
   Movement: {fileID: 0}
   collider: {fileID: 0}
-  dropTable: {fileID: 11400000, guid: 4afb46ab6e6ee5d4abe365894bf699f0, type: 2}
+  dropTable: {fileID: 0}
   isDead: 0
   selected: 0
   beingHunted: 0

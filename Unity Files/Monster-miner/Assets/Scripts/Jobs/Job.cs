@@ -11,6 +11,15 @@ public enum JobType
     Building,
     Hunter,
 }
+
+[System.Serializable]
+public struct RequiredItem
+{
+    public ItemType resource;
+    public int amount;
+
+}
+
 [CreateAssetMenu(menuName = "Scriptable Objects/Job")]
 public class Job : ScriptableObject {
 
@@ -28,6 +37,7 @@ public class Job : ScriptableObject {
 
     public GameObject InteractionObject;
 
+    public RequiredItem[] RequiredItems;
 
     public void Awake()
     {

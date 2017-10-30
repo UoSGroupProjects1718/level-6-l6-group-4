@@ -13,8 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jobName: Build Barracks
   maxWorkAmount: 50
-  currentWorkAmount: 0
+  currentWorkAmount: 50
   jobType: 4
   jobLocation: {x: 0, y: 0, z: 0}
   InteractionObject: {fileID: 1690739389680340, guid: 457904f0f7fbc274f9e3f881229e82f5,
     type: 2}
+  RequiredItems:
+  - resource: 0
+    amount: 20
+  - resource: 3
+    amount: 15

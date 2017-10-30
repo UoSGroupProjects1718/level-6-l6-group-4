@@ -37,7 +37,7 @@ namespace MonsterMiner
                     newItem.transform.localScale = new Vector3(1, 1, 1);
                     newItem.GetComponent<MeshRenderer>().material.color = Color.white;
                     Item.item = Instantiate(drops.Drops[i]);
-                    if (Item.item.type == ItemType.Nutrition || Item.item.type == ItemType.Resource)
+                    if (Item.item.type != ItemType.Weapon|| Item.item.type != ItemType.Armour)
                     {
                         Item.item.currentStackAmount = Random.Range((drops.Drops[i] as Resource).minDropAmount, (drops.Drops[i] as Resource).maxDropAmount);
                     }

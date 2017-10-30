@@ -22,23 +22,29 @@ namespace MonsterMiner
                 {
                     if (JobManager.Instance.JobDocket[i].jobType == DesiredJob)
                     {
-                        //if there are no granaries or stockpiles then dont pick it up
-                        if (DesiredJob == JobType.Gathering && JobManager.Instance.JobDocket[i].InteractionObject.GetComponent<Item>().item.type == ItemType.Nutrition)
+                        if (DesiredJob == JobType.Gathering)
                         {
-                            if (BehaviourTreeManager.Granaries.Count > 0)
+                            ItemType itemType = JobManager.Instance.JobDocket[i].InteractionObject.GetComponent<Item>().item.type;
+                            //if there are no granaries or stockpiles then dont pick it up
+                            if (JobManager.Instance.JobDocket[i].InteractionObject.GetComponent<Item>().item.type == ItemType.Nutrition)
                             {
-                                Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
+                                if (BehaviourTreeManager.Granaries.Count > 0)
+                                {
+                                    Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
+                                    JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
+                                    return Status.SUCCESS;
+                                }
+                            }
+
+                            else if (itemType < ItemType.Nutrition)
+                            {
+                                if (BehaviourTreeManager.Stockpiles.Count > 0)
+                                    Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
                                 JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
                                 return Status.SUCCESS;
                             }
                         }
-                        else if (DesiredJob == JobType.Gathering && JobManager.Instance.JobDocket[i].InteractionObject.GetComponent<Item>().item.type == ItemType.Resource)
-                        {
-                            Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
-                            JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
-                            return Status.SUCCESS;
-                        }
-                        else if(DesiredJob == JobType.Hunter)
+                        else if (DesiredJob == JobType.Hunter)
                         {
                             Colonist.currentJob = (JobManager.Instance.JobDocket[i]);
                             JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);

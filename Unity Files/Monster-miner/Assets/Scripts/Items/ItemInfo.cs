@@ -5,7 +5,12 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Resource,
+    Wood,
+    Stone,
+    Iron,
+    Bone,
+    Crystal,
+    //put only raw resources above this point otherwise it will break scripts
     Nutrition,
     Weapon,
     Armour,

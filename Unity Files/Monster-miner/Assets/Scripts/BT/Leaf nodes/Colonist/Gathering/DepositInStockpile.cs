@@ -12,12 +12,21 @@ namespace MonsterMiner
             {
                 //if(Colonist.currentJob.InteractionObject.GetComponent<Item>().item.type == ItemType.Nutrition)
                 //{
-                Colonist.currentJob.InteractionObject.transform.position = Colonist.transform.position;
                 
-                Stockpile.Instance.AddItem(Colonist.currentJob.InteractionObject.GetComponent<Item>().item as Resource);
-                Destroy(Colonist.currentJob.InteractionObject);
-                Colonist.currentJob = null;
-                Colonist.GathererStockpile = null;
+                if(Stockpile.Instance.AddResource(Colonist.currentJob.InteractionObject.GetComponent<Item>().item as Resource))
+                {
+                    Destroy(Colonist.currentJob.InteractionObject);
+                    Colonist.currentJob = null;
+                    Colonist.GathererStockpile = null;
+                }
+                else
+                {
+                    Colonist.currentJob.InteractionObject.transform.position = Colonist.transform.position;
+                    Colonist.currentJob.InteractionObject.GetComponent<MeshRenderer>().enabled = true;
+                    Colonist.currentJob = null;
+                    Colonist.GathererStockpile = null;
+
+                }
                // }
                 //else
                 //{

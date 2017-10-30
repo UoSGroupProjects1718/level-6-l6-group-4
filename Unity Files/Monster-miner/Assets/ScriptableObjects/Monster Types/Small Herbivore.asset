@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: x
   monsterType: 1
-  numHuntersRequired: 3
+  numHuntersRequired: 1
   monsterSpeed: 0
   health: 0
   maxHealth: 0
@@ -24,4 +24,4 @@ MonoBehaviour:
   nextAttack: 0
   matingCooldown: 0
   monsterMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  dropTable: {fileID: 11400000, guid: 4afb46ab6e6ee5d4abe365894bf699f0, type: 2}
+  dropTable: {fileID: 11400000, guid: 48bcc423fc9deed4ca3c966b9e19ebe4, type: 2}

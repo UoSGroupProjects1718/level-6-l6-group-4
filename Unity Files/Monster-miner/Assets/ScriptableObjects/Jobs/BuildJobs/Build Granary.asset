@@ -18,3 +18,6 @@ MonoBehaviour:
   jobLocation: {x: 0, y: 0, z: 0}
   InteractionObject: {fileID: 1429845595509982, guid: b602f64080432ff4082e2a3cadc25668,
     type: 2}
+  RequiredItems:
+  - resource: 0
+    amount: 15

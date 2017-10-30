@@ -16,11 +16,11 @@ MonoBehaviour:
   itemDescription: Tasty meat that your colonists can eat to sustain themselves
   decayPerHour: 2.5
   maxItemDurability: 50
-  currentItemDurability: 0
+  currentItemDurability: 50
   maxStackAmount: 0
   currentStackAmount: 0
   itemMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  type: 1
+  type: 5
   GatherWorkPerItem: 2
   Nutrition: 50
   minDropAmount: 1
