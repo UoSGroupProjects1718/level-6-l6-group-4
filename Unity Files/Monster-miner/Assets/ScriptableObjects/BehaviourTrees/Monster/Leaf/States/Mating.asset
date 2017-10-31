@@ -11,3 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7832e280df2ed944a950b137368cb161, type: 3}
   m_Name: Mating
   m_EditorClassIdentifier: 
+  SmallHerbivorePrefab: {fileID: 1312501801275572, guid: 2108d8c7fcd00f24abfe29434d374891,
+    type: 2}

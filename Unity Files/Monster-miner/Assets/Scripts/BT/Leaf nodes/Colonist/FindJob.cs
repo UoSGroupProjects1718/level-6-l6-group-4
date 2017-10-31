@@ -28,7 +28,7 @@ namespace MonsterMiner
                             //if there are no granaries or stockpiles then dont pick it up
                             if (JobManager.Instance.JobDocket[i].InteractionObject.GetComponent<Item>().item.type == ItemType.Nutrition)
                             {
-                                if (BehaviourTreeManager.Granaries.Count > 0 && Stockpile.Instance.InventoryDictionary[ItemType.Nutrition] < Stockpile.Instance.MaxNutrition)
+                                if (BehaviourTreeManager.Granaries.Count > 0 && Stockpile.Instance.InventoryDictionary[ItemType.Nutrition] < Stockpile.Instance.NutritionSpace)
                                 {
                                     Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
                                     JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
@@ -36,7 +36,7 @@ namespace MonsterMiner
                                 }
                             }
 
-                            else if (itemType < ItemType.Nutrition && Stockpile.Instance.CurrentResources < Stockpile.Instance.MaxResources)
+                            else if (itemType < ItemType.Nutrition && Stockpile.Instance.CurrResourceAmount < Stockpile.Instance.ResourceSpace)
                             {
                                 if (BehaviourTreeManager.Stockpiles.Count > 0)
                                     Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
@@ -53,7 +53,9 @@ namespace MonsterMiner
                         }
                         else if(DesiredJob == JobType.Building)
                         {
-                            for(int j = 0; j <  JobManager.Instance.JobDocket[j].RequiredItems.Length; j++)
+                            if (JobManager.Instance.JobDocket[i].RequiredItems == null)
+                                continue;
+                            for(int j = 0; j <  JobManager.Instance.JobDocket[i].RequiredItems.Length; j++)
                             {
                                 if(Stockpile.Instance.InventoryDictionary[JobManager.Instance.JobDocket[i].RequiredItems[j].resource] <= 0)
                                 {

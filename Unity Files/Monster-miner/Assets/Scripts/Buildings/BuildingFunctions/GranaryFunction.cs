@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class GranaryFunction : BuildingFunction {
 
+    public int ResourceSpaceIncrease;
+
     public override void Function()
     {
         //show ui elements on click
     }
 
-    
+    public override void OnBuilt()
+    {
+        Stockpile.Instance.NutritionSpace += ResourceSpaceIncrease;
+    }
 
 
 }

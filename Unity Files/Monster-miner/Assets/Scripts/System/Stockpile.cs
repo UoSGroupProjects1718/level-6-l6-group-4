@@ -8,33 +8,13 @@ public class Stockpile : SingletonClass<Stockpile>
 
     public ResourceTypeDictionary InventoryDictionary;
     [SerializeField]
-    int CurrResourceAmount;
+    public int CurrResourceAmount;
     [SerializeField]
-    int ResourceSpace;
+    public int ResourceSpace;
     [SerializeField]
-    int NutritionSpace;
+    public int NutritionSpace;
    
-    public int CurrentResources
-    {
-        get
-        {
-            return CurrResourceAmount;
-        }
-    }
-    public int MaxResources
-    {
-        get
-        {
-            return ResourceSpace;
-        }
-    }
-    public int MaxNutrition
-    {
-        get
-        {
-            return NutritionSpace;
-        }
-    }
+   
 
     public override void Awake()
     {

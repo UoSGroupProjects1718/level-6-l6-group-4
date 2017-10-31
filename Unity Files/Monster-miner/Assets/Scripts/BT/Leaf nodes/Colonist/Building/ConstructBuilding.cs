@@ -14,6 +14,8 @@ namespace MonsterMiner
 
                 Colonist.currentJob.InteractionObject.GetComponent<BuildingFunction>().Built = true;
                 Colonist.currentJob.InteractionObject.GetComponent<BuildingModelSwap>().UpdateObject();
+                Colonist.currentJob.InteractionObject.GetComponent<BuildingFunction>().OnBuilt();
+                UIController.Instance.UpdateStockpile();
                 //uncomment when model swapping for all buildings is correctly implemented + the scaffolding scale is correct
                 //  Colonist.currentJob.InteractionObject.GetComponent<BuildingModelSwap>().UpdateObject();
                 Debug.Log("Building Completed: " + Colonist.currentJob.InteractionObject.name);
@@ -25,6 +27,7 @@ namespace MonsterMiner
                 {
                     BehaviourTreeManager.Stockpiles.Add(Colonist.currentJob.InteractionObject.GetComponent<StockpileFunction>());
                 }
+                
                 Colonist.currentJob = null;
                 return Status.SUCCESS;
             }

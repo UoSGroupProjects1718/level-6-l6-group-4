@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
 [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Monster/Mating")]
 public class Mating : BehaviourBase {
 
-    
+    public GameObject SmallHerbivorePrefab;
 
 	public override Status UpdateFunc(MonsterController Monster) {
         Transform ClosestOfSameType = null;
@@ -39,6 +39,8 @@ public class Mating : BehaviourBase {
             Debug.Log("Sexy noises");
             Monster.lastMatingTime = Time.time;
             Monster.currentTarget.GetComponent<MonsterController>().lastMatingTime = Time.time;
+            //stopgap measure, change later
+            Instantiate(SmallHerbivorePrefab, Monster.transform.position, Quaternion.identity);
         }
         return Status.SUCCESS;
     } 

@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e46c7e7a453dc4ba31b9edfc533056, type: 3}
   m_Name: Small Herbivore
   m_EditorClassIdentifier: 
-  monsterName: x
+  monsterName: Small Herbivore
   monsterType: 1
   numHuntersRequired: 1
   monsterSpeed: 0
   health: 0
-  maxHealth: 0
+  maxHealth: 100
   combatRange: 0
   viewRange: 0
   damage: 0

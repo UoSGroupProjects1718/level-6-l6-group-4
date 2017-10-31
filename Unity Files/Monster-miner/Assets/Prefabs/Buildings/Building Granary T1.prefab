@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Built: 0
   colliders: []
+  ResourceSpaceIncrease: 50
 --- !u!114 &114919396105104824
 MonoBehaviour:
   m_ObjectHideFlags: 1

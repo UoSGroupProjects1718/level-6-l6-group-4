@@ -16,7 +16,7 @@ MonoBehaviour:
   numHuntersRequired: 1
   monsterSpeed: 0
   health: 0
-  maxHealth: 0
+  maxHealth: 100
   combatRange: 0
   viewRange: 0
   damage: 0

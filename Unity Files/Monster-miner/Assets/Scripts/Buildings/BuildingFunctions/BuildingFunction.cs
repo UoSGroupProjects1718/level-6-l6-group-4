@@ -34,4 +34,8 @@ public abstract class BuildingFunction : MonoBehaviour {
         }
     }
     public abstract void Function();
+    public virtual void OnBuilt()
+    {
+
+    }
 }

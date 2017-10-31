@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Built: 0
   colliders: []
+  ResourceIncreaseAmount: 50
 --- !u!208 &208765332339406672
 NavMeshObstacle:
   m_ObjectHideFlags: 1
