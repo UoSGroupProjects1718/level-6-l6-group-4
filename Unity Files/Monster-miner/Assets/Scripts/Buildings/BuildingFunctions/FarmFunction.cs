@@ -12,12 +12,14 @@ public class FarmFunction : BuildingFunction {
         FullyGrown
     }
 
-    GrowthState currentGrowth = GrowthState.FullyGrown;
+    GrowthState currentGrowth = GrowthState.JustPlanted;
 
     double timeOfLastHarvest;
 
     [SerializeField]
     float CropGrowthTime;
+
+    public Mesh[] Models;
 
     // Use this for initialization
     void Start () {
@@ -39,7 +41,7 @@ public class FarmFunction : BuildingFunction {
                 if (timeOfLastHarvest + CropGrowthTime < getTime())
                 {
                     currentGrowth = GrowthState.FullyGrown;
-                    //ADD JOB
+                    //ADD HARVEST JOB
                     //CHANGE MODEL
                 }
                 break;

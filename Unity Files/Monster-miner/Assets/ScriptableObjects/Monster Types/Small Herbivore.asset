@@ -22,6 +22,6 @@ MonoBehaviour:
   damage: 0
   attackSpeed: 0
   nextAttack: 0
-  matingCooldown: 0
+  matingCooldown: 10
   monsterMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   dropTable: {fileID: 11400000, guid: 48bcc423fc9deed4ca3c966b9e19ebe4, type: 2}
