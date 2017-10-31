@@ -7,6 +7,8 @@ public class UIPanels : SingletonClass<UIPanels> {
     public GameObject BarracksPanel;
     public MonsterType BarracksTertiaryFocusedMonster;
 
+
+
 	public override void Awake ()
     {
         base.Awake();

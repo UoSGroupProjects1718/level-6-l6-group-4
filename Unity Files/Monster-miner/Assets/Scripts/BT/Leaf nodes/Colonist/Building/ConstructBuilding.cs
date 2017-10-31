@@ -23,7 +23,7 @@ namespace MonsterMiner
                 }
                 else if (Colonist.currentJob.jobName == "Build Stockpile")
                 {
-                    //add the stockpile here
+                    BehaviourTreeManager.Stockpiles.Add(Colonist.currentJob.InteractionObject.GetComponent<StockpileFunction>());
                 }
                 Colonist.currentJob = null;
                 return Status.SUCCESS;

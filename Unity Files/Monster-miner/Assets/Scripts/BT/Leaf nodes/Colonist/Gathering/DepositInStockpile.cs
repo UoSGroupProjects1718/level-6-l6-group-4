@@ -36,6 +36,7 @@ namespace MonsterMiner
                 //    Colonist.currentJob = null;
                 //    Colonist.GathererStockpile = null;
                 //}
+                UIController.Instance.UpdateStockpile();
                 return Status.SUCCESS;
             }
         }

@@ -20,6 +20,7 @@ namespace MonsterMiner
                 }
                if(hasEnough == Colonist.currentJob.RequiredItems.Length)
                 {
+                    UIController.Instance.UpdateStockpile();
                     return Status.SUCCESS;
                 }
                 JobManager.Instance.JobDocket.Add(Colonist.currentJob);

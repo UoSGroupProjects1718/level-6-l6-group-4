@@ -28,7 +28,7 @@ namespace MonsterMiner
                             //if there are no granaries or stockpiles then dont pick it up
                             if (JobManager.Instance.JobDocket[i].InteractionObject.GetComponent<Item>().item.type == ItemType.Nutrition)
                             {
-                                if (BehaviourTreeManager.Granaries.Count > 0)
+                                if (BehaviourTreeManager.Granaries.Count > 0 && Stockpile.Instance.InventoryDictionary[ItemType.Nutrition] < Stockpile.Instance.MaxNutrition)
                                 {
                                     Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
                                     JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
@@ -36,7 +36,7 @@ namespace MonsterMiner
                                 }
                             }
 
-                            else if (itemType < ItemType.Nutrition)
+                            else if (itemType < ItemType.Nutrition && Stockpile.Instance.CurrentResources < Stockpile.Instance.MaxResources)
                             {
                                 if (BehaviourTreeManager.Stockpiles.Count > 0)
                                     Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);

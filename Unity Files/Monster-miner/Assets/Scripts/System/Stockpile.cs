@@ -14,6 +14,27 @@ public class Stockpile : SingletonClass<Stockpile>
     [SerializeField]
     int NutritionSpace;
    
+    public int CurrentResources
+    {
+        get
+        {
+            return CurrResourceAmount;
+        }
+    }
+    public int MaxResources
+    {
+        get
+        {
+            return ResourceSpace;
+        }
+    }
+    public int MaxNutrition
+    {
+        get
+        {
+            return NutritionSpace;
+        }
+    }
 
     public override void Awake()
     {
@@ -22,12 +43,12 @@ public class Stockpile : SingletonClass<Stockpile>
 
     public bool AddResource(Resource res)
     {
-        
+
         switch (res.type)
         {
             case ItemType.Wood:
                 //if we can add the resource given the space we have, increase the amount of the resource and the current amount of resources
-                if(CurrResourceAmount + res.currentStackAmount <= ResourceSpace)
+                if (CurrResourceAmount + res.currentStackAmount <= ResourceSpace)
                 {
                     InventoryDictionary[ItemType.Wood] += res.currentStackAmount;
                     CurrResourceAmount += res.currentStackAmount;
@@ -119,8 +140,8 @@ public class Stockpile : SingletonClass<Stockpile>
                     res.currentStackAmount -= AmountAvailable;
                     return false;
                 }
-             
-          
+
+
             default:
                 Debug.LogError("Resource being added is wearable, This Should not have happend");
                 break;
