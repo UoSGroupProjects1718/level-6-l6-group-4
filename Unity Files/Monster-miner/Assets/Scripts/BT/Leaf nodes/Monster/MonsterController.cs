@@ -51,14 +51,13 @@ public class MonsterController : MonoBehaviour {
 
     #endregion
 
-    void Awake () {
+    void Start () {
         BehaviourTreeManager.Monsters.Add(this);
         currentState = MovementState.Wander;
         Movement = GetComponent<MonsterMovement>();
         collider = GetComponent<Collider>();
         lastMatingTime = Time.time;
         GetMonster();
-        health = maxHealth;
         //set the selection cirlce
         SelectionCircle = transform.GetChild(0).GetComponent<Projector>();
     }
@@ -89,9 +88,9 @@ public class MonsterController : MonoBehaviour {
         MonsterTypes.Instance.getMonsterData(
             monsterType,out health, out attackSpeed, out damage, 
             out combatRange, out attackSpeed, out tempMesh, out dropTable, out matingCooldown, out numHunters);
-        maxHealth = health;
+        health  = maxHealth;
         lastMatingTime = Time.time;
-        Instantiate(tempMesh);
+        GetComponent<MeshFilter>().mesh =  Instantiate(tempMesh);
         tempMesh = null;
         //MAke a spawn point
     }

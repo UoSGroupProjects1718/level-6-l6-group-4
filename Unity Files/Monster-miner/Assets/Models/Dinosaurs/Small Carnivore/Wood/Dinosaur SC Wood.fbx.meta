@@ -1,0 +1,225 @@
+fileFormatVersion: 2
+guid: 2b719e47c10565b43ac25900fda6820a
+timeCreated: 1509468148
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Arm L I
+    100002: Arm L II
+    100004: Arm L III
+    100006: Arm L IV
+    100008: Arm L IV_end
+    100010: Arm L Target
+    100012: Arm L Target_end
+    100014: Arm R I
+    100016: Arm R II
+    100018: Arm R III
+    100020: Arm R IV
+    100022: Arm R IV_end
+    100024: Arm R Target
+    100026: Arm R Target_end
+    100028: Dino Movement Control Bone
+    100030: //RootNode
+    100032: Foot L
+    100034: Foot L IK
+    100036: Foot L_end
+    100038: Foot R
+    100040: Foot R IK
+    100042: Foot R_end
+    100044: Hand L
+    100046: Hand L IK
+    100048: Hand L_end
+    100050: Hand R
+    100052: Hand R IK
+    100054: Hand R_end
+    100056: Head
+    100058: Head_end
+    100060: Leg L I
+    100062: Leg L II
+    100064: Leg L III
+    100066: Leg L III_end
+    100068: Leg L Target
+    100070: Leg L Target_end
+    100072: Leg R I
+    100074: Leg R II
+    100076: Leg R III
+    100078: Leg R III_end
+    100080: Leg R Target
+    100082: Leg R Target_end
+    100084: Small Carnivore Wood
+    100086: Small Carnivore Wood Armeture
+    100088: Tail Split I
+    100090: Tail Split I End
+    100092: Tail Split I End_end
+    100094: Tail Split II
+    100096: Tail Split II End
+    100098: Tail Split II End_end
+    100100: Tail Split III
+    100102: Tail Split III End
+    100104: Tail Split III End_end
+    100106: Tail Split IV
+    100108: Tail Split IV End
+    100110: Tail Split IV End_end
+    100112: Tail Split V
+    100114: Tail Split V End
+    100116: Tail Split V End_end
+    100118: Tail Split VI
+    100120: Tail Split VI End
+    100122: Tail Split VI End_end
+    100124: Tail Split VII End
+    100126: Tail Split VII End_end
+    100128: Tail Split VIII End
+    100130: Tail Split VIII End_end
+    100132: Tail Top
+    100134: Torso I
+    100136: Torso II
+    100138: Torso III
+    400000: Arm L I
+    400002: Arm L II
+    400004: Arm L III
+    400006: Arm L IV
+    400008: Arm L IV_end
+    400010: Arm L Target
+    400012: Arm L Target_end
+    400014: Arm R I
+    400016: Arm R II
+    400018: Arm R III
+    400020: Arm R IV
+    400022: Arm R IV_end
+    400024: Arm R Target
+    400026: Arm R Target_end
+    400028: Dino Movement Control Bone
+    400030: //RootNode
+    400032: Foot L
+    400034: Foot L IK
+    400036: Foot L_end
+    400038: Foot R
+    400040: Foot R IK
+    400042: Foot R_end
+    400044: Hand L
+    400046: Hand L IK
+    400048: Hand L_end
+    400050: Hand R
+    400052: Hand R IK
+    400054: Hand R_end
+    400056: Head
+    400058: Head_end
+    400060: Leg L I
+    400062: Leg L II
+    400064: Leg L III
+    400066: Leg L III_end
+    400068: Leg L Target
+    400070: Leg L Target_end
+    400072: Leg R I
+    400074: Leg R II
+    400076: Leg R III
+    400078: Leg R III_end
+    400080: Leg R Target
+    400082: Leg R Target_end
+    400084: Small Carnivore Wood
+    400086: Small Carnivore Wood Armeture
+    400088: Tail Split I
+    400090: Tail Split I End
+    400092: Tail Split I End_end
+    400094: Tail Split II
+    400096: Tail Split II End
+    400098: Tail Split II End_end
+    400100: Tail Split III
+    400102: Tail Split III End
+    400104: Tail Split III End_end
+    400106: Tail Split IV
+    400108: Tail Split IV End
+    400110: Tail Split IV End_end
+    400112: Tail Split V
+    400114: Tail Split V End
+    400116: Tail Split V End_end
+    400118: Tail Split VI
+    400120: Tail Split VI End
+    400122: Tail Split VI End_end
+    400124: Tail Split VII End
+    400126: Tail Split VII End_end
+    400128: Tail Split VIII End
+    400130: Tail Split VIII End_end
+    400132: Tail Top
+    400134: Torso I
+    400136: Torso II
+    400138: Torso III
+    4300000: Small Carnivore Wood
+    9500000: //RootNode
+    13700000: Small Carnivore Wood
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
