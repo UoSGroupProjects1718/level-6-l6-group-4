@@ -5,9 +5,10 @@ using MonsterMiner.BehaviourTree;
 [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Monster/Mating")]
 public class Mating : BehaviourBase {
 
-    Transform ClosestOfSameType;
+    
 
 	public override Status UpdateFunc(MonsterController Monster) {
+        Transform ClosestOfSameType = null;
         if (Monster.currentState != MonsterController.MovementState.MakeLove)
         {
             return Status.SUCCESS;
@@ -16,8 +17,8 @@ public class Mating : BehaviourBase {
 
         foreach (MonsterController CheckingMonster in BehaviourTreeManager.Monsters)
         {
-            if (CheckingMonster.monsterName == Monster.monsterName) { 
-                if (getDist(Monster.transform, CheckingMonster.transform) < Dist)
+            if (CheckingMonster.monsterType == Monster.monsterType && Monster!=CheckingMonster) { 
+                if (getDist(Monster.transform, CheckingMonster.transform) < Dist && Time.time - CheckingMonster.lastMatingTime > CheckingMonster.matingCooldown )
                 {
                     ClosestOfSameType = CheckingMonster.transform;
                     Dist = getDist(Monster.transform, CheckingMonster.transform);
@@ -32,9 +33,12 @@ public class Mating : BehaviourBase {
 
         Monster.currentTarget = ClosestOfSameType;
 
-        if(Dist > 2)
+        if(Dist < 5)
         {
             //MAKE A BABY
+            Debug.Log("Sexy noises");
+            Monster.lastMatingTime = Time.time;
+            Monster.currentTarget.GetComponent<MonsterController>().lastMatingTime = Time.time;
         }
         return Status.SUCCESS;
     } 

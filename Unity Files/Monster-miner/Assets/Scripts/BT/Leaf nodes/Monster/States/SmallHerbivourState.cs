@@ -31,7 +31,7 @@ public class SmallHerbivourState : BehaviourBase
 
         if (Closest == null || Dist > Monster.viewRange)
         {
-            if(Time.time - Monster.lastMatingTime < Monster.matingCooldown)
+            if(Time.time - Monster.lastMatingTime > Monster.matingCooldown)
             {
                 Monster.currentState = MonsterController.MovementState.MakeLove;
                 return Status.SUCCESS;

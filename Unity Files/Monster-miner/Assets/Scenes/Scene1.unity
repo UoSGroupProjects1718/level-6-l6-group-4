@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -740,8 +740,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 668568087}
   m_HandleRect: {fileID: 668568086}
   m_Direction: 2
-  m_Value: 0.9999997
-  m_Size: 0.6666667
+  m_Value: 1
+  m_Size: 0.66666675
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1935,7 +1935,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1132741036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.5, z: 6.3}
+  m_LocalPosition: {x: -0, y: 0.5, z: -2.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1951187278}
@@ -2144,7 +2144,7 @@ MonoBehaviour:
   attackSpeed: 0.5
   nextAttack: 0
   lastMatingTime: 0
-  matingCooldown: 0
+  matingCooldown: 10
   Movement: {fileID: 0}
   collider: {fileID: 0}
   dropTable: {fileID: 0}

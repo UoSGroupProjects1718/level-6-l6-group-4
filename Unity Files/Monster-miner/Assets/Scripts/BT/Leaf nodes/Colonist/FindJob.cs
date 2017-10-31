@@ -57,7 +57,7 @@ namespace MonsterMiner
                             {
                                 if(Stockpile.Instance.InventoryDictionary[JobManager.Instance.JobDocket[i].RequiredItems[j].resource] <= 0)
                                 {
-                                    return Status.FAILURE;
+                                    break;
                                 }
                                 else
                                 {
