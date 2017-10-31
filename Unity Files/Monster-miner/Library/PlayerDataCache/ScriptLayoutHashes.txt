@@ -1,6 +1,6 @@
 WindowsStandalone
 af9511b7e07cbe1e9c5b4458913cd137 Assembly-CSharp.dll:.BarracksPanelUI
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Mating
+96bdae28b39cb035d354c5fb72cc25c9 Assembly-CSharp.dll:.Mating
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9f07aaefd0255462bb6e4f9e5da6b2d4 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -17,6 +17,7 @@ c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 92ef2e8863d47cf66b4e761bfabe4165 Assembly-CSharp.dll:.Keybinds
 036a7bb46b23e88f9046a2b1bb967918 Assembly-CSharp.dll:.JobManager
 ff08450f7a15e3e43e5f762f7be3e880 Assembly-CSharp.dll:MonsterMiner.BehaviourTree.Sequence
+78201495e3e1646e7a425587f158a253 Assembly-CSharp.dll:.FarmFunction
 93d53cfaa0061f98906bc558bf1a2ad0 Assembly-CSharp.dll:.BuildingManager
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -115,6 +116,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MonsterMiner.BehaviourTree.GetResourcesForJob
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -122,9 +124,9 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 67c3c74abd9d6f0ecb46f74445399802 Assembly-CSharp.dll:.BarracksFunction
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.AgentMovement
-ed085a51103f26ac6f7c65de1c46d945 Assembly-CSharp.dll:.Job
-28a6afc98d9a2ab8102bafd0766b9a56 Assembly-CSharp.dll:.UIButtons
-67c3c74abd9d6f0ecb46f74445399802 Assembly-CSharp.dll:.GranaryFunction
+ac5ae5229f2c61018cfb880681a673c5 Assembly-CSharp.dll:.Job
+26e27a4c30456738992472b40689a4e3 Assembly-CSharp.dll:.UIController
+e539f04c033c02890f5ecc361adeba65 Assembly-CSharp.dll:.GranaryFunction
 91a2db01a04077fd807e40cb5d4eb09a Assembly-CSharp.dll:.DropTable
 013effe509cd145d7cc8ad69b633908f Assembly-CSharp.dll:.ColonistController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SmallHerbivourState
@@ -162,9 +164,9 @@ a9f9e41128b73e56fc55510f1ef29b1c Assembly-CSharp.dll:MonsterMiner.BehaviourTree.
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 5f2ad81aa8994e8fbe25d1e57afe6773 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
-03448fc32f2a36a9c673150e5536bb33 Assembly-CSharp.dll:.MonsterController
+66ae953c89089d71d00b8e687401b5ed Assembly-CSharp.dll:.MonsterController
 41fe4a66c067033788927a41b2f6bf79 Assembly-CSharp.dll:.CameraController
-f57d9d1088a5bfb1b10c524c4bbf9a1f Assembly-CSharp.dll:.Resource
+b098e0fd8422777377b6ec839431bb0c Assembly-CSharp.dll:.Resource
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -184,10 +186,10 @@ ff08450f7a15e3e43e5f762f7be3e880 Assembly-CSharp.dll:MonsterMiner.BehaviourTree.
 3ec3300a7a0136ead6c4477989e4f5a0 Assembly-CSharp.dll:MonsterMiner.BehaviourTree.IsJobTypeDecorator
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MonsterMiner.BehaviourTree.ConstructBuilding
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MonsterMiner.BehaviourTree.MoveToTarget
-e079593c73b6eb2e981d22d9e3718e73 Assembly-CSharp.dll:.Stockpile
+48655fb9a835974053cb5091a50ddd27 Assembly-CSharp.dll:.Stockpile
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MonsterMiner.BehaviourTree.WorkOnJob
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MonsterMiner.BehaviourTree.GatherObject
-ba25e8accdec77f4ae70062285d16bac Assembly-CSharp.dll:.MonsterType
-67c3c74abd9d6f0ecb46f74445399802 Assembly-CSharp.dll:.StockpileFunction
+54e497b22fd2777409d5353b8825c2c9 Assembly-CSharp.dll:.MonsterType
+ad32fa6287cee24046ac2f2a5888f8d6 Assembly-CSharp.dll:.StockpileFunction
 67c3c74abd9d6f0ecb46f74445399802 Assembly-CSharp.dll:.BlacksmithFunction
 ff08450f7a15e3e43e5f762f7be3e880 Assembly-CSharp.dll:MonsterMiner.BehaviourTree.Composite

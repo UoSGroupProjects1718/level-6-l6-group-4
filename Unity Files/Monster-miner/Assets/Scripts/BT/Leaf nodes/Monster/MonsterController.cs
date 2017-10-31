@@ -59,7 +59,7 @@ public class MonsterController : MonoBehaviour {
         lastMatingTime = Time.time;
         GetMonster();
         //set the selection cirlce
-        SelectionCircle = transform.GetChild(0).GetComponent<Projector>();
+        SelectionCircle = transform.GetComponentInChildren<Projector>();
     }
 
      public void takeDamage(float damage)
@@ -85,12 +85,14 @@ public class MonsterController : MonoBehaviour {
     {
         isDead = false;
         Mesh tempMesh = null;
+        Material[] materials;
         MonsterTypes.Instance.getMonsterData(
             monsterType,out health, out attackSpeed, out damage, 
-            out combatRange, out attackSpeed, out tempMesh, out dropTable, out matingCooldown, out numHunters);
-        health  = maxHealth;
+            out combatRange, out attackSpeed, out tempMesh, out materials, out dropTable, out matingCooldown, out numHunters, out viewRange);
         lastMatingTime = Time.time;
-        GetComponent<MeshFilter>().mesh =  Instantiate(tempMesh);
+        transform.GetComponentInChildren<SkinnedMeshRenderer>().sharedMesh =  Instantiate(tempMesh);
+        transform.GetComponentInChildren<SkinnedMeshRenderer>().materials = materials;
+        maxHealth = health;
         tempMesh = null;
         //MAke a spawn point
     }

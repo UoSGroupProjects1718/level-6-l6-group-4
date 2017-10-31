@@ -10,7 +10,6 @@ public class MonsterType : ScriptableObject {
 
     public int numHuntersRequired;
     public float monsterSpeed;
-    public float health;
     public float maxHealth;
     public float combatRange;
     public float viewRange;
@@ -20,5 +19,7 @@ public class MonsterType : ScriptableObject {
     public float matingCooldown;
     public Mesh monsterMesh;
     public DropTable dropTable;
+
+    public Material[] materials;
     
 }

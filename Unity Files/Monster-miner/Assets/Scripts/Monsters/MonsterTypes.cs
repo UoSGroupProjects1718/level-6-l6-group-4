@@ -31,10 +31,10 @@ public class MonsterTypes : SingletonClass<MonsterTypes> {
        
     }
     public void getMonsterData(TypeOfMonster Type,
-        out float returnHealth, out float returnSpeed, out float returnDamage, out float returnCombatRange, out float returnAttackSpeed, out Mesh returnMesh,
-        out DropTable returnDropTable, out float returnMatingCooldown, out int numHunters
+        out float returnHealth, out float returnSpeed, out float returnDamage, out float returnCombatRange, out float returnAttackSpeed, out Mesh returnMesh, out Material[] materials,
+        out DropTable returnDropTable, out float returnMatingCooldown, out int numHunters, out float viewRange
         ) {
-        returnHealth = Mons[Type].health;
+        returnHealth = Mons[Type].maxHealth;
         returnSpeed = Mons[Type].monsterSpeed;
         returnDamage = Mons[Type].damage;
         returnCombatRange = Mons[Type].combatRange;
@@ -43,6 +43,8 @@ public class MonsterTypes : SingletonClass<MonsterTypes> {
         returnDropTable = Mons[Type].dropTable;
         returnMatingCooldown = Mons[Type].matingCooldown;
         numHunters = Mons[Type].numHuntersRequired;
+        materials = Mons[Type].materials;
+        viewRange = Mons[Type].viewRange;
         return;
     }
     public void getNumHunters(TypeOfMonster Type, out int numHunters)
