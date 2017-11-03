@@ -74,7 +74,13 @@ public class ColonistController : MonoBehaviour {
             agent = value;
         }
     }
-#endregion
+    [HideInInspector]
+    public float wanderRepathTimer;
+    [HideInInspector]
+    public float wanderTimer;
+
+    public float wanderRadius = 4f;
+    #endregion
     #endregion
 
     private void Start()

@@ -6,7 +6,7 @@ namespace MonsterMiner
 {
     namespace BehaviourTree
     {
-        [CreateAssetMenu(menuName = "Scriptable Objects/ BehaviourTree/Leaf nodes/Colonist/Generic/ConsumeFood")]
+        [CreateAssetMenu(menuName = "BehaviourTree/Leaf nodes/Colonist/Generic/ConsumeFood")]
         public class ConsumeFood : BehaviourBase
         { 
 

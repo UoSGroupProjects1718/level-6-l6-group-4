@@ -367,6 +367,11 @@ Prefab:
       propertyPath: damageReduction
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: wanderRadius
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
   m_IsPrefabParent: 0
@@ -1271,7 +1276,7 @@ MonoBehaviour:
   maxHealth: 100
   health: 0
   requiredNutritionPerDay: 25
-  colonistJob: 0
+  colonistJob: 2
   currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
@@ -1287,6 +1292,9 @@ MonoBehaviour:
   gathererStockpile: {fileID: 0}
   selected: 0
   selectionCircle: {fileID: 0}
+  wanderRepathTimer: 0
+  wanderTimer: 0
+  wanderRadius: 40
 --- !u!114 &764116376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2748,6 +2756,11 @@ Prefab:
       propertyPath: damageReduction
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: wanderRadius
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
   m_IsPrefabParent: 0
@@ -3006,7 +3019,7 @@ MonoBehaviour:
   maxHealth: 100
   health: 0
   requiredNutritionPerDay: 25
-  colonistJob: 0
+  colonistJob: 1
   currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
@@ -3022,6 +3035,9 @@ MonoBehaviour:
   gathererStockpile: {fileID: 0}
   selected: 0
   selectionCircle: {fileID: 0}
+  wanderRepathTimer: 0
+  wanderTimer: 0
+  wanderRadius: 40
 --- !u!114 &1704022092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3483,21 +3499,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1687612695503324, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
       propertyPath: m_Name
-      value: Small carnivore
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 195765941216423456, guid: 87d1e2c6b430f3e4795e4b402e3671ef,
-        type: 2}
-      propertyPath: m_Speed
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114637651449680390, guid: 87d1e2c6b430f3e4795e4b402e3671ef,
-        type: 2}
-      propertyPath: monsterType
-      value: 0
+      value: Small Herbivore
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
@@ -3780,6 +3782,11 @@ Prefab:
         type: 2}
       propertyPath: damageReduction
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: wanderRadius
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
@@ -5012,7 +5019,7 @@ MonoBehaviour:
   maxHealth: 100
   health: 0
   requiredNutritionPerDay: 25
-  colonistJob: 0
+  colonistJob: 2
   currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
@@ -5028,6 +5035,9 @@ MonoBehaviour:
   gathererStockpile: {fileID: 0}
   selected: 0
   selectionCircle: {fileID: 0}
+  wanderRepathTimer: 0
+  wanderTimer: 0
+  wanderRadius: 40
 --- !u!114 &2027888232
 MonoBehaviour:
   m_ObjectHideFlags: 0

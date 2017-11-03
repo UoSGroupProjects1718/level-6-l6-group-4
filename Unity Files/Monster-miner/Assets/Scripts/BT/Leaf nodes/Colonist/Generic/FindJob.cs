@@ -9,20 +9,26 @@ namespace MonsterMiner
         [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Leaf Nodes/Find Job")]
         public class FindJob : BehaviourBase
         {
-            public JobType DesiredJob;
+            public JobType desiredJob;
 
             public override Status UpdateFunc(ColonistController Colonist)
             {
-                if (Colonist.currentJob != null &&  Colonist.currentJob.jobType != DesiredJob)
+                //return failure if the colonist has a job and they are not looking for this type of job
+                if (Colonist.currentJob != null &&  Colonist.currentJob.jobType != desiredJob)
                     return Status.FAILURE;
-                else if(Colonist.currentJob != null && Colonist.currentJob.jobType == DesiredJob)
+                //or if the colonist has a job and they want this type of job, succeed
+                else if(Colonist.currentJob != null && Colonist.currentJob.jobType == desiredJob)
                     return Status.SUCCESS;
 
+                //loop through all of the current jobs
                 for (int i = 0; i < JobManager.Instance.JobDocket.Count; i++)
                 {
-                    if (JobManager.Instance.JobDocket[i].jobType == DesiredJob)
+                    //if the job is the right type
+                    if (JobManager.Instance.JobDocket[i].jobType == desiredJob)
                     {
-                        if (DesiredJob == JobType.Gathering)
+                        //job specific job handling
+
+                        if (desiredJob == JobType.Gathering)
                         {
                             ItemType itemType = JobManager.Instance.JobDocket[i].InteractionObject.GetComponent<Item>().item.type;
                             //if there are no granaries or stockpiles then dont pick it up
@@ -44,14 +50,14 @@ namespace MonsterMiner
                                 return Status.SUCCESS;
                             }
                         }
-                        else if (DesiredJob == JobType.Hunter)
+                        else if (desiredJob == JobType.Hunter)
                         {
                             Colonist.currentJob = (JobManager.Instance.JobDocket[i]);
                             JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
                             Colonist.target = Colonist.currentJob.InteractionObject.GetComponent<MonsterController>();
                             return Status.SUCCESS;
                         }
-                        else if(DesiredJob == JobType.Building)
+                        else if(desiredJob == JobType.Building)
                         {
                             if (JobManager.Instance.JobDocket[i].RequiredItems == null)
                                 continue;

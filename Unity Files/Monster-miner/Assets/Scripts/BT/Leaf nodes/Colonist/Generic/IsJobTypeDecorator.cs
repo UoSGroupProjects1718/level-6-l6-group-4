@@ -16,8 +16,7 @@ namespace MonsterMiner
             {
                 if(Colonist.colonistJob == WorkerType)
                 {
-                    Child.tick(Colonist);
-                    return Status.SUCCESS;
+                    return Child.tick(Colonist);
                 }
                 return Status.FAILURE;
             }

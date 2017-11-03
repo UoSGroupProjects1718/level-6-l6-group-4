@@ -16,7 +16,7 @@ namespace MonsterMiner
 
             public override Status UpdateFunc(ColonistController Colonist)
             {
-                if (Colonist.currentJob == null || Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable == null)
+                if (Colonist.currentJob == null || Colonist.currentJob.InteractionObject != null && Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable == null)
                     return Status.FAILURE;
 
 
