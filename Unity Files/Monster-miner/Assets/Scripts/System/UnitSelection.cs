@@ -17,7 +17,7 @@ public class UnitSelection : MonoBehaviour {
     {
         for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
         {
-            BehaviourTreeManager.Colonists[i].SelectionCircle.enabled = false;
+            BehaviourTreeManager.Colonists[i].selectionCircle.enabled = false;
             BehaviourTreeManager.Colonists[i].selected = false;
         }
         for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
@@ -52,14 +52,14 @@ public class UnitSelection : MonoBehaviour {
             {
                 if (IsWithinBounds(BehaviourTreeManager.Colonists[i].gameObject))
                 {
-                    BehaviourTreeManager.Colonists[i].SelectionCircle.enabled = true;
+                    BehaviourTreeManager.Colonists[i].selectionCircle.enabled = true;
                     BehaviourTreeManager.Colonists[i].selected = true;
                     if(!SelectedColonists.Contains(BehaviourTreeManager.Colonists[i]))
                         SelectedColonists.Add(BehaviourTreeManager.Colonists[i]);
                 }
                 else
                 {
-                    BehaviourTreeManager.Colonists[i].SelectionCircle.enabled = false;
+                    BehaviourTreeManager.Colonists[i].selectionCircle.enabled = false;
                     BehaviourTreeManager.Colonists[i].selected = false;
                     if (SelectedColonists.Contains(BehaviourTreeManager.Colonists[i]))
                         SelectedColonists.Remove(BehaviourTreeManager.Colonists[i]);

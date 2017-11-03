@@ -344,6 +344,29 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788,
         type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: equippedArmour.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3,
+        type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: equippedArmour.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef,
+        type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: equippedArmour.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d0cb52de6be57240b14390e34172781,
+        type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: damageReduction
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
   m_IsPrefabParent: 0
@@ -1240,25 +1263,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e1b5a6c148b134794e0de48f024bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ColonistName: Bob Jones III
-  RequiredNutritionPerDay: 25
-  ColonistJob: 2
-  currentJob: {fileID: 0}
-  ColonistBaseMoveSpeed: 5
-  ColonistMoveSpeed: 0
-  ColonistBaseWorkSpeed: 15
-  ColonistWorkSpeed: 15
+  colonistName: 
+  colonistBaseMoveSpeed: 5
+  colonistMoveSpeed: 0
+  colonistBaseWorkSpeed: 15
+  colonistWorkSpeed: 0
   maxHealth: 100
-  Health: 100
-  colonistWeapon: {fileID: 0}
+  health: 0
+  requiredNutritionPerDay: 25
+  colonistJob: 0
+  currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
+  colonistWeapon: {fileID: 0}
+  equippedArmour:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  damageReduction: 0
   hasPath: 0
   agentMovement: {fileID: 0}
   collider: {fileID: 0}
-  GathererStockpile: {fileID: 0}
+  gathererStockpile: {fileID: 0}
   selected: 0
-  SelectionCircle: {fileID: 0}
+  selectionCircle: {fileID: 0}
 --- !u!114 &764116376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2697,6 +2725,29 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788,
         type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: equippedArmour.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3,
+        type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: equippedArmour.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef,
+        type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: equippedArmour.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d0cb52de6be57240b14390e34172781,
+        type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: damageReduction
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
   m_IsPrefabParent: 0
@@ -2947,25 +2998,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e1b5a6c148b134794e0de48f024bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ColonistName: Bob Jones II
-  RequiredNutritionPerDay: 25
-  ColonistJob: 1
-  currentJob: {fileID: 0}
-  ColonistBaseMoveSpeed: 5
-  ColonistMoveSpeed: 0
-  ColonistBaseWorkSpeed: 15
-  ColonistWorkSpeed: 50
+  colonistName: 
+  colonistBaseMoveSpeed: 5
+  colonistMoveSpeed: 0
+  colonistBaseWorkSpeed: 15
+  colonistWorkSpeed: 0
   maxHealth: 100
-  Health: 100
-  colonistWeapon: {fileID: 0}
+  health: 0
+  requiredNutritionPerDay: 25
+  colonistJob: 0
+  currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
+  colonistWeapon: {fileID: 0}
+  equippedArmour:
+  - {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3, type: 2}
+  - {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef, type: 2}
+  - {fileID: 11400000, guid: 2d0cb52de6be57240b14390e34172781, type: 2}
+  damageReduction: 20
   hasPath: 0
   agentMovement: {fileID: 0}
   collider: {fileID: 0}
-  GathererStockpile: {fileID: 0}
+  gathererStockpile: {fileID: 0}
   selected: 0
-  SelectionCircle: {fileID: 0}
+  selectionCircle: {fileID: 0}
 --- !u!114 &1704022092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3427,7 +3483,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1687612695503324, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
       propertyPath: m_Name
-      value: Small Herbivore
+      value: Small carnivore
       objectReference: {fileID: 0}
     - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3437,6 +3493,11 @@ Prefab:
         type: 2}
       propertyPath: m_Speed
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637651449680390, guid: 87d1e2c6b430f3e4795e4b402e3671ef,
+        type: 2}
+      propertyPath: monsterType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
@@ -3656,9 +3717,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: equippedArmour.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4273611654519326, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 48.5
+      value: 31.9
       objectReference: {fileID: 0}
     - target: {fileID: 4273611654519326, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3692,38 +3758,29 @@ Prefab:
       propertyPath: m_Name
       value: Hunter (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4088942854943498, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088942854943498, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088942854943498, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088942854943498, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
         type: 2}
-      propertyPath: ColonistWorkSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 119210537368258424, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
-        type: 2}
-      propertyPath: m_OrthographicSize
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
-        type: 2}
-      propertyPath: colonistWeapon
+      propertyPath: equippedArmour.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788,
+      objectReference: {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3,
         type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: equippedArmour.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef,
+        type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: equippedArmour.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d0cb52de6be57240b14390e34172781,
+        type: 2}
+    - target: {fileID: 114205038781590682, guid: 6c34f96dcde60ce4c96d160d43dcc99b,
+        type: 2}
+      propertyPath: damageReduction
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c34f96dcde60ce4c96d160d43dcc99b, type: 2}
   m_IsPrefabParent: 0
@@ -4947,25 +5004,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e1b5a6c148b134794e0de48f024bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ColonistName: Bob Jones III
-  RequiredNutritionPerDay: 25
-  ColonistJob: 2
-  currentJob: {fileID: 0}
-  ColonistBaseMoveSpeed: 5
-  ColonistMoveSpeed: 0
-  ColonistBaseWorkSpeed: 15
-  ColonistWorkSpeed: 15
+  colonistName: 
+  colonistBaseMoveSpeed: 5
+  colonistMoveSpeed: 0
+  colonistBaseWorkSpeed: 15
+  colonistWorkSpeed: 0
   maxHealth: 100
-  Health: 100
-  colonistWeapon: {fileID: 0}
+  health: 0
+  requiredNutritionPerDay: 25
+  colonistJob: 0
+  currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
+  colonistWeapon: {fileID: 0}
+  equippedArmour:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  damageReduction: 0
   hasPath: 0
   agentMovement: {fileID: 0}
   collider: {fileID: 0}
-  GathererStockpile: {fileID: 0}
+  gathererStockpile: {fileID: 0}
   selected: 0
-  SelectionCircle: {fileID: 0}
+  selectionCircle: {fileID: 0}
 --- !u!114 &2027888232
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,28 +15,35 @@ public enum ColonistJobType
 public class ColonistController : MonoBehaviour {
 
     #region Variables
-    public string ColonistName;
-    public int RequiredNutritionPerDay = 25;
-    public ColonistJobType ColonistJob;
-    public Job currentJob;
+    #region basic info
+    public string colonistName;
+    public float colonistBaseMoveSpeed = 5f;
+    public float colonistMoveSpeed;
 
-
-    public float ColonistBaseMoveSpeed = 5f;
-    public float ColonistMoveSpeed;
-
-    public float ColonistBaseWorkSpeed = 15f;
-    public float ColonistWorkSpeed;
+    public float colonistBaseWorkSpeed = 15f;
+    public float colonistWorkSpeed;
 
     public int maxHealth = 100;
-    public float Health;
+    public float health;
 
-    public Weapon colonistWeapon;
+    public int requiredNutritionPerDay = 25;
+    public GameTime timeOfNextMeal;
+    #endregion
+    #region Job
+    public ColonistJobType colonistJob;
+    public Job currentJob;
+    public GameTime lastWorked;
+    #endregion
+    #region Equipment and combat
     public float nextAttack;
     public MonsterController target;
 
-    public GameTime lastWorked;
-    public GameTime TimeOfNextMeal;
-
+    public Weapon colonistWeapon;
+    public Armour[] equippedArmour;
+    public float damageReduction = 0;
+    
+    #endregion
+    #region misc
     [HideInInspector]
     public bool hasPath;
 
@@ -47,7 +53,7 @@ public class ColonistController : MonoBehaviour {
     public new Collider collider;
 
     [HideInInspector]
-    public GameObject GathererStockpile;
+    public GameObject gathererStockpile;
 
     NavMeshAgent agent;
 
@@ -55,7 +61,7 @@ public class ColonistController : MonoBehaviour {
     public bool selected;
 
     [Header("Selection Circle must be first child")]
-    public Projector SelectionCircle;
+    public Projector selectionCircle;
 
     public NavMeshAgent NavMeshAgent
     {
@@ -68,7 +74,7 @@ public class ColonistController : MonoBehaviour {
             agent = value;
         }
     }
-
+#endregion
     #endregion
 
     private void Start()
@@ -82,18 +88,19 @@ public class ColonistController : MonoBehaviour {
         lastWorked = TimeManager.Instance.IngameTime;
 
 
-        Health = maxHealth;
-        ColonistMoveSpeed = ColonistBaseMoveSpeed;
-        ColonistWorkSpeed = ColonistBaseWorkSpeed;
-        UpdateMoveSpeed(ColonistBaseMoveSpeed);
+        health = maxHealth;
+        colonistMoveSpeed = colonistBaseMoveSpeed;
+        colonistWorkSpeed = colonistBaseWorkSpeed;
+        UpdateMoveSpeed(colonistBaseMoveSpeed);
         //set the selection cirlce
-        SelectionCircle = transform.GetChild(0).GetComponent<Projector>();
+        selectionCircle = transform.GetChild(0).GetComponent<Projector>();
         SetTimeOfNextMeal();
+        equippedArmour = new Armour[Enum.GetValues(typeof(ArmourSlot)).Length];
     }
 
     public void OnDrawGizmos()
     {
-        if(colonistWeapon != null && ColonistJob == ColonistJobType.Hunter)
+        if(colonistWeapon != null && colonistJob == ColonistJobType.Hunter)
         Gizmos.DrawWireSphere(transform.position, colonistWeapon.Range);
     }
 
@@ -115,54 +122,88 @@ public class ColonistController : MonoBehaviour {
         }
         time.hours = 6;
 
-        TimeOfNextMeal = time;
+        timeOfNextMeal = time;
     }
 
-    public void takeDamage(float damage)
+    public void TakeDamage(float damage)
     {
-        Health -= damage;
-        if (checkDead())
+        //find the damage we resisted (converting damage reduction to a value between 0 and 1)
+        float resistedDamage = damage * (damageReduction / 100);
+
+        health -= (damage - resistedDamage);
+
+        if (CheckDead())
             Death();
     }
 
-    public bool checkDead()
+    public bool CheckDead()
     {
-        if (Health < 0)
+        if (health < 0)
             return true;
         return false;
     }
 
     void Death()
     {
-        Debug.Log(ColonistName + " has died.");
+        Debug.Log(colonistName + " has died.");
     }
     public void UpdateMoveSpeed(float MoveSpeed)
     {
         //store the old move base move speed
-        float OldBase = ColonistBaseMoveSpeed;
+        float OldBase = colonistBaseMoveSpeed;
         //then update the move speed
-        ColonistBaseMoveSpeed = MoveSpeed;
+        colonistBaseMoveSpeed = MoveSpeed;
         //figure out the difference between the old and current move speeds
-        float diffBaseCurrent = OldBase - ColonistMoveSpeed;
+        float diffBaseCurrent = OldBase - colonistMoveSpeed;
         //then apply the new move speed with the current move speed penalty enacted
-        ColonistMoveSpeed = ColonistBaseMoveSpeed - diffBaseCurrent;
+        colonistMoveSpeed = colonistBaseMoveSpeed - diffBaseCurrent;
         //and update the navmeshagent
-        GetComponent<NavMeshAgent>().speed = ColonistMoveSpeed;
+        GetComponent<NavMeshAgent>().speed = colonistMoveSpeed;
     }
     public void UpdateWorkSpeed(float WorkSpeed)
     {
         //store the old base work speed
-        float OldBase = ColonistBaseWorkSpeed;
+        float OldBase = colonistBaseWorkSpeed;
         //update the base work speed
-        ColonistBaseWorkSpeed = WorkSpeed;
+        colonistBaseWorkSpeed = WorkSpeed;
         //then figure out the difference between the old base and the current speed
-        float diffBaseCurrent = OldBase - ColonistWorkSpeed;
+        float diffBaseCurrent = OldBase - colonistWorkSpeed;
         //and apply the  new work speed with the current pentalty enacted
-        ColonistWorkSpeed = ColonistBaseWorkSpeed - diffBaseCurrent;
+        colonistWorkSpeed = colonistBaseWorkSpeed - diffBaseCurrent;
     }
-    public void UpdateDamageResistance()
+    public void UpdateDamageResistance(Armour oldArmour, Armour newArmour)
     {
+        //regardless of if we have a new armour piece we need to be reducing the DR of the old piece
+        damageReduction -= oldArmour.DamageReduction;
+        //then if we have new armour to swap out
+        if(newArmour != null)
+        {
+            //we increase the DR again
+            damageReduction += newArmour.DamageReduction;
+        }
+        Mathf.Clamp(damageReduction, 0, 100);
+    }
+    public void EquipArmour(Armour newArmour)
+    {
+        //check to see if the colonist is wearing armour
+        if(equippedArmour[(int)newArmour.armourSlot] != null)
+        {
+            //if so get the new DR
+            UpdateDamageResistance(equippedArmour[(int)newArmour.armourSlot],newArmour);
+        }
+        //then just make the corresponding slot contain the new armour info
+        equippedArmour[(int)newArmour.armourSlot] = newArmour;
+    }
+    public void UnequipArmour(ArmourSlot slot)
+    {
+        //if there is no armour, we shouldnt be unequipping anyway
+        if (equippedArmour[(int)slot] == null)
+            return;
 
+        //then update DR
+        UpdateDamageResistance(equippedArmour[(int)slot], null);
+        //then set the slot to null
+        equippedArmour[(int)slot] = null;
     }
 
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
@@ -13,7 +13,7 @@ public class AttackColonist : BehaviourBase
             if (Time.time > Monster.nextAttack)
             {
                 Monster.nextAttack = Time.time + Monster.attackSpeed;
-                Monster.currentTarget.GetComponent<ColonistController>().takeDamage(Monster.damage);
+                Monster.currentTarget.GetComponent<ColonistController>().TakeDamage(Monster.damage);
                 return Status.SUCCESS;
             }
         }

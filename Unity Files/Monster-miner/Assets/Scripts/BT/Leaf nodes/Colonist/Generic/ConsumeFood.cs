@@ -13,13 +13,13 @@ namespace MonsterMiner
             public override Status UpdateFunc(ColonistController Colonist)
             {
                 //if it is time to eat, check if we can eat the colonist's required nutrition amount and then remove it
-                if(TimeManager.Instance.IngameTime.Date == Colonist.TimeOfNextMeal.Date)
+                if(TimeManager.Instance.IngameTime.Date == Colonist.timeOfNextMeal.Date)
                 {
-                    if (TimeManager.Instance.IngameTime.hours == Colonist.TimeOfNextMeal.hours)
+                    if (TimeManager.Instance.IngameTime.hours == Colonist.timeOfNextMeal.hours)
                     {
-                        if (Stockpile.Instance.InventoryDictionary[ItemType.Nutrition] >= Colonist.RequiredNutritionPerDay)
+                        if (Stockpile.Instance.InventoryDictionary[ItemType.Nutrition] >= Colonist.requiredNutritionPerDay)
                         {
-                            Stockpile.Instance.InventoryDictionary[ItemType.Nutrition] -= Colonist.RequiredNutritionPerDay;
+                            Stockpile.Instance.InventoryDictionary[ItemType.Nutrition] -= Colonist.requiredNutritionPerDay;
                             Colonist.SetTimeOfNextMeal();
                             UIController.Instance.UpdateStockpile();
                             return Status.SUCCESS;
@@ -27,11 +27,11 @@ namespace MonsterMiner
                         //if not, figure out the amount we can take out, eat that and then reduce colonist health by 1 for each nutrition they could not consume
                         else
                         {
-                            int AmountAvailable = Colonist.RequiredNutritionPerDay - Stockpile.Instance.InventoryDictionary[ItemType.Nutrition];
+                            int AmountAvailable = Colonist.requiredNutritionPerDay - Stockpile.Instance.InventoryDictionary[ItemType.Nutrition];
                             Stockpile.Instance.InventoryDictionary[ItemType.Nutrition] -= AmountAvailable;
-                            Colonist.Health -= Colonist.maxHealth / 10;
-                            Colonist.ColonistWorkSpeed -= Colonist.ColonistBaseWorkSpeed / 10;
-                            Colonist.ColonistMoveSpeed -= Colonist.ColonistBaseMoveSpeed / 10;
+                            Colonist.health -= Colonist.maxHealth / 10;
+                            Colonist.colonistWorkSpeed -= Colonist.colonistBaseWorkSpeed / 10;
+                            Colonist.colonistMoveSpeed -= Colonist.colonistBaseMoveSpeed / 10;
                             Colonist.SetTimeOfNextMeal();
                             UIController.Instance.UpdateStockpile();
                             return Status.SUCCESS;

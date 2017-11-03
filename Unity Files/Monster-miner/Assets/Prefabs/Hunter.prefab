@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1192663371909008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.5, y: 1.16, z: 0.81}
+  m_LocalPosition: {x: 31.9, y: 1.16, z: 9.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4088942854943498}
@@ -152,25 +152,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e1b5a6c148b134794e0de48f024bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ColonistName: Bob Jones
-  RequiredNutritionPerDay: 25
-  ColonistJob: 0
-  currentJob: {fileID: 0}
-  ColonistBaseMoveSpeed: 5
-  ColonistMoveSpeed: 0
-  ColonistBaseWorkSpeed: 15
-  ColonistWorkSpeed: 15
+  colonistName: 
+  colonistBaseMoveSpeed: 5
+  colonistMoveSpeed: 0
+  colonistBaseWorkSpeed: 15
+  colonistWorkSpeed: 0
   maxHealth: 100
-  Health: 100
-  colonistWeapon: {fileID: 0}
+  health: 0
+  requiredNutritionPerDay: 25
+  colonistJob: 0
+  currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
+  colonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  equippedArmour:
+  - {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3, type: 2}
+  - {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef, type: 2}
+  - {fileID: 11400000, guid: 2d0cb52de6be57240b14390e34172781, type: 2}
+  damageReduction: 20
   hasPath: 0
   agentMovement: {fileID: 0}
   collider: {fileID: 0}
-  GathererStockpile: {fileID: 0}
+  gathererStockpile: {fileID: 0}
   selected: 0
-  SelectionCircle: {fileID: 0}
+  selectionCircle: {fileID: 0}
 --- !u!119 &119210537368258424
 Projector:
   m_ObjectHideFlags: 1

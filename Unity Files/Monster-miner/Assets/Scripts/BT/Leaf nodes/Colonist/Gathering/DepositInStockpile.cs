@@ -17,7 +17,7 @@ namespace MonsterMiner
                 {
                     Destroy(Colonist.currentJob.InteractionObject);
                     Colonist.currentJob = null;
-                    Colonist.GathererStockpile = null;
+                    Colonist.gathererStockpile = null;
                 }
                 else
                 {
@@ -26,7 +26,7 @@ namespace MonsterMiner
                     ItemInfo item = Colonist.currentJob.InteractionObject.GetComponent<Item>().item;
                     JobManager.CreateJob(JobType.Gathering,(item as Resource).GatherWorkPerItem * item.currentStackAmount,item.attachedGameObject,item.attachedGameObject.transform.position,Colonist.currentJob.jobName);
                     Colonist.currentJob = null;
-                    Colonist.GathererStockpile = null;
+                    Colonist.gathererStockpile = null;
 
                 }
                // }

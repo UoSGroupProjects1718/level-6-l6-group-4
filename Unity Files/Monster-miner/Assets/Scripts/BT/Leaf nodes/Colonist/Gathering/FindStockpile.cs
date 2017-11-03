@@ -12,13 +12,13 @@ namespace MonsterMiner
         {
             public override Status UpdateFunc(ColonistController Colonist)
             {
-                if (Colonist.GathererStockpile != null)
+                if (Colonist.gathererStockpile != null)
                     return Status.SUCCESS;
 
-                Colonist.GathererStockpile = GetStockpile(Colonist);
-                if (Colonist.GathererStockpile == null)
+                Colonist.gathererStockpile = GetStockpile(Colonist);
+                if (Colonist.gathererStockpile == null)
                     return Status.FAILURE;
-                Colonist.currentJob.jobLocation = Colonist.GathererStockpile.transform.position;
+                Colonist.currentJob.jobLocation = Colonist.gathererStockpile.transform.position;
                 return Status.SUCCESS;
             }
 

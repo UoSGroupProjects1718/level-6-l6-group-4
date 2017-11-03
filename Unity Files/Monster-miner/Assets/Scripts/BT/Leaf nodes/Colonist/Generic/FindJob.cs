@@ -55,7 +55,9 @@ namespace MonsterMiner
                         {
                             if (JobManager.Instance.JobDocket[i].RequiredItems == null)
                                 continue;
-                            for(int j = 0; j <  JobManager.Instance.JobDocket[i].RequiredItems.Length; j++)
+#pragma warning disable CS0162 // Unreachable code detected
+                            for (int j = 0; j <  JobManager.Instance.JobDocket[i].RequiredItems.Length; j++)
+#pragma warning restore CS0162 // Unreachable code detected
                             {
                                 if(Stockpile.Instance.InventoryDictionary[JobManager.Instance.JobDocket[i].RequiredItems[j].resource] <= 0)
                                 {

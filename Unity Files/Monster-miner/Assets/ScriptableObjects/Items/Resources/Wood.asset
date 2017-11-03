@@ -9,18 +9,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d25fc9ba46dc8b40b101a0e322dde72, type: 3}
-  m_Name: Meat
+  m_Name: Wood
   m_EditorClassIdentifier: 
   attachedGameObject: {fileID: 0}
-  itemName: Meat
-  itemDescription: Tasty meat that your colonists can eat to sustain themselves
-  decayPerHour: 2.5
-  maxItemDurability: 50
-  currentItemDurability: 50
-  maxStackAmount: 0
-  currentStackAmount: 0
+  itemName: Wood
+  itemDescription: 
+  decayPerHour: 3
+  maxItemDurability: 28
+  currentItemDurability: 28
+  currentStackAmount: 1
   itemMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  type: 5
-  GatherWorkPerItem: 2
-  minDropAmount: 120
-  maxDropAmount: 150
+  type: 0
+  GatherWorkPerItem: 1
+  minDropAmount: 10
+  maxDropAmount: 55

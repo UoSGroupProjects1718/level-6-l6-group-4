@@ -14,7 +14,7 @@ namespace MonsterMiner
 
             public override Status UpdateFunc(ColonistController Colonist)
             {
-                if(Colonist.ColonistJob == WorkerType)
+                if(Colonist.colonistJob == WorkerType)
                 {
                     Child.tick(Colonist);
                     return Status.SUCCESS;

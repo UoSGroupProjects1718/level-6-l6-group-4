@@ -7,9 +7,7 @@ namespace MonsterMiner
     {
         [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Leaf Nodes/Move to job")]
         public class MoveToJob : BehaviourBase
-        {
-            [SerializeField]
-            private float MinDistForPathSuccess = .5f;
+        { 
 
             public override Status UpdateFunc(ColonistController Colonist)
             {
@@ -17,12 +15,8 @@ namespace MonsterMiner
                 if (Colonist.currentJob == null)
                     return Status.FAILURE;
 
-               // RaycastHit hit = new RaycastHit();
-                Debug.DrawRay(Colonist.transform.position, Colonist.currentJob.jobLocation - Colonist.transform.position,Color.red);
-                //if(Physics.Raycast(Colonist.transform.position,Colonist.currentJob.jobLocation - Colonist.transform.position,out hit, MinDistForPathSuccess ) || Vector3.Distance(Colonist.transform.position,Colonist.currentJob.jobLocation) < 0.5f)
-                   // if(hit.collider.gameObject == Colonist.currentJob.InteractionObject)
-                    //{
-                   // }
+               
+                Debug.DrawRay(Colonist.transform.position, Colonist.currentJob.jobLocation - Colonist.transform.position, Color.red);
                 if(Colonist.hasPath == false)
                 {
                     Colonist.NavMeshAgent.SetDestination(Colonist.currentJob.jobLocation);

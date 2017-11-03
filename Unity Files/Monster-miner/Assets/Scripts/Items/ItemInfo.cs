@@ -31,7 +31,6 @@ public class ItemInfo : ScriptableObject {
     [HideInInspector]
     public float currentItemDurability;
 
-    public int maxStackAmount;
     public int currentStackAmount;
 
     public Mesh itemMesh;

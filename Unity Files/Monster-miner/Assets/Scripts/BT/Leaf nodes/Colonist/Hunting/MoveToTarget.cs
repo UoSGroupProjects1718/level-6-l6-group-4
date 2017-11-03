@@ -10,13 +10,6 @@ namespace MonsterMiner
         [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Leaf Nodes/Move to target")]
         public class MoveToTarget : BehaviourBase
         {
-            LayerMask monsterLayer;
-
-            public void OnEnable()
-            {
-                monsterLayer = LayerMask.NameToLayer("Monster");
-            }
-
             public override Status UpdateFunc(ColonistController Colonist)
             {
                 if (Colonist.target == null)
@@ -41,15 +34,7 @@ namespace MonsterMiner
                 {
                     return true;
                 }
-                //RaycastHit hit = new RaycastHit();
-                //Debug.DrawRay(Colonist.transform.position, Colonist.target.transform.position - Colonist.transform.position);
-                //if (Physics.Raycast(Colonist.transform.position,monster.transform.position - Colonist.transform.position, out hit, Colonist.ColonistWeapon.Range, monsterLayer))
-                //{
-                //    if(hit.collider.gameObject == monster.gameObject)
-                //    {
-                //        return true;
-                //    }
-                //}
+
                 return false;
             }
         }

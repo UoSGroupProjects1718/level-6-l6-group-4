@@ -11,16 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e46c7e7a453dc4ba31b9edfc533056, type: 3}
   m_Name: Small Carnivore
   m_EditorClassIdentifier: 
-  monsterName: e
+  monsterName: Small carnivore
   monsterType: 0
   numHuntersRequired: 1
   monsterSpeed: 0
-  health: 0
   maxHealth: 100
-  combatRange: 0
-  viewRange: 0
-  damage: 0
-  attackSpeed: 0
+  combatRange: 1.5
+  viewRange: 20
+  damage: 15
+  attackSpeed: 2
   nextAttack: 0
   matingCooldown: 0
   monsterMesh: {fileID: 4300000, guid: ac752233d499c934084b3d4ca815397d, type: 3}

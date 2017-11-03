@@ -9,14 +9,6 @@ namespace MonsterMiner
         [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Leaf Nodes/Colonist/Hunter/Attack monster")]
         public class AttackMonster : BehaviourBase
         {
-
-            private LayerMask monsterLayerMask;
-
-            private void OnEnable()
-            {
-                monsterLayerMask = LayerMask.NameToLayer("Monster");
-            }
-
             public override Status UpdateFunc(ColonistController Colonist)
             {
                 if (Colonist.target == null)
