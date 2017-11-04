@@ -576,3 +576,6 @@ public class SerializableDictionary<TKey, TValue> : IDictionary<TKey, TValue>
 }
 [Serializable]
 public class ResourceTypeDictionary : SerializableDictionary<ItemType,int>{ }
+
+[Serializable]
+public class WearableInventoryDictionary : SerializableDictionary<Wearable, int> { }

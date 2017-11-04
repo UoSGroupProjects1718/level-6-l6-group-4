@@ -13,7 +13,7 @@ public class GranaryFunction : BuildingFunction {
 
     public override void OnBuilt()
     {
-        Stockpile.Instance.NutritionSpace += ResourceSpaceIncrease;
+        Stockpile.Instance.nutritionSpace += ResourceSpaceIncrease;
     }
 
 

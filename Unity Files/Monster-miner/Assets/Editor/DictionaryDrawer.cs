@@ -175,3 +175,5 @@ public abstract class DictionaryDrawer<TK, TV> : PropertyDrawer
 
 [CustomPropertyDrawer(typeof(ResourceTypeDictionary))]
 public class ResourceTypeDictionaryDrawer : DictionaryDrawer<ItemType, int> { }
+[CustomPropertyDrawer(typeof(WearableInventoryDictionary))]
+public class WearableInventoryDictionaryDrawer : DictionaryDrawer<Wearable, int> { }

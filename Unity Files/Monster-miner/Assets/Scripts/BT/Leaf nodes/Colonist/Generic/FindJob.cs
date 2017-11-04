@@ -34,7 +34,7 @@ namespace MonsterMiner
                             //if there are no granaries or stockpiles then dont pick it up
                             if (JobManager.Instance.JobDocket[i].InteractionObject.GetComponent<Item>().item.type == ItemType.Nutrition)
                             {
-                                if (BehaviourTreeManager.Granaries.Count > 0 && Stockpile.Instance.InventoryDictionary[ItemType.Nutrition] < Stockpile.Instance.NutritionSpace)
+                                if (BehaviourTreeManager.Granaries.Count > 0 && Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] < Stockpile.Instance.nutritionSpace)
                                 {
                                     Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
                                     JobManager.Instance.JobDocket.Remove(JobManager.Instance.JobDocket[i]);
@@ -42,7 +42,7 @@ namespace MonsterMiner
                                 }
                             }
 
-                            else if (itemType < ItemType.Nutrition && Stockpile.Instance.CurrResourceAmount < Stockpile.Instance.ResourceSpace)
+                            else if (itemType < ItemType.Nutrition && Stockpile.Instance.currResourceAmount < Stockpile.Instance.resourceSpace)
                             {
                                 if (BehaviourTreeManager.Stockpiles.Count > 0)
                                     Colonist.currentJob = Instantiate(JobManager.Instance.JobDocket[i]);
@@ -65,7 +65,7 @@ namespace MonsterMiner
                             for (int j = 0; j <  JobManager.Instance.JobDocket[i].RequiredItems.Length; j++)
 #pragma warning restore CS0162 // Unreachable code detected
                             {
-                                if(Stockpile.Instance.InventoryDictionary[JobManager.Instance.JobDocket[i].RequiredItems[j].resource] <= 0)
+                                if(Stockpile.Instance.inventoryDictionary[JobManager.Instance.JobDocket[i].RequiredItems[j].resource] <= 0)
                                 {
                                     break;
                                 }

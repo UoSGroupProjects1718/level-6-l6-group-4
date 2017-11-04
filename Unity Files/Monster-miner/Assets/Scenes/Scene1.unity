@@ -1620,19 +1620,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9375f6bdfc66d0a4c9d3e7b04fbd2d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryDictionary:
-    _Buckets: 050000000400000003000000020000000100000000000000ffffffff
-    _HashCodes: 05000000040000000300000002000000010000000000000000000000
+  inventoryDictionary:
+    _Buckets: 050000000100000002000000000000000300000004000000ffffffff
+    _HashCodes: 03000000010000000200000004000000050000000000000000000000
     _Next: ffffffffffffffffffffffffffffffffffffffffffffffff00000000
     _Count: 6
-    _Version: 49
+    _Version: 37
     _FreeList: -1
     _FreeCount: 0
-    _Keys: 05000000040000000300000002000000010000000000000000000000
-    _Values: c8000000000000000f000000050000000f0000001e00000000000000
-  CurrResourceAmount: 70
-  ResourceSpace: 200
-  NutritionSpace: 200
+    _Keys: 03000000010000000200000004000000050000000000000000000000
+    _Values: 1e0000001e0000001e0000001e000000960000001e00000000000000
+  currResourceAmount: 150
+  resourceSpace: 200
+  nutritionSpace: 200
+  wearableInventoryDictionary:
+    _Buckets: ffffffffffffffffffffffff
+    _HashCodes: 000000000000000000000000
+    _Next: 000000000000000000000000
+    _Count: 0
+    _Version: 0
+    _FreeList: -1
+    _FreeCount: 0
+    _Keys:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    _Values: 000000000000000000000000
+  currWearablesInInventory: 0
+  armourySpace: 0
 --- !u!114 &824090731
 MonoBehaviour:
   m_ObjectHideFlags: 0

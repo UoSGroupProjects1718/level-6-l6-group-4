@@ -21,10 +21,10 @@ public class UIController : SingletonClass<UIController>
     {
        for(int i = 0; i < (int)ItemType.Nutrition; i++)
         {
-            StockpilePanel.transform.GetChild(i).GetComponent<Text>().text = (ItemType)i +": " +  Stockpile.Instance.InventoryDictionary[(ItemType)i].ToString();
+            StockpilePanel.transform.GetChild(i).GetComponent<Text>().text = (ItemType)i +": " +  Stockpile.Instance.inventoryDictionary[(ItemType)i].ToString();
         }
-        StockpilePanel.transform.GetChild(StockpilePanel.transform.childCount - 2).GetComponent<Text>().text = "Total: " + Stockpile.Instance.CurrResourceAmount + " / " + Stockpile.Instance.ResourceSpace;
-        StockpilePanel.transform.GetChild(StockpilePanel.transform.childCount - 1).GetComponent<Text>().text = "Food: " + Stockpile.Instance.InventoryDictionary[ItemType.Nutrition] + " / " + Stockpile.Instance.NutritionSpace;
+        StockpilePanel.transform.GetChild(StockpilePanel.transform.childCount - 2).GetComponent<Text>().text = "Total: " + Stockpile.Instance.currResourceAmount + " / " + Stockpile.Instance.resourceSpace;
+        StockpilePanel.transform.GetChild(StockpilePanel.transform.childCount - 1).GetComponent<Text>().text = "Food: " + Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] + " / " + Stockpile.Instance.nutritionSpace;
     }
 
     //when multiple hunters are supposed to hunt one monster, multiple jobs for the same monster must be queued up, just make as many jobs as required

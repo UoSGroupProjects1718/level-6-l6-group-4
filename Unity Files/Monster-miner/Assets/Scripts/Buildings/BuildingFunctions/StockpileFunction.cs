@@ -13,7 +13,7 @@ public class StockpileFunction : BuildingFunction
     }
     public override void OnBuilt()
     {
-        Stockpile.Instance.ResourceSpace += ResourceIncreaseAmount;
+        Stockpile.Instance.resourceSpace += ResourceIncreaseAmount;
     }
 
 
