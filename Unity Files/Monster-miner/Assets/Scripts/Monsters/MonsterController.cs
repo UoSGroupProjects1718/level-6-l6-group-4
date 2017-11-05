@@ -55,7 +55,6 @@ public class MonsterController : MonoBehaviour {
         Movement = GetComponent<MonsterMovement>();
         collider = GetComponent<Collider>();
         lastMatingTime = Time.time;
-        GetMonster();
         //set the selection cirlce
         SelectionCircle = transform.GetComponentInChildren<Projector>();
     }
@@ -79,9 +78,11 @@ public class MonsterController : MonoBehaviour {
         Debug.Log(monsterName + " has died.");
     }
     
-    public void GetMonster()
+    public void GetMonster(Vector3 position, string type)
     {
+        MonsterSpawner.Instance.SpawnMonster(position, type);
         isDead = false;
+        /*
         Mesh tempMesh = null;
         Material[] materials;
         MonsterTypes.Instance.getMonsterData(
@@ -90,14 +91,12 @@ public class MonsterController : MonoBehaviour {
         lastMatingTime = Time.time;
         transform.GetComponentInChildren<SkinnedMeshRenderer>().sharedMesh =  Instantiate(tempMesh);
         transform.GetComponentInChildren<SkinnedMeshRenderer>().materials = materials;
-        maxHealth = health;
-        tempMesh = null;
-        //MAke a spawn point
-    }
+        */
 
-    string GetMonsterName()
-    {
-        return "";
+       
+        lastMatingTime = Time.time;
+        maxHealth = health;
+        //MAke a spawn point
     }
 
     private void OnDrawGizmos()
