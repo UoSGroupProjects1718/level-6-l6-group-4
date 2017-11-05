@@ -17,7 +17,7 @@ public class MonsterType : ScriptableObject {
     public float attackSpeed;
     public float nextAttack;
     public float matingCooldown;
-    public Mesh monsterMesh;
+    public GameObject monsterMeshAndBones;
     public DropTable dropTable;
 
     public Material[] materials;

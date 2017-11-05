@@ -12,44 +12,49 @@ public class MonsterTypes : SingletonClass<MonsterTypes> {
     }
     
     public MonsterType[] Monsters = new MonsterType[0];
-    public Dictionary<TypeOfMonster, MonsterType> Mons;
+    public Dictionary<string, MonsterType> Mons;
+    public List<string> dictionaryKeys;
 
 
     public override void Awake()
     {
         base.Awake();
-        Mons = new Dictionary<TypeOfMonster, MonsterType>();
+        Mons = new Dictionary<string, MonsterType>();
+        dictionaryKeys = new List<string>();
         for (int i = 0; i < Monsters.Length; i++)
         {
             //ONLY FOR EASE OF DEBUGGING//
             Monsters[i].numHuntersRequired = 1;
             /////////////////////////////////////////
-            Mons.Add(Monsters[i].monsterType, Monsters[i]);
+            Mons.Add(Monsters[i].name, Monsters[i]);
+            dictionaryKeys.Add(Monsters[i].name);
+
         }
         Monsters = null;
 
        
     }
-    public void getMonsterData(TypeOfMonster Type,
-        out float returnHealth, out float returnSpeed, out float returnDamage, out float returnCombatRange, out float returnAttackSpeed, out Mesh returnMesh, out Material[] materials,
+    
+    public void getMonsterData(string dictonaryKey,
+        out float returnHealth, out float returnSpeed, out float returnDamage, out float returnCombatRange, 
+        out float returnAttackSpeed,
         out DropTable returnDropTable, out float returnMatingCooldown, out int numHunters, out float viewRange
         ) {
-        returnHealth = Mons[Type].maxHealth;
-        returnSpeed = Mons[Type].monsterSpeed;
-        returnDamage = Mons[Type].damage;
-        returnCombatRange = Mons[Type].combatRange;
-        returnAttackSpeed = Mons[Type].attackSpeed;
-        returnMesh = Mons[Type].monsterMesh;
-        returnDropTable = Mons[Type].dropTable;
-        returnMatingCooldown = Mons[Type].matingCooldown;
-        numHunters = Mons[Type].numHuntersRequired;
-        materials = Mons[Type].materials;
-        viewRange = Mons[Type].viewRange;
+        returnHealth = Mons[dictonaryKey].maxHealth;
+        returnSpeed = Mons[dictonaryKey].monsterSpeed;
+        returnDamage = Mons[dictonaryKey].damage;
+        returnCombatRange = Mons[dictonaryKey].combatRange;
+        returnAttackSpeed = Mons[dictonaryKey].attackSpeed;
+        returnDropTable = Mons[dictonaryKey].dropTable;
+        returnMatingCooldown = Mons[dictonaryKey].matingCooldown;
+        numHunters = Mons[dictonaryKey].numHuntersRequired;
+        viewRange = Mons[dictonaryKey].viewRange;
         return;
+        
     }
-    public void getNumHunters(TypeOfMonster Type, out int numHunters)
+    public void getNumHunters(MonsterController controller, out int numHunters)
     {
-        numHunters = Mons[Type].numHuntersRequired;
+        numHunters = controller.numHunters;
     }
     int getType(string Name) {
         for (int i = 0; i < Monsters.Length; i++)
