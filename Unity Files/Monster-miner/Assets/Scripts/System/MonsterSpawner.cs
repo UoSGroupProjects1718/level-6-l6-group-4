@@ -78,6 +78,8 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
             }
         }
 
+        Debug.Log("THERE IS NO DINO YOU ARE LOOKING FOR");
+
 
         //find the type of monster
         //check the appropriate list
