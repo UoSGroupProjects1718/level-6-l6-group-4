@@ -29,12 +29,14 @@ public class BehaviourTreeManager : MonoBehaviour
         {
             for (int i = 0; i < Colonists.Count; i++)
             {
-                ColonistTree.UpdateFunc(Colonists[i]);
+                if(Colonists[i].isActiveAndEnabled)
+                    ColonistTree.UpdateFunc(Colonists[i]);
             }
 
             for (int i = 0; i < Monsters.Count; i++)
             {
-                MonsterTree.UpdateFunc(Monsters[i]);
+                if (Monsters[i].isActiveAndEnabled)
+                    MonsterTree.UpdateFunc(Monsters[i]);
             }
             yield return new WaitForFixedUpdate();
         }
