@@ -19,6 +19,12 @@ public class BehaviourTreeManager : MonoBehaviour
 
     private void Start()
     {
+        for(int i = 0; i < 5; i++)
+        {
+            
+            MonsterSpawner.Instance.SpawnMonster(Utils.RandomNavSphere(Vector3.zero,70,-1), "Small Wood Herbivore");
+        }
+
         StartCoroutine(BehaviourTrees());
     }
 

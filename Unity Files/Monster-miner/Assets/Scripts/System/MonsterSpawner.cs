@@ -7,21 +7,48 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
     //Set up all lists
     List<MonsterController> controllers;
     List<List<GameObject>> MonsterLists;
+    GameObject ParentObj;
 
     int numberPerList = 20;
 
-    private void Start()
+    public override void Awake()
     {
-        foreach (string key in MonsterTypes.Instance.dictionaryKeys) {
-            GameObject currentMeshAndBones = MonsterTypes.Instance.Mons[key].monsterMeshAndBones;
-            List<GameObject> workingList = new List<GameObject>();
-            for (int i = 0; i < numberPerList; i++)
+        base.Awake();
+        //foreach (string key in MonsterTypes.Instance.dictionaryKeys) {
+        //    GameObject currentMeshAndBones = MonsterTypes.Instance.Mons[key].monsterMeshAndBones;
+        //    List<GameObject> workingList = new List<GameObject>();
+        //    for (int i = 0; i < numberPerList; i++)
+        //    {
+        //        GameObject newMeshAndBones = Instantiate(currentMeshAndBones);
+        //        newMeshAndBones.SetActive(false);
+        //        workingList.Add(newMeshAndBones);
+        //    }
+        //    MonsterLists.Add(workingList);
+        //}
+        ParentObj = new GameObject();
+        ParentObj.name = "MonsterPoolParentObj";
+        ParentObj.transform.position = Vector3.zero;
+        ParentObj.transform.rotation = Quaternion.identity;
+
+
+        MonsterLists = new List<List<GameObject>>();
+        controllers = new List<MonsterController>();
+        foreach (string key in MonsterTypes.Instance.dictionaryKeys)
+        {
+            try
             {
-                GameObject newMeshAndBones = Instantiate(currentMeshAndBones);
-                newMeshAndBones.SetActive(false);
-                workingList.Add(newMeshAndBones);
+                GameObject currentMeshAndBones = MonsterTypes.Instance.Mons[key].monsterMeshAndBones;
+                List<GameObject> workingList = new List<GameObject>();
+                for (int i = 0; i < numberPerList; i++)
+                {
+                    GameObject newMeshAndBones = Instantiate(currentMeshAndBones);
+                    newMeshAndBones.SetActive(false);
+                    workingList.Add(newMeshAndBones);
+                    newMeshAndBones.transform.SetParent(ParentObj.transform);
+                }
+                MonsterLists.Add(workingList);
             }
-            MonsterLists.Add(workingList);
+            catch { Debug.Log("No mesh"); }
         }
     }
 
@@ -36,7 +63,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
         MonsterTypes.Instance.getMonsterData(
            type, out controller.health, out controller.attackSpeed, out controller.damage,
            out controller.combatRange, out controller.attackSpeed, out controller.dropTable, out controller.matingCooldown, 
-           out controller.numHunters, out controller.viewRange);
+           out controller.numHunters, out controller.viewRange, out controller.monsterType);
     }
 
     MonsterController GetController() {
@@ -48,7 +75,10 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
                 
             }
         }
-        MonsterController returnController = new MonsterController();
+        GameObject gObject = new GameObject();
+        MonsterController returnController = gObject.AddComponent(typeof(MonsterController)) as MonsterController;
+        gObject.AddComponent(typeof(MonsterMovement));
+        gObject.transform.SetParent(ParentObj.transform);
         controllers.Add(returnController);
         return returnController;
     }
@@ -59,7 +89,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
 
         foreach (List<GameObject> searchingList in MonsterLists)
         {
-            if (searchingList[0] == wantedMeshAndBones)
+            if (searchingList[0].name == wantedMeshAndBones.name +"(Clone)")
             {
                 //we have found the wanted list
                 foreach(GameObject meshAndBones in searchingList)
@@ -72,6 +102,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
                     }
                 }
                 GameObject createdMeshAndBones = Instantiate(wantedMeshAndBones, parent.transform);
+                createdMeshAndBones.transform.GetChild(createdMeshAndBones.transform.childCount-1).transform.localEulerAngles = new Vector3(0,0,90);
                 createdMeshAndBones.transform.SetParent(parent.transform);
                 searchingList.Add(createdMeshAndBones);
                 return;

@@ -64,5 +64,19 @@ public static class Utils
         bounds.SetMinMax(min, max);
         return bounds;
     }
+    //find a random point within a unit sphere
+    public static Vector3 RandomNavSphere(Vector3 origin, float distance, int layermask)
+    {
+
+        Vector3 randomDirection = Random.insideUnitSphere * distance;
+
+
+        randomDirection += origin;
+        UnityEngine.AI.NavMeshHit navHit;
+        //sample whether we can hit a point
+        UnityEngine.AI.NavMesh.SamplePosition(randomDirection, out navHit, distance, layermask);
+        //then return the position
+        return navHit.position;
+    }
 
 }

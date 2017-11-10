@@ -40,7 +40,7 @@ public class Mating : BehaviourBase {
             Monster.lastMatingTime = Time.time;
             Monster.currentTarget.GetComponent<MonsterController>().lastMatingTime = Time.time;
             //stopgap measure, change later
-            Instantiate(SmallHerbivorePrefab, Monster.transform.position, Quaternion.identity);
+            MonsterSpawner.Instance.SpawnMonster(Monster.transform.position, "Small Wood Herbivore");
         }
         return Status.SUCCESS;
     } 

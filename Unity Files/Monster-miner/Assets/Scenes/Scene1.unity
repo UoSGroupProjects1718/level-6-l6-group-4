@@ -223,52 +223,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2673088b1df4f14aaf2b20a9fda7026, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &71738886
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 76.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.1037103e-17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 55.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1687612695503324, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_Name
-      value: Small Herbivore (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &77460248
 Prefab:
   m_ObjectHideFlags: 0
@@ -825,8 +779,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 668568087}
   m_HandleRect: {fileID: 668568086}
   m_Direction: 2
-  m_Value: 0.9999997
-  m_Size: 0.6666667
+  m_Value: 0.9999991
+  m_Size: 0.6666665
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1609,6 +1563,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5a467a59fc51e964f8a3e3e6173d3ccd, type: 2}
   - {fileID: 11400000, guid: d68ed0c9c13a9e343b60927cb03b2448, type: 2}
   - {fileID: 11400000, guid: 79a1b342b26a8494abf5cf71df714956, type: 2}
+  dictionaryKeys: []
 --- !u!114 &824090730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1913,52 +1868,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2673088b1df4f14aaf2b20a9fda7026, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1089052076
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 17.216852
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.1037103e-17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -14.912007
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1687612695503324, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_Name
-      value: Small Herbivore(1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1240575983
 Prefab:
@@ -3473,52 +3382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4722bcc5be74094ba7cb53a85155fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1817117832
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 17.216852
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.1037103e-17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 2.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714931643062226, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1687612695503324, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-      propertyPath: m_Name
-      value: Small Herbivore
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 87d1e2c6b430f3e4795e4b402e3671ef, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1836011044
 Prefab:
   m_ObjectHideFlags: 0
