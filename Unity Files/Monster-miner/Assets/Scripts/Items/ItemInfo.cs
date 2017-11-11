@@ -12,8 +12,7 @@ public enum ItemType
     Crystal,
     //put only raw resources above this point otherwise it will break scripts
     Nutrition,
-    Weapon,
-    Armour,
+    Wearable,
 }
 public class ItemInfo : ScriptableObject {
 

@@ -9,18 +9,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 317cbb10194a99845b46fc1620f0e41e, type: 3}
-  m_Name: Iron Breastplate
+  m_Name: Hunter Chest
   m_EditorClassIdentifier: 
   attachedGameObject: {fileID: 0}
-  itemName: Iron breastplate
+  itemName: Hunter Chest
   itemDescription: A breastplace made from iron ore
   decayPerHour: 1.5
   maxItemDurability: 50
-  currentItemDurability: 0
+  currentItemDurability: 50
   currentStackAmount: 1
   itemMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  type: 7
+  type: 6
+  equippableMesh: {fileID: 137619357096855660, guid: 886699129a21b754d8f5107bf974484f,
+    type: 2}
+  armourSlot: 1
   walkSpeedModifier: -0.5
   workSpeedModifier: -0.5
-  armourSlot: 1
   DamageReduction: 10

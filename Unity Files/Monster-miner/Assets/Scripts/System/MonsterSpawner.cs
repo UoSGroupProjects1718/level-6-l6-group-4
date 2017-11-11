@@ -14,17 +14,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
     public override void Awake()
     {
         base.Awake();
-        //foreach (string key in MonsterTypes.Instance.dictionaryKeys) {
-        //    GameObject currentMeshAndBones = MonsterTypes.Instance.Mons[key].monsterMeshAndBones;
-        //    List<GameObject> workingList = new List<GameObject>();
-        //    for (int i = 0; i < numberPerList; i++)
-        //    {
-        //        GameObject newMeshAndBones = Instantiate(currentMeshAndBones);
-        //        newMeshAndBones.SetActive(false);
-        //        workingList.Add(newMeshAndBones);
-        //    }
-        //    MonsterLists.Add(workingList);
-        //}
+
         ParentObj = new GameObject();
         ParentObj.name = "MonsterPoolParentObj";
         ParentObj.transform.position = Vector3.zero;
@@ -57,7 +47,6 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
     {
         MonsterController controller = GetController();
         controller.gameObject.transform.position = placement;
-
         GetMesh(type, controller);
 
         MonsterTypes.Instance.getMonsterData(

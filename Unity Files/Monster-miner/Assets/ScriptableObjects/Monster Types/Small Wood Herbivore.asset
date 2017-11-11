@@ -21,7 +21,7 @@ MonoBehaviour:
   damage: 0
   attackSpeed: 0
   nextAttack: 0
-  matingCooldown: 25
+  matingCooldown: 100
   monsterMeshAndBones: {fileID: 1687612695503324, guid: 87d1e2c6b430f3e4795e4b402e3671ef,
     type: 2}
   dropTable: {fileID: 11400000, guid: 48bcc423fc9deed4ca3c966b9e19ebe4, type: 2}

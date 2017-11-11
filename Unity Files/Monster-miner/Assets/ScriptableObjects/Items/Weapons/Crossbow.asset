@@ -17,12 +17,12 @@ MonoBehaviour:
   decayPerHour: 0
   maxItemDurability: 100
   currentItemDurability: 100
-  maxStackAmount: 1
   currentStackAmount: 1
-  itemMesh: {fileID: 0}
+  itemMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
   type: 6
-  WalkSpeedModifier: 0
-  WorkSpeedModifier: 0
+  armourSlot: 3
+  walkSpeedModifier: 0
+  workSpeedModifier: 0
   Damage: 30
   Range: 30
   AttackSpeed: 2

@@ -38,8 +38,11 @@ public class ColonistController : MonoBehaviour {
     public float nextAttack;
     public MonsterController target;
 
+    public SkinnedMeshRenderer colonistBodyMesh;
+
     public Weapon colonistWeapon;
     public Armour[] equippedArmour;
+    public SkinnedMeshRenderer[] equippedItemMeshes;
     public float damageReduction = 0;
     
     #endregion
@@ -47,8 +50,6 @@ public class ColonistController : MonoBehaviour {
     [HideInInspector]
     public bool hasPath;
 
-    [HideInInspector]
-    public AgentMovement agentMovement;
     [HideInInspector]
     public new Collider collider;
 
@@ -87,7 +88,6 @@ public class ColonistController : MonoBehaviour {
     {
         BehaviourTreeManager.Colonists.Add(this);
 
-        agentMovement = GetComponent<AgentMovement>();
         collider = gameObject.GetComponent<Collider>();
         agent = GetComponent<NavMeshAgent>();
 
@@ -101,7 +101,10 @@ public class ColonistController : MonoBehaviour {
         //set the selection cirlce
         selectionCircle = transform.GetChild(0).GetComponent<Projector>();
         SetTimeOfNextMeal();
-        equippedArmour = new Armour[Enum.GetValues(typeof(ArmourSlot)).Length];
+        equippedArmour = new Armour[Enum.GetNames(typeof(ArmourSlot)).Length-1];
+        equippedItemMeshes = new SkinnedMeshRenderer[Enum.GetNames(typeof(ArmourSlot)).Length - 1];
+        if(gameObject.name == "Colonist")
+        colonistBodyMesh = gameObject.transform.Find("Graphics").Find("BodyMesh").GetComponent<SkinnedMeshRenderer>();
     }
 
     public void OnDrawGizmos()
@@ -177,6 +180,7 @@ public class ColonistController : MonoBehaviour {
         //and apply the  new work speed with the current pentalty enacted
         colonistWorkSpeed = colonistBaseWorkSpeed - diffBaseCurrent;
     }
+
     public void UpdateDamageResistance(Armour oldArmour, Armour newArmour)
     {
         //regardless of if we have a new armour piece we need to be reducing the DR of the old piece
@@ -189,27 +193,49 @@ public class ColonistController : MonoBehaviour {
         }
         Mathf.Clamp(damageReduction, 0, 100);
     }
-    public void EquipArmour(Armour newArmour)
+    //inspired by https://www.youtube.com/watch?v=ZBLvKR2E62Q&t=401s
+    public void EquipWearable(Wearable wearable)
     {
-        //check to see if the colonist is wearing armour
-        if(equippedArmour[(int)newArmour.armourSlot] != null)
+        int slotIndex = (int)wearable.armourSlot;
+        if (slotIndex != (int)ArmourSlot.Weapon)
         {
-            //if so get the new DR
-            UpdateDamageResistance(equippedArmour[(int)newArmour.armourSlot],newArmour);
+            //check to see if the colonist is wearing armour
+            if (equippedArmour[slotIndex] != null)
+            {
+                //if so get the new DR
+                UpdateDamageResistance(equippedArmour[slotIndex], wearable as Armour);
+            }
+            //then just make the corresponding slot contain the new armour info
+            equippedArmour[slotIndex] = Instantiate(wearable) as Armour;
+            SkinnedMeshRenderer newMesh = Instantiate(wearable.equippableMesh);
+            newMesh.transform.parent = colonistBodyMesh.transform;
+            newMesh.bones = colonistBodyMesh.bones;
+            newMesh.rootBone = colonistBodyMesh.rootBone;
+            equippedItemMeshes[slotIndex] = newMesh;
+           
+          
         }
-        //then just make the corresponding slot contain the new armour info
-        equippedArmour[(int)newArmour.armourSlot] = newArmour;
+        else
+        {
+            colonistWeapon = wearable as Weapon;
+        }
+       
+
+
     }
     public void UnequipArmour(ArmourSlot slot)
     {
+        int slotIndex = (int)slot;
         //if there is no armour, we shouldnt be unequipping anyway
-        if (equippedArmour[(int)slot] == null)
-            return;
-
-        //then update DR
-        UpdateDamageResistance(equippedArmour[(int)slot], null);
-        //then set the slot to null
-        equippedArmour[(int)slot] = null;
+       if(equippedArmour[slotIndex] != null)
+        {
+            if(equippedItemMeshes[slotIndex] != null)
+            {
+                Destroy(equippedItemMeshes[slotIndex].gameObject);
+            }
+            UpdateDamageResistance(equippedArmour[slotIndex],null);
+            equippedArmour[slotIndex] = null;
+        }
     }
 
 }
