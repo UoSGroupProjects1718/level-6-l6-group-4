@@ -53,6 +53,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
            type, out controller.health, out controller.attackSpeed, out controller.damage,
            out controller.combatRange, out controller.attackSpeed, out controller.dropTable, out controller.matingCooldown, 
            out controller.numHunters, out controller.viewRange, out controller.monsterType);
+        controller.gameObject.name = type;
     }
 
     MonsterController GetController() {

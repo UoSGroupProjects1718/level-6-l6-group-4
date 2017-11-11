@@ -12,14 +12,14 @@ public class TestEquipButtons : MonoBehaviour {
 
     public void HeadClick()
     {
-        colonist.EquipWearable(head);
+        colonist.colonistEquipment.EquipWearable(head);
     }
     public void TorsoClick()
     {
-        colonist.EquipWearable(torso);
+        colonist.colonistEquipment.EquipWearable(torso);
     }
     public void LegsClick()
     {
-        colonist.EquipWearable(legs);
+        colonist.colonistEquipment.EquipWearable(legs);
     }
 }

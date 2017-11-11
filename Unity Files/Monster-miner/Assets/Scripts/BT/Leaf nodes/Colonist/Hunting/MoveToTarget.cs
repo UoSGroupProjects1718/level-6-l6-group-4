@@ -30,7 +30,7 @@ namespace MonsterMiner
             private bool InRange(ColonistController Colonist, MonsterController monster)
             {
 
-                if(Vector3.Distance(Colonist.transform.position,monster.transform.position) < Colonist.colonistWeapon.Range - 1)
+                if(Vector3.Distance(Colonist.transform.position,monster.transform.position) < Colonist.colonistEquipment.weapon.Range - 1)
                 {
                     return true;
                 }

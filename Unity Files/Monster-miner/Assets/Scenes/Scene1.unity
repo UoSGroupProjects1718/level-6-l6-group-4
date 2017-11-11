@@ -385,6 +385,48 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1240575983}
   m_GameObject: {fileID: 158538418}
+--- !u!1001 &198073911
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1704022098}
+    m_Modifications:
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+  m_IsPrefabParent: 0
 --- !u!224 &250017850 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224527413666318922, guid: b705929e526266b4086d23f4dbdd32f2,
@@ -554,6 +596,7 @@ GameObject:
   - component: {fileID: 284386186}
   - component: {fileID: 284386185}
   - component: {fileID: 284386184}
+  - component: {fileID: 284386188}
   m_Layer: 0
   m_Name: Hunter (2)
   m_TagString: Untagged
@@ -585,11 +628,7 @@ MonoBehaviour:
   currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
-  colonistBodyMesh: {fileID: 0}
-  colonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
-  equippedArmour: []
-  equippedItemMeshes: []
-  damageReduction: 0
+  colonistEquipment: {fileID: 0}
   hasPath: 0
   collider: {fileID: 0}
   gathererStockpile: {fileID: 0}
@@ -633,7 +672,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1.55
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!4 &284386187
@@ -653,6 +692,22 @@ Transform:
   m_Father: {fileID: 1264015826}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &284386188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 284386183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5721c8923c901744ab053d1dbbc90121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  equippedArmour: []
+  equippedItemMeshes: []
+  damageReduction: 0
+  colonistBodyMesh: {fileID: 0}
 --- !u!1001 &330395627
 Prefab:
   m_ObjectHideFlags: 0
@@ -1379,12 +1434,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 764116382}
-  - component: {fileID: 764116381}
-  - component: {fileID: 764116380}
-  - component: {fileID: 764116379}
   - component: {fileID: 764116378}
   - component: {fileID: 764116377}
   - component: {fileID: 764116375}
+  - component: {fileID: 764116376}
   m_Layer: 0
   m_Name: Scout (1)
   m_TagString: Untagged
@@ -1415,14 +1468,7 @@ MonoBehaviour:
   currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
-  colonistBodyMesh: {fileID: 0}
-  colonistWeapon: {fileID: 0}
-  equippedArmour:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  equippedItemMeshes: []
-  damageReduction: 0
+  colonistEquipment: {fileID: 0}
   hasPath: 0
   collider: {fileID: 0}
   gathererStockpile: {fileID: 0}
@@ -1431,6 +1477,22 @@ MonoBehaviour:
   wanderRepathTimer: 0
   wanderTimer: 0
   wanderRadius: 30
+--- !u!114 &764116376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764116374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5721c8923c901744ab053d1dbbc90121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  equippedArmour: []
+  equippedItemMeshes: []
+  damageReduction: 0
+  colonistBodyMesh: {fileID: 0}
 --- !u!54 &764116377
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1464,61 +1526,9 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!23 &764116379
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 764116374}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!136 &764116380
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 764116374}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &764116381
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 764116374}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &764116382
 Transform:
   m_ObjectHideFlags: 0
@@ -1530,6 +1540,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 695917213}
+  - {fileID: 1954251960}
   m_Father: {fileID: 1264015826}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2100,6 +2111,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2673088b1df4f14aaf2b20a9fda7026, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &984662720
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2027888238}
+    m_Modifications:
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &991526708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,6 +2239,7 @@ GameObject:
   - component: {fileID: 1002371728}
   - component: {fileID: 1002371727}
   - component: {fileID: 1002371726}
+  - component: {fileID: 1002371730}
   m_Layer: 0
   m_Name: Hunter (1)
   m_TagString: Untagged
@@ -2217,14 +2271,7 @@ MonoBehaviour:
   currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
-  colonistBodyMesh: {fileID: 0}
-  colonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
-  equippedArmour:
-  - {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3, type: 2}
-  - {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef, type: 2}
-  - {fileID: 11400000, guid: 2d0cb52de6be57240b14390e34172781, type: 2}
-  equippedItemMeshes: []
-  damageReduction: 20
+  colonistEquipment: {fileID: 0}
   hasPath: 0
   collider: {fileID: 0}
   gathererStockpile: {fileID: 0}
@@ -2268,7 +2315,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1.55
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!4 &1002371729
@@ -2287,6 +2334,22 @@ Transform:
   m_Father: {fileID: 1264015826}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1002371730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002371725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5721c8923c901744ab053d1dbbc90121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  equippedArmour: []
+  equippedItemMeshes: []
+  damageReduction: 0
+  colonistBodyMesh: {fileID: 0}
 --- !u!1 &1031210154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,6 +2472,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1031210154}
+--- !u!4 &1184655480 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 984662720}
 --- !u!4 &1193449641 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0,
@@ -2939,6 +3007,53 @@ MonoBehaviour:
   torso: {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef, type: 2}
   legs: {fileID: 11400000, guid: 2d0cb52de6be57240b14390e34172781, type: 2}
   colonist: {fileID: 1494036840}
+--- !u!1001 &1319495597
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 764116382}
+    m_Modifications:
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8ba6beb1951f77d4abd7bf14119bc0e0, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1362571510 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 198073911}
 --- !u!1 &1404441683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,6 +3180,7 @@ GameObject:
   - component: {fileID: 1450371673}
   - component: {fileID: 1450371672}
   - component: {fileID: 1494036840}
+  - component: {fileID: 1450371675}
   m_Layer: 0
   m_Name: Colonist
   m_TagString: Untagged
@@ -3126,6 +3242,22 @@ Transform:
   m_Father: {fileID: 1264015826}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1450371675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1450371671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5721c8923c901744ab053d1dbbc90121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  equippedArmour: []
+  equippedItemMeshes: []
+  damageReduction: 0
+  colonistBodyMesh: {fileID: 0}
 --- !u!1 &1471848930
 GameObject:
   m_ObjectHideFlags: 0
@@ -3274,11 +3406,7 @@ MonoBehaviour:
   currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
-  colonistBodyMesh: {fileID: 0}
-  colonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
-  equippedArmour: []
-  equippedItemMeshes: []
-  damageReduction: 0
+  colonistEquipment: {fileID: 0}
   hasPath: 0
   collider: {fileID: 0}
   gathererStockpile: {fileID: 0}
@@ -3680,6 +3808,7 @@ GameObject:
   - component: {fileID: 1645314172}
   - component: {fileID: 1645314171}
   - component: {fileID: 1645314170}
+  - component: {fileID: 1645314174}
   m_Layer: 0
   m_Name: Hunter
   m_TagString: Untagged
@@ -3711,14 +3840,7 @@ MonoBehaviour:
   currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
-  colonistBodyMesh: {fileID: 0}
-  colonistWeapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
-  equippedArmour:
-  - {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3, type: 2}
-  - {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef, type: 2}
-  - {fileID: 11400000, guid: 2d0cb52de6be57240b14390e34172781, type: 2}
-  equippedItemMeshes: []
-  damageReduction: 20
+  colonistEquipment: {fileID: 0}
   hasPath: 0
   collider: {fileID: 0}
   gathererStockpile: {fileID: 0}
@@ -3762,7 +3884,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1.55
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!4 &1645314173
@@ -3781,6 +3903,22 @@ Transform:
   m_Father: {fileID: 1264015826}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1645314174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1645314169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5721c8923c901744ab053d1dbbc90121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  equippedArmour: []
+  equippedItemMeshes: []
+  damageReduction: 0
+  colonistBodyMesh: {fileID: 0}
 --- !u!1 &1654114279
 GameObject:
   m_ObjectHideFlags: 0
@@ -4053,12 +4191,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1704022098}
-  - component: {fileID: 1704022097}
-  - component: {fileID: 1704022096}
-  - component: {fileID: 1704022095}
   - component: {fileID: 1704022094}
   - component: {fileID: 1704022093}
   - component: {fileID: 1704022091}
+  - component: {fileID: 1704022092}
   m_Layer: 0
   m_Name: Builder
   m_TagString: Untagged
@@ -4089,14 +4225,7 @@ MonoBehaviour:
   currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
-  colonistBodyMesh: {fileID: 0}
-  colonistWeapon: {fileID: 0}
-  equippedArmour:
-  - {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3, type: 2}
-  - {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef, type: 2}
-  - {fileID: 11400000, guid: 2d0cb52de6be57240b14390e34172781, type: 2}
-  equippedItemMeshes: []
-  damageReduction: 20
+  colonistEquipment: {fileID: 0}
   hasPath: 0
   collider: {fileID: 0}
   gathererStockpile: {fileID: 0}
@@ -4105,6 +4234,22 @@ MonoBehaviour:
   wanderRepathTimer: 0
   wanderTimer: 0
   wanderRadius: 30
+--- !u!114 &1704022092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1704022090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5721c8923c901744ab053d1dbbc90121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  equippedArmour: []
+  equippedItemMeshes: []
+  damageReduction: 0
+  colonistBodyMesh: {fileID: 0}
 --- !u!54 &1704022093
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4138,61 +4283,9 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!23 &1704022095
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1704022090}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 8a3763ef8d1edb744aae6d43248d8dea, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!136 &1704022096
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1704022090}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1704022097
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1704022090}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1704022098
 Transform:
   m_ObjectHideFlags: 0
@@ -4204,6 +4297,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 634630078}
+  - {fileID: 1362571510}
   m_Father: {fileID: 1264015826}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5131,6 +5225,11 @@ MonoBehaviour:
   FloorLayerMask:
     serializedVersion: 2
     m_Bits: 256
+--- !u!4 &1954251960 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4289735312756330, guid: 8ba6beb1951f77d4abd7bf14119bc0e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319495597}
 --- !u!1001 &1966170868
 Prefab:
   m_ObjectHideFlags: 0
@@ -6139,12 +6238,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2027888238}
-  - component: {fileID: 2027888237}
-  - component: {fileID: 2027888236}
-  - component: {fileID: 2027888235}
   - component: {fileID: 2027888234}
   - component: {fileID: 2027888233}
   - component: {fileID: 2027888231}
+  - component: {fileID: 2027888232}
   m_Layer: 0
   m_Name: Scout
   m_TagString: Untagged
@@ -6175,14 +6272,7 @@ MonoBehaviour:
   currentJob: {fileID: 0}
   nextAttack: 0
   target: {fileID: 0}
-  colonistBodyMesh: {fileID: 0}
-  colonistWeapon: {fileID: 0}
-  equippedArmour:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  equippedItemMeshes: []
-  damageReduction: 0
+  colonistEquipment: {fileID: 0}
   hasPath: 0
   collider: {fileID: 0}
   gathererStockpile: {fileID: 0}
@@ -6191,6 +6281,22 @@ MonoBehaviour:
   wanderRepathTimer: 0
   wanderTimer: 0
   wanderRadius: 30
+--- !u!114 &2027888232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2027888230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5721c8923c901744ab053d1dbbc90121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  equippedArmour: []
+  equippedItemMeshes: []
+  damageReduction: 0
+  colonistBodyMesh: {fileID: 0}
 --- !u!54 &2027888233
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6224,61 +6330,9 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!23 &2027888235
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2027888230}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!136 &2027888236
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2027888230}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &2027888237
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2027888230}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &2027888238
 Transform:
   m_ObjectHideFlags: 0
@@ -6290,6 +6344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1471848931}
+  - {fileID: 1184655480}
   m_Father: {fileID: 1264015826}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

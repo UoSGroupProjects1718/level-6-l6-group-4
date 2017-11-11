@@ -50,6 +50,7 @@ public class MonsterTypes : SingletonClass<MonsterTypes> {
         numHunters = Mons[dictonaryKey].numHuntersRequired;
         viewRange = Mons[dictonaryKey].viewRange;
         monsType = Mons[dictonaryKey].monsterType;
+
         return;
         
     }

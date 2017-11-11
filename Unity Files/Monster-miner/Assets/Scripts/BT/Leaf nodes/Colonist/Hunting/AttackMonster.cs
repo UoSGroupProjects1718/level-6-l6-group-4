@@ -18,8 +18,8 @@ namespace MonsterMiner
                 {
                     if(HasHit(Colonist))
                     {
-                        Colonist.nextAttack = Time.time + Colonist.colonistWeapon.AttackSpeed;
-                        Colonist.target.takeDamage(Colonist.colonistWeapon.Damage);
+                        Colonist.nextAttack = Time.time + Colonist.colonistEquipment.weapon.AttackSpeed;
+                        Colonist.target.takeDamage(Colonist.colonistEquipment.weapon.Damage);
                         if (Colonist.target.checkDead())
                         {
                             Colonist.target.transform.GetChild(Colonist.target.transform.childCount - 1).Rotate(new Vector3(0, 0, 90));
@@ -39,7 +39,7 @@ namespace MonsterMiner
             private bool HasHit(ColonistController Colonist)
             {
                 float hitChance = Random.Range(0, 100);
-                return (hitChance <= Colonist.colonistWeapon.Accuracy);
+                return (hitChance <= Colonist.colonistEquipment.weapon.Accuracy);
 
             }
         }
