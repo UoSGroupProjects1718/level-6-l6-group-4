@@ -34,6 +34,25 @@ public class LargeCarnivorState : BehaviourBase
                 Monster.currentState = MonsterController.MovementState.MakeLove;
                 return Status.SUCCESS;
             }
+
+            for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
+            {
+                float thisDist = (BehaviourTreeManager.Monsters[i].transform.position - pos.position).magnitude;
+                if (thisDist < Dist)
+                {
+                    Dist = thisDist;
+                    Closest = BehaviourTreeManager.Colonists[i].transform;
+                }
+            }
+            if(Closest != null && Dist < Monster.viewRange)
+            {
+                Monster.currentTarget = Closest;
+                Monster.currentState = MonsterController.MovementState.Chase;
+                return Status.SUCCESS;
+            }
+
+
+
             Monster.currentState = MonsterController.MovementState.Wander;
             return Status.SUCCESS;
         }
