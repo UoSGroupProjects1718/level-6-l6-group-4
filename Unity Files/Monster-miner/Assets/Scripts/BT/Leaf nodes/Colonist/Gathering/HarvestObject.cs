@@ -20,11 +20,16 @@ namespace MonsterMiner
                     return Status.FAILURE;
 
 
-                    SpawnDrops(Colonist.currentJob,Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable);
-                    Debug.Log("Finished harvesting" + Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().monsterName);
-                    Destroy(Colonist.currentJob.InteractionObject);
-                    Colonist.currentJob = null;
-                    return Status.SUCCESS;
+                SpawnDrops(Colonist.currentJob,Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable);
+                Debug.Log("Finished harvesting" + Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().monsterName);
+                //Destroy(Colonist.currentJob.InteractionObject);
+                for (int i = 0; i < Colonist.currentJob.InteractionObject.transform.childCount; i++)
+                {
+                    Colonist.currentJob.InteractionObject.transform.GetChild(i).gameObject.SetActive(false);
+                }
+                Colonist.currentJob.InteractionObject.transform.DetachChildren();
+                Colonist.currentJob = null;
+                return Status.SUCCESS;
    
             }
 
