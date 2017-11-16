@@ -1,0 +1,39 @@
+15/11/2017 - 10:30
+
+Members in attendance: Oliver Chamberlain, Daniel Jamieson, Ross Warren, Douglas Simpson
+
+
+Discussed and reviewed the previous week's work.
+
+Discussed eliminating the farm building due to it not really fitting with the game's justification for why the wood and stone etc cannot be
+used as building materials and why materials are harvested from the dinosaurs. 
+
+Clarified Ross' UI designs and requested alterations.
+
+
+
+Tasks
+-------
+
+Oliver
+Implement the barracks building system and UI
+Design and implement the item database
+tweak the armour equipping system to no longer include the helmet slot
+
+
+Daniel
+complete the implementation of the terrain system with the new terrain set
+Iterate on the carnivore hunting behaviour
+
+
+Ross
+Create visual affordances and designs within the UI
+Playtest the UI
+Research into design methods for visual affordances and designs
+
+
+Douglas
+Modelling more terrain tiles - continued from last week
+T pose the main character model 
+Make 4 new chestplates for colonist equipment
+Make different coloured capes for each colonist type
