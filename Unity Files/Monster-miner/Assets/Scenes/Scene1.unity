@@ -969,7 +969,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 668568087}
   m_HandleRect: {fileID: 668568086}
   m_Direction: 2
-  m_Value: 0.9999997
+  m_Value: 1
   m_Size: 0.6666667
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1114,7 +1114,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 634630077}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1704022098}
@@ -1336,7 +1336,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 695917212}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 764116382}
@@ -1665,6 +1665,7 @@ GameObject:
   - component: {fileID: 824090729}
   - component: {fileID: 824090730}
   - component: {fileID: 824090731}
+  - component: {fileID: 824090732}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1804,6 +1805,26 @@ MonoBehaviour:
   BarracksInputField: {fileID: 0}
   BarracksPanel: {fileID: 0}
   BarracksTertiaryFocusedMonster: {fileID: 0}
+--- !u!114 &824090732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 824090724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d0077dd511da0439a07c812f68ab81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  databaseItems:
+  - {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
+  - {fileID: 11400000, guid: bf7b19bdd439d8f4a86246931c714838, type: 2}
+  - {fileID: 11400000, guid: 7e86d8907b88d74449b673beb6ff1fcc, type: 2}
+  - {fileID: 11400000, guid: 2d0cb52de6be57240b14390e34172781, type: 2}
+  - {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3, type: 2}
+  - {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef, type: 2}
+  ItemPrefab: {fileID: 1821821615303488, guid: 42df5e56edc14fe479bbfd51bb74dc08, type: 2}
+  ObjectPoolSize: 20
 --- !u!1 &826661229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,7 +1972,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 892816260}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 284386187}
@@ -3283,7 +3304,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1471848930}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2027888238}
@@ -4522,7 +4543,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1777678747}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1002371729}
@@ -4935,7 +4956,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1844808916}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1645314173}

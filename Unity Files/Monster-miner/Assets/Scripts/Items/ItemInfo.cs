@@ -25,21 +25,13 @@ public class ItemInfo : ScriptableObject {
     public string itemDescription;
     public float decayPerHour;
     //maybe make this 100 on all items?
-    [Range(0,200)]
+    [Range(0, 200)]
     public float maxItemDurability;
-    [HideInInspector]
-    public float currentItemDurability;
 
     public int currentStackAmount;
 
     public Mesh itemMesh;
     public ItemType type;
 
-
-
-    private void Awake()
-    {
-        currentItemDurability = maxItemDurability;
-    }
 
 }

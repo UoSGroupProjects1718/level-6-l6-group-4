@@ -35,23 +35,27 @@ namespace MonsterMiner
 
             private void SpawnDrops(Job job,DropTable drops)
             {
+                //loop through the drop table and create a new item for each item in the list
                 for(int i = 0; i < drops.Drops.Length; i++)
                 {
-                    GameObject newItem = Instantiate(ItemPrefab,job.InteractionObject.transform.position,Quaternion.identity);
+                    GameObject newItem = ItemDatabase.SpawnItemToWorld(drops.Drops[i].itemName);
                     Item Item = newItem.GetComponent<Item>();
                     newItem.transform.localScale = new Vector3(1, 1, 1);
+                    newItem.transform.position = job.jobLocation;
                     newItem.GetComponent<MeshRenderer>().material.color = Color.white;
-                    Item.item = Instantiate(drops.Drops[i]);
+
+                    //if it is not a wearable, set a random stack amount
                     if (Item.item.type != ItemType.Wearable)
                     {
                         Item.item.currentStackAmount = Random.Range((drops.Drops[i] as Resource).minDropAmount, (drops.Drops[i] as Resource).maxDropAmount);
                     }
+                    //otherwise its a wearable and these dont stack
                     else
                         Item.item.currentStackAmount = 1;
+
+
                     int WorkAmount = Item.item.currentStackAmount * (Item.item as Resource).GatherWorkPerItem;
-                    JobManager.CreateJob(JobType.Gathering, WorkAmount, newItem, newItem.transform.position, "Gather " + Item.item.name);
-                    Item.UpdateMesh();
-                    
+                    JobManager.CreateJob(JobType.Gathering, WorkAmount, newItem, newItem.transform.position, "Gather " + Item.item.name);                    
                 }
             }
             

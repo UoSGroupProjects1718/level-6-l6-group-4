@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System;
 
 
@@ -30,6 +30,7 @@ public class Equipment : MonoBehaviour
         }
         Mathf.Clamp(damageReduction, 0, 100);
     }
+
     //inspired by https://www.youtube.com/watch?v=ZBLvKR2E62Q&t=401s
     public void EquipWearable(Wearable wearable)
     {
@@ -43,8 +44,8 @@ public class Equipment : MonoBehaviour
                 UpdateDamageResistance(equippedArmour[slotIndex], wearable as Armour);
             }
             //then just make the corresponding slot contain the new armour info
-            equippedArmour[slotIndex] = Instantiate(wearable) as Armour;
-            SkinnedMeshRenderer newMesh = Instantiate(wearable.equippableMesh);
+            equippedArmour[slotIndex] = ItemDatabase.GetItem(wearable.itemName) as Armour;
+            SkinnedMeshRenderer newMesh = ItemDatabase.GetItemSkinnedMeshRenderer(wearable.itemName);
             newMesh.transform.parent = colonistBodyMesh.transform;
             newMesh.bones = colonistBodyMesh.bones;
             newMesh.rootBone = colonistBodyMesh.rootBone;
@@ -59,16 +60,26 @@ public class Equipment : MonoBehaviour
     }
     public void UnequipArmour(ArmourSlot slot)
     {
+        if(slot == ArmourSlot.Weapon)
+        {
+            //weapon's skinnedmeshrenderer to disabled
+
+            weapon = null;
+            return;
+        }
         int slotIndex = (int)slot;
         //if there is no armour, we shouldnt be unequipping anyway
         if (equippedArmour[slotIndex] != null)
         {
             if (equippedItemMeshes[slotIndex] != null)
             {
-                Destroy(equippedItemMeshes[slotIndex].gameObject);
+                //return the item to the it's respective pool by disabling it
+                equippedItemMeshes[slotIndex].transform.parent = null;
+                equippedItemMeshes[slotIndex].enabled = false;
             }
             UpdateDamageResistance(equippedArmour[slotIndex], null);
             equippedArmour[slotIndex] = null;
         }
     }
+
 }

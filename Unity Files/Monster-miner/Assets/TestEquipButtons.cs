@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,14 +12,38 @@ public class TestEquipButtons : MonoBehaviour {
 
     public void HeadClick()
     {
-        colonist.colonistEquipment.EquipWearable(head);
+        try
+        {
+            colonist.colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Head") as Wearable);
+            Debug.Log("Head button pressed");
+        }
+        catch
+        {
+            Debug.LogWarning("Could not get Hunter Head");
+        }
     }
     public void TorsoClick()
     {
-        colonist.colonistEquipment.EquipWearable(torso);
+        try
+        {
+            colonist.colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Chest") as Wearable);
+
+        }
+        catch
+        {
+            Debug.LogWarning("Could not get Hunter Chest");
+        }
     }
     public void LegsClick()
     {
-        colonist.colonistEquipment.EquipWearable(legs);
+        try
+        {
+
+        colonist.colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Legs") as Wearable);
+        }
+        catch
+        {
+            Debug.LogWarning("Could not get Hunter Legs");
+        }
     }
 }
