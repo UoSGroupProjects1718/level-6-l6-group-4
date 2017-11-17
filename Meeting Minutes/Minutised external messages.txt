@@ -1,0 +1,122 @@
+26/09/17 - Established unity version 2017.1.1 as the version all members must keep to when editing the project.
+	 - Discussed using a trello board until jira is set up (the trello board was being used by Oliver and Daniel on any
+	   tasks which were underway prior to the official start of the academic year). Douglas and Ross did not want to use trello
+	   and so only Oliver and Daniel used it.
+	 - Discussed various games' art styles and tried to formulate an art style. Decided on using a low-poly art style due to a potentially
+	   large modelling requirement from the artists, alongside Ross' self professed weakness in modelling due to having more of an interest in UI design.
+	 - Oliver and Douglas: Discussed the merits of implementing a perspective or an orthographic camera. Settled on implementing a perspective camera.
+	   Also discussed whether the camera should have full 360 degree rotation or whether it should have a static perspective. Settled on 360 degree rotation.
+
+27/09/17 - Douglas presented prototype models for a granary, stockpile, bunker, cannon and wall building.
+	 - Oliver set up a Github repository to house the game files prior to a Github repository being officially set up for the game project.
+	 - Douglas agreed to upload his prototype models to the github repository, douglas could not work out how to do this, so he uploaded the models to dropbox and sent links to the dropbox files.
+
+28/09/17 - Oliver, Douglas, Daniel: Discussion about how to model the terrain for the game, discussed using program specifically made for modelling trees,
+	   speed tree was suggested for this use by Oliver, no ultimate decision was made.
+	 - Oliver discussed his progress in a building creation system, showed code snippets and explained how this worked in order to confirm with the design team 
+	   that the mechanics were working as envisioned. This was confirmed.
+	 - Daniel set up the official github repository via github classrooms for the project and Oliver provided the necessary links for the design team to gain access to the github. The design team
+	   did not pursue gaining access to the github until late in W/C 02/10/17.
+	 - Oliver also provided a link to the Jira board however Douglas could not remember his details for Jira and so could not access the board until later in the week.
+	 - Daniel populated the jira board with tasks that were agreed earlier in the week during a group meeting.
+ 	 - Oliver and Daniel: Established different working dates so that they do not clash with eachother while working on the project.
+	
+
+29/09/17 - Ross apologises for lack of communication. Says that he has completed body pose sketches for concept art and established colour theories for
+	   each colonist type. These were on paper and would be digitised later that day. Promised an image of the work in progress in order to check in on work done.
+	   these were not provided.
+	 
+02/10/17 - Douglas presented an image of a work in progress building model with the design changed from being renaissance european to being crafted from large bones with leather stretched between supports.
+	 - Oliver and daniel have a discord meeting concerning the underlying behaviour tree structure and base classes for use in the game's AI. Together established the base classes and a more "Friendly" implementation of a behaviour
+	   tree builder using scriptable objects.
+	 - Douglas presented various different models for cannons.
+	 - Oliver, Daniel and Douglas: Discussion about the implementation of a cannon as a building, Oliver and Daniel cite the time required to implement such a feature and the relative importance of it compared to a more core feature. 
+	   and suggest that the feature is pushed to the back of the backlog as a relatively unimportant feature in comparison to currently required features.
+ 	
+
+03/10/17 - Oliver suggests a meeting for the following day, Only daniel responds with an affirmative, no reply from the design team.
+	
+
+04/10/17 - Douglas presented a prototype model of a building's scaffolding. Oliver suggests that Douglas send an email to log the fact that some models have been made and images of these will be provided via a different channel.
+	 - Ross says that he will upload the weeks meeting minutes at 7pm, these minutes were never provided. Douglas and Ross both attended the day's meeting.
+
+05/10/17 - Douglas had uploaded some building models to a github repository but this was the temporary repository before the official one was set up. Douglas then goes through the process to gain access to the correct repository.
+	 - Douglas presents various "finalised" models via screenshots.
+	 - Douglas says that he does not know how to correctly upload files to github and Oliver agrees that himself and Daniel will show Douglas (and Ross if required) how to use Github.
+	 
+07/10/17 - Oliver and Daniel: discussion based around the mechanics of swapping a mesh for the building in order to show a scaffolding model before a building has been fully built. 
+	   There was a scaling issue with the building models and Daniel requested for douglas to investigate and fix the scaling issue. This issue was not rectified so a workaround in unity was found.
+	 - Oliver says that an item decay and hunting mechanic have been completed.
+	
+09/10/17 - Douglas replies to Oliver and Daniel regarding the model scaling issue, promises to look into it. 
+
+10/10/17 - Oliver gives a quick feature list description for ross in order to draw up some further concept art for two other game ideas (that were concepted prior to ross joining the group) for use in the presentation that week.
+	
+12/10/17 - Douglas presents a building model for a barracks and says that updates may be sporadic due to internet maintenance at Athena Hall.
+	 - Oliver says that he will not start any of his tasks until monday due to the prior agreed upon arrangement with Daniel.
+
+13/10/17 - Douglas presents more building models, for different barracks models and for blacksmith's forge models.
+	 - Oliver suggests some possible UI layouts based on some UI panels in Stonehearth.
+
+15/10/17 - Douglas presents more building models, this time for a bunker.
+	 - Douglas presents the idea of having cannon defence buildings again. Daniel suggests that this is a topic for the group meeting on wednesday.
+	 
+18/10/17 - Douglas presents more cannon models.
+
+19/10/17 - Oliver asks for an update from ross.
+
+20/10/17 - Oliver asks for an update from ross, and asks for douglas to rename the meshes because in unity they are all called "cube" 
+	 - Douglas agrees to re-export the models with altered mesh names and presents some models for the dinosaurs.
+	 - Oliver and Douglas: Discussion about the design of the dinosaurs, Oliver suggested that smaller herbivores that would only run away may be better bipedal because they should be able to run faster (this was backed up with some cursory research on
+	   real life dinosaurs)
+	 - Douglas says that he will begin rigging his dinosaur models the next day.
+
+21/10/17 - Douglas sends images of his dinosaur models with rigging implemented.
+
+23/10/17 - Oliver says that a meeting is booked with Chris for wednesday at 11:45 and says that the design team do not need to be present (after asking Chris if this was acceptable)
+	 - The whole team agree upon a meeting time of 12pm.
+
+27/10/17 - Douglas presents various more dinosaur models.
+  	 - Oliver suggests that the model based on an ankylosaur which has a flat shell, should be more convex and uses some concept images of scientist's best guess of what different types of ankylosaur looked like.
+
+28/10/17 - Oliver shows a screenshot of one of the UI panels for verification. No answer was given on this matter.
+
+29/10/17 -  Douglas shares pictures of dinosaur models that he has rigged.
+	 - Oliver, Daniel, Douglas: conversation regarding how the resources to build resources are sourced. Two ideas were presented. 1) The resources are just automatically attributed to the building when the colonist goes to build it.
+	   Or 2) The colonist walks to a stockpile in order to pick them up and haul them to the building. The first idea was agreed upon.
+	 
+30/10/17 - Oliver, Daniel, Douglas: Discussion about lack of work from Ross and Douglas suggested that we send an email requesting an update from Ross, which Daniel had done the previous morning. Oliver says that he will send another email
+	   asking for an update on monday evening to afford Ross one working day to reply. 
+	
+31/10/17 - Oliver asks if Douglas is happy with meeting at 11  the following day, an email had been sent however  Douglas had not seen the email. It is noted that Ross had been active in emailing but had not replied to the email regarding the meeting.
+
+02/11/17 - Oliver discusses with Douglas about how the armour and weapon models need to be exported and sends two video tutorials which outline the exact processes required for this. Douglas says he will take a look if he needs it.
+
+03/11/17 - Douglas requests a list of all colonist types that require clothing, Oliver gives this list, and also begins a discussion about whether both a builder and blacksmith are required as the builder spends a lot of time idle. Douglas agrees
+	   that a dedicated builder may not be required.
+	 - Ross says that he cannot access his email because the website is down, Oliver and Daniel say they can access their emails and troubleshoot for Ross and find a way for him to access his emails.
+	 - Discuss assigning Ross mostly UI tasks in the coming weeks due to most of the modelling requirement having been satisfied.
+
+05/11/17 - Oliver and Daniel request help from the design team regarding the presentation for that week as there was a slide that was design oriented and they were unsure of what to include.
+	 - Ross presents a female human model for the colonists.
+
+08/11/17 - Douglas asks what time the group is meeting, which was agreed to be 10am via email.
+	 - Ross says that he is running late.
+
+10/11/17 - Oliver requests Douglas' help with a broken model. 
+
+13/11/17 - Douglas replies saying that his model should not be broken. And that the root bone should not be what Unity was picking up as the root bone.
+ 	 - Oliver says that he has fixed the issue he was having over the previous few days, and that he had made a new blend file with the model working correctly
+	   for Douglas to use as a template when modelling and exporting in the future.
+
+14/11/17 - Members all agree upon a meeting at 10:30 the following day.
+	 - Douglas presents some models for terrain tiles.
+	 - Oliver asks if Douglas is keeping a list of which tiles can tile to each other tile as was asked for to save a lot of time for Daniel when implementing the terrain system.
+	   Douglas says that he wasnt as it was not needed at that juncture and Oliver urged Douglas to keep a list because Daniel cannot assume that each tile will tile to each other and 
+	   it will take Daniel much more time to figure this out after the fact than it will for Douglas while he is making them.
+	 - Ross asked for clarification and input on the requested UI panels. He discussed this with Oliver and Douglas and the design for these panels were iterated upon.
+
+16/11/17 - Oliver suggested that with different colonist types having different coloured capes (which was decided the day previous to further increase the colour affordances that each colonist had) 
+	   that different colonist jobs could have different stats associated with them via the cape system.
+	 
+
