@@ -8,6 +8,9 @@ Discussed and reviewed the previous week's work.
 Discussed eliminating the farm building due to it not really fitting with the game's justification for why the wood and stone etc cannot be
 used as building materials and why materials are harvested from the dinosaurs. 
 
+Daniel asked Douglas for a list of which tiles are able to be neighbouring tiles on each orthogonal direction for the terrain tiles. This is required alongside the tiles
+themselves for his task this week to complete the terrain implementation.
+
 Clarified Ross' UI designs and requested alterations.
 
 
