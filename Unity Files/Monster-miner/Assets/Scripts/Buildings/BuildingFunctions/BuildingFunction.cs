@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public abstract class BuildingFunction : MonoBehaviour {
 
@@ -28,6 +29,8 @@ public abstract class BuildingFunction : MonoBehaviour {
     }
     public virtual void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
         if (Built)
         {
             Function();

@@ -31,7 +31,8 @@ public class UnitSelection : MonoBehaviour {
     {
 
         if (EventSystem.current.IsPointerOverGameObject())
-            return;
+            isSelecting = false;
+
         if (Input.GetKeyDown(Keybinds.Instance.PrimaryActionKey))
         {
             isSelecting = true;
