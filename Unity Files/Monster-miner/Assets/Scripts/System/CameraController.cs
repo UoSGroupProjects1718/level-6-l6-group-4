@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class CameraController : MonoBehaviour
 {
     [Header("Interaction speed")]
@@ -30,22 +30,24 @@ public class CameraController : MonoBehaviour
         Vector3 CamPosition = transform.position;
 
         #region mouseScroll
-        float mouseScroll = Input.GetAxis("Mouse ScrollWheel");
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            float mouseScroll = Input.GetAxis("Mouse ScrollWheel");
 
-        //if the mouse scroll is greater than 0 then we will increase new_zPos otherwise we will reduce it
-        if (mouseScroll > 0)
-            cam_zPos += 0.1f;
+            //if the mouse scroll is greater than 0 then we will increase new_zPos otherwise we will reduce it
+            if (mouseScroll > 0)
+                cam_zPos += 0.1f;
 
-        else if (mouseScroll < 0)
-            cam_zPos -= 0.1f;
+            else if (mouseScroll < 0)
+                cam_zPos -= 0.1f;
 
-        //clamp the camera's new z position
-        cam_zPos = Mathf.Clamp(cam_zPos, 0, 1);
+            //clamp the camera's new z position
+            cam_zPos = Mathf.Clamp(cam_zPos, 0, 1);
 
-        //then set it, based on the information from our animation curve
-        CamPosition.y = (curve.Evaluate(cam_zPos) * camMaxZoom);
-        CamPosition.y = Mathf.Clamp(CamPosition.y, camMinZoom, camMaxZoom);
-
+            //then set it, based on the information from our animation curve
+            CamPosition.y = (curve.Evaluate(cam_zPos) * camMaxZoom);
+            CamPosition.y = Mathf.Clamp(CamPosition.y, camMinZoom, camMaxZoom);
+        }
         #endregion
         #region camera movement
         //translation
