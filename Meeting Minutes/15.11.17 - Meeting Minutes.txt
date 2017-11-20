@@ -43,3 +43,24 @@ Modelling more terrain tiles - continued from last week
 T pose the main character model 
 Make 4 new chestplates for colonist equipment
 Make different coloured capes for each colonist type
+
+
+Addendum -
+
+On Sunday:
+	Oliver and Douglas discussed whether it is more beneficial to the game to recycle and recolour assets for the colonist armour or to make seperate models for each
+	armour type. Oliver's argument was that in terms of time efficiency it would be most effective for the project to recycle old assets and re-visit this should a time
+	become available to do so. Douglas' argument was that quote "Palette swapping is a lazy waste of potential". No resolution was decided. This will be a topic at the next group meeting.
+On Monday: 
+	Oliver, Douglas and Ross picked up the previous discussion about recycling assets. Ross' opinion was that he assumed that we would recolour and recycle the assets and then suggested that
+	this should be a topic of the next group meeting. Ross also presented some evidence of other games doing this, such as runescape which shares a similar low poly art style with a 3rd person
+	overhead camera. Douglas' opinion is that recolouring the assets for the colonist leg armour would not work, because he has already modelled some chest pieces
+	and would rather model colonist leg armour outside of the assigned development time than use placeholder graphics.
+
+
+
+
+
+
+
+
