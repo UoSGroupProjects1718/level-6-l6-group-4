@@ -7,7 +7,7 @@ public class MonsterType : ScriptableObject {
     public string monsterName;
     public MonsterTypes.TypeOfMonster monsterType;
 
-
+    [HideInInspector]
     public int numHuntersRequired;
     public float monsterSpeed;
     public float maxHealth;
@@ -15,6 +15,7 @@ public class MonsterType : ScriptableObject {
     public float viewRange;
     public float damage;
     public float attackSpeed;
+    [HideInInspector]
     public float nextAttack;
     public float matingCooldown;
     public GameObject monsterMeshAndBones;
