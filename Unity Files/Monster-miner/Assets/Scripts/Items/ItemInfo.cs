@@ -27,7 +27,7 @@ public class ItemInfo : ScriptableObject {
     //maybe make this 100 on all items?
     [Range(0, 200)]
     public float maxItemDurability;
-
+    [HideInInspector]
     public int currentStackAmount;
 
     public Mesh itemMesh;
