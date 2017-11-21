@@ -56,6 +56,10 @@ On Monday:
 	this should be a topic of the next group meeting. Ross also presented some evidence of other games doing this, such as runescape which shares a similar low poly art style with a 3rd person
 	overhead camera. Douglas' opinion is that recolouring the assets for the colonist leg armour would not work, because he has already modelled some chest pieces
 	and would rather model colonist leg armour outside of the assigned development time than use placeholder graphics.
+	Oliver suggested creating an asset list for all art assets, animations and behaviours required to create a working product, to better allow the group to understand what level of work needs 
+	to be done before beginning to balance and polish the game.
+	Daniel requested that the group stay behind following our meeting with Dave on Wednesday until 3pm in order to go over the feedback from Dave, to create an asset list and to show Ross and Douglas
+	what parts of the unity project they need to access for balancing purposes.
 
 
 
