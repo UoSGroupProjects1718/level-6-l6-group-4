@@ -15,12 +15,12 @@ public class MonsterType : ScriptableObject {
     public float viewRange;
     public float damage;
     public float attackSpeed;
+    public float maxHunger;
     [HideInInspector]
     public float nextAttack;
     public float matingCooldown;
     public GameObject monsterMeshAndBones;
     public DropTable dropTable;
-
     public Material[] materials;
     
 }

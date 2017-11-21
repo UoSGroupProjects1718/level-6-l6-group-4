@@ -5,6 +5,12 @@ using MonsterMiner.BehaviourTree;
 [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Monster/LargeCarnivorSelectState")]
 public class LargeCarnivorState : BehaviourBase
 {
+    [SerializeField]
+    float hungerLossPerFrame;
+    [SerializeField]
+    float hungerDamage;
+    [SerializeField]
+    float attackHunger;
     public override Status UpdateFunc(MonsterController Monster)
     {
 
@@ -14,6 +20,16 @@ public class LargeCarnivorState : BehaviourBase
             
             return Status.SUCCESS;
         }
+
+        if (Monster.hunger < 0)
+        {
+            Monster.takeDamage(hungerDamage);
+        }
+        else
+        {
+            Monster.hunger -= hungerLossPerFrame;
+        }
+        
         Transform pos = Monster.transform;
         float Dist = float.MaxValue;
         Transform Closest = null;
@@ -34,25 +50,26 @@ public class LargeCarnivorState : BehaviourBase
                 Monster.currentState = MonsterController.MovementState.MakeLove;
                 return Status.SUCCESS;
             }
-
-            for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
+            if (Monster.hunger < attackHunger)
             {
-                float thisDist = (BehaviourTreeManager.Monsters[i].transform.position - pos.position).magnitude;
-                if (thisDist < Dist)
+
+                for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
                 {
-                    Dist = thisDist;
-                    Closest = BehaviourTreeManager.Colonists[i].transform;
+                    float thisDist = (BehaviourTreeManager.Monsters[i].transform.position - pos.position).magnitude;
+                    if (thisDist < Dist)
+                    {
+                        Dist = thisDist;
+                        Closest = BehaviourTreeManager.Colonists[i].transform;
+                    }
                 }
+                if (Closest != null && Dist < Monster.viewRange)
+                {
+                    Monster.currentTarget = Closest;
+                    Monster.currentState = MonsterController.MovementState.Chase;
+                    return Status.SUCCESS;
+                }
+                
             }
-            if(Closest != null && Dist < Monster.viewRange)
-            {
-                Monster.currentTarget = Closest;
-                Monster.currentState = MonsterController.MovementState.Chase;
-                return Status.SUCCESS;
-            }
-
-
-
             Monster.currentState = MonsterController.MovementState.Wander;
             return Status.SUCCESS;
         }

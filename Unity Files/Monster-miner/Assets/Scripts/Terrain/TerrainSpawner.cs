@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour {
 
-    public GameObject[] SpawnTiles;
+    [SerializeField]
+    GameObject[] SpawnTiles;
 
-    public int MinSmallArea;
-    public int MaxSmallArea;
-    public int MinMedArea;
-    public int MaxMedArea;
-    public int MinLargeArea;
-    public int MaxLargeArea;
+    [SerializeField]
+    int MinSmallArea;
+    [SerializeField]
+    int MaxSmallArea;
+    [SerializeField]
+    int MinMedArea;
+    [SerializeField]
+    int MaxMedArea;
+    [SerializeField]
+    int MinLargeArea;
+    [SerializeField]
+    int MaxLargeArea;
 
-    public float SpawnXDiff;
-    public float SpawnYDiff;
+    [SerializeField]
+    float SpawnXDiff=100;
+    [SerializeField]
+    float SpawnYDiff=100;
     // Use this for initialization
-    public List<GameObject> GlobalList;
     MapTileList[,] map;
 
     List<Vector2> NextSpawn = new List<Vector2>();
@@ -80,19 +88,19 @@ public class TerrainSpawner : MonoBehaviour {
         UpList = DownList = LeftList = RightList = new List<GameObject>();
         try
         {
-            UpList = map[x, y - 1].GetUnwantedList(GlobalList);
+            UpList = map[x, y - 1].GetNorth();
         }
         catch { }
         try
         {
-            DownList = map[x, y + 1].GetUnwantedList(GlobalList); 
+            DownList = map[x, y + 1].GetSouth(); 
         }
         catch { }
         try {
-            LeftList = map[x-1, y].GetUnwantedList(GlobalList); 
+            LeftList = map[x-1, y].GetEast(); 
         }
         catch { }
-        try {RightList = map[x+1, y].GetUnwantedList(GlobalList);  }
+        try {RightList = map[x+1, y].GetWest();  }
         catch { }
 
 
@@ -115,26 +123,41 @@ public class TerrainSpawner : MonoBehaviour {
 
 
     List<GameObject> GetPossibleList(List<GameObject> Up, List<GameObject> Down, List<GameObject> Left, List<GameObject> Right) {
-        List<GameObject> ReturnList = GlobalList;
-
-        foreach (GameObject tile in Up)
+        List<GameObject> ReturnList = Up;
+        if (ReturnList == null)
         {
-            ReturnList.Remove(tile);
+            ReturnList = MapTileList.GlobalList;
         }
 
-        foreach (GameObject tile in Down)
-        {
-            ReturnList.Remove(tile);
-        }
 
-        foreach (GameObject tile in Left)
+        foreach (GameObject tile in Up)//check each tile in up. if not in Let, Right or down, remove it.
         {
-            ReturnList.Remove(tile);
-        }
+            if (Down != null) { 
+                if (!Down.Contains(tile))
+                {
+                    Up.Remove(tile);
+                    continue;
+                }
+           }
 
-        foreach (GameObject tile in Right)
-        {
-            ReturnList.Remove(tile);
+            if (Left != null)
+            {
+
+
+                if (!Left.Contains(tile))
+                {
+                    Up.Remove(tile);
+                    continue;
+                }
+            }
+            if (Right != null)
+            {
+                if (!Up.Contains(tile))
+                {
+                    Right.Remove(tile);
+                    continue;
+                }
+            }
         }
 
         return ReturnList;

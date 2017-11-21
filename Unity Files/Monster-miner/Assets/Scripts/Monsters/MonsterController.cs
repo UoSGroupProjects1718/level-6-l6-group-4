@@ -33,6 +33,8 @@ public class MonsterController : MonoBehaviour {
     public float nextAttack;
     public float lastMatingTime;
     public float matingCooldown;
+    public float hunger;
+    public float maxHunger;
 
     public MonsterMovement Movement;
     [HideInInspector]
@@ -83,8 +85,8 @@ public class MonsterController : MonoBehaviour {
         MonsterSpawner.Instance.SpawnMonster(position, type);
         isDead = false;      
         lastMatingTime = Time.time;
-        maxHealth = health;
-        //MAke a spawn point
+        health = maxHealth;
+        hunger = maxHunger;
     }
 
     private void OnDrawGizmos()
