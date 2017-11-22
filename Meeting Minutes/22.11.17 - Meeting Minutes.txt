@@ -1,0 +1,27 @@
+22/11/17 - 10:45
+
+Members in attendance - Oliver, Daniel, Ross, Douglas (Arrived at 11:20)
+
+The group had a meeting booked with Dave for 11:30:
+    
+	- Dave suggested that the group create a new colonist model, it doesnt have to look anatomically correct, it could just be a cone with a sphere on top for a head. This would allow for more clarity.
+	- The design team need to pout more thought into the saturation of the colours of all elements in the game to create and preserve a visual hierarchy.
+	- Dave and Ross discussed UI design, using gestalt principles and creating colour affordances to guide the player around the UI.
+
+
+Following this, the team reconvened a group meeting at 12pm:
+	- The team created a list of all assets required to deliver a completed game, before the polishing stage.
+	- The team also worked out the number of development hours the team has per person up until the february presentation where feature complete-ness is expected
+	  this was 80 hours per person, expecting 8 hours per week for the ten weeks leading up until this time. With any extra hours up until 12 left as extra hours for any tasks or to complete tasks.
+	  Douglas has said he cannot guarantee that he can deliver any hours for the six weeks of the Christmas break, so the expected development hours for Douglas are 32 over this period. Oliver, Daniel
+	  and Ross believe that they will be able to deliver an average of eight hours per week over this time.
+	- The group discussed the requirement of animation for many of the models that Douglas has created. Daniel, Oliver and Ross believe that it would be most beneficial for the project to push any animation as
+	  far back as possible on the priority list as there are many other important tasks to be completed in relation to design work. This is further supported by the fact that Douglas (who is the one who would be assigned
+	  this task) cannot guarantee any more than 32 hours over the ten week period until being feature complete. Douglas disagrees with this and believes that animation should be pushed forward in priority over other tasks.
+	- Asked douglas to research how to scale the models properly for exporting to unity. This has been an issue in the past week with using his models because scaling models to a uniform scale is very difficult for the programming	
+	  team, because the models when imported have varying scales of between 700 - 1500 per axis, the z and y axes have also been flipped, this needs addressing.
+	- Reminded Douglas that when he is modelling terrain tiles, he needs to keep a list for each tile, as to what tiles should neighbour it on each of the four orthogonal directions. This was asked for in previous weeks and was not
+	  delivered for previously modelled tiles.
+
+	13:00 - Douglas and Ross left
+	14:10 - Sprint is completed by Oliver and Daniel, meeting adjourned.
