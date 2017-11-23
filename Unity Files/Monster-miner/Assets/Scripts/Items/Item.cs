@@ -10,7 +10,12 @@ public class Item : MonoBehaviour {
 
     public ItemInfo item;
     private GameTime timeSpawned;
+    [SerializeField]
     private float currentItemDurability;
+    [HideInInspector]
+    public Job correspondingJob;
+    [HideInInspector]
+    public bool pickedUp;
 
     //do item related stuff
     private void Start()
@@ -24,11 +29,19 @@ public class Item : MonoBehaviour {
     {
        if(timeSpawned.hours != TimeManager.Instance.IngameTime.hours)
         {
-            currentItemDurability -= item.decayPerHour;
-            timeSpawned = TimeManager.Instance.IngameTime;
-            if(currentItemDurability <= 0)
+            if(!pickedUp)
             {
-                Debug.Log("item has decayed");
+                currentItemDurability -= item.decayPerHour;
+                timeSpawned = TimeManager.Instance.IngameTime;
+                if(currentItemDurability <= 0)
+                {
+                    if(JobManager.Instance.JobDocket.Contains(correspondingJob))
+                    {
+                        JobManager.Instance.JobDocket.Remove(correspondingJob);
+                    }
+                    gameObject.SetActive(false);
+                    Debug.Log("item has decayed");
+                }
             }
         }
     }

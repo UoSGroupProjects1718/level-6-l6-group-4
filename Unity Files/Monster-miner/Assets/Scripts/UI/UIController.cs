@@ -50,27 +50,27 @@ public class UIController : SingletonClass<UIController>
     }
     public void BarracksTertiaryActivate()
     {
-        UIPanels.Instance.BarracksPanel.transform.GetChild(1).gameObject.SetActive(!UIPanels.Instance.BarracksPanel.transform.GetChild(1).gameObject.activeSelf);
+        UIPanels.Instance.barracksPanel.transform.GetChild(1).gameObject.SetActive(!UIPanels.Instance.barracksPanel.transform.GetChild(1).gameObject.activeSelf);
     }
 
     //this is disgusting code, needs to be revisited
     public void IncrementBarracksInputField()
     {
-        int number = int.Parse(UIPanels.Instance.BarracksInputField.text);
+        int number = int.Parse(UIPanels.Instance.barracksInputField.text);
         number++;
-        UIPanels.Instance.BarracksInputField.text = number.ToString();
+        UIPanels.Instance.barracksInputField.text = number.ToString();
     }
     public void DecrementBarracksInputField()
     {
-        int number = int.Parse(UIPanels.Instance.BarracksInputField.text);
+        int number = int.Parse(UIPanels.Instance.barracksInputField.text);
         if(number > 1)
         {
             number--;
-            UIPanels.Instance.BarracksInputField.text = number.ToString();
+            UIPanels.Instance.barracksInputField.text = number.ToString();
         }
     }
     public void  BarracksConfirmButton()
     {
-        UIPanels.Instance.BarracksTertiaryFocusedMonster.numHuntersRequired = int.Parse(UIPanels.Instance.BarracksInputField.text);
+        UIPanels.Instance.barracksTertiaryFocusedMonster.numHuntersRequired = int.Parse(UIPanels.Instance.barracksInputField.text);
     }
 }

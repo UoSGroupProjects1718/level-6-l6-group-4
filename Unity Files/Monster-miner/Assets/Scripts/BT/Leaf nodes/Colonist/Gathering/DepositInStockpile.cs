@@ -10,32 +10,26 @@ namespace MonsterMiner
         {
             public override Status UpdateFunc(ColonistController Colonist)
             {
-                //if(Colonist.currentJob.InteractionObject.GetComponent<Item>().item.type == ItemType.Nutrition)
-                //{
-                
+          //if we can add the item to the stockpile, send the item back to the pool, and reset the current job
                 if(Stockpile.Instance.AddResource(Colonist.currentJob.InteractionObject.GetComponent<Item>().item as Resource))
                 {
-                    Destroy(Colonist.currentJob.InteractionObject);
+                    Colonist.currentJob.InteractionObject.GetComponent<Item>().pickedUp = false;
+                    Colonist.currentJob.InteractionObject.SetActive(false);
                     Colonist.currentJob = null;
                     Colonist.gathererStockpile = null;
                 }
+                //otherwise put what we can into the stockpile and create a new job, and put the item on the colonist's position
                 else
                 {
                     Colonist.currentJob.InteractionObject.transform.position = Colonist.transform.position;
                     Colonist.currentJob.InteractionObject.GetComponent<MeshRenderer>().enabled = true;
+                    Colonist.currentJob.InteractionObject.GetComponent<Item>().pickedUp = false;
                     ItemInfo item = Colonist.currentJob.InteractionObject.GetComponent<Item>().item;
                     JobManager.CreateJob(JobType.Gathering,(item as Resource).GatherWorkPerItem * item.currentStackAmount,item.attachedGameObject,item.attachedGameObject.transform.position,Colonist.currentJob.jobName);
                     Colonist.currentJob = null;
                     Colonist.gathererStockpile = null;
 
                 }
-               // }
-                //else
-                //{
-                //    Colonist.GathererStockpile.GetComponent<StockpileFunction>().AddItem(Colonist.currentJob.InteractionObject.GetComponent<Item>().item);
-                //    Colonist.currentJob = null;
-                //    Colonist.GathererStockpile = null;
-                //}
                 UIController.Instance.UpdateStockpile();
                 return Status.SUCCESS;
             }

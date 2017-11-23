@@ -16,6 +16,7 @@ namespace MonsterMiner
 
 
                 Colonist.currentJob.InteractionObject.GetComponent<MeshRenderer>().enabled = false;
+                Colonist.currentJob.InteractionObject.GetComponent<Item>().pickedUp = true;
                 return Status.SUCCESS;
             }
         }

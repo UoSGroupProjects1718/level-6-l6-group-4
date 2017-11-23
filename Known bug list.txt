@@ -1,0 +1,3 @@
+ - Buildings can be placed within one another because the colliders were turned off, need to introduce a trigger collider to handle building collisions again
+
+

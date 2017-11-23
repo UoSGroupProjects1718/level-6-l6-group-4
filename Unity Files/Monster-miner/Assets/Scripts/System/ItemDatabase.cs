@@ -5,7 +5,6 @@ using UnityEngine;
 public class ItemDatabase : MonoBehaviour
 { 
 
-
     [Header("Deposit all ingame items in this array, it will be sorted into a database")]
     [SerializeField]
     private ItemInfo[] databaseItems;

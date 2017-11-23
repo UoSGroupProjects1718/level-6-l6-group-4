@@ -6,6 +6,7 @@ public class ArmouryJobPanel : MonoBehaviour {
 
     public Transform contentParent;
     public GameObject content;
+    [SerializeField]
     private GameObject poolParent;
     private List<GameObject> picturePool;
     [SerializeField]
@@ -13,9 +14,8 @@ public class ArmouryJobPanel : MonoBehaviour {
 	
 
 	void Awake () {
-        poolParent = new GameObject();
+       
         picturePool = new List<GameObject>();
-        poolParent.name = "ArmouryColonistPicturePool";
         for(int i = 0; i < poolSize; i++)
         {
            GameObject panel =  Instantiate(content,poolParent.transform) as GameObject;
@@ -52,12 +52,16 @@ public class ArmouryJobPanel : MonoBehaviour {
     //on disable reset the pictures
     public void OnDisable()
     {
-        while (contentParent.childCount > 0)
+       while(contentParent.transform.childCount > 0)
         {
             if (poolParent != null)
             {
                 contentParent.transform.GetChild(0).gameObject.SetActive(false);
                 contentParent.transform.GetChild(0).SetParent(poolParent.transform);
+            }
+            else
+            {
+                break;
             }
         }
     }

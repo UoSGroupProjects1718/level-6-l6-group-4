@@ -16,13 +16,13 @@ namespace MonsterMiner
 
             public override Status UpdateFunc(ColonistController Colonist)
             {
+                //if the colonists job is null, the jobs interaction object is null or the drop table is not present, we have failed
                 if (Colonist.currentJob == null || Colonist.currentJob.InteractionObject != null && Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable == null)
                     return Status.FAILURE;
 
-
                 SpawnDrops(Colonist.currentJob,Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable);
                 Debug.Log("Finished harvesting" + Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().monsterName);
-                //Destroy(Colonist.currentJob.InteractionObject);
+                //send the monster back to the pool
                 for (int i = 0; i < Colonist.currentJob.InteractionObject.transform.childCount; i++)
                 {
                     Colonist.currentJob.InteractionObject.transform.GetChild(i).gameObject.SetActive(false);
@@ -39,23 +39,25 @@ namespace MonsterMiner
                 for(int i = 0; i < drops.Drops.Length; i++)
                 {
                     GameObject newItem = ItemDatabase.SpawnItemToWorld(drops.Drops[i].itemName);
-                    Item Item = newItem.GetComponent<Item>();
+                    Item item = newItem.GetComponent<Item>();
                     newItem.transform.localScale = new Vector3(1, 1, 1);
                     newItem.transform.position = job.jobLocation;
                     newItem.GetComponent<MeshRenderer>().material.color = Color.white;
 
                     //if it is not a wearable, set a random stack amount
-                    if (Item.item.type != ItemType.Wearable)
+                    if (item.item.type != ItemType.Wearable)
                     {
-                        Item.item.currentStackAmount = Random.Range((drops.Drops[i] as Resource).minDropAmount, (drops.Drops[i] as Resource).maxDropAmount);
+                        item.item.currentStackAmount = Random.Range((drops.Drops[i] as Resource).minDropAmount, (drops.Drops[i] as Resource).maxDropAmount);
                     }
                     //otherwise its a wearable and these dont stack
                     else
-                        Item.item.currentStackAmount = 1;
+                        item.item.currentStackAmount = 1;
 
 
-                    int WorkAmount = Item.item.currentStackAmount * (Item.item as Resource).GatherWorkPerItem;
-                    JobManager.CreateJob(JobType.Gathering, WorkAmount, newItem, newItem.transform.position, "Gather " + Item.item.name);                    
+                    int WorkAmount = item.item.currentStackAmount * (item.item as Resource).GatherWorkPerItem;
+                    JobManager.CreateJob(JobType.Gathering, WorkAmount, newItem, newItem.transform.position, "Gather " + item.item.name);
+                    //the  items current job should be the one we have just added to the docket
+                    item.correspondingJob = JobManager.Instance.JobDocket[JobManager.Instance.JobDocket.Count - 1];
                 }
             }
             

@@ -35,7 +35,7 @@ public class BehaviourTreeManager : MonoBehaviour
         {
             for (int i = 0; i < Colonists.Count; i++)
             {
-                if(Colonists[i].isActiveAndEnabled)
+                if (Colonists[i].isActiveAndEnabled)
                     ColonistTree.UpdateFunc(Colonists[i]);
             }
 
@@ -47,7 +47,4 @@ public class BehaviourTreeManager : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
     }
-
-
-
 }

@@ -10,6 +10,7 @@ public abstract class BuildingFunction : MonoBehaviour {
     public bool Built;
     
     public List<Collider> colliders = new List<Collider>();
+    
 
 
     public virtual void OnCollisionEnter(Collision collision)
@@ -33,6 +34,7 @@ public abstract class BuildingFunction : MonoBehaviour {
             return;
         if (Built)
         {
+            
             Function();
         }
     }

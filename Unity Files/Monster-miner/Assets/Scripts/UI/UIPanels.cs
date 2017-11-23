@@ -2,26 +2,39 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIPanels : SingletonClass<UIPanels> {
 
+    [SerializeField]
+    private Vector2 panelSharedAnchorPoint;
+    [HideInInspector]
+    public InputField barracksInputField;
+    [HideInInspector]
+    public GameObject barracksPanel;
+    [HideInInspector]
+    public MonsterType barracksTertiaryFocusedMonster;
+    [HideInInspector]
+    public GameObject armouryPanel;
 
-    public InputField BarracksInputField;
-    public GameObject BarracksPanel;
-    public MonsterType BarracksTertiaryFocusedMonster;
-    public GameObject ArmouryPanel;
-
-
+    [HideInInspector]
+    public GameObject focusedPanel;
 
 	public override void Awake ()
     {
         base.Awake();
-        BarracksPanel = GameObject.Find("Barracks panel");
-        BarracksPanel.transform.GetChild(1).gameObject.SetActive(false);
-        BarracksPanel.transform.GetChild(3).gameObject.SetActive(false);
-        BarracksInputField = BarracksPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<InputField>();
-        BarracksPanel.SetActive(false);
+        barracksPanel = GameObject.Find("Barracks panel");
+        barracksInputField = barracksPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<InputField>();
+        ResetPanel(barracksPanel.transform);
+        barracksPanel.SetActive(false);
 
-        ArmouryPanel = GameObject.Find("Armoury panel");
-        //ArmouryPanel.transform.GetChild(1).gameObject.SetActive(false);
-        //ArmouryPanel.transform.GetChild(3).gameObject.SetActive(false);
-        ArmouryPanel.SetActive(false);
+        armouryPanel = GameObject.Find("Armoury panel");
+        ResetPanel(armouryPanel.transform);
+        armouryPanel.SetActive(false);
+    }
+
+
+    public void ResetPanel(Transform panel)
+    {
+        panel.GetChild(1).gameObject.SetActive(false);
+        panel.GetChild(3).gameObject.SetActive(false);
+        panel.GetChild(2).gameObject.SetActive(true);
+        panel.GetComponent<RectTransform>().anchoredPosition = panelSharedAnchorPoint;
     }
 }

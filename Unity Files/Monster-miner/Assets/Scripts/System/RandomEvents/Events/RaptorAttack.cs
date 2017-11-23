@@ -1,9 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
-[CreateAssetMenu(menuName = "Scriptable Objects/Random Events/Large Raptor Attack")]
+//this was causing errors, I commented it out - OC
+//[CreateAssetMenu(menuName = "Scriptable Objects/Random Events/Large Raptor Attack")]
 
 public class RaptorAttack : RandEvent {
 

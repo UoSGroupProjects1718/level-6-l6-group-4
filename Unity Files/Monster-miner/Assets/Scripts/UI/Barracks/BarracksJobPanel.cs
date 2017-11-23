@@ -13,7 +13,7 @@ public class BarracksJobPanel : MonoBehaviour
 
     public void Start()
     {
-        TertiaryPanel = UIPanels.Instance.BarracksPanel.transform.GetChild(1).gameObject;
+        TertiaryPanel = UIPanels.Instance.barracksPanel.transform.GetChild(1).gameObject;
     }
 
     public void MouseDown()
@@ -22,16 +22,16 @@ public class BarracksJobPanel : MonoBehaviour
         {
             //TertiaryPanel.transform.GetChild(0).GetComponent<Image>().sprite = monster.UISprite;
             TertiaryPanel.transform.GetChild(1).GetComponent<Text>().text = monster.monsterName;
-            UIPanels.Instance.BarracksTertiaryFocusedMonster = monster;
-            UIPanels.Instance.BarracksInputField.text = monster.numHuntersRequired.ToString();
+            UIPanels.Instance.barracksTertiaryFocusedMonster = monster;
+            UIPanels.Instance.barracksInputField.text = monster.numHuntersRequired.ToString();
         }
         else
         {
             TertiaryPanel.transform.GetChild(1).GetComponent<Text>().text = monster.monsterName;
-            UIPanels.Instance.BarracksPanel.transform.GetChild(2).gameObject.SetActive(false);
-            UIPanels.Instance.BarracksPanel.transform.GetChild(3).gameObject.SetActive(true);
-            UIPanels.Instance.BarracksTertiaryFocusedMonster = monster;
-            UIPanels.Instance.BarracksInputField.text = monster.numHuntersRequired.ToString();
+            UIPanels.Instance.barracksPanel.transform.GetChild(2).gameObject.SetActive(false);
+            UIPanels.Instance.barracksPanel.transform.GetChild(3).gameObject.SetActive(true);
+            UIPanels.Instance.barracksTertiaryFocusedMonster = monster;
+            UIPanels.Instance.barracksInputField.text = monster.numHuntersRequired.ToString();
             TertiaryPanel.SetActive(true);
         }
     }

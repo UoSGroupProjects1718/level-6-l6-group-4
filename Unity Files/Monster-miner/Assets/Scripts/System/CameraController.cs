@@ -74,13 +74,17 @@ public class CameraController : MonoBehaviour
         #endregion
 
 
-        CamPosition.x = Mathf.Clamp(CamPosition.x, -CameraBounds.x, CameraBounds.x);
-        CamPosition.z = Mathf.Clamp(CamPosition.z, -CameraBounds.y, CameraBounds.y);
+        CamPosition.x = Mathf.Clamp(CamPosition.x, (-CameraBounds.x)/2, (CameraBounds.x)/2);
+        CamPosition.z = Mathf.Clamp(CamPosition.z, (-CameraBounds.y)/2, (CameraBounds.y)/2);
 
 
         transform.position = CamPosition;
 
 
 
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(CameraBounds.x, 0, CameraBounds.y));
     }
 }
