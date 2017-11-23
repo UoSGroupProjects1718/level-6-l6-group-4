@@ -2,48 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TerrainSpawner : MonoBehaviour {
+public class TerrainSpawner : MonoBehaviour
+{
 
     [SerializeField]
     GameObject[] SpawnTiles;
+    public List<GameObject> GlobalList;
+    [SerializeField]
+    int tilesToSpawn = 3;
 
     [SerializeField]
-    int MinSmallArea;
+    float SpawnXDiff = 100;
     [SerializeField]
-    int MaxSmallArea;
-    [SerializeField]
-    int MinMedArea;
-    [SerializeField]
-    int MaxMedArea;
-    [SerializeField]
-    int MinLargeArea;
-    [SerializeField]
-    int MaxLargeArea;
-
-    [SerializeField]
-    float SpawnXDiff=100;
-    [SerializeField]
-    float SpawnYDiff=100;
-    // Use this for initialization
+    float SpawnYDiff = 100;
     MapTileList[,] map;
-
     List<Vector2> NextSpawn = new List<Vector2>();
+
+    private void Start()
+    {
+        StartCoroutine(SpawnWorld());
+    }
 
     IEnumerator SpawnWorld()
     {
-        //Set Variables
-        int SmallAreaLayers = Random.Range(MinSmallArea, MaxSmallArea);
-        int MedAreaLayers = Random.Range(MinMedArea, MaxMedArea);
-        int LargeAreaLayers = Random.Range(MinLargeArea, MaxLargeArea);
-
-        int ForLoopLimit = SmallAreaLayers + MedAreaLayers+ LargeAreaLayers;
-        int ArraySize= ForLoopLimit *2;
+        int ArraySize = tilesToSpawn * 2;
         ArraySize += 1;
         //+1 centre 
-        map = new MapTileList[ArraySize,ArraySize];
-        
-        SpawnSpawn(ForLoopLimit+1);
-        AddNeighboursToList(ForLoopLimit + 1, ForLoopLimit + 1);
+        map = new MapTileList[ArraySize, ArraySize];
+
+        SpawnOrigin(tilesToSpawn + 1);
+        AddNeighboursToList(tilesToSpawn + 1, tilesToSpawn + 1);
         while (NextSpawn.Count > 0)
         {
             SpawnTile(NextSpawn[0]);
@@ -56,33 +44,35 @@ public class TerrainSpawner : MonoBehaviour {
         return null;
     }
 
-    void AddNeighboursToList(int x, int y) {
-        NextSpawn.Add(new Vector2(x+1, y));
-        NextSpawn.Add(new Vector2(x-1, y));
-        NextSpawn.Add(new Vector2(x, y-1));
-        NextSpawn.Add(new Vector2(x, y+1));
+    void AddNeighboursToList(int x, int y)
+    {
+        NextSpawn.Add(new Vector2(x + 1, y));
+        NextSpawn.Add(new Vector2(x - 1, y));
+        NextSpawn.Add(new Vector2(x, y - 1));
+        NextSpawn.Add(new Vector2(x, y + 1));
     }
 
-    void SpawnSpawn(int Middle)
+    void SpawnOrigin(int Middle)
     {
         map[Middle, Middle] = Instantiate(SpawnTiles[Random.Range(0, SpawnTiles.Length - 1)], new Vector3(0, 0, 0), transform.rotation).GetComponent<MapTileList>();
     }
 
-    void SpawnTile(Vector2 gridPos) {
+    void SpawnTile(Vector2 gridPos)
+    {
         int x = (int)gridPos.x;
         int y = (int)gridPos.y;
-        try
-        {
-            if (map[x, y] != null)
-            {
-                return;
-            }
-        }
-
-        catch
+        //try
+        //{
+        if (map[x, y] != null)
         {
             return;
         }
+        //}
+
+        //catch
+        //{
+        //    return;
+        //}
 
         List<GameObject> UpList, DownList, LeftList, RightList;
         UpList = DownList = LeftList = RightList = new List<GameObject>();
@@ -90,17 +80,21 @@ public class TerrainSpawner : MonoBehaviour {
         {
             UpList = map[x, y - 1].GetNorth();
         }
+        catch
+        {
+            int i = 0;
+        }
+        try
+        {
+            DownList = map[x, y + 1].GetSouth();
+        }
         catch { }
         try
         {
-            DownList = map[x, y + 1].GetSouth(); 
+            LeftList = map[x - 1, y].GetEast();
         }
         catch { }
-        try {
-            LeftList = map[x-1, y].GetEast(); 
-        }
-        catch { }
-        try {RightList = map[x+1, y].GetWest();  }
+        try { RightList = map[x + 1, y].GetWest(); }
         catch { }
 
 
@@ -111,50 +105,59 @@ public class TerrainSpawner : MonoBehaviour {
         if (PossibleList.Count == 0)
         {
             Debug.Log("No Neighbours at spawn. Problems have occoured");
+            map[x, y] = new MapTileList();
         }
         else
         {
-            map[x, y] = Instantiate(PossibleList[Random.Range(0, PossibleList.Count)], new Vector3(0, 0, 0), transform.rotation).GetComponent<MapTileList>();
+            map[x, y] = Instantiate(PossibleList[Random.Range(0, PossibleList.Count)], new Vector3(0, 0, 0), Quaternion.identity).GetComponent<MapTileList>();
         }
         AddNeighboursToList(x, y);
     }
 
-
-
-
-    List<GameObject> GetPossibleList(List<GameObject> Up, List<GameObject> Down, List<GameObject> Left, List<GameObject> Right) {
-        List<GameObject> ReturnList = Up;
-        if (ReturnList == null)
+    List<GameObject> GetPossibleList(List<GameObject> Up, List<GameObject> Down, List<GameObject> Left, List<GameObject> Right)
+    {
+        List<GameObject> ReturnList = new List<GameObject>();// Up;
+        if (Up == null)
         {
-            ReturnList = MapTileList.GlobalList;
+            ReturnList = GlobalList;
         }
 
 
-        foreach (GameObject tile in Up)//check each tile in up. if not in Let, Right or down, remove it.
+        else
         {
-            if (Down != null) { 
-                if (!Down.Contains(tile))
+            if (Up.Count > 0)
+                ReturnList = Up;
+            else
+            {
+                ReturnList = GlobalList;
+            }
+        }
+
+
+        foreach (GameObject tile in ReturnList)//check each tile in up. if not in Let, Right or down, remove it.
+        {
+            if (Down != null)
+            {
+                if (!ListContains(Down,tile.name) && Down.Count > 0)
                 {
-                    Up.Remove(tile);
+                    ReturnList.Remove(tile);
                     continue;
                 }
-           }
+            }
 
             if (Left != null)
             {
-
-
-                if (!Left.Contains(tile))
+                if (!ListContains(Left, tile.name) && Left.Count > 0)
                 {
-                    Up.Remove(tile);
+                    ReturnList.Remove(tile);
                     continue;
                 }
             }
             if (Right != null)
             {
-                if (!Up.Contains(tile))
+                if (!ListContains(Right, tile.name) && Right.Count > 0)
                 {
-                    Right.Remove(tile);
+                    ReturnList.Remove(tile);
                     continue;
                 }
             }
@@ -165,5 +168,15 @@ public class TerrainSpawner : MonoBehaviour {
     }
 
 
-    
+    bool ListContains(List<GameObject> list, string name)
+    {
+        foreach  (GameObject tile in list)
+        {
+            if (tile.name == name)
+                return true;
+        }
+        return false;
+    }
+
 }
+
