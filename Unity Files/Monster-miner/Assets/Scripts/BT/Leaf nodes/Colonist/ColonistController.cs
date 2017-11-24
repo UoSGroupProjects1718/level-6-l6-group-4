@@ -98,7 +98,10 @@ public class ColonistController : MonoBehaviour {
         UpdateMoveSpeed(colonistBaseMoveSpeed);
         //set the selection cirlce
         selectionCircle = transform.GetChild(0).GetComponent<Projector>();
+        selectionCircle.gameObject.SetActive(false);
         SetTimeOfNextMeal();
+
+        EquipDefaultGear();
         
     }
 
@@ -175,5 +178,44 @@ public class ColonistController : MonoBehaviour {
         float diffBaseCurrent = OldBase - colonistWorkSpeed;
         //and apply the  new work speed with the current pentalty enacted
         colonistWorkSpeed = colonistBaseWorkSpeed - diffBaseCurrent;
+    }
+
+    private void EquipDefaultGear()
+    {
+        switch (colonistJob)
+        {
+            case ColonistJobType.Hunter:
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Head") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Chest") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Legs") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crossbow") as Wearable);
+                break;
+            case ColonistJobType.Builder:
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Head") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Chest") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Legs") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crossbow") as Wearable);
+                break;
+            case ColonistJobType.Scout:
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Head") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Chest") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Legs") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crossbow") as Wearable);
+                break;
+            case ColonistJobType.Farmer:
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Head") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Chest") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Legs") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crossbow") as Wearable);
+                break;
+            case ColonistJobType.Blacksmith:
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Head") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Chest") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Legs") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crossbow") as Wearable);
+                break;
+            default:
+                break;
+        }
     }
 }

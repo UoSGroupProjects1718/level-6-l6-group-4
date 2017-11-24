@@ -16,8 +16,8 @@ MonoBehaviour:
   itemDescription: Legplates made from iron ore
   decayPerHour: 1.5
   maxItemDurability: 50
-  currentItemDurability: 50
   currentStackAmount: 1
+  uiSprite: {fileID: 21300004, guid: e2e9ee5165ac9c34e9faab0f79f8ba36, type: 3}
   itemMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   type: 6
   equippableMesh: {fileID: 137288740997124556, guid: 3aa2a54e1e2731e47991da7394a37764,

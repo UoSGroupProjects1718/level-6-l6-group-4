@@ -12,7 +12,7 @@ public class Stockpile : SingletonClass<Stockpile>
     public int nutritionSpace;
 
 
-#region Resource inventory
+    #region Resource inventory
     public bool AddResource(Resource res)
     {
 
@@ -125,7 +125,7 @@ public class Stockpile : SingletonClass<Stockpile>
         switch (ResourceType)
         {
             case ItemType.Wood:
-                if(inventoryDictionary[ItemType.Wood] - amount >= 0)
+                if (inventoryDictionary[ItemType.Wood] - amount >= 0)
                 {
                     inventoryDictionary[ItemType.Wood] -= amount;
                     currResourceAmount -= amount;
@@ -146,7 +146,7 @@ public class Stockpile : SingletonClass<Stockpile>
                 {
                     return ReturnAmountAvailable(ItemType.Stone, amount);
                 }
-                
+
             case ItemType.Iron:
                 if (inventoryDictionary[ItemType.Iron] - amount >= 0)
                 {
@@ -190,7 +190,7 @@ public class Stockpile : SingletonClass<Stockpile>
                 }
                 else
                 {
-                    return ReturnAmountAvailable(ItemType.Nutrition, amount); 
+                    return ReturnAmountAvailable(ItemType.Nutrition, amount);
                 }
 
             default:
@@ -205,7 +205,7 @@ public class Stockpile : SingletonClass<Stockpile>
         int AmountAvailable = amount - Mathf.Abs(difference);
         inventoryDictionary[itemType] -= AmountAvailable;
 
-        if(itemType < ItemType.Nutrition)
+        if (itemType < ItemType.Nutrition)
         {
             currResourceAmount -= AmountAvailable;
             currResourceAmount = Mathf.Clamp(currResourceAmount, 0, resourceSpace);
@@ -215,10 +215,25 @@ public class Stockpile : SingletonClass<Stockpile>
     }
     #endregion
 
-#region Wearable Inventory
-    public WearableInventoryDictionary wearableInventoryDictionary;
+    #region Wearable Inventory
+    public WearableInventoryDictionary wearableInventoryDictionary = new WearableInventoryDictionary();
     public int currWearablesInInventory;
     public int armourySpace;
+
+    public string[] WearableSlugs
+    {
+        get
+        {
+            int index = 0;
+            string[] slugs = new string[wearableInventoryDictionary.Keys.Count];
+            foreach(KeyValuePair<Wearable,int> wearable in wearableInventoryDictionary)
+            {
+                slugs[index] = wearable.Key.itemName;
+                index++;
+            }
+            return slugs;
+        }
+    }
 
     public bool AddWearable(Wearable wearable)
     {
@@ -239,15 +254,16 @@ public class Stockpile : SingletonClass<Stockpile>
         }
         return false;
     }
-    public Wearable removeWearable(Wearable wearable)
+    public bool removeWearable(Wearable wearable)
     {
         if (!wearableInventoryDictionary.ContainsKey(wearable))
-            return null;
+            return false;
         
         wearableInventoryDictionary[wearable]--;
+        currWearablesInInventory--;
         if (wearableInventoryDictionary[wearable] <= 0)
             wearableInventoryDictionary.Remove(wearable);
-        return wearable;
+        return true;
     }
 #endregion
 }

@@ -16,10 +16,11 @@ MonoBehaviour:
   itemDescription: A slow firing weapon which fires a bolt at high speed
   decayPerHour: 0
   maxItemDurability: 100
-  currentItemDurability: 100
   currentStackAmount: 1
+  uiSprite: {fileID: 21300006, guid: e2e9ee5165ac9c34e9faab0f79f8ba36, type: 3}
   itemMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
   type: 6
+  equippableMesh: {fileID: 0}
   armourSlot: 3
   walkSpeedModifier: 0
   workSpeedModifier: 0

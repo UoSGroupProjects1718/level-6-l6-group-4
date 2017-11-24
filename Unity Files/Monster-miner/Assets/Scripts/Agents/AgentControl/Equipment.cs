@@ -11,7 +11,7 @@ public class Equipment : MonoBehaviour
 
     public SkinnedMeshRenderer colonistBodyMesh;
 
-    private void Start()
+    private void Awake()
     {
         equippedArmour = new Armour[Enum.GetNames(typeof(ArmourSlot)).Length - 1];
         equippedItemMeshes = new SkinnedMeshRenderer[Enum.GetNames(typeof(ArmourSlot)).Length - 1];
@@ -73,9 +73,7 @@ public class Equipment : MonoBehaviour
         {
             if (equippedItemMeshes[slotIndex] != null)
             {
-                //return the item to the it's respective pool by disabling it
-                equippedItemMeshes[slotIndex].transform.parent = null;
-                equippedItemMeshes[slotIndex].enabled = false;
+                ItemDatabase.ReturnSkinnedMeshRenderer(equippedItemMeshes[slotIndex]);
             }
             UpdateDamageResistance(equippedArmour[slotIndex], null);
             equippedArmour[slotIndex] = null;

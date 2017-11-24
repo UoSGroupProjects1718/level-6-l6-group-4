@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 public class UIPanels : SingletonClass<UIPanels> {
-
+    [Header("The point on the screen each panel is docked")]
+  
     [SerializeField]
     private Vector2 panelSharedAnchorPoint;
     [HideInInspector]

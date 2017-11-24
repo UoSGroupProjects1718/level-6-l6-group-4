@@ -10,14 +10,15 @@ public class ItemDatabase : MonoBehaviour
     private ItemInfo[] databaseItems;
     [SerializeField]
     GameObject ItemPrefab;
+    private static int numWearables;
 
+    private static GameObject SkinnedMeshParent;
     //for now we will just include the same for every object
     [SerializeField]
     private int ObjectPoolSize = 20;
     private static Dictionary<string,ItemInfo> itemDatabase;
     private static Dictionary<string, List<SkinnedMeshRenderer>> skinnedMeshRendererPools;
     private static Dictionary<string, List<GameObject>> WorldItemPool;
-
 
 
     public void Awake()
@@ -34,7 +35,7 @@ public class ItemDatabase : MonoBehaviour
         Item.name = "Item Pools";
 
 
-        GameObject SkinnedMeshParent = new GameObject();
+        SkinnedMeshParent = new GameObject();
         SkinnedMeshParent.name = "Skinned Mesh Renderer Pool";
 
         //populate the database
@@ -62,6 +63,7 @@ public class ItemDatabase : MonoBehaviour
 
             if(databaseItems[i].type == ItemType.Wearable && (databaseItems[i] as Wearable).equippableMesh)
             {
+                numWearables++;
                 //create pool for wearableMesh
                 List<SkinnedMeshRenderer> skinnedMeshPool = new List<SkinnedMeshRenderer>();
                 for(int j =0; j < ObjectPoolSize; j++)
@@ -77,8 +79,13 @@ public class ItemDatabase : MonoBehaviour
         }
     }
 
-
-
+    public static int NumWearables
+    {
+        get
+        {
+            return numWearables;
+        }
+    }
     public static ItemInfo GetItem(string slug)
     {
         if (!itemDatabase.ContainsKey(slug))
@@ -118,6 +125,11 @@ public class ItemDatabase : MonoBehaviour
             }
         }
         return null;
+    }
+    public static void ReturnSkinnedMeshRenderer(SkinnedMeshRenderer renderer)
+    {
+        renderer.gameObject.SetActive(false);
+        renderer.transform.SetParent(SkinnedMeshParent.transform);
     }
 
 
