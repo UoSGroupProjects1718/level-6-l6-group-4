@@ -1,3 +1,3 @@
  - Buildings can be placed within one another because the colliders were turned off, need to introduce a trigger collider to handle building collisions again
-
+ - Barracks UI pulls information from an array on the object's script, make it pull from the monster list
 

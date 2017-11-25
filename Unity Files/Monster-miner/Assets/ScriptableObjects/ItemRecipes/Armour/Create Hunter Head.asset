@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ebe394039cfb3e4aa09d419dab1d652, type: 3}
+  m_Name: Create Hunter Head
+  m_EditorClassIdentifier: 
+  craftedItem: {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3, type: 2}
+  requiredItems:
+  - resource: 0
+    requiredAmount: 5
+  - resource: 3
+    requiredAmount: 10
+  - resource: 2
+    requiredAmount: 5

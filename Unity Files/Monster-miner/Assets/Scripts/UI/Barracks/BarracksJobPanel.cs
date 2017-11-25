@@ -28,8 +28,7 @@ public class BarracksJobPanel : MonoBehaviour
         else
         {
             TertiaryPanel.transform.GetChild(1).GetComponent<Text>().text = monster.monsterName;
-            UIPanels.Instance.barracksPanel.transform.GetChild(2).gameObject.SetActive(false);
-            UIPanels.Instance.barracksPanel.transform.GetChild(3).gameObject.SetActive(true);
+            UIPanels.Instance.barracksPanel.transform.GetChild(2).gameObject.SetActive(true);
             UIPanels.Instance.barracksTertiaryFocusedMonster = monster;
             UIPanels.Instance.barracksInputField.text = monster.numHuntersRequired.ToString();
             TertiaryPanel.SetActive(true);

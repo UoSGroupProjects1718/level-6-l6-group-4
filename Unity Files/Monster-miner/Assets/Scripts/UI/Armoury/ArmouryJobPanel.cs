@@ -187,12 +187,13 @@ public class ArmouryJobPanel : MonoBehaviour
         {
             //if it is, we simply need to close it
             tertiaryPanel.SetActive(false);
+            UIPanels.Instance.armouryPanel.transform.GetChild(2).gameObject.SetActive(false);
         }
         //otherwise if it isnt active
         else
         {
 
-
+            UIPanels.Instance.armouryPanel.transform.GetChild(2).gameObject.SetActive(true);
             focusedColonist = colonist;
             //and set the name text
             tertiaryPanel.transform.GetChild(0).GetComponent<Text>().text =colonist.colonistName;
