@@ -21,7 +21,6 @@ public class BlacksmithFunction : BuildingFunction {
             //then reset its foldout and buttons
             UIPanels.Instance.ResetPanel(UIPanels.Instance.blacksmithPanel.transform);
             UIPanels.Instance.focusedPanel = UIPanels.Instance.blacksmithPanel;
-            UIPanels.Instance.blacksmithPanel.GetComponent<BlacksmithPanelUI>().OnPanelOpen();
         }
         //otherwise it was activated
         else

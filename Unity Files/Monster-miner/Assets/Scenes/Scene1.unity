@@ -1051,8 +1051,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 106500546}
   m_HandleRect: {fileID: 106500545}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.9999998
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1155,21 +1155,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
-  m_VerticalFit: 1
+  m_VerticalFit: 2
 --- !u!114 &364788186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 364788183}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: 205
-  m_MinHeight: 260
+  m_MinHeight: 358.49
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -3534,6 +3534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeButton: {fileID: 1037835552974340, guid: 2bf7a4bb08f45204a8c593ddead97782,
     type: 2}
+  requiredResourcesBaseSprite: {fileID: 0}
 --- !u!1001 &984662720
 Prefab:
   m_ObjectHideFlags: 0
@@ -4634,7 +4635,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 682901815}
   m_HandleRect: {fileID: 682901814}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5016,15 +5017,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 20
-    m_Right: 20
-    m_Top: 20
-    m_Bottom: 20
+    m_Left: 10
+    m_Right: 10
+    m_Top: 10
+    m_Bottom: 10
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 45, y: 45}
-  m_Spacing: {x: 25, y: 25}
+  m_CellSize: {x: 65, y: 65}
+  m_Spacing: {x: 5, y: 5}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &1386491566
@@ -5678,7 +5679,7 @@ Prefab:
     - target: {fileID: 224527413666318922, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224527413666318922, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
@@ -5747,7 +5748,7 @@ Prefab:
     - target: {fileID: 224381136820991068, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.99999976
       objectReference: {fileID: 0}
     - target: {fileID: 114019403928192236, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
@@ -5930,12 +5931,12 @@ Prefab:
     - target: {fileID: 224625223584309128, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -2.1225128
+      value: -177.12251
       objectReference: {fileID: 0}
     - target: {fileID: 224625223584309128, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 260
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114793189891035020, guid: b705929e526266b4086d23f4dbdd32f2,
         type: 2}
@@ -6090,6 +6091,21 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114300830078779024, guid: b705929e526266b4086d23f4dbdd32f2,
+        type: 2}
+      propertyPath: m_ShowMaskGraphic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114941711972885812, guid: b705929e526266b4086d23f4dbdd32f2,
+        type: 2}
+      propertyPath: m_Inertia
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793189891035020, guid: b705929e526266b4086d23f4dbdd32f2,
+        type: 2}
+      propertyPath: m_Spacing
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114340286160784340, guid: b705929e526266b4086d23f4dbdd32f2, type: 2}
@@ -7174,15 +7190,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 20
-    m_Right: 20
-    m_Top: 25
-    m_Bottom: 25
+    m_Left: 10
+    m_Right: 10
+    m_Top: 15
+    m_Bottom: 15
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 70, y: 70}
-  m_Spacing: {x: 25, y: 25}
+  m_CellSize: {x: 90, y: 90}
+  m_Spacing: {x: 5, y: 5}
   m_Constraint: 1
   m_ConstraintCount: 3
 --- !u!114 &1699879600
@@ -7196,15 +7212,15 @@ MonoBehaviour:
   m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalFit: 1
-  m_VerticalFit: 1
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!114 &1699879601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699879597}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -7361,7 +7377,7 @@ GameObject:
   - component: {fileID: 1704376263}
   - component: {fileID: 1704376262}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: RequiredResources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

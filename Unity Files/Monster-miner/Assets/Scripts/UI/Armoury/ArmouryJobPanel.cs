@@ -92,6 +92,8 @@ public class ArmouryJobPanel : MonoBehaviour
         for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
         {
             GameObject picture = GetColonistPicture();
+            //this has to be done every time we we-parent a game object to a grid layout group because otherwise it warps the image
+            picture.transform.localScale = Vector3.one;
             if (picture != null)
             {
                 switch (BehaviourTreeManager.Colonists[i].colonistJob)
@@ -115,7 +117,8 @@ public class ArmouryJobPanel : MonoBehaviour
         for (int j = 0; j < Stockpile.Instance.WearableSlugs.Length; j++)
         {
             GameObject picture = GetWearablePicture();
-            
+            picture.transform.localScale = Vector3.one;
+
             if (picture != null)
             {
                 //set the image
@@ -132,7 +135,7 @@ public class ArmouryJobPanel : MonoBehaviour
         for (int j = 0; j < Stockpile.Instance.WearableSlugs.Length; j++)
         {
             GameObject picture = GetWearablePicture();
-
+            picture.transform.localScale = Vector3.one;
             if (picture != null)
             {
                 //set the image
@@ -243,6 +246,7 @@ public class ArmouryJobPanel : MonoBehaviour
             if (!Stockpile.Instance.wearableInventoryDictionary.ContainsKey(unequippedItem))
             {
                 GameObject newButton = GetWearablePicture();
+                newButton.transform.localScale = Vector3.one;
             }
             //then add the item to the stockpile
             Stockpile.Instance.AddWearable(focusedColonist.colonistEquipment.equippedArmour[(int)correspondingWearable.armourSlot]);
