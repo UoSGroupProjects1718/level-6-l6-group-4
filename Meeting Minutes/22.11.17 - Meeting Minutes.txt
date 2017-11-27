@@ -25,3 +25,79 @@ Following this, the team reconvened a group meeting at 12pm:
 
 	13:00 - Douglas and Ross left
 	14:10 - Sprint is completed by Oliver and Daniel, meeting adjourned.
+
+
+
+Addendum:
+
+	21/11/17 - Douglas uploads screenshots of terrain tiles.
+		 - Douglas promised to upload assets to github the day previously.Douglas did not upload assets to github, was asked to upload assets by Oliver. 
+		 - Oliver asked Douglas to postpone his non-pushed commits as these were upwards of 5 commits out of date and could have caused merge errors. Douglas
+		   insists this will be fine and pushes the commits following Daniel saying that he could and that he would resolve any errors manually. 
+		   Oliver explains github desktop to Douglas and Douglas says that he would prefer to keep his assets on his local drive because he believes that the assets are not
+		   secure on github. Daniel tries to explain that github is in fact safe and gives reasons why.
+	22/11/17 - Douglas uploads image of his new iteration of the colonist model. Oliver requests that he tests the scale in the unity editor and to figure out why the scaling
+		   of every model is incorrect in unity. Douglas said that he was trying to fix the scale in blender. Ultimately he did not figure out the scaling in blender, he postulated
+		   that the scale was being modified by Unity. A few days later, Oliver went into blender and quickly found the issue. The issue was that the scaling in blender was set to 1,1,0.02, this was fixed by applying local scaling./
+		 - Douglas showed models of capes for the colonist. Oliver asked doug to make the hood cover more of the head, in a beaked hood style but not like is seen in assassin creed, Douglas said ok, he will make the cape look like it does in assassins creed
+		   Oliver showed an image of what he imagined the cape would look like, Douglas presented three different types of cape. The group chose the cloak type they preferred.
+		   Douglas then sent colour variations of every cloak type.
+		 - Douglas says that unity has scaled his work by 100 times, but it is proportional. Douglas has attempted to do scale comparisons in unity, and said that the scaling issue is because of how unity works.
+		 - Oliver discusses with douglas the difference in coordinate system for blender and unity, and asks Douglas to fix this. A conversation is started regarding fixing the scaling issue. Oliver looked into the scaling issue in blender,
+		   and quickly discovered that each model had a different scale for each axis, Oliver managed to fix this by converting the current scale to being the local scale of the object. 
+		 - Daniel queries Douglas as to why there are many polys underneath the terrain tile which will never be seen. Douglas' reply was "Because it would take far longer to sort than it's worth, and it wont have have any negligable effect on the frame rate"
+		 - Daniel says to Douglas that while a game engine doesnt render unseen polys, it still has to think about them in order to figure out what not to render. Daniel asked Douglas to fix this. Douglas' reply was "Dan, do you know how much clipping is going
+		   on with the models I have made? It would take hours and hours to remove every invisible polygon".
+		 - Daniel asked why Douglas made the model with so many polygons which will never be seen, and Douglas replied that he did this because it is so much faster to do this. Douglas said that the modelling can be done well or fast, but not both. The group tells Douglas
+		   that as they have requested beforehand, they would like the modelling done well, rather than quickly because when the modelling is not done well, this causes further work for other members of the group to fix the errors.
+		 - Oliver says that he has been deleting a lot of underground and thus unseen polys from some of the models. Douglas does not like that this is being done and asks why Oliver is using his time to do this and not coding. Douglas asked why Oliver didnt just tell him to fix the models
+		   and Oliver's reply was "Because the models look exactly the same from the angle they will be seen and because it did not take me much time at all really. I just needed to look up the hotkey for creating a face."
+		 - Douglas said that there is no point in him being on the project if someone else is doing any 3d modelling, because he is only able to 3d model. Daniel replied that he is a designer and has been in all of the same lectures as Ross but Ross is willing to work other than what he is best at.
+		 - Douglas complained that the group does not listen to his design ideas and Daniel replied that the group does, however Douglas' ideas are not feasible given our technical skill and timeframe and that the group as a whole is not comfortable with these ideas.
+		 - Ross interjects by trying to clarify what Daniel said, by saying that the whole group needs to agree on ideas otherwise there will be concerns and the conversation arose by Daniel and Oliver voicing their concerns.
+		 - Douglas said that he will fix the models, it is not the programming team's job to fix the models, they should instead point out a problem and tell him to fix it. Oliver replied that he was not fixing the model but rather improving the efficiency by removing unseen polys and that Douglas thought
+		   that the number of polys in the model was fine, however when Oliver investigated further, found that there was a large percentage of extreneous polys that will never be seen by the player. 
+		 - Douglas ran an optimisation patch on every model and corrected the scaling issue that was present with each one.
+		 - Douglas said that he was cutting the grass out of the plains model because he agreed that they were not needed. Oliver agreed with this sentiment
+		
+	24/11/17 - Douglas uploads forest tile images. Daniel voices concerns that the colonists will not be able to move around the tile and players will have their view obstructed due to the trees clipping into the camera.
+		 - Douglas was unaware of the camera's position in unity and did not realise that the scale of this tile was inappropriate. 
+		 - Oliver agreed with Daniel on this matter, and believes that the tree will definitely clip through the camera and suggested an alternate way to model the forest - with low poly trees, including example images.
+		 - Douglas believes that including many seperate trees instead of one large mass which represents a forest would make it more difficult to see any npcs if they can move between trees. 
+	    	 - Daniel reminds Douglas that this exact issue is why the click and drag feature is present. 
+		 - Ross says that he can see where Douglas is coming from with regards to the trees, however they lack the obvious affordance that they are trees.
+		 - Oliver sends a picture of a quick prototype model that he made in blender as an example of what he meant. 
+		 - Douglas confuses Oliver's intentions and says that so many trees would clutter the tile. Oliver tells doug that he can use his judgement to create a reasonable number of trees per tile. Douglas believes that this is what he has already done.
+		 - Daniel reminds Douglas that he has posted pictures for feedback from the group, has recieved constructive criticism and some potential alternate ways to create these tiles and is ignoring this feedback. Douglas remade tiles in the style that was requested.
+		 - Douglas believes that the programming team is asking him to re-do all of the work he has done this week so far, the programming team assure him that they just wish for him to make some alterations. 
+		 - Douglas says that there is nothing from his models that he is able to re-use and so he will need to re-model everything.
+	 	 - Daniel says that douglas can re-use the exact same placement that Douglas used previously, but instead of one large mass, smaller individual trees.
+		 - Douglas feels that the programming team is constraining his design input too much, and that he is not allowed to express his own creativity. Douglas states that he is getting annoyed with other members of the group asking him to iterate on his original ideas.
+		 - Douglas says that whenever the programming team ask him to iterate on his designs, it is wasting his development time, which the programming team had previously said was limited, especially because Douglas is not available to do work over the Christmas break.
+		 - Douglas says that he was brought on as the group's 3d modeller, but the group reject many of the models that he presents. 
+		 - Daniel suggests that because Douglas has very different design choices to other members of the group, it may be pertinent to fork the project to allow for Douglas' difference in creativity. Douglas replied that this is not a good idea, because he cannot code and the 
+		   rest of the group cannot model.
+		 - Douglas says that he will redo the tree models, but if there are any design decisions he requests that they are presented before he presents the finished models. Daniel tells Douglas that the group would be appreciative if he researched the subject of his models before beginning the modelling process.
+		 - Douglas sends the reference image that he used to model the tree tiles (this was from an old lego racing game). Daniel asked if Douglas used any reference images from RTS games, because the camera behaves and views the world in very different ways to the genre our project fits into.
+		 - Douglas asks how dense the forest tiles should be, Oliver said that there are plenty of games in our genre which include forests, and suggests some possible sources that Douglas can use as reference.
+		 - Douglas then asks for more specificity in what the team want each tile to look like, so Daniel makes a moodboard to illustrate some examples of what the tiles could look like for both the rocky tiles and the desert tiles.
+		 - Douglas presents some new tree tile models. The group say that these tiles look much better.
+		 - Douglas presents the first desert tile model.
+		 - Oliver asked if Douglas had been keeping the list of which tiles should tile to which that the programming team requested weeks previously. Douglas said that he is updating the list as he goes.
+		 - Oliver sends a video of the Armoury building UI implementation for review by the group.
+	
+	25/11/17 - Douglas sends another image of a desert tile.
+		 - The group talks about whether the terrain tiles can be rotated on spawn.
+		 - Douglas sends another image of a meteor crash in the desert and another desert tile. 
+	26/11/17 - Douglas sends two images of rocky terrain. 
+		 - Daniel expresses concerns over the focal points of each tile. Most tiles have their feature in the dead centre and thinks that this may look too uniform and make the player feel uneasy due to this.
+		 - Oliver expresses concerns over the space each tile affords the player to build on it. And that great care should be taken when designing each tile so as to make sure that the player has enough space to build upon it.
+		 - Oliver presents an image, showing the tiling of different tiles and says that even though Douglas is creating a priority list for how each tile will spawn, he cannot ensure that there will be enough space to build upon with the current tiles, as the only tiles which have enough space to build, are the blank plains tiles.
+		 - Douglas says that he assumes that the plains tile will be the most common because that tile type can tile to anything, thus ensuring that there will be enough space. Oliver reminds Douglas that the terrain spawning system is a random system with a set of developer made constraints, in the form of a priority list.
+		 - Daniel tells Douglas to stop assuming things, and use the project and research to inform his decision, and to ask more questions if he is unsure of what he should do.
+		 - Douglas says that he obviously did not make the fact that plains will be the most common tile type clear enough. Daniel says that he is assuming this, and as Oliver said, the terrain spawning system is at its heart a random system.
+		 - Douglas says that as he is writing the priority list, he assumes that his priority list will be generalised over every single board, and suggests that the programming team take over writing this priority list.
+		 - Douglas disagrees with the sentiment that the programming team is trying to convey.
+		 - The group talks about demolishing buildings and recycling them for resources. 
+		
+
