@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
@@ -18,7 +18,7 @@ public class LargeHerbivourState : BehaviourBase
 
         if (Monster.health < Monster.maxHealth)//if attacked
         {
-            Monster.health += Monster.naturalRegen;
+            Monster.health += Monster.naturalRegen * Time.deltaTime;
             Transform pos = Monster.transform;
             float Dist = float.MaxValue;
             Transform Closest = null;

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
@@ -17,7 +17,7 @@ public class SmallHerbivourState : BehaviourBase
             return Status.SUCCESS;
         }
         if (Monster.health < Monster.maxHealth)
-            Monster.health += Monster.naturalRegen;
+            Monster.health += Monster.naturalRegen * Time.deltaTime;
 
         Transform pos = Monster.transform;
         float Dist = float.MaxValue;
