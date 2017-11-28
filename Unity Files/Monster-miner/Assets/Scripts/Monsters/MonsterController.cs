@@ -35,6 +35,10 @@ public class MonsterController : MonoBehaviour {
     public float matingCooldown;
     public float hunger;
     public float maxHunger;
+    public float hungerAttackPercentage;
+    public float hungerDamage;
+    public float hungerLossPerSecond;
+    public float naturalRegen;
 
     public MonsterMovement Movement;
     [HideInInspector]

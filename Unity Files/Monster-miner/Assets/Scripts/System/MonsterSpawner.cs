@@ -42,7 +42,6 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
         }
     }
 
-
     public void SpawnMonster(Vector3 placement, string type)
     {
         MonsterController controller = GetController();
@@ -50,7 +49,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
         GetMesh(type, controller);
 
         MonsterTypes.Instance.getMonsterData(
-           type, out controller.maxHealth, out controller.maxHunger, out controller.attackSpeed, out controller.damage,
+           type, out controller.maxHealth, out controller.maxHunger,out controller.hungerAttackPercentage ,out controller.hungerLossPerSecond, out controller.hungerDamage, out controller.naturalRegen, out controller.attackSpeed, out controller.damage,
            out controller.combatRange, out controller.attackSpeed, out controller.dropTable, out controller.matingCooldown, 
            out controller.numHunters, out controller.viewRange, out controller.monsterType);
         controller.gameObject.name = type;

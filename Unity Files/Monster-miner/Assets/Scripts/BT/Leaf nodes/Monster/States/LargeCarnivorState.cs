@@ -5,12 +5,6 @@ using MonsterMiner.BehaviourTree;
 [CreateAssetMenu(menuName = "Scriptable Objects/BehaviourTree/Monster/LargeCarnivorSelectState")]
 public class LargeCarnivorState : BehaviourBase
 {
-    [SerializeField]
-    float hungerLossPerFrame;
-    [SerializeField]
-    float hungerDamage;
-    [SerializeField]
-    float attackHunger;
     public override Status UpdateFunc(MonsterController Monster)
     {
 
@@ -23,11 +17,11 @@ public class LargeCarnivorState : BehaviourBase
 
         if (Monster.hunger < 0)
         {
-            Monster.takeDamage(hungerDamage);
+            Monster.takeDamage(Monster.hungerDamage);
         }
         else
         {
-            Monster.hunger -= hungerLossPerFrame;
+            Monster.hunger -= Monster.hungerLossPerSecond * Time.deltaTime;
         }
         
         Transform pos = Monster.transform;
@@ -50,7 +44,7 @@ public class LargeCarnivorState : BehaviourBase
                 Monster.currentState = MonsterController.MovementState.MakeLove;
                 return Status.SUCCESS;
             }
-            if (Monster.hunger < attackHunger)
+            if (Monster.hunger < Monster.maxHunger * Monster.hungerAttackPercentage)
             {
 
                 for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)

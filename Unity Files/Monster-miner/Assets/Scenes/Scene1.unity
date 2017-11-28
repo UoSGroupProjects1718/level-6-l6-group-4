@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1051,8 +1051,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 106500546}
   m_HandleRect: {fileID: 106500545}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0.25
+  m_Size: 0.9999997
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2758,6 +2758,8 @@ GameObject:
   - component: {fileID: 824090733}
   - component: {fileID: 824090734}
   - component: {fileID: 824090732}
+  - component: {fileID: 824090735}
+  - component: {fileID: 824090736}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2824,7 +2826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3b110cd3f903543bd2fece43c8dcd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DaysPerHour: 32
+  DaysPerHour: 50
   dateText: {fileID: 1744796963}
 --- !u!114 &824090729
 MonoBehaviour:
@@ -2980,6 +2982,38 @@ MonoBehaviour:
   FloorLayerMask:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &824090735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 824090724}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e096496262f2c694c94c2e105d9f9019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnTiles:
+  - {fileID: 1997270432867008, guid: 934129d5036781f42a18fdd307a38eb6, type: 2}
+  GlobalList:
+  - {fileID: 1997270432867008, guid: 934129d5036781f42a18fdd307a38eb6, type: 2}
+  tilesToSpawn: 3
+  SpawnXDiff: 100
+  SpawnYDiff: 100
+--- !u!114 &824090736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 824090724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167bb2c40f6574e4f8f216f65e7a3cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventList:
+  - {fileID: 11400000, guid: 131c5e9dbdee15945b83964c9f0c3b75, type: 2}
+  percentageChanceOfEvent: 100
 --- !u!1 &826661229
 GameObject:
   m_ObjectHideFlags: 0
@@ -7773,7 +7807,6 @@ GameObject:
   - component: {fileID: 1816183101}
   - component: {fileID: 1816183100}
   - component: {fileID: 1816183106}
-  - component: {fileID: 1816183107}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7915,24 +7948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4722bcc5be74094ba7cb53a85155fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1816183107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1816183099}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e096496262f2c694c94c2e105d9f9019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnTiles:
-  - {fileID: 1997270432867008, guid: 934129d5036781f42a18fdd307a38eb6, type: 2}
-  GlobalList:
-  - {fileID: 1997270432867008, guid: 934129d5036781f42a18fdd307a38eb6, type: 2}
-  tilesToSpawn: 3
-  SpawnXDiff: 100
-  SpawnYDiff: 100
 --- !u!1001 &1836011044
 Prefab:
   m_ObjectHideFlags: 0

@@ -14,9 +14,11 @@ public class LargeHerbivourState : BehaviourBase
             
             return Status.SUCCESS;
         }
+     
 
         if (Monster.health < Monster.maxHealth)//if attacked
         {
+            Monster.health += Monster.naturalRegen;
             Transform pos = Monster.transform;
             float Dist = float.MaxValue;
             Transform Closest = null;

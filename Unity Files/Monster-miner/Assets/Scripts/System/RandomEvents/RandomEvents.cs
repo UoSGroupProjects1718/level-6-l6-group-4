@@ -4,39 +4,32 @@ using UnityEngine;
 
 public class RandomEvents : MonoBehaviour {
     [SerializeField]
-    List<RandEvent> eventList;
+    List<RandEvent> eventList = new List<RandEvent>();
     bool checkedToday=false;
-    [SerializeField]
-    float percentageChanceOfEvent;
+    [SerializeField,Range(0,100)]
+    float percentageChanceOfEvent = 0;
     
 	// Update is called once per frame
 	void FixedUpdate () {
-        Debug.Log(this.name);
-		if(TimeManager.Instance.IngameTime.hours==0 && TimeManager.Instance.IngameTime.minutes == 0 && checkedToday==false)//check every day for a random event
+		if(TimeManager.Instance.IngameTime.hours==0 && TimeManager.Instance.IngameTime.minutes< 5 && !checkedToday)//check every day for a random event
         {
-            if(Random.Range(0,100) < percentageChanceOfEvent)
+            checkedToday = true;
+            StartCoroutine(delayChecked());
+            if(Random.Range(0,100f) < percentageChanceOfEvent)
             {
-                StartCoroutine(RandomEvent());
+                if (eventList.Count > 0)
+                {
+                    StartCoroutine(eventList[Random.Range(0, eventList.Count)].CallEvent());
+                }
             }
         }
 	}
 
-    IEnumerator RandomEvent()
+
+    IEnumerator delayChecked()
     {
-        checkedToday = true;
-
-        if (eventList.Count > 0)
-        {
-            StartCoroutine(eventList[Random.Range(0, eventList.Count)].CallEvent());
-        }
-
-        while (TimeManager.Instance.IngameTime.minutes == 0)
-        {
-            continue;
-        }
-
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
         checkedToday = false;
-        return null;
     }
-
 }

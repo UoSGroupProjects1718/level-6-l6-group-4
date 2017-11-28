@@ -36,12 +36,16 @@ public class MonsterTypes : SingletonClass<MonsterTypes> {
     }
 
     public void getMonsterData(string dictionaryKey,
-        out float returnHealth, out float returnHunger, out float returnSpeed, out float returnDamage, out float returnCombatRange, 
+        out float returnHealth, out float returnHunger, out float returnHungerAttackPercentage, out float returnHungerDamage, out float hungerLossPerSecond, out float returnNaturalRegen, out float returnSpeed, out float returnDamage, out float returnCombatRange, 
         out float returnAttackSpeed,
         out DropTable returnDropTable, out float returnMatingCooldown, out int numHunters, out float viewRange, out TypeOfMonster monsType
         ) {
         returnHealth = Mons[dictionaryKey].maxHealth;
         returnHunger = Mons[dictionaryKey].maxHunger;
+        returnNaturalRegen = Mons[dictionaryKey].naturalRegeneration;
+        returnHungerDamage = Mons[dictionaryKey].hungerDamage;
+        returnHungerAttackPercentage = Mons[dictionaryKey].attackHungerPercentage;
+        hungerLossPerSecond = Mons[dictionaryKey].hungerLossPerSecond;
         returnSpeed = Mons[dictionaryKey].monsterSpeed;
         returnDamage = Mons[dictionaryKey].damage;
         returnCombatRange = Mons[dictionaryKey].combatRange;

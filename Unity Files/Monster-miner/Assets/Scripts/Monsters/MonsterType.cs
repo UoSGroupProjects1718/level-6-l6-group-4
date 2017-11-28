@@ -16,6 +16,11 @@ public class MonsterType : ScriptableObject {
     public float damage;
     public float attackSpeed;
     public float maxHunger;
+    [Range(0,100)]
+    public float attackHungerPercentage;
+    public float hungerLossPerSecond;
+    public float hungerDamage;
+    public float naturalRegeneration;
     [HideInInspector]
     public float nextAttack;
     public float matingCooldown;
