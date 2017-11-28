@@ -36,6 +36,7 @@ Addendum:
 		   insists this will be fine and pushes the commits following Daniel saying that he could and that he would resolve any errors manually. 
 		   Oliver explains github desktop to Douglas and Douglas says that he would prefer to keep his assets on his local drive because he believes that the assets are not
 		   secure on github. Daniel tries to explain that github is in fact safe and gives reasons why.
+
 	22/11/17 - Douglas uploads image of his new iteration of the colonist model. Oliver requests that he tests the scale in the unity editor and to figure out why the scaling
 		   of every model is incorrect in unity. Douglas said that he was trying to fix the scale in blender. Ultimately he did not figure out the scaling in blender, he postulated
 		   that the scale was being modified by Unity. A few days later, Oliver went into blender and quickly found the issue. The issue was that the scaling in blender was set to 1,1,0.02, this was fixed by applying local scaling./
@@ -89,6 +90,7 @@ Addendum:
 	25/11/17 - Douglas sends another image of a desert tile.
 		 - The group talks about whether the terrain tiles can be rotated on spawn.
 		 - Douglas sends another image of a meteor crash in the desert and another desert tile. 
+
 	26/11/17 - Douglas sends two images of rocky terrain. 
 		 - Daniel expresses concerns over the focal points of each tile. Most tiles have their feature in the dead centre and thinks that this may look too uniform and make the player feel uneasy due to this.
 		 - Oliver expresses concerns over the space each tile affords the player to build on it. And that great care should be taken when designing each tile so as to make sure that the player has enough space to build upon it.
@@ -99,5 +101,24 @@ Addendum:
 		 - Douglas says that as he is writing the priority list, he assumes that his priority list will be generalised over every single board, and suggests that the programming team take over writing this priority list.
 		 - Douglas disagrees with the sentiment that the programming team is trying to convey.
 		 - The group talks about demolishing buildings and recycling them for resources. 
+
+	27/11/17 - Douglas affirms that he had seen the email requesting for his work to be uploaded to github and that he had uploaded the work.
+		 - Oliver requests that Douglas remember to upload any work to  github once he is finished for the day, because it prevents pc crashes from wiping any uncommitted work.
+		 - Douglas requested that the steppes terrain type just be savannah, Douglas requests that he is given some photographs to demonstrate what steppes should look like. Daniel says that the steppes terrain was intended to be the transition tile from plains to mountainous regions.
+		   Douglas says that this is what he was assuming that this was what rocky terrain was for and requests that the team give him 100% specific instructions of what they want.
+		 - Oliver sends a small mood board to demonstrate what the team is asking for and clarifies that steppes and savannah is different - Steppes and savannah are both grasslands except steppes are tree-less - Daniel apologises for any lack of specificity and assures Douglas that if he has any questions, he needs to ask for clarification.
+		 - Douglas asks whether the team really wants a steppes style terrain as there isnt much to model. Oliver makes the point that terrain doesnt have to be flashy or have many features, due to the mechanical choices made in the game, currently there is no way for a player to clear trees or rocks, and a lot of open space for building will be required.
+		 - Oliver sends an image illustrating a possible way that Douglas could create the steppes terrain - an open plain with a few small rocky outcrops - Douglas says this is fine, however due to the number of times the team has asked for models to be re-worked or iterated on, he would like for the team to be very specific when setting art tasks, if the team 
+		   is not 100% sure of what they want terrain to look like, they should expect to recieve his own vision for what terrain looks like. If the team doesnt want him to make it how he envisions it then they need to be absolutely specific about density of terrain and how open it should be.
+		 - Oliver says that if Douglas can present research to back up design choices, then the team will be less likely to dislike the produced artwork. Douglas says that he does do research, he just doesnt show research when asked to explain design choices to save time. Daniel said that if Douglas were to show research when questioned, the team may be able to see why design choices were made.
+		 - Douglas says that he understands that the programming team are effectively the project managers, however they need to understand that he does do research, but it is down to the managers to ensure that it is down to the managers and not him to ensure that he researches the correct thing. Daniel replied that the programming team are not the managers, it should be down to the entire group to
+		   contribute to project management. Douglas disagrees. Daniel replies that the programming team have taken on more of managerial role to ensure that the project stays on track. Douglas says that he has not been managing because he does not have the management skills and does not understand how Jira works. Daniel questions Douglas as to whether he understands agile methodology, Douglas replies that
+		   he does not, and in his previous projects was only in charge of keeping meeting minutes and so does not understand how to use Jira.
+		 - Douglas addresses Oliver and says that he is happy to do research, however he needs to be clear on what it is. Oliver replies that if Douglas is able to show the team research, and explain his choices, then the team cannot complain about the work product. The team cannot trust that Douglas has researched the work he has produced without seeing evidence of such research and thus cannot be sure that
+		   any work has been informed by any design principles. Oliver also suggests that Douglas try to import his models into Unity to get a better idea of how the models will be seen by players because the models he is creating will look different in game than they do in his modelling software.
+		 - Douglas presents two models for steppes terrain, Oliver says that this is exactly what he was envisioning.
+		 - The team agrees upon a meeting time of 2pm for the next day.
+		 - Ross presents WIP images of UI art for the armoury building.
+	
 		
 
