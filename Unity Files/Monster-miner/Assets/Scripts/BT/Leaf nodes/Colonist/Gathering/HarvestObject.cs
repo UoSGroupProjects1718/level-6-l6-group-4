@@ -17,17 +17,17 @@ namespace MonsterMiner
             public override Status UpdateFunc(ColonistController Colonist)
             {
                 //if the colonists job is null, the jobs interaction object is null or the drop table is not present, we have failed
-                if (Colonist.currentJob == null || Colonist.currentJob.InteractionObject != null && Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable == null)
+                if (Colonist.currentJob == null || Colonist.currentJob.interactionObject != null && Colonist.currentJob.interactionObject.GetComponent<MonsterController>().dropTable == null)
                     return Status.FAILURE;
 
-                SpawnDrops(Colonist.currentJob,Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().dropTable);
-                Debug.Log("Finished harvesting" + Colonist.currentJob.InteractionObject.GetComponent<MonsterController>().monsterName);
+                SpawnDrops(Colonist.currentJob,Colonist.currentJob.interactionObject.GetComponent<MonsterController>().dropTable);
+                Debug.Log("Finished harvesting" + Colonist.currentJob.interactionObject.GetComponent<MonsterController>().monsterName);
                 //send the monster back to the pool
-                for (int i = 0; i < Colonist.currentJob.InteractionObject.transform.childCount; i++)
+                for (int i = 0; i < Colonist.currentJob.interactionObject.transform.childCount; i++)
                 {
-                    Colonist.currentJob.InteractionObject.transform.GetChild(i).gameObject.SetActive(false);
+                    Colonist.currentJob.interactionObject.transform.GetChild(i).gameObject.SetActive(false);
                 }
-                Colonist.currentJob.InteractionObject.transform.DetachChildren();
+                Colonist.currentJob.interactionObject.transform.DetachChildren();
                 Colonist.currentJob = null;
                 return Status.SUCCESS;
    
@@ -55,7 +55,7 @@ namespace MonsterMiner
 
 
                     int WorkAmount = item.item.currentStackAmount * (item.item as Resource).GatherWorkPerItem;
-                    JobManager.CreateJob(JobType.Gathering, WorkAmount, newItem, newItem.transform.position, "Gather " + item.item.name);
+                    JobManager.CreateJob(JobType.Gathering, WorkAmount, item.item,newItem,newItem.transform.position, "Gather " + item.item.itemName);
                     //the  items current job should be the one we have just added to the docket
                     item.correspondingJob = JobManager.Instance.JobDocket[JobManager.Instance.JobDocket.Count - 1];
                 }

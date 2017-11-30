@@ -14,10 +14,11 @@ MonoBehaviour:
   jobName: Build Armoury
   maxWorkAmount: 50
   currentWorkAmount: 50
-  jobType: 4
+  jobType: 3
   jobLocation: {x: 0, y: 0, z: 0}
-  InteractionObject: {fileID: 1585109613272100, guid: 8025604e850b2f04ab6d3596ce85065c,
+  interactionObject: {fileID: 1585109613272100, guid: 8025604e850b2f04ab6d3596ce85065c,
     type: 2}
+  interactionItem: {fileID: 0}
   RequiredItems:
   - resource: 0
     requiredAmount: 10

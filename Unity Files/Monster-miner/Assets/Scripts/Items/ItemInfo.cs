@@ -29,6 +29,8 @@ public class ItemInfo : ScriptableObject {
     public float maxItemDurability;
     [HideInInspector]
     public int currentStackAmount;
+    public int GatherWorkPerItem;
+
     public Sprite uiSprite;
     public Mesh itemMesh;
     public ItemType type;

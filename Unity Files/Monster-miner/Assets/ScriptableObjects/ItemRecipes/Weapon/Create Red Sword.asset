@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebe394039cfb3e4aa09d419dab1d652, type: 3}
   m_Name: Create Red Sword
   m_EditorClassIdentifier: 
+  workAmount: 20
   craftedItem: {fileID: 11400000, guid: b81384e6139743745ba37c2f932ddb83, type: 2}
   requiredItems:
   - resource: 2

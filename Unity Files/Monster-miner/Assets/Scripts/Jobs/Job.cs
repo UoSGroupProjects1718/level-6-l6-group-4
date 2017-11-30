@@ -4,7 +4,6 @@ using UnityEngine;
 
 public enum JobType
 {
-    Farmer,
     Gathering,
     Harvesting,
     Crafting,
@@ -23,18 +22,20 @@ public struct RequiredItem
 public class Job : ScriptableObject {
 
     public string jobName;
-    [SerializeField]
+
     public float maxWorkAmount;
 
-//    [HideInInspector]
+    [HideInInspector]
     public float currentWorkAmount;
+
 
     public JobType jobType;
 
     [HideInInspector]
     public Vector3 jobLocation;
 
-    public GameObject InteractionObject;
+    public GameObject interactionObject;
+    public ItemInfo interactionItem;
 
     public RequiredItem[] RequiredItems;
 

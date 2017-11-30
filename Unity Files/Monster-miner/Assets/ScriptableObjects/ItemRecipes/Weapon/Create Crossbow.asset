@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebe394039cfb3e4aa09d419dab1d652, type: 3}
   m_Name: Create Crossbow
   m_EditorClassIdentifier: 
+  workAmount: 10
   craftedItem: {fileID: 11400000, guid: 067e9b8583308c84c97c022202e91788, type: 2}
   requiredItems:
   - resource: 0

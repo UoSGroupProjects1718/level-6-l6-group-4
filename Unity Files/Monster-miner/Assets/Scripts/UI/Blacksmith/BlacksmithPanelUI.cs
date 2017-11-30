@@ -76,4 +76,20 @@ public class BlacksmithPanelUI : MonoBehaviour {
 
         
     }
+    public void OnConfirmButtonPress()
+    {
+        for(int i = 0; i < int.Parse(UIPanels.Instance.blacksmithInputField.text); i++)
+        {
+            RequiredItem[] requiredItems = new RequiredItem[focusedRecipe.requiredItems.Length];
+            for(int j  =0; j < requiredItems.Length; j++)
+            {
+                requiredItems[j].requiredAmount = focusedRecipe.requiredItems[j].requiredAmount;
+                requiredItems[j].resource = focusedRecipe.requiredItems[j].resource;
+            }
+
+            JobManager.CreateJob(JobType.Crafting, requiredItems, focusedRecipe.workAmount, focusedRecipe.craftedItem, Vector3.zero, "Create " + focusedRecipe.craftedItem.itemName);
+        }
+    }
+
+
 }

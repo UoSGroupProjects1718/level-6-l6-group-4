@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebe394039cfb3e4aa09d419dab1d652, type: 3}
   m_Name: Create Crafter Chest
   m_EditorClassIdentifier: 
+  workAmount: 20
   craftedItem: {fileID: 11400000, guid: 36471b47933580d458e594d33ab0b34f, type: 2}
   requiredItems:
   - resource: 0
-    requiredAmount: 10
+    requiredAmount: 5
   - resource: 3
-    requiredAmount: 15
+    requiredAmount: 10

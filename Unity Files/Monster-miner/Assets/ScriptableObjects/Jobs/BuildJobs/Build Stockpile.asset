@@ -13,11 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jobName: Build Stockpile
   maxWorkAmount: 50
-  currentWorkAmount: 0
-  jobType: 4
+  currentWorkAmount: 50
+  jobType: 3
   jobLocation: {x: 0, y: 0, z: 0}
-  InteractionObject: {fileID: 1768753147500134, guid: 834e2e72d2e0ecb4caa973ca064deddc,
+  interactionObject: {fileID: 1768753147500134, guid: 834e2e72d2e0ecb4caa973ca064deddc,
     type: 2}
+  interactionItem: {fileID: 0}
   RequiredItems:
   - resource: 0
     requiredAmount: 15

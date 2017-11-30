@@ -14,10 +14,11 @@ MonoBehaviour:
   jobName: Build Barracks
   maxWorkAmount: 50
   currentWorkAmount: 50
-  jobType: 4
+  jobType: 3
   jobLocation: {x: 0, y: 0, z: 0}
-  InteractionObject: {fileID: 1690739389680340, guid: 457904f0f7fbc274f9e3f881229e82f5,
+  interactionObject: {fileID: 1690739389680340, guid: 457904f0f7fbc274f9e3f881229e82f5,
     type: 2}
+  interactionItem: {fileID: 0}
   RequiredItems:
   - resource: 0
     requiredAmount: 15

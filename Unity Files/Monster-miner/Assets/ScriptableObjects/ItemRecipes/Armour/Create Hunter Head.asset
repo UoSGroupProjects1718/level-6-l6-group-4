@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebe394039cfb3e4aa09d419dab1d652, type: 3}
   m_Name: Create Hunter Head
   m_EditorClassIdentifier: 
+  workAmount: 10
   craftedItem: {fileID: 11400000, guid: a15ad2d944bbba84f83a0e48cd6e77a3, type: 2}
   requiredItems:
   - resource: 0

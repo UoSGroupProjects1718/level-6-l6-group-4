@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebe394039cfb3e4aa09d419dab1d652, type: 3}
   m_Name: Create Crafter Head
   m_EditorClassIdentifier: 
+  workAmount: 10
   craftedItem: {fileID: 11400000, guid: 0aef74b24dd2bea4fb6995c33c7f7aae, type: 2}
   requiredItems:
   - resource: 0

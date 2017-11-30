@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db9eb9aa57788c469107194bbb74a83, type: 3}
   m_Name: FindJobGathering
   m_EditorClassIdentifier: 
-  desiredJob: 1
+  desiredJob: 0

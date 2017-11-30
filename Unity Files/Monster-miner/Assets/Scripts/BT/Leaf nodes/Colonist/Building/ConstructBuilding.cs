@@ -12,22 +12,30 @@ namespace MonsterMiner
                 if (Colonist.currentJob == null)
                     return Status.FAILURE;
 
-                Colonist.currentJob.InteractionObject.GetComponent<BuildingFunction>().Built = true;
-                Colonist.currentJob.InteractionObject.GetComponent<BuildingModelSwap>().UpdateObject();
-                Colonist.currentJob.InteractionObject.GetComponent<BuildingFunction>().OnBuilt();
+                Colonist.currentJob.interactionObject.GetComponent<BuildingFunction>().Built = true;
+                Colonist.currentJob.interactionObject.GetComponent<BuildingModelSwap>().UpdateObject();
+                Colonist.currentJob.interactionObject.GetComponent<BuildingFunction>().OnBuilt();
                 UIController.Instance.UpdateStockpile();
                 //uncomment when model swapping for all buildings is correctly implemented + the scaffolding scale is correct
                 //  Colonist.currentJob.InteractionObject.GetComponent<BuildingModelSwap>().UpdateObject();
-                Debug.Log("Building Completed: " + Colonist.currentJob.InteractionObject.name);
-                if (Colonist.currentJob.jobName == "Build Granary")
+                Debug.Log("Building Completed: " + Colonist.currentJob.interactionObject.name);
+                switch(Colonist.currentJob.jobName)
                 {
-                    BehaviourTreeManager.Granaries.Add(Colonist.currentJob.InteractionObject.GetComponent<GranaryFunction>());
-                }
-                else if (Colonist.currentJob.jobName == "Build Stockpile")
-                {
-                    BehaviourTreeManager.Stockpiles.Add(Colonist.currentJob.InteractionObject.GetComponent<StockpileFunction>());
-                }
-                
+                    case "Build Granary":
+                        BehaviourTreeManager.Granaries.Add(Colonist.currentJob.interactionObject.GetComponent<GranaryFunction>());
+                        break;
+                    case "Build Stockpile":
+                        BehaviourTreeManager.Stockpiles.Add(Colonist.currentJob.interactionObject.GetComponent<StockpileFunction>());
+                        break;
+                    case "Build Armoury":
+                        BehaviourTreeManager.Armouries.Add(Colonist.currentJob.interactionObject.GetComponent<ArmouryFunction>());
+                        break;
+                    case "Build Blacksmith":
+                        BehaviourTreeManager.Blacksmiths.Add(Colonist.currentJob.interactionObject.GetComponent<BlacksmithFunction>());
+                        break;
+                    default:
+                        break;
+                }                
                 Colonist.currentJob = null;
                 return Status.SUCCESS;
             }

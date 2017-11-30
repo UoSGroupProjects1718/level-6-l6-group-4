@@ -39,17 +39,18 @@ public class UIPanels : SingletonClass<UIPanels> {
 	public override void Awake ()
     {
         base.Awake();
-        barracksPanel = GameObject.Find("Barracks panel");
-        barracksInputField = barracksPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<InputField>();
-        ResetPanel(barracksPanel.transform);
-        barracksPanel.SetActive(false);
+        //uncomment on barracks reimplementation
+        //barracksPanel = GameObject.Find("Barracks panel");
+        //barracksInputField = barracksPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<InputField>();
+        //ResetPanel(barracksPanel.transform);
+        //barracksPanel.SetActive(false);
 
         armouryPanel = GameObject.Find("Armoury panel");
         ResetPanel(armouryPanel.transform);
         armouryPanel.SetActive(false);
 
         blacksmithPanel = GameObject.Find("Blacksmith panel");
-        blacksmithInputField = barracksPanel.GetComponentInChildren<InputField>();
+        blacksmithInputField = blacksmithPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<InputField>();
         ResetPanel(blacksmithPanel.transform);
         blacksmithPanel.SetActive(false);
     }

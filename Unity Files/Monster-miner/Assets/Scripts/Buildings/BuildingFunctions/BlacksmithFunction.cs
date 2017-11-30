@@ -5,6 +5,8 @@
 
 public class BlacksmithFunction : BuildingFunction {
 
+    public bool beingWorked;
+
     public override void Function()
     {
         //if the focused panel isnt null

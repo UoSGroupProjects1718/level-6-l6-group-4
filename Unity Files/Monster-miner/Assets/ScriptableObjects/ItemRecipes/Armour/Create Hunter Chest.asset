@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebe394039cfb3e4aa09d419dab1d652, type: 3}
   m_Name: Create Hunter Chest
   m_EditorClassIdentifier: 
+  workAmount: 20
   craftedItem: {fileID: 11400000, guid: 329a7f7ba1c1fe84ca8210843fa87cef, type: 2}
   requiredItems:
   - resource: 0
@@ -18,4 +19,4 @@ MonoBehaviour:
   - resource: 1
     requiredAmount: 10
   - resource: 2
-    requiredAmount: 5
+    requiredAmount: 10

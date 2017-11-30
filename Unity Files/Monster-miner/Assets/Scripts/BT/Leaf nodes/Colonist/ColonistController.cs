@@ -4,10 +4,8 @@ using UnityEngine.AI;
 public enum ColonistJobType
 {
     Hunter,
-    Builder,
+    Crafter,
     Scout,
-    Farmer,
-    Blacksmith,
 }
 
 [RequireComponent(typeof(NavMeshAgent))]
@@ -190,7 +188,7 @@ public class ColonistController : MonoBehaviour {
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Legs") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crossbow") as Wearable);
                 break;
-            case ColonistJobType.Builder:
+            case ColonistJobType.Crafter:
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Head") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Chest") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Legs") as Wearable);
@@ -200,18 +198,6 @@ public class ColonistController : MonoBehaviour {
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Head") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Chest") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Legs") as Wearable);
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crossbow") as Wearable);
-                break;
-            case ColonistJobType.Farmer:
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Head") as Wearable);
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Chest") as Wearable);
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Legs") as Wearable);
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crossbow") as Wearable);
-                break;
-            case ColonistJobType.Blacksmith:
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Head") as Wearable);
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Chest") as Wearable);
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Legs") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crossbow") as Wearable);
                 break;
             default:

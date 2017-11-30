@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebe394039cfb3e4aa09d419dab1d652, type: 3}
   m_Name: Create Crafter Legs
   m_EditorClassIdentifier: 
+  workAmount: 15
   craftedItem: {fileID: 11400000, guid: 47330a990e10f584d84bf6706da038fc, type: 2}
   requiredItems:
   - resource: 0

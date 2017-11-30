@@ -17,6 +17,7 @@ MonoBehaviour:
   decayPerHour: 1.5
   maxItemDurability: 50
   currentStackAmount: 1
+  GatherWorkPerItem: 5
   uiSprite: {fileID: 21300004, guid: e2e9ee5165ac9c34e9faab0f79f8ba36, type: 3}
   itemMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   type: 6
