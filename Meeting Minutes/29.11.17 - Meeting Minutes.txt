@@ -1,0 +1,12 @@
+29/11/16 - 14:00
+
+Members in attendance - Oliver, Daniel, Ross, Douglas
+
+- Discussed Ross' UI designs and some possible changes to be made, also the specifics of how the art sprite sheets need to be split up. 
+- Oliver and Daniel took Ross and Douglas through how to create items and characters in the Unity Editor and what elements they need to balance.
+
+- Discussed tasks for the week
+
+14:30 Douglas and Ross leave
+
+13:00 Meeting end
