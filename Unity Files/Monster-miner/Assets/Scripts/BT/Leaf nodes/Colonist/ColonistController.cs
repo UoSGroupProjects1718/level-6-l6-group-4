@@ -96,7 +96,7 @@ public class ColonistController : MonoBehaviour {
         UpdateMoveSpeed(colonistBaseMoveSpeed);
         //set the selection cirlce
         selectionCircle = transform.GetChild(0).GetComponent<Projector>();
-        selectionCircle.gameObject.SetActive(false);
+        selectionCircle.enabled = false;
         SetTimeOfNextMeal();
 
         EquipDefaultGear();

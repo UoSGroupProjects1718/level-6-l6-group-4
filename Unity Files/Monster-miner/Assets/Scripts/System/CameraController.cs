@@ -23,7 +23,19 @@ public class CameraController : MonoBehaviour
 
 
 
-    private float cam_zPos = 0;
+    private float cam_yPos = 0;
+    [SerializeField]
+    private float zoomDifferentialOver100;
+
+    [SerializeField]
+    [Range(0,0.5f)]
+    private float zoomSpeed;
+
+    private void Start()
+    {
+        zoomDifferentialOver100 = (camMaxZoom - camMinZoom) / 100;
+        zoomSpeed *= 100;
+    }
 
     void Update()
     {
@@ -36,47 +48,46 @@ public class CameraController : MonoBehaviour
 
             //if the mouse scroll is greater than 0 then we will increase new_zPos otherwise we will reduce it
             if (mouseScroll > 0)
-                cam_zPos += 0.1f;
+                //transform.Translate(new Vector3(0, -zoomDifferentialOver100 * zoomSpeed,0));
+                CamPosition += new Vector3(0, -zoomDifferentialOver100 * zoomSpeed, 0);
 
             else if (mouseScroll < 0)
-                cam_zPos -= 0.1f;
+                //transform.Translate(new Vector3(0, zoomDifferentialOver100 * zoomSpeed, 0));
+                CamPosition += new Vector3(0, zoomDifferentialOver100 * zoomSpeed, 0);
 
-            //clamp the camera's new z position
-            cam_zPos = Mathf.Clamp(cam_zPos, 0, 1);
 
-            //then set it, based on the information from our animation curve
-            CamPosition.y = (curve.Evaluate(cam_zPos) * camMaxZoom);
-            CamPosition.y = Mathf.Clamp(CamPosition.y, camMinZoom, camMaxZoom);
         }
         #endregion
         #region camera movement
         //translation
         if (Input.GetKey(Keybinds.Instance.MoveCameraUp) )//|| Input.mousePosition.y >= Screen.height - CameraScreenBorder)
-            CamPosition += (transform.up * panSpeed) * Time.deltaTime;
+          //transform.Translate((transform.forward * panSpeed) * Time.deltaTime, Space.World);
+          CamPosition += (transform.forward * panSpeed) * Time.deltaTime;
 
         if (Input.GetKey(Keybinds.Instance.MoveCameraDown))// || Input.mousePosition.y <= CameraScreenBorder)
-            CamPosition -= (transform.up *  panSpeed)* Time.deltaTime;
-
+           //transform.Translate((-transform.forward *  panSpeed)* Time.deltaTime, Space.World);
+           CamPosition += (-transform.forward * panSpeed)*Time.deltaTime;
         if (Input.GetKey(Keybinds.Instance.MoveCameraLeft))// || Input.mousePosition.x <= CameraScreenBorder)
-            CamPosition -= (transform.right * panSpeed)* Time.deltaTime;
+            //transform.Translate((-transform.right * panSpeed)* Time.deltaTime, Space.World);
+            CamPosition += (-transform.right * panSpeed) * Time.deltaTime;
 
         if (Input.GetKey(Keybinds.Instance.MoveCameraRight))// || Input.mousePosition.x >= Screen.width - CameraScreenBorder)
+            //transform.Translate((transform.right * panSpeed) * Time.deltaTime,Space.World );
             CamPosition += (transform.right * panSpeed) * Time.deltaTime;
-
 
         //rotation
         if (Input.GetKey(Keybinds.Instance.RotateCameraLeft))
-            transform.Rotate((Vector3.down * CamRotationSpeed), Space.World);
+            transform.Rotate((-transform.up * CamRotationSpeed));
 
         if (Input.GetKey(Keybinds.Instance.RotateCameraRight))
-            transform.Rotate((Vector3.up * CamRotationSpeed) , Space.World);
+            transform.Rotate((transform.up * CamRotationSpeed));
 
         #endregion
 
 
         CamPosition.x = Mathf.Clamp(CamPosition.x, (-CameraBounds.x)/2, (CameraBounds.x)/2);
+        CamPosition.y = Mathf.Clamp(CamPosition.y, camMinZoom, camMaxZoom);
         CamPosition.z = Mathf.Clamp(CamPosition.z, (-CameraBounds.y)/2, (CameraBounds.y)/2);
-
 
         transform.position = CamPosition;
 
