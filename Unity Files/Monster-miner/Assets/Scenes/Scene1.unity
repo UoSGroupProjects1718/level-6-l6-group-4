@@ -1393,7 +1393,7 @@ Prefab:
     - target: {fileID: 114461317878078400, guid: f921b7a2f74da2248b212a1b248832ee,
         type: 2}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224006199274790316, guid: f921b7a2f74da2248b212a1b248832ee,
         type: 2}
@@ -1749,26 +1749,11 @@ MonoBehaviour:
   camMaxZoom: 80
   CameraBounds: {x: 300, y: 300}
   CameraScreenBorder: 3
-  curve:
+  floorLayerMask:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  zoomDifferentialOver100: 0
+    m_Bits: 256
   zoomSpeed: 0.08
+  mousePanBoxSize: 40
 --- !u!4 &688086037
 Transform:
   m_ObjectHideFlags: 0
@@ -1776,7 +1761,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 688086035}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.3837547, y: 37.314243, z: 11.051481}
+  m_LocalPosition: {x: 6.3837547, y: 71.5, z: 11.051481}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1816183105}
@@ -4671,7 +4656,12 @@ Prefab:
     - target: {fileID: 114752282870183198, guid: 63a362827d79d904e9faab302ddad1ff,
         type: 2}
       propertyPath: m_Value
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375595152682514, guid: 63a362827d79d904e9faab302ddad1ff,
+        type: 2}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63a362827d79d904e9faab302ddad1ff, type: 2}
@@ -5620,7 +5610,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1816183099}
   m_LocalRotation: {x: 0.5, y: -0, z: -0, w: 0.8660254}
-  m_LocalPosition: {x: -6.3837547, y: 29.525753, z: -16.011482}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 688086037}
