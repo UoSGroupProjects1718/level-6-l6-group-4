@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
+[RequireComponent(typeof(NavMesh))]
 public class MapTileList : MonoBehaviour {
     
     [SerializeField]
@@ -12,6 +13,8 @@ public class MapTileList : MonoBehaviour {
     List<GameObject> SouthList;
     [SerializeField]
     List<GameObject> WestList;
+
+    
 
     public List<GameObject> GetNorth()
     {
@@ -33,5 +36,9 @@ public class MapTileList : MonoBehaviour {
     {
         return WestList;
 
+    }
+
+    public void Bake()
+    {
     }
 }

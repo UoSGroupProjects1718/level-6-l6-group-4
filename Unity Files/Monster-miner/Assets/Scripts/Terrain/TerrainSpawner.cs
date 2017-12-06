@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class TerrainSpawner : MonoBehaviour
 {
-
     [SerializeField]
     GameObject[] SpawnTiles;
     public List<GameObject> GlobalList;
     [SerializeField]
     int tilesToSpawn = 3;
-
+    
     [SerializeField]
     float SpawnXDiff = 100;
     [SerializeField]
@@ -36,12 +35,12 @@ public class TerrainSpawner : MonoBehaviour
         {
             SpawnTile(NextSpawn[0]);
             NextSpawn.RemoveAt(0);
-
         }
+        
 
         SpawnTiles = null;
         map = null;
-        return null;
+        yield return null;
     }
 
     void AddNeighboursToList(int x, int y)
@@ -59,20 +58,21 @@ public class TerrainSpawner : MonoBehaviour
 
     void SpawnTile(Vector2 gridPos)
     {
+
         int x = (int)gridPos.x;
         int y = (int)gridPos.y;
-        //try
-        //{
+        try
+        {
         if (map[x, y] != null)
         {
             return;
         }
-        //}
+        }
 
-        //catch
-        //{
-        //    return;
-        //}
+        catch
+        {
+            return;
+        }
 
         List<GameObject> UpList, DownList, LeftList, RightList;
         UpList = DownList = LeftList = RightList = new List<GameObject>();
@@ -80,10 +80,7 @@ public class TerrainSpawner : MonoBehaviour
         {
             UpList = map[x, y - 1].GetNorth();
         }
-        catch
-        {
-            int i = 0;
-        }
+        catch { }
         try
         {
             DownList = map[x, y + 1].GetSouth();
@@ -101,7 +98,7 @@ public class TerrainSpawner : MonoBehaviour
 
         List<GameObject> PossibleList = GetPossibleList(UpList, DownList, LeftList, RightList);
 
-
+        
         if (PossibleList.Count == 0)
         {
             Debug.Log("No Neighbours at spawn. Problems have occoured");
@@ -109,13 +106,15 @@ public class TerrainSpawner : MonoBehaviour
         }
         else
         {
-            map[x, y] = Instantiate(PossibleList[Random.Range(0, PossibleList.Count)], new Vector3(0, 0, 0), Quaternion.identity).GetComponent<MapTileList>();
+            map[x, y] = Instantiate(PossibleList[Random.Range(0, PossibleList.Count)], new Vector3((x - tilesToSpawn-1) * SpawnXDiff, 0, (y- tilesToSpawn-1) *SpawnYDiff), Quaternion.identity).GetComponent<MapTileList>();
         }
         AddNeighboursToList(x, y);
     }
 
     List<GameObject> GetPossibleList(List<GameObject> Up, List<GameObject> Down, List<GameObject> Left, List<GameObject> Right)
-    {
+    {   
+        
+       
         List<GameObject> ReturnList = new List<GameObject>();// Up;
         if (Up == null)
         {
@@ -167,16 +166,16 @@ public class TerrainSpawner : MonoBehaviour
 
     }
 
-
     bool ListContains(List<GameObject> list, string name)
     {
         foreach  (GameObject tile in list)
         {
-            if (tile.name == name)
+            if (tile.name == name || tile.name + "(Clone)"==name || tile.name == name + "(Clone)")
                 return true;
         }
         return false;
     }
 
+    
 }
 

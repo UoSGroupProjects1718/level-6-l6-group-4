@@ -22,7 +22,6 @@ public class TimeManager : SingletonClass<TimeManager> {
         //the amount of ingame minutes per second to inccrease the minute counter by
         //the amount of in game days to pass per real time hour multiplied by the amount of hours in the day, divided by the amount of minutes in an hour
         timeDelta = (( DaysPerHour * 24) / 60);
-        Debug.Log(timeDelta);
         IngameTimeDisplay.Date = new Vector3(1, 1, 1492);
     }
     public void Start()

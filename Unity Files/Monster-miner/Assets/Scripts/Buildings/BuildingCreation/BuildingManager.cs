@@ -29,7 +29,7 @@ public class BuildingManager : SingletonClass<BuildingManager>
     {
         base.Awake();
         //instantiate a button for each building in the array
-        for(int i = 0; i < Buildings.Length; i++)
+        for (int i = 0; i < Buildings.Length; i++)
         {
             //instantiate a new button under the parent object, which holds a grid layout group
             GameObject button = Instantiate(ButtonPrefab, BuildingUIParent) as GameObject;

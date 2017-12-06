@@ -10,15 +10,15 @@ public class BehaviourTreeManager : MonoBehaviour
     [SerializeField]
     private BehaviourBase MonsterTree;
 
-    static public List<ColonistController> Colonists = new List<ColonistController>();
-    static public List<MonsterController> Monsters = new List<MonsterController>();
+    public static List<ColonistController> Colonists = new List<ColonistController>();
+    public static List<MonsterController> Monsters = new List<MonsterController>();
 
 
     //building lists for finding the closest one to move to
-    static public List<GranaryFunction> Granaries = new List<GranaryFunction>();
-    static public List<StockpileFunction> Stockpiles = new List<StockpileFunction>();
-    static public List<ArmouryFunction> Armouries = new List<ArmouryFunction>();
-    static public List<BlacksmithFunction> Blacksmiths = new List<BlacksmithFunction>();
+    public static List<GranaryFunction> Granaries = new List<GranaryFunction>();
+    public static List<StockpileFunction> Stockpiles = new List<StockpileFunction>();
+    public static List<ArmouryFunction> Armouries = new List<ArmouryFunction>();
+    public static List<BlacksmithFunction> Blacksmiths = new List<BlacksmithFunction>();
 
     private void Start()
     {
