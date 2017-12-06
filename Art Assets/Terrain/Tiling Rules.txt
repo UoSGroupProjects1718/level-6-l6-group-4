@@ -1,0 +1,32 @@
+Tile Rules (Below is a list of all tiles, with which tiles they can connect too assuming they are the one being placed.)
+Tiles may be connected to different tiles so long as they are all on the list for the tile that is itself being placed.
+Tiles that can only connect to a handfull of tile types should be by far the rarest.
+All tiles can be rotated and mirrored at random unless otherwise noted.
+
+
+Plains I: Plains I,II,III,IV, Crater I,II, Forest I, Oasis I,II, Desert I, Ravine I,II, Steppes I, II
+Plains II: Plains I,III,IV, Crater I,II, Forest I, Oasis I,II, Desert I, Ravine I,II
+Plains III: Plains I,II,IV, Crater I,II, Forest I, Oasis I,II, Desert I, Ravine I,II
+Plains IV: Plains I,II,III, Crater I,II, Forest I, Oasis I,II, Desert I, Ravine I,II
+
+Crater I: Plains I,II,III,IV
+Crater II: Plains I,II,III,IV
+
+Forest I: Plains I,II,III,IV
+Forest II: Plains I,II,III,IV
+Forest III: Forest I,II,III
+Forest IV: Plains I,II,III,IV
+
+(Additional note: Desert tiles can be mirrored but should not rotate in order to keep the dunes facing the same way).
+Desert I: Plains I
+Desert II: Desert I,II,III,IV
+Desert III: Desert II
+Desert IV: Desert I,II,III
+
+Rock I: Plains I, Desert I, Steppes I,II
+Rock II:Rock I, II
+Rock III: Rock II,III,IV
+Rock IV: Rock III,IV, Moutain I,II,III
+
+Steppes I: Plains I, Rock I,II, Steppes II
+Steppes II: Plains I, Rock I,II, Steppes I
