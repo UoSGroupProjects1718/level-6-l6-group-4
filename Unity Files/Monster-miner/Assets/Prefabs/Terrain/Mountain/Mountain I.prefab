@@ -136,10 +136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd410978574652640b9de1f684feb58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NorthList: []
-  EastList: []
-  SouthList: []
-  WestList: []
+  NorthList:
+  - {fileID: 1846637882837576, guid: 4b19c70ce0b582148a3b67ba703bec53, type: 2}
+  EastList:
+  - {fileID: 1846637882837576, guid: 4b19c70ce0b582148a3b67ba703bec53, type: 2}
+  SouthList:
+  - {fileID: 1846637882837576, guid: 4b19c70ce0b582148a3b67ba703bec53, type: 2}
+  WestList:
+  - {fileID: 1846637882837576, guid: 4b19c70ce0b582148a3b67ba703bec53, type: 2}
 --- !u!114 &114508826952323600
 MonoBehaviour:
   m_ObjectHideFlags: 1

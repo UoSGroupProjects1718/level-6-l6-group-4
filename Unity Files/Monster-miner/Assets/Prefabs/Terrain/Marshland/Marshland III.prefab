@@ -156,10 +156,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd410978574652640b9de1f684feb58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NorthList: []
-  EastList: []
-  SouthList: []
-  WestList: []
+  NorthList:
+  - {fileID: 1043541372899314, guid: b396524a640bec942a4c22c301634b7b, type: 2}
+  - {fileID: 1651542984207006}
+  - {fileID: 1898817082886912, guid: 785cdb0f00995ee4b8de2312c5c56c57, type: 2}
+  EastList:
+  - {fileID: 1043541372899314, guid: b396524a640bec942a4c22c301634b7b, type: 2}
+  - {fileID: 1651542984207006}
+  - {fileID: 1898817082886912, guid: 785cdb0f00995ee4b8de2312c5c56c57, type: 2}
+  SouthList:
+  - {fileID: 1043541372899314, guid: b396524a640bec942a4c22c301634b7b, type: 2}
+  - {fileID: 1651542984207006}
+  - {fileID: 1898817082886912, guid: 785cdb0f00995ee4b8de2312c5c56c57, type: 2}
+  WestList:
+  - {fileID: 1043541372899314, guid: b396524a640bec942a4c22c301634b7b, type: 2}
+  - {fileID: 1651542984207006}
+  - {fileID: 1898817082886912, guid: 785cdb0f00995ee4b8de2312c5c56c57, type: 2}
 --- !u!114 &114845823257587452
 MonoBehaviour:
   m_ObjectHideFlags: 1
