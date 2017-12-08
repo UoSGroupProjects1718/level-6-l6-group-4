@@ -71,6 +71,7 @@ public class CameraController : MonoBehaviour
                 expectedYPosition += zoomDifferentialOver100 * zoomSpeed;
             }
 
+            expectedYPosition = Mathf.Clamp(expectedYPosition, camMinZoom, camMaxZoom);
 
         }
         #endregion

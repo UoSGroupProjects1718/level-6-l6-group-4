@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e46c7e7a453dc4ba31b9edfc533056, type: 3}
+  m_Name: Large Iron Carnivore
+  m_EditorClassIdentifier: 
+  monsterName: Large Iron Carnivore
+  monsterType: 0
+  numHuntersRequired: 0
+  monsterSpeed: 0
+  maxHealth: 0
+  combatRange: 0
+  viewRange: 0
+  damage: 0
+  attackSpeed: 0
+  maxHunger: 0
+  attackHungerPercentage: 0
+  hungerLossPerSecond: 0
+  hungerDamage: 0
+  naturalRegeneration: 0
+  nextAttack: 0
+  matingCooldown: 0
+  monsterMeshAndBones: {fileID: 0}
+  dropTable: {fileID: 0}

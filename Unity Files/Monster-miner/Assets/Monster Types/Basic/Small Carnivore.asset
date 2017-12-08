@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e46c7e7a453dc4ba31b9edfc533056, type: 3}
+  m_Name: Small Carnivore
+  m_EditorClassIdentifier: 
+  monsterName: Small Carnivore
+  monsterType: 0
+  numHuntersRequired: 0
+  monsterSpeed: 8.85
+  maxHealth: 35
+  combatRange: 5
+  viewRange: 40
+  damage: 15
+  attackSpeed: 2
+  maxHunger: 50
+  attackHungerPercentage: 40
+  hungerLossPerSecond: 1
+  hungerDamage: 5
+  naturalRegeneration: 0
+  nextAttack: 0
+  matingCooldown: 180
+  monsterMeshAndBones: {fileID: 1463320577259356, guid: 129344fdf9f903845982ed29f1534a3a,
+    type: 2}
+  dropTable: {fileID: 11400000, guid: ef903411387c89641a01d8ea3c3c2f6a, type: 2}

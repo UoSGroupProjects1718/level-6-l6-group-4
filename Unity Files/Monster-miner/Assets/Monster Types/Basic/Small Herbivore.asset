@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e46c7e7a453dc4ba31b9edfc533056, type: 3}
+  m_Name: Small Herbivore
+  m_EditorClassIdentifier: 
+  monsterName: Small Herbivore
+  monsterType: 3
+  numHuntersRequired: 0
+  monsterSpeed: 8.25
+  maxHealth: 35
+  combatRange: 4
+  viewRange: 30
+  damage: 10
+  attackSpeed: 0
+  maxHunger: 150
+  attackHungerPercentage: 10
+  hungerLossPerSecond: 1.5
+  hungerDamage: 3
+  naturalRegeneration: 5
+  nextAttack: 0
+  matingCooldown: 90
+  monsterMeshAndBones: {fileID: 1059623514651182, guid: 8f9bdd30015ee4c41b996a2541ccea27,
+    type: 2}
+  dropTable: {fileID: 11400000, guid: 121b906a89920d3428d4191a0dae4eaa, type: 2}

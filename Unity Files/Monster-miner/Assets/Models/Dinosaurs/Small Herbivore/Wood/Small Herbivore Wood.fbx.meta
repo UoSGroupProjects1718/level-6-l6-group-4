@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 72a1a2995c06c0c4898ed44ac7332c59
+timeCreated: 1512734196
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Arm L Forearm
+    100002: Arm L Forearm_end
+    100004: Arm L Hand
+    100006: Arm L Hand_end
+    100008: Arm L IK
+    100010: Arm L Midsection
+    100012: Arm L Shoulder
+    100014: Arm L Target
+    100016: Arm L Target_end
+    100018: Arm R Forearm
+    100020: Arm R Forearm_end
+    100022: Arm R Hand
+    100024: Arm R Hand_end
+    100026: Arm R IK
+    100028: Arm R Midsection
+    100030: Arm R Shoulder
+    100032: Arm R Target
+    100034: Arm R Target_end
+    100036: Head
+    100038: Head_end
+    100040: Leg L Foot
+    100042: Leg L Foot_end
+    100044: Leg L IK
+    100046: Leg L Midsection
+    100048: Leg L Shin
+    100050: Leg L Shin_end
+    100052: Leg L Target
+    100054: Leg L Target_end
+    100056: Leg L Thigh
+    100058: Leg R Foot
+    100060: Leg R Foot_end
+    100062: Leg R IK
+    100064: Leg R Midsection
+    100066: Leg R Shin
+    100068: Leg R Shin_end
+    100070: Leg R Target
+    100072: Leg R Target_end
+    100074: Leg R Thigh
+    100076: Main Bone
+    100078: Neck
+    100080: Small Herbiovre Wood Armeture
+    100082: Small Herbivore Wood
+    100084: //RootNode
+    100086: Tail Base
+    100088: Tail Base_end
+    100090: Tail Top
+    100092: Torso Core
+    100094: Torso Lower
+    100096: Torso Upper
+    400000: Arm L Forearm
+    400002: Arm L Forearm_end
+    400004: Arm L Hand
+    400006: Arm L Hand_end
+    400008: Arm L IK
+    400010: Arm L Midsection
+    400012: Arm L Shoulder
+    400014: Arm L Target
+    400016: Arm L Target_end
+    400018: Arm R Forearm
+    400020: Arm R Forearm_end
+    400022: Arm R Hand
+    400024: Arm R Hand_end
+    400026: Arm R IK
+    400028: Arm R Midsection
+    400030: Arm R Shoulder
+    400032: Arm R Target
+    400034: Arm R Target_end
+    400036: Head
+    400038: Head_end
+    400040: Leg L Foot
+    400042: Leg L Foot_end
+    400044: Leg L IK
+    400046: Leg L Midsection
+    400048: Leg L Shin
+    400050: Leg L Shin_end
+    400052: Leg L Target
+    400054: Leg L Target_end
+    400056: Leg L Thigh
+    400058: Leg R Foot
+    400060: Leg R Foot_end
+    400062: Leg R IK
+    400064: Leg R Midsection
+    400066: Leg R Shin
+    400068: Leg R Shin_end
+    400070: Leg R Target
+    400072: Leg R Target_end
+    400074: Leg R Thigh
+    400076: Main Bone
+    400078: Neck
+    400080: Small Herbiovre Wood Armeture
+    400082: Small Herbivore Wood
+    400084: //RootNode
+    400086: Tail Base
+    400088: Tail Base_end
+    400090: Tail Top
+    400092: Torso Core
+    400094: Torso Lower
+    400096: Torso Upper
+    4300000: Small Herbivore Wood
+    9500000: //RootNode
+    13700000: Small Herbivore Wood
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.75
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
