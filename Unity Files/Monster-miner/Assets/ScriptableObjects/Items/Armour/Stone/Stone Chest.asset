@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Name: Stone Chest
   m_EditorClassIdentifier: 
   attachedGameObject: {fileID: 0}
-  itemName: 
-  itemDescription: 
-  decayPerHour: 0
-  maxItemDurability: 0
+  itemName: Stone Chest
+  itemDescription: A chestplate made of stone
+  decayPerHour: 5
+  maxItemDurability: 100
   currentStackAmount: 0
-  GatherWorkPerItem: 0
-  uiSprite: {fileID: 0}
-  itemMesh: {fileID: 0}
-  type: 0
-  equippableMesh: {fileID: 0}
-  armourSlot: 0
+  GatherWorkPerItem: 5
+  uiSprite: {fileID: 21300002, guid: e2e9ee5165ac9c34e9faab0f79f8ba36, type: 3}
+  itemMesh: {fileID: 4300000, guid: 9c7c4ff8d3805284b8286c9c5ee5a82e, type: 3}
+  type: 6
+  equippableMesh: {fileID: 137619357096855660, guid: cd57d7ede8e92104bbb0e87d5c97d18f,
+    type: 2}
+  armourSlot: 1
   walkSpeedModifier: 0
   workSpeedModifier: 0
   DamageReduction: 0

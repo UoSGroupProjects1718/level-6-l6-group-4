@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Name: Crystal Legs
   m_EditorClassIdentifier: 
   attachedGameObject: {fileID: 0}
-  itemName: 
-  itemDescription: 
-  decayPerHour: 0
-  maxItemDurability: 0
+  itemName: Crystal Legs
+  itemDescription: Trousers made of crystal
+  decayPerHour: 5
+  maxItemDurability: 100
   currentStackAmount: 0
-  GatherWorkPerItem: 0
-  uiSprite: {fileID: 0}
-  itemMesh: {fileID: 0}
+  GatherWorkPerItem: 10
+  uiSprite: {fileID: 21300004, guid: e2e9ee5165ac9c34e9faab0f79f8ba36, type: 3}
+  itemMesh: {fileID: 4300000, guid: 2e4de8293312ae844924c8a2ed881b11, type: 3}
   type: 0
-  equippableMesh: {fileID: 0}
-  armourSlot: 0
+  equippableMesh: {fileID: 137288740997124556, guid: c5e0183f0a113aa4e91fc1db988efcb3,
+    type: 2}
+  armourSlot: 2
   walkSpeedModifier: 0
   workSpeedModifier: 0
   DamageReduction: 0
