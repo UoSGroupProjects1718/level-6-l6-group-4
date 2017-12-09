@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 950, y: 421}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -68,7 +68,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 421}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &4
 MonoBehaviour:
@@ -130,8 +130,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 913, y: 371}
-  m_MaxSize: {x: 22008, y: 14021}
+  m_MinSize: {x: 917, y: 392}
+  m_MaxSize: {x: 22012, y: 14042}
   vertical: 1
   controlID: 9
 --- !u!114 &7
@@ -154,8 +154,8 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 947
-  m_MinSize: {x: 913, y: 371}
-  m_MaxSize: {x: 22008, y: 14021}
+  m_MinSize: {x: 917, y: 392}
+  m_MaxSize: {x: 22012, y: 14042}
   vertical: 0
   controlID: 10
 --- !u!114 &8
@@ -204,10 +204,10 @@ MonoBehaviour:
     y: 0
     width: 715
     height: 947
-  m_MinSize: {x: 711, y: 371}
-  m_MaxSize: {x: 18006, y: 14021}
+  m_MinSize: {x: 715, y: 392}
+  m_MaxSize: {x: 18010, y: 14042}
   vertical: 1
-  controlID: 35
+  controlID: 11
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -229,10 +229,10 @@ MonoBehaviour:
     y: 0
     width: 715
     height: 643
-  m_MinSize: {x: 711, y: 271}
-  m_MaxSize: {x: 18006, y: 10021}
+  m_MinSize: {x: 715, y: 271}
+  m_MaxSize: {x: 18010, y: 10021}
   vertical: 0
-  controlID: 36
+  controlID: 12
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,8 +251,8 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 643
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -302,8 +302,8 @@ MonoBehaviour:
     y: 643
     width: 715
     height: 304
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -417,9 +417,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -40.606537, y: 1.1345088, z: -31.745039}
+    m_Target: {x: 23.065891, y: -50.980637, z: 52.208366}
     speed: 2
-    m_Value: {x: -40.606537, y: 1.1345088, z: -31.745039}
+    m_Value: {x: 23.065891, y: -50.980637, z: 52.208366}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -442,13 +442,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.2830102, y: -0.093328916, z: 0.027684705, w: 0.95416385}
+    m_Target: {x: -0.40776125, y: -0.23134787, z: 0.1075972, w: -0.8767165}
     speed: 2
-    m_Value: {x: 0.2830102, y: -0.093328916, z: 0.027684705, w: 0.95416385}
+    m_Value: {x: -0.40776125, y: -0.23134787, z: 0.1075972, w: -0.8767165}
   m_Size:
-    m_Target: 57.37862
+    m_Target: 188.31717
     speed: 2
-    m_Value: 57.37862
+    m_Value: 188.31717
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -487,23 +487,23 @@ MonoBehaviour:
     height: 622
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 3083feff
     m_LastClickedID: 0
-    m_ExpandedIDs: fad4f7ffc6e2f7ff7c55f9ff1afcffff00000000
+    m_ExpandedIDs: 1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Large Carnivore Bone
-      m_OriginalName: Large Carnivore Bone
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -396862
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -550,10 +550,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs/Dinosaurs/Large Carnivore
-    - Assets/Prefabs/Dinosaurs/Large Herbivore
-    - Assets/Prefabs/Dinosaurs/Small Carnivore
-    - Assets/Prefabs/Dinosaurs/Small Herbivore
+    - Assets/ScriptableObjects/Items/Armour/Crystal
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -564,7 +561,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: e0240000
     m_LastClickedID: 9440
-    m_ExpandedIDs: 00000000d626000024270000282700003627000038270000402700004a2700004e270000a2270000a4270000cc270000ea270000f6270000fc270000062800000a280000402800006e280000b4280000f428000002290000162900005029000080290000382a0000402a0000842a0000ac2a0000c02a0000fa2a0000062b00005a2b0000b02b0000be2b0000c22b0000f02b0000fc2b00005e2c0000622c00008a2c0000922c00009a2c0000be2c0000e62c0000ee2c0000f22c0000202d0000302d0000762d0000d62d00003a2e00005a2e0000762e0000ce2e0000d02e0000e22e0000fa2e0000242f0000342f00003a2f0000602f0000722f00006238000086840000888400008a8400008c8400008e84000090840000928400009484000096840000988400009a8400009c8400009e840000a0840000a2840000a4840000a6840000a8840000aa840000ac840000ae840000b0840000b2840000b4840000b6840000b8840000ba840000bc840000be840000c0840000c2840000
+    m_ExpandedIDs: 00000000d6260000242700002827000036270000382700004a2700004e270000a2270000a4270000cc270000ea270000f2270000f6270000fc27000006280000082800000a2800006e280000b4280000e0280000f428000002290000142900001629000050290000802900002e2a0000342a0000382a0000402a0000842a0000ac2a0000c02a0000fa2a0000062b0000b22b0000c02b0000c42b0000ea2b0000f22b0000f42b0000fa2b0000fe2b0000602c0000642c00008c2c0000942c00009c2c0000c02c0000e82c0000f02c0000f42c0000142d0000202d0000222d0000322d00005c2d0000a22d0000d82d0000022e0000362e00003c2e0000462e00005a2e0000762e0000d02e0000e22e0000fa2e0000242f0000342f0000602f0000643a00002e97000030970000329700003497000036970000389700003a9700003c9700003e97000040970000429700004497000046970000489700004a9700004c9700004e97000050970000529700005497000056970000589700005a9700005c9700005e97000060970000629700006497000066970000689700006a970000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -589,24 +586,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 480}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d6260000242700002827000036270000382700004a2700004e270000a2270000a4270000cc270000ea270000f2270000f6270000fc27000006280000082800000a2800006e280000b4280000e0280000f428000002290000142900001629000050290000802900002e2a0000342a0000382a0000402a0000842a0000ac2a0000c02a0000fa2a0000062b0000b02b0000be2b0000c22b0000e82b0000f02b0000f22b0000f82b0000fc2b00005e2c0000622c00008a2c0000922c00009a2c0000be2c0000e62c0000ee2c0000f22c0000122d00001e2d0000202d0000302d00005a2d0000a02d0000d62d0000002e0000342e00003a2e0000462e00005a2e0000762e0000d02e0000e22e0000fa2e0000242f0000342f0000602f00006238000086840000888400008a8400008c8400008e84000090840000928400009484000096840000988400009a8400009c8400009e840000a0840000a2840000a4840000a6840000a8840000aa840000ac840000ae840000b0840000b2840000b4840000b6840000b8840000ba840000bc840000be840000c0840000c2840000
+    m_ExpandedIDs: 00000000d62600000a270000242700002827000036270000382700004a2700004e27000078270000a2270000a4270000cc270000ea270000f2270000f6270000fc27000006280000082800000a2800006e280000b4280000de280000e0280000f42800000229000014290000162900001a2900002a290000802900002e2a0000342a0000382a0000402a0000482a0000842a0000ac2a0000c02a0000c82a0000fa2a0000062b00008c2b0000b22b0000c02b0000c42b0000ea2b0000f22b0000fa2b0000fe2b0000602c0000642c00008c2c0000942c00009c2c0000c02c0000c62c0000e82c0000f02c0000f42c0000142d0000202d0000322d00004a2d00005c2d00005e2d0000a22d0000d82d0000022e00003c2e0000462e00005a2e0000602e0000762e0000d02e0000e22e0000fa2e0000242f0000342f0000642f0000643a00002e97000030970000329700003497000036970000389700003a9700003c9700003e97000040970000429700004497000046970000489700004a9700004c9700004e97000050970000529700005497000056970000589700005a9700005c9700005e97000060970000629700006497000066970000689700006a970000b4970000ba970000c0970000c6970000ce970000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Large Cystal Herbivore
-      m_OriginalName: Large Cystal Herbivore
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10874
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 

@@ -12,4 +12,6 @@ public class Armour : Wearable
     [Range(0,100)]
     public float DamageReduction;
 
+
+
 }
