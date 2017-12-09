@@ -14,19 +14,19 @@ MonoBehaviour:
   monsterName: Large Crystal Carnivore
   monsterType: 0
   numHuntersRequired: 0
-  monsterSpeed: 0
-  maxHealth: 0
-  combatRange: 0
-  viewRange: 0
-  damage: 0
-  attackSpeed: 0
-  maxHunger: 0
-  attackHungerPercentage: 0
-  hungerLossPerSecond: 0
-  hungerDamage: 0
+  monsterSpeed: 8.35
+  maxHealth: 80
+  combatRange: 5
+  viewRange: 40
+  damage: 25
+  attackSpeed: 30
+  maxHunger: 100
+  attackHungerPercentage: 40
+  hungerLossPerSecond: 1
+  hungerDamage: 0.5
   naturalRegeneration: 0
   nextAttack: 0
-  matingCooldown: 0
-  monsterMeshAndBones: {fileID: 0}
-  dropTable: {fileID: 0}
-  materials: []
+  matingCooldown: 180
+  monsterMeshAndBones: {fileID: 1606670941163456, guid: 7a1584cc95601f9489d5277b09c0ea2a,
+    type: 2}
+  dropTable: {fileID: 11400000, guid: ac8d4cc4e2a3fde45a9cc328eaf7ad54, type: 2}

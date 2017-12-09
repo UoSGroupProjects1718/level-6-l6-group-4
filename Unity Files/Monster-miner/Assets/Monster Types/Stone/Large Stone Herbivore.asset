@@ -12,20 +12,21 @@ MonoBehaviour:
   m_Name: Large Stone Herbivore
   m_EditorClassIdentifier: 
   monsterName: Large Stone Herbivore
-  monsterType: 0
+  monsterType: 3
   numHuntersRequired: 0
-  monsterSpeed: 0
-  maxHealth: 0
-  combatRange: 0
-  viewRange: 0
-  damage: 0
-  attackSpeed: 0
-  maxHunger: 0
-  attackHungerPercentage: 0
-  hungerLossPerSecond: 0
-  hungerDamage: 0
-  naturalRegeneration: 0
+  monsterSpeed: 5
+  maxHealth: 175
+  combatRange: 10
+  viewRange: 100
+  damage: 35
+  attackSpeed: 7
+  maxHunger: 100
+  attackHungerPercentage: 10
+  hungerLossPerSecond: 0.5
+  hungerDamage: 1
+  naturalRegeneration: 1
   nextAttack: 0
-  matingCooldown: 0
-  monsterMeshAndBones: {fileID: 0}
-  dropTable: {fileID: 0}
+  matingCooldown: 300
+  monsterMeshAndBones: {fileID: 1839860248496744, guid: 54cbc1f2cd63cca41bc55ebb9217a5f4,
+    type: 2}
+  dropTable: {fileID: 11400000, guid: 47e6517a876d7b3499f0467c63b49dd9, type: 2}

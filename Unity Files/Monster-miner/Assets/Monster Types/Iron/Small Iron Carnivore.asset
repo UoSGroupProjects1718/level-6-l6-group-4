@@ -14,18 +14,19 @@ MonoBehaviour:
   monsterName: Small Iron Carnivore
   monsterType: 0
   numHuntersRequired: 0
-  monsterSpeed: 0
-  maxHealth: 0
-  combatRange: 0
-  viewRange: 0
-  damage: 0
-  attackSpeed: 0
-  maxHunger: 0
-  attackHungerPercentage: 0
-  hungerLossPerSecond: 0
-  hungerDamage: 0
+  monsterSpeed: 7.3
+  maxHealth: 65
+  combatRange: 5
+  viewRange: 40
+  damage: 25
+  attackSpeed: 3.5
+  maxHunger: 180
+  attackHungerPercentage: 40
+  hungerLossPerSecond: 1
+  hungerDamage: 0.5
   naturalRegeneration: 0
   nextAttack: 0
-  matingCooldown: 0
-  monsterMeshAndBones: {fileID: 0}
-  dropTable: {fileID: 0}
+  matingCooldown: 180
+  monsterMeshAndBones: {fileID: 1918491503144512, guid: 8e49c2d97aedc324ba237825a4e43b1e,
+    type: 2}
+  dropTable: {fileID: 11400000, guid: 7d9574c232807554da1730bf1db8851b, type: 2}

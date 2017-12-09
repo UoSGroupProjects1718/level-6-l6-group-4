@@ -14,18 +14,19 @@ MonoBehaviour:
   monsterName: Small Stone Carnivore
   monsterType: 0
   numHuntersRequired: 0
-  monsterSpeed: 0
-  maxHealth: 0
-  combatRange: 0
-  viewRange: 0
-  damage: 0
-  attackSpeed: 0
-  maxHunger: 0
-  attackHungerPercentage: 0
-  hungerLossPerSecond: 0
-  hungerDamage: 0
+  monsterSpeed: 8.3
+  maxHealth: 50
+  combatRange: 5
+  viewRange: 40
+  damage: 20
+  attackSpeed: 3.5
+  maxHunger: 100
+  attackHungerPercentage: 40
+  hungerLossPerSecond: 1
+  hungerDamage: 0.5
   naturalRegeneration: 0
   nextAttack: 0
-  matingCooldown: 0
-  monsterMeshAndBones: {fileID: 0}
-  dropTable: {fileID: 0}
+  matingCooldown: 180
+  monsterMeshAndBones: {fileID: 1819039465734844, guid: 0fdf7067cef862141b25c7978f7f0d03,
+    type: 2}
+  dropTable: {fileID: 11400000, guid: 53ac60da9cc194d4ca19d9fe8aea02bc, type: 2}

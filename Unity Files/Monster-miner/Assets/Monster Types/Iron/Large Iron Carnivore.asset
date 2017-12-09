@@ -12,20 +12,21 @@ MonoBehaviour:
   m_Name: Large Iron Carnivore
   m_EditorClassIdentifier: 
   monsterName: Large Iron Carnivore
-  monsterType: 0
+  monsterType: 2
   numHuntersRequired: 0
-  monsterSpeed: 0
-  maxHealth: 0
-  combatRange: 0
-  viewRange: 0
-  damage: 0
-  attackSpeed: 0
-  maxHunger: 0
-  attackHungerPercentage: 0
-  hungerLossPerSecond: 0
-  hungerDamage: 0
+  monsterSpeed: 6
+  maxHealth: 12
+  combatRange: 15
+  viewRange: 65
+  damage: 30
+  attackSpeed: 6
+  maxHunger: 100
+  attackHungerPercentage: 25
+  hungerLossPerSecond: 0.5
+  hungerDamage: 1
   naturalRegeneration: 0
   nextAttack: 0
-  matingCooldown: 0
-  monsterMeshAndBones: {fileID: 0}
-  dropTable: {fileID: 0}
+  matingCooldown: 180
+  monsterMeshAndBones: {fileID: 1534380976066500, guid: e3193e713098f3f40a7c6800ba988a79,
+    type: 2}
+  dropTable: {fileID: 11400000, guid: a408c1ee996fc534a85c906c26d37f2d, type: 2}

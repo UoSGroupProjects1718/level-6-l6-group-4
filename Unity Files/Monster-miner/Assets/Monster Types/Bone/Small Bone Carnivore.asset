@@ -14,19 +14,19 @@ MonoBehaviour:
   monsterName: Small Bone Carnivore
   monsterType: 0
   numHuntersRequired: 0
-  monsterSpeed: 0
-  maxHealth: 0
-  combatRange: 0
-  viewRange: 0
-  damage: 0
-  attackSpeed: 0
-  maxHunger: 0
-  attackHungerPercentage: 0
-  hungerLossPerSecond: 0
-  hungerDamage: 0
+  monsterSpeed: 8.55
+  maxHealth: 50
+  combatRange: 5
+  viewRange: 40
+  damage: 15
+  attackSpeed: 2
+  maxHunger: 100
+  attackHungerPercentage: 40
+  hungerLossPerSecond: 1
+  hungerDamage: 0.5
   naturalRegeneration: 0
   nextAttack: 0
-  matingCooldown: 0
-  monsterMeshAndBones: {fileID: 0}
-  dropTable: {fileID: 0}
-  materials: []
+  matingCooldown: 180
+  monsterMeshAndBones: {fileID: 1254877088806880, guid: a0d9f724047211f469ab9c8a91522bbe,
+    type: 2}
+  dropTable: {fileID: 11400000, guid: bf38ece7e74a852419c36e48f2b8038f, type: 2}
