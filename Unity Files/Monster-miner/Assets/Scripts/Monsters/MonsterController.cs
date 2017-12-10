@@ -61,6 +61,7 @@ public class MonsterController : MonoBehaviour {
         Movement = GetComponent<MonsterMovement>();
         collider = GetComponentInChildren<Collider>();
         lastMatingTime = Time.time;
+        Movement.navMeshAgent.speed = monsterSpeed;
         //set the selection cirlce
         SelectionCircle = transform.GetComponentInChildren<Projector>();
     }
@@ -84,9 +85,8 @@ public class MonsterController : MonoBehaviour {
         Debug.Log(monsterName + " has died.");
     }
     
-    public void GetMonster(Vector3 position, string type)
+    public void GetMonster()
     {
-        MonsterSpawner.Instance.SpawnMonster(position, type);
         isDead = false;      
         lastMatingTime = Time.time;
         health = maxHealth;

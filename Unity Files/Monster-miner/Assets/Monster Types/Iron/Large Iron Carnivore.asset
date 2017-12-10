@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Large Iron Carnivore
   monsterType: 2
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 6
-  maxHealth: 12
+  maxHealth: 120
   combatRange: 15
   viewRange: 65
   damage: 30

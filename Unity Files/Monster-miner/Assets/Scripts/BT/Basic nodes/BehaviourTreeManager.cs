@@ -20,12 +20,19 @@ public class BehaviourTreeManager : MonoBehaviour
     public static List<ArmouryFunction> Armouries = new List<ArmouryFunction>();
     public static List<BlacksmithFunction> Blacksmiths = new List<BlacksmithFunction>();
 
+
+
+
+
     private void Start()
     {
-        for(int i = 0; i < 5; i++)
+
+
+
+        for(int i = 0; i < 15; i++)
         {
             
-            MonsterSpawner.Instance.SpawnMonster(Utils.RandomNavSphere(Vector3.zero,70,-1), "Small Wood Herbivore");
+            MonsterSpawner.Instance.SpawnMonster(Utils.RandomNavSphere(Vector3.zero,90,-1), MonsterTypes.Instance.dictionaryKeys[Random.Range(0,24)]);
         }
 
         StartCoroutine(BehaviourTrees());

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
@@ -17,7 +17,7 @@ public class LargeCarnivorState : BehaviourBase
 
         if (Monster.hunger < 0)
         {
-            Monster.takeDamage(Monster.hungerDamage);
+            Monster.takeDamage(Monster.hungerDamage * Time.deltaTime); //this was removing hunger damage every frame rather than every second so I multiplied by deltatime
         }
         else
         {
