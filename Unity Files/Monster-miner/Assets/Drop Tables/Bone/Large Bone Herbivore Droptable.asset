@@ -8,24 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e46c7e7a453dc4ba31b9edfc533056, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b643a7686370814dbfea0cdb6fa10b4, type: 3}
   m_Name: Large Bone Herbivore Droptable
   m_EditorClassIdentifier: 
-  monsterName: 
-  monsterType: 0
-  numHuntersRequired: 0
-  monsterSpeed: 0
-  maxHealth: 0
-  combatRange: 0
-  viewRange: 0
-  damage: 0
-  attackSpeed: 0
-  maxHunger: 0
-  attackHungerPercentage: 0
-  hungerLossPerSecond: 0
-  hungerDamage: 0
-  naturalRegeneration: 0
-  nextAttack: 0
-  matingCooldown: 0
-  monsterMeshAndBones: {fileID: 0}
-  dropTable: {fileID: 0}
+  Drops:
+  - {fileID: 11400000, guid: d43f2e5aa24b3ce478e0fb83d45e9ff2, type: 2}
+  - {fileID: 11400000, guid: 7e86d8907b88d74449b673beb6ff1fcc, type: 2}

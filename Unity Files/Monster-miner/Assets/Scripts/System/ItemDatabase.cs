@@ -55,6 +55,10 @@ public class ItemDatabase : MonoBehaviour
                     newItem.transform.parent = Item.transform;
                     newItem.GetComponent<Item>().item = databaseItems[i];
                     newItem.GetComponent<MeshFilter>().mesh = databaseItems[i].itemMesh;
+
+                    if (databaseItems[i].itemRenderer != null)
+                        newItem.GetComponent<Renderer>().materials = databaseItems[i].itemRenderer.sharedMaterials;
+
                     newItem.SetActive(false);
                     itemPool.Add(newItem);
                 }

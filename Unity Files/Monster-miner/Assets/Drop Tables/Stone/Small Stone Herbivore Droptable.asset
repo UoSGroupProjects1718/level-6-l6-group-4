@@ -11,4 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b643a7686370814dbfea0cdb6fa10b4, type: 3}
   m_Name: Small Stone Herbivore Droptable
   m_EditorClassIdentifier: 
-  Drops: []
+  Drops:
+  - {fileID: 11400000, guid: 7e86d8907b88d74449b673beb6ff1fcc, type: 2}
+  - {fileID: 11400000, guid: e7ea063302908964696ecb20d5685032, type: 2}

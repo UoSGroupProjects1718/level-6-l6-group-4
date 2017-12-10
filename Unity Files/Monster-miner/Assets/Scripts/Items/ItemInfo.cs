@@ -33,6 +33,7 @@ public class ItemInfo : ScriptableObject {
 
     public Sprite uiSprite;
     public Mesh itemMesh;
+    public MeshRenderer itemRenderer;
     public ItemType type;
 
 

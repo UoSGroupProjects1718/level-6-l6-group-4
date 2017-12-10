@@ -53,7 +53,7 @@ public class UIController : SingletonClass<UIController>
         UIPanels.Instance.barracksPanel.transform.GetChild(1).gameObject.SetActive(!UIPanels.Instance.barracksPanel.transform.GetChild(1).gameObject.activeSelf);
     }
 
-    //this is disgusting code, needs to be revisited
+   
     public void IncrementBarracksInputField()
     {
         int number = int.Parse(UIPanels.Instance.barracksInputField.text);

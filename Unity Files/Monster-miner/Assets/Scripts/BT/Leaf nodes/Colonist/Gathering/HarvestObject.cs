@@ -11,9 +11,6 @@ namespace MonsterMiner
         public class HarvestObject : BehaviourBase
         {
 
-            [SerializeField]
-            private GameObject ItemPrefab;
-
             public override Status UpdateFunc(ColonistController Colonist)
             {
                 //if the colonists job is null, the jobs interaction object is null or the drop table is not present, we have failed

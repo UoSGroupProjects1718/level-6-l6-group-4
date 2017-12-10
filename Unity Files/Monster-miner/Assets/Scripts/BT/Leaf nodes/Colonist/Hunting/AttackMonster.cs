@@ -25,7 +25,7 @@ namespace MonsterMiner
                             Colonist.target.transform.GetChild(Colonist.target.transform.childCount - 1).Rotate(new Vector3(0, 0, 90));
                             JobManager.CreateJob(JobType.Harvesting, 50, Colonist.target.gameObject, Colonist.target.transform.position, "Harvest" + Colonist.target.monsterName);
                             Colonist.target.Movement.navMeshAgent.isStopped = true;
-                            Colonist.target.collider.enabled = false;
+                           // Colonist.target.collider.enabled = false;
                             BehaviourTreeManager.Monsters.Remove(Colonist.target);
                             Colonist.target = null;
                             Colonist.currentJob = null;

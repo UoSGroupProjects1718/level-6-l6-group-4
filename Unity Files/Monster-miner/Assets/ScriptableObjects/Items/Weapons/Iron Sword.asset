@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece5e7d9d29505845aae30f8927a643d, type: 3}
+  m_Name: Iron Sword
+  m_EditorClassIdentifier: 
+  attachedGameObject: {fileID: 0}
+  itemName: Iron Sword
+  itemDescription: 
+  decayPerHour: 10
+  maxItemDurability: 100
+  currentStackAmount: 0
+  GatherWorkPerItem: 0
+  uiSprite: {fileID: 21300022, guid: e2e9ee5165ac9c34e9faab0f79f8ba36, type: 3}
+  itemMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  type: 6
+  equippableMesh: {fileID: 0}
+  armourSlot: 3
+  walkSpeedModifier: 0.5
+  workSpeedModifier: 0.5
+  Damage: 30
+  Range: 15
+  AttackSpeed: 3
+  Accuracy: 68

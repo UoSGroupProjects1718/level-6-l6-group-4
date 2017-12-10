@@ -11,4 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b643a7686370814dbfea0cdb6fa10b4, type: 3}
   m_Name: Large Iron Carnivore Droptable
   m_EditorClassIdentifier: 
-  Drops: []
+  Drops:
+  - {fileID: 11400000, guid: 7e86d8907b88d74449b673beb6ff1fcc, type: 2}
+  - {fileID: 11400000, guid: 1c75f5762b3bda14f98e8ddd6ad4b63f, type: 2}

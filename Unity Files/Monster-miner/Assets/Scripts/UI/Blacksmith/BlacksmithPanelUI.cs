@@ -91,5 +91,19 @@ public class BlacksmithPanelUI : MonoBehaviour {
         }
     }
 
-
+    public void IncrementBlacksmithInputField()
+    {
+        int number = int.Parse(UIPanels.Instance.blacksmithInputField.text);
+        number++;
+        UIPanels.Instance.blacksmithInputField.text = number.ToString();
+    }
+    public void DecrementBlacksmithInputField()
+    {
+        int number = int.Parse(UIPanels.Instance.blacksmithInputField.text);
+        if (number > 1)
+        {
+            number--;
+            UIPanels.Instance.blacksmithInputField.text = number.ToString();
+        }
+    }
 }
