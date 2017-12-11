@@ -6,7 +6,8 @@ public class TerrainSpawner : MonoBehaviour
 {
     [SerializeField]
     GameObject[] SpawnTiles;
-    public List<GameObject> GlobalList;
+    [SerializeField]
+    List<GameObject> GlobalList;
     [SerializeField]
     int tilesToSpawn = 3;
     
@@ -33,7 +34,6 @@ public class TerrainSpawner : MonoBehaviour
         AddNeighboursToList(tilesToSpawn + 1, tilesToSpawn + 1);
         while (NextSpawn.Count > 0)
         {
-            Debug.Log(NextSpawn.Count);
             if(NextSpawn.Count > 1000)
             {
                 break;//sometimes breaks
@@ -50,7 +50,11 @@ public class TerrainSpawner : MonoBehaviour
 
     void AddNeighboursToList(int x, int y)
     {
-        try
+        if(x > tilesToSpawn*2 || x<0 || y > tilesToSpawn * 2 || y < 0)
+        {
+            return;
+        }
+            try
         {
             if (map[x + 1, y] == null)
             {
@@ -135,8 +139,39 @@ public class TerrainSpawner : MonoBehaviour
         
         if (PossibleList.Count == 0)
         {
-            Debug.Log("No Neighbours at spawn. Problems have occoured");
-            map[x, y] = new MapTileList();
+            Debug.Log("No Neighbours at spawn. Problems have occoured at " + x + ", "+ y);
+            try
+            {
+                Debug.Log("Left:" + map[x - 1, y].gameObject.name);
+            }
+            catch { }
+            try
+            {
+                Debug.Log("Right:" + map[x + 1, y].gameObject.name);
+            }
+            catch { }
+            try
+            {
+                Debug.Log("Up:" + map[x, y + 1].gameObject.name);
+            }
+            catch { }
+            try
+            {
+                Debug.Log("Down:" + map[x, y - 1].gameObject.name);
+            }
+            catch { }
+            int temp = Random.Range(0, GlobalList.Count);
+            try
+            {
+                GameObject tempObj = Instantiate(GlobalList[temp], new Vector3((x - tilesToSpawn - 1) * SpawnXDiff, 0, (y - tilesToSpawn - 1) * SpawnYDiff), Quaternion.identity);
+            
+                map[x, y] = tempObj.GetComponent<MapTileList>();
+            }
+            catch
+            {
+                int i = 0;
+            }
+            Debug.Log("ERROR");
         }
         else
         {
@@ -166,7 +201,11 @@ public class TerrainSpawner : MonoBehaviour
         List<GameObject> ReturnList = new List<GameObject>();// Up;
         if (Up == null)
         {
-            ReturnList = GlobalList;
+
+            foreach  (GameObject tile in GlobalList)
+            {
+                ReturnList.Add(tile);
+            }
         }
 
 
@@ -176,7 +215,10 @@ public class TerrainSpawner : MonoBehaviour
                 ReturnList = Up;
             else
             {
-                ReturnList = GlobalList;
+                foreach (GameObject tile in GlobalList)
+                {
+                    ReturnList.Add(tile);
+                }
             }
         }
 

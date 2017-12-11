@@ -136,7 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd410978574652640b9de1f684feb58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NorthList: []
+  NorthList:
+  - {fileID: 1496752093666548, guid: 420b92678fa68e14d929a4394b95211d, type: 2}
+  - {fileID: 1846637882837576}
   EastList:
   - {fileID: 1496752093666548, guid: 420b92678fa68e14d929a4394b95211d, type: 2}
   - {fileID: 1846637882837576}

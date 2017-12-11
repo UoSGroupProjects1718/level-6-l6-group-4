@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
     private float zoomDifferentialOver100;
 
 
-
+    [SerializeField]
     private float expectedYPosition;
 
     private Vector2 middleClickStart;
@@ -148,10 +148,10 @@ public class CameraController : MonoBehaviour
         }
 
         float expectedDistFromFloor = CamPosition.y - distFromFloor;
-        CamPosition.y = expectedYPosition + expectedDistFromFloor;
-        CamPosition.y = Mathf.Clamp(CamPosition.y, camMinZoom + expectedDistFromFloor, camMaxZoom + expectedDistFromFloor);
+        CamPosition.y = expectedYPosition;// + expectedDistFromFloor;
+        //CamPosition.y = Mathf.Clamp(CamPosition.y, camMinZoom + expectedDistFromFloor, camMaxZoom + expectedDistFromFloor);
 
-
+        //CamPosition.y = Mathf.Clamp(CamPosition.y, 20, 80);
 
         transform.position = CamPosition;
 
