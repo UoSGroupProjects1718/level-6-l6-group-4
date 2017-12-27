@@ -27,6 +27,14 @@ public class UIPanels : SingletonClass<UIPanels> {
     public GameObject blacksmithFocusedJob;
     public Craftable[] blacksmithCraftingRecipes;
 
+    public GameObject textAlertPanel;
+
+    public GameObject houseCompletionPanel;
+
+
+
+
+
     [HideInInspector]
     public GameObject focusedPanel;
 
