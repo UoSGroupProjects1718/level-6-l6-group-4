@@ -8,7 +8,7 @@ public class GranaryFunction : BuildingFunction {
 
     public override void Function()
     {
-        //show ui elements on click
+    
     }
 
     public override void OnBuilt()

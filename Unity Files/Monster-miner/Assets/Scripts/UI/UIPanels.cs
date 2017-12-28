@@ -6,6 +6,13 @@ public class UIPanels : SingletonClass<UIPanels> {
     private Vector2 panelSharedAnchorPoint;
 
 
+    public GameObject textAlertPanel;
+    public GameObject houseCompletionPanel;
+    public int currHouseColonistAmount;
+    public Transform alertsHolder;
+
+
+
     //barracks info
     [HideInInspector]
     public InputField barracksInputField;
@@ -27,10 +34,6 @@ public class UIPanels : SingletonClass<UIPanels> {
     public GameObject blacksmithFocusedJob;
     public Craftable[] blacksmithCraftingRecipes;
 
-    public GameObject textAlertPanel;
-
-    public GameObject houseCompletionPanel;
-
 
 
 
@@ -47,6 +50,9 @@ public class UIPanels : SingletonClass<UIPanels> {
 	public override void Awake ()
     {
         base.Awake();
+
+        alertsHolder = GameObject.Find("Alerts").transform;
+
 
         barracksPanel = GameObject.Find("Barracks panel");
         barracksInputField = barracksPanel.transform.GetChild(1).GetChild(1).GetChild(1).GetComponent<InputField>();

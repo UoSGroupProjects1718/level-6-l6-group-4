@@ -4,14 +4,6 @@ public class ArmouryFunction : BuildingFunction {
 
     public int armourySpaceIncrease = 20;
 
-    public void Start()
-    {
-        UnityEngine.Debug.Log("Adding items to armoury for debugging");
-        Stockpile.Instance.AddWearable(ItemDatabase.GetItem("Hunter Chest") as Wearable);
-        Stockpile.Instance.AddWearable(ItemDatabase.GetItem("Hunter Chest") as Wearable);
-        Stockpile.Instance.AddWearable(ItemDatabase.GetItem("Hunter Legs") as Wearable);
-        Stockpile.Instance.AddWearable(ItemDatabase.GetItem("Crafter Head") as Wearable);
-    }
 
     public override void Function()
     {

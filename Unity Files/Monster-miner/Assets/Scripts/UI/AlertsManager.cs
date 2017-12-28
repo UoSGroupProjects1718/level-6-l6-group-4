@@ -15,6 +15,8 @@ public class AlertsManager : SingletonClass<AlertsManager>
     private Transform alertsContentParent;
 
     private Transform alertsButtonPoolParent;
+    [HideInInspector]
+    public int currentAlertButtonIndex;
 
     [SerializeField]
     private int buttonPoolSize = 20;
@@ -67,11 +69,14 @@ public class AlertsManager : SingletonClass<AlertsManager>
 
     public void ShowTextAlert(string alertText)
     {
-
+        currentAlertButtonIndex = UnityEngine.EventSystems.EventSystem.current.gameObject.transform.GetSiblingIndex();
+        UIPanels.Instance.textAlertPanel.transform.GetChild(0).GetComponent<Text>().text = alertText;
+        UIPanels.Instance.textAlertPanel.SetActive(true);
     }
     public void ShowHouseCompletion()
     {
-
+        currentAlertButtonIndex = UnityEngine.EventSystems.EventSystem.current.gameObject.transform.GetSiblingIndex();
+        UIPanels.Instance.houseCompletionPanel.SetActive(true);
     }
 
 
@@ -90,6 +95,7 @@ public class AlertsManager : SingletonClass<AlertsManager>
             alertButton.SetActive(true);
             //and set its transform parent
             alertButton.transform.parent = alertsContentParent;
+            alertButton.transform.localScale = Vector2.one;
             return alertButton;
         }
         return null;
