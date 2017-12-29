@@ -51,7 +51,7 @@ public class UIPanels : SingletonClass<UIPanels> {
     {
         base.Awake();
 
-        alertsHolder = GameObject.Find("Alerts").transform;
+        alertsHolder = GameObject.Find("Alerts").transform.GetChild(0);
 
 
         barracksPanel = GameObject.Find("Barracks panel");

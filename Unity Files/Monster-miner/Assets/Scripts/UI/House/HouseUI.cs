@@ -30,7 +30,10 @@ public class HouseUI : MonoBehaviour {
     {
         inputFields = GetComponentsInChildren<InputField>();
     }
-
+    public void OnEnable()
+    {
+        ResetHouseUI();
+    }
     public void ChangeEditMode(int e)
     {
         mode = (HousePanelEditMode)e;
@@ -111,8 +114,24 @@ public class HouseUI : MonoBehaviour {
         if (val > maxAllowed)
             val = maxAllowed;
 
+        //update the total text to show the currently queued requested jobs
+        int currentTotal = scout + hunter + crafter;
+        UIPanels.Instance.houseCompletionPanel.transform.Find("TotalChosenText").GetComponent<Text>().text = currentTotal.ToString() + "/" + UIPanels.Instance.currHouseColonistAmount;
+
+        //and check to see if the confirm button should be active
+        if (scout+hunter+crafter == UIPanels.Instance.currHouseColonistAmount)
+        {
+            UIPanels.Instance.houseCompletionPanel.transform.Find("ConfirmButton").GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            UIPanels.Instance.houseCompletionPanel.transform.Find("ConfirmButton").GetComponent<Button>().interactable = false;
+        }
+
+
 
     }
+
 
 
     public void ConfirmButton()
@@ -139,4 +158,20 @@ public class HouseUI : MonoBehaviour {
         AlertsManager.Instance.ReturnAlertButton(UIPanels.Instance.alertsHolder.GetChild(AlertsManager.Instance.currentAlertButtonIndex).gameObject);
     }
 
+    public void ResetHouseUI()
+    {
+        //reset the desired job variables
+        hunter = 0;
+        scout = 0;
+        crafter = 0;
+
+        for(int i = 0; i < inputFields.Length; i++)
+        {
+            inputFields[i].text = 0.ToString();
+        }
+
+        UIPanels.Instance.houseCompletionPanel.transform.Find("ConfirmButton").GetComponent<Button>().interactable = false;
+        UIPanels.Instance.houseCompletionPanel.transform.Find("TotalChosenText").GetComponent<Text>().text = 0.ToString() + "/" + UIPanels.Instance.currHouseColonistAmount;
+
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public enum AlertType
@@ -69,13 +70,18 @@ public class AlertsManager : SingletonClass<AlertsManager>
 
     public void ShowTextAlert(string alertText)
     {
-        currentAlertButtonIndex = UnityEngine.EventSystems.EventSystem.current.gameObject.transform.GetSiblingIndex();
+        //get the current button index
+        currentAlertButtonIndex = EventSystem.current.currentSelectedGameObject.transform.GetSiblingIndex();
+        //set the required text component
         UIPanels.Instance.textAlertPanel.transform.GetChild(0).GetComponent<Text>().text = alertText;
+        //and activate the panel
         UIPanels.Instance.textAlertPanel.SetActive(true);
     }
     public void ShowHouseCompletion()
     {
-        currentAlertButtonIndex = UnityEngine.EventSystems.EventSystem.current.gameObject.transform.GetSiblingIndex();
+        //get the currnent button index
+        currentAlertButtonIndex = EventSystem.current.currentSelectedGameObject.transform.GetSiblingIndex();
+        //and activate it
         UIPanels.Instance.houseCompletionPanel.SetActive(true);
     }
 

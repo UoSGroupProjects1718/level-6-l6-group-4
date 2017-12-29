@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scafoldingMesh: {fileID: 4300000, guid: 516af43761a3b0644842f46fe222c9c8, type: 3}
+  scafoldingMesh: {fileID: 4300000, guid: c5c56200c3ac5af45b86d3d1a76bc4af, type: 3}
 --- !u!114 &114784331018041396
 MonoBehaviour:
   m_ObjectHideFlags: 1
