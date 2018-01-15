@@ -33,6 +33,13 @@ namespace MonsterMiner
                     case "Build Blacksmith":
                         BehaviourTreeManager.Blacksmiths.Add(Colonist.currentJob.interactionObject.GetComponent<BlacksmithFunction>());
                         break;
+                    case "Build House":
+                        BehaviourTreeManager.Houses.Add(Colonist.currentJob.interactionObject.GetComponent<HouseFunction>());
+                        break;
+                    case "Build Barracks":
+                        BehaviourTreeManager.Barracks.Add(Colonist.currentJob.interactionObject.GetComponent<BarracksFunction>());
+                        break;
+
                     default:
                         break;
                 }                

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class StartManager : MonoBehaviour {
     public MonsterTypes monsterTypes;
     public TerrainSpawner terrainSpawner;
+    string path = "";
     // Use this for initialization
     void Start () {
         
@@ -39,7 +41,6 @@ public class StartManager : MonoBehaviour {
 	
 	public bool FileExist()
     {
-        //check if the save file exists
-        return false;
+        return (File.Exists(path + "/SaveData.dat")) ;
     }
 }

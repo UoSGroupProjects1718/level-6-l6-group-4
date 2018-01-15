@@ -19,6 +19,8 @@ public class BehaviourTreeManager : MonoBehaviour
     public static List<StockpileFunction> Stockpiles = new List<StockpileFunction>();
     public static List<ArmouryFunction> Armouries = new List<ArmouryFunction>();
     public static List<BlacksmithFunction> Blacksmiths = new List<BlacksmithFunction>();
+    public static List<HouseFunction> Houses = new List<HouseFunction>();
+    public static List<BarracksFunction> Barracks = new List<BarracksFunction>();
 
 
 

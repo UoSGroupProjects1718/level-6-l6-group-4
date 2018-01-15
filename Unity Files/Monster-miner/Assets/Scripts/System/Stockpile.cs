@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Stockpile : SingletonClass<Stockpile>
 {
-
-
     public ResourceTypeDictionary inventoryDictionary;
     public int currResourceAmount;
     public int resourceSpace;
     public int nutritionSpace;
 
+
+    public WearableInventoryDictionary wearableInventoryDictionary = new WearableInventoryDictionary();
+    public int currWearablesInInventory;
+    public int armourySpace;
 
     #region Resource inventory
     public bool AddResource(Resource res)
@@ -216,9 +219,7 @@ public class Stockpile : SingletonClass<Stockpile>
     #endregion
 
     #region Wearable Inventory
-    public WearableInventoryDictionary wearableInventoryDictionary = new WearableInventoryDictionary();
-    public int currWearablesInInventory;
-    public int armourySpace;
+    
 
     public string[] WearableSlugs
     {
