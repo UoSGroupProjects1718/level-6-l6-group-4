@@ -16,9 +16,8 @@ public class MonsterTypes : SingletonClass<MonsterTypes> {
     public List<string> dictionaryKeys;
 
 
-    public override void Awake()
+    public void NewWorldAwake()
     {
-        base.Awake();
         Mons = new Dictionary<string, MonsterType>();
         dictionaryKeys = new List<string>();
         for (int i = 0; i < Monsters.Length; i++)
@@ -33,6 +32,13 @@ public class MonsterTypes : SingletonClass<MonsterTypes> {
         Monsters = null;
 
        
+    }
+
+    public void LoadWorldAwake()
+    {
+        base.Awake();
+        Mons = new Dictionary<string, MonsterType>();
+        dictionaryKeys = new List<string>();
     }
 
     public void getMonsterData(string dictionaryKey,

@@ -57,7 +57,6 @@ public class MonsterController : MonoBehaviour {
 
     void Start () {
         BehaviourTreeManager.Monsters.Add(this);
-        currentState = MovementState.Wander;
         Movement = GetComponent<MonsterMovement>();
         collider = GetComponentInChildren<Collider>();
         lastMatingTime = Time.time;

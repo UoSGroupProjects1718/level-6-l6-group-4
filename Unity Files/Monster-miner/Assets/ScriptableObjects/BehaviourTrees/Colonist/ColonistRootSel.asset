@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: ColonistRootSel
   m_EditorClassIdentifier: 
   Children:
+  - {fileID: 11400000, guid: 8e483f172fbf28841b89a46b623ca9b3, type: 2}
   - {fileID: 11400000, guid: 01c653d5fcf351547b6201185542f84b, type: 2}
   - {fileID: 11400000, guid: 396b78c0a33c86d46a646890f9b339ed, type: 2}
   - {fileID: 11400000, guid: 6eaf96ad7cf0b5148bfe33cf9ee43f02, type: 2}

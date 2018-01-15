@@ -15,9 +15,8 @@ public class TimeManager : SingletonClass<TimeManager> {
     [SerializeField]
     private Text dateText;
 
-    public override void Awake()
+    public void BeginTime()
     {
-        base.Awake();
         IngameTimeDisplay = new GameTime();
         //the amount of ingame minutes per second to inccrease the minute counter by
         //the amount of in game days to pass per real time hour multiplied by the amount of hours in the day, divided by the amount of minutes in an hour
@@ -35,6 +34,11 @@ public class TimeManager : SingletonClass<TimeManager> {
         get
         {
             return IngameTimeDisplay;
+        }
+
+        private set
+        {
+            IngameTime = value;
         }
     }
     public float DeltaTime
@@ -95,6 +99,10 @@ public class TimeManager : SingletonClass<TimeManager> {
     {
         string timeOfDay = (IngameTime.hours > 12) ? " pm" : " am";
         dateText.text = IngameTime.hours + " : " + Mathf.RoundToInt(IngameTime.minutes) + timeOfDay + "  " + IngameTime.Date.x + ", " + IngameTime.Date.y + ", " + IngameTime.Date.z;
+    }
+
+    public void SetGameTime(GameTime newGameTime) {
+        IngameTime = newGameTime;
     }
 
 }

@@ -17,14 +17,12 @@ public class TerrainSpawner : MonoBehaviour
     float SpawnYDiff = 100;
     MapTileList[,] map;
     List<Vector2> NextSpawn = new List<Vector2>();
+    GameObject parentObj;
 
-    private void Start()
+    public IEnumerator SpawnNewWorld()
     {
-        StartCoroutine(SpawnWorld());
-    }
-
-    IEnumerator SpawnWorld()
-    {
+        parentObj = new GameObject();
+        parentObj.name = "Terrain";
         int ArraySize = tilesToSpawn * 2;
         ArraySize += 1;
         //+1 centre 
@@ -45,6 +43,11 @@ public class TerrainSpawner : MonoBehaviour
       //  StartCoroutine(buildNavMesh());
         SpawnTiles = null;
         map = null;
+        yield return null;
+    }
+
+    public IEnumerator LoadWorld()
+    {
         yield return null;
     }
 
@@ -91,7 +94,7 @@ public class TerrainSpawner : MonoBehaviour
 
     void SpawnOrigin(int Middle)
     {
-        map[Middle, Middle] = Instantiate(SpawnTiles[Random.Range(0, SpawnTiles.Length - 1)], new Vector3(0, 0, 0), transform.rotation).GetComponent<MapTileList>();
+        map[Middle, Middle] = Instantiate(SpawnTiles[Random.Range(0, SpawnTiles.Length - 1)], new Vector3(0, 0, 0), transform.rotation, parentObj.transform).GetComponent<MapTileList>();
     }
 
     void SpawnTile(Vector2 gridPos)
@@ -163,7 +166,7 @@ public class TerrainSpawner : MonoBehaviour
             int temp = Random.Range(0, GlobalList.Count);
             try
             {
-                GameObject tempObj = Instantiate(GlobalList[temp], new Vector3((x - tilesToSpawn - 1) * SpawnXDiff, 0, (y - tilesToSpawn - 1) * SpawnYDiff), Quaternion.identity);
+                GameObject tempObj = Instantiate(GlobalList[temp], new Vector3((x - tilesToSpawn - 1) * SpawnXDiff, 0, (y - tilesToSpawn - 1) * SpawnYDiff), Quaternion.identity, parentObj.transform);
             
                 map[x, y] = tempObj.GetComponent<MapTileList>();
             }
@@ -175,7 +178,7 @@ public class TerrainSpawner : MonoBehaviour
         }
         else
         {
-            map[x, y] = Instantiate(PossibleList[Random.Range(0, PossibleList.Count)], new Vector3((x - tilesToSpawn-1) * SpawnXDiff, 0, (y- tilesToSpawn-1) *SpawnYDiff), Quaternion.identity).GetComponent<MapTileList>();
+            map[x, y] = Instantiate(PossibleList[Random.Range(0, PossibleList.Count)], new Vector3((x - tilesToSpawn-1) * SpawnXDiff, 0, (y- tilesToSpawn-1) *SpawnYDiff), Quaternion.identity, parentObj.transform).GetComponent<MapTileList>();
            
         }
         AddNeighboursToList(x, y);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDatabase : MonoBehaviour
+public class ItemDatabase : SingletonClass<ItemDatabase>
 { 
 
     [Header("Deposit all ingame items in this array, it will be sorted into a database")]
@@ -23,8 +23,6 @@ public class ItemDatabase : MonoBehaviour
 
     public void Awake()
     {
-
-        
         if (databaseItems.Length == 0)
             Debug.LogError("Database has not been assigned");
         itemDatabase = new Dictionary<string, ItemInfo>();

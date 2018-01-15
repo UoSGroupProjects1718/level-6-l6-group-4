@@ -18,12 +18,10 @@ public class UnitSelection : MonoBehaviour {
         for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
         {
             BehaviourTreeManager.Colonists[i].selectionCircle.enabled = false;
-            BehaviourTreeManager.Colonists[i].selected = false;
         }
         for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
         {
             BehaviourTreeManager.Monsters[i].SelectionCircle.enabled = false;
-            BehaviourTreeManager.Monsters[i].selected = false;
         }
     }
 

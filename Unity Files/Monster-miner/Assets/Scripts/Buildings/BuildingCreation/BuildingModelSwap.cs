@@ -5,7 +5,6 @@ using UnityEngine;
 public class BuildingModelSwap : MonoBehaviour {
     
     public Mesh scafoldingMesh;
-    MeshFilter Rend;
     Mesh currentMesh;
 
     private void Awake()

@@ -6,22 +6,21 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
 
     //Set up all lists
     List<MonsterController> controllers;
-    List<List<GameObject>> MonsterLists;
-    GameObject ParentObj;
+    List<List<GameObject>> monsterLists;
+    GameObject parentObj;
 
     int numberPerList = 20;
 
-    public override void Awake()
+    public void SpawnMonsterLists()
     {
-        base.Awake();
 
-        ParentObj = new GameObject();
-        ParentObj.name = "MonsterPoolParentObj";
-        ParentObj.transform.position = Vector3.zero;
-        ParentObj.transform.rotation = Quaternion.identity;
+        parentObj = new GameObject();
+        parentObj.name = "MonsterPoolParentObj";
+        parentObj.transform.position = Vector3.zero;
+        parentObj.transform.rotation = Quaternion.identity;
 
 
-        MonsterLists = new List<List<GameObject>>();
+        monsterLists = new List<List<GameObject>>();
         controllers = new List<MonsterController>();
         foreach (string key in MonsterTypes.Instance.dictionaryKeys)
         {
@@ -34,9 +33,9 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
                     GameObject newMeshAndBones = Instantiate(currentMeshAndBones);
                     newMeshAndBones.SetActive(false);
                     workingList.Add(newMeshAndBones);
-                    newMeshAndBones.transform.SetParent(ParentObj.transform);
+                    newMeshAndBones.transform.SetParent(parentObj.transform);
                 }
-                MonsterLists.Add(workingList);
+                monsterLists.Add(workingList);
             }
             catch { Debug.Log("No mesh"); }
         }
@@ -68,7 +67,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
         GameObject gObject = new GameObject();
         MonsterController returnController = gObject.AddComponent(typeof(MonsterController)) as MonsterController;
         gObject.AddComponent(typeof(MonsterMovement));
-        gObject.transform.SetParent(ParentObj.transform);
+        gObject.transform.SetParent(parentObj.transform);
         controllers.Add(returnController);
         return returnController;
     }
@@ -77,7 +76,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
     {
         GameObject wantedMeshAndBones = MonsterTypes.Instance.Mons[type].monsterMeshAndBones;
 
-        foreach (List<GameObject> searchingList in MonsterLists)
+        foreach (List<GameObject> searchingList in monsterLists)
         {
             if (searchingList[0].name == wantedMeshAndBones.name +"(Clone)")
             {
