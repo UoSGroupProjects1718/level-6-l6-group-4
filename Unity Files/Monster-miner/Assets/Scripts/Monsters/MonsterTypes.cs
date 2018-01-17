@@ -36,7 +36,6 @@ public class MonsterTypes : SingletonClass<MonsterTypes> {
 
     public void LoadWorldAwake()
     {
-        base.Awake();
         Mons = new Dictionary<string, MonsterType>();
         dictionaryKeys = new List<string>();
     }

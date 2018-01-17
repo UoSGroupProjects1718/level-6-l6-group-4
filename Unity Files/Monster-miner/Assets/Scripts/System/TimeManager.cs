@@ -103,7 +103,10 @@ public class TimeManager : SingletonClass<TimeManager> {
 
     public void SetGameTime(GameTime newGameTime) {
         IngameTime = newGameTime;
+        
     }
+
+    
 
 }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
 
-public class BehaviourTreeManager : MonoBehaviour
+public class BehaviourTreeManager : SingletonClass<BehaviourTreeManager>
 {
     [SerializeField]
     private BehaviourBase ColonistTree;
@@ -26,22 +26,10 @@ public class BehaviourTreeManager : MonoBehaviour
 
 
 
-    private void Start()
-    {
 
 
 
-        for(int i = 0; i < 15; i++)
-        {
-            
-            MonsterSpawner.Instance.SpawnMonster(Utils.RandomNavSphere(Vector3.zero,90,-1), MonsterTypes.Instance.dictionaryKeys[Random.Range(0,24)]);
-        }
-
-        StartCoroutine(BehaviourTrees());
-    }
-
-
-    IEnumerator BehaviourTrees()
+    public IEnumerator BehaviourTrees()
     {
         while (true)
         {

@@ -7,10 +7,9 @@ using System.Linq;
 
 public class SaveData : MonoBehaviour {
     string path = "./";
-	void Save()
+	public void Save()
     {
-        BinaryFormatter bF = new BinaryFormatter();
-        FileStream file = File.Create("/SaveData.dat");
+        
 
         Dictionary<string, object> saveData = new Dictionary<string, object>();
 
@@ -69,7 +68,7 @@ public class SaveData : MonoBehaviour {
         saveData.Add("Buildings", buildings);
 
 
-        saveData.Add("Time", TimeManager.Instance.IngameTime);
+        //saveData.Add("Time", TimeManager.Instance.IngameTime);
 
 
 
@@ -82,7 +81,26 @@ public class SaveData : MonoBehaviour {
 
         saveData.Add("WearableRescourceEntries", wearableRescourceEntries);
 
+        BinaryFormatter bF = new BinaryFormatter();
+        FileStream file = File.Create(path + "SaveData.dat");
+        Debug.Log(saveData);
+        bF.Serialize(file, saveData);
+        file.Close();
 
+        Debug.Log("Save Complete");
+    }
+
+    public void Load()
+    {
+        BinaryFormatter bF = new BinaryFormatter();
+        FileStream file = File.Open(path + "SaveData.dat",FileMode.Open);
+        string j = (string)bF.Deserialize(file);
+        
+        Dictionary<string, object> s;
+        //Dictionary<string, object> saveData = (Dictionary<string, object>)bF.Deserialize(file);
+
+        int i = 0;
+        
     }
 
     List<Building> SaveBuildings()
@@ -120,6 +138,8 @@ public class SaveData : MonoBehaviour {
             Building building = new Building();
             building.building = BehaviourTreeManager.Granaries[i].gameObject;
             building.transform = BehaviourTreeManager.Granaries[i].transform;
+            building.name = BehaviourTreeManager.Granaries[i].name.TrimEnd('(');
+
             buildings.Add(building);
         }
         //house 
@@ -150,13 +170,26 @@ public class SaveData : MonoBehaviour {
         data.hunger = monster.hunger;
         data.lastMatingTime = monster.lastMatingTime;
         data.monsterType = monster.monsterType.ToString();
-        data.transform = monster.gameObject.transform;
+        Transform transform = monster.gameObject.transform;
+        data.Pos.x = transform.position.x;
+        data.Pos.y = transform.position.y;
+        data.Pos.z = transform.position.z;
+        data.Rot.x = transform.rotation.eulerAngles.x;
+        data.Rot.y = transform.rotation.eulerAngles.y;
+        data.Rot.z = transform.rotation.eulerAngles.z;
         return data;
     }
 
     ColonistData SaveColonistData(ColonistController colonist)
     {
         ColonistData data = new ColonistData();
+        Transform transform = colonist.gameObject.transform;
+        data.Pos.x = transform.position.x;
+        data.Pos.y = transform.position.y;
+        data.Pos.z = transform.position.z;
+        data.Rot.x = transform.rotation.eulerAngles.x;
+        data.Rot.y = transform.rotation.eulerAngles.y;
+        data.Rot.z = transform.rotation.eulerAngles.z;
         data.torso = colonist.colonistEquipment.equippedArmour[(int)ArmourSlot.Torso].itemName;
         data.legs = colonist.colonistEquipment.equippedArmour[(int)ArmourSlot.Legs].itemName;
         data.weapon = colonist.colonistEquipment.weapon.itemName;
@@ -172,33 +205,44 @@ public class SaveData : MonoBehaviour {
     Job SaveColonistJob(Job currentJob)
     {
         Job returnJob = new Job();
-        returnJob.currentWorkAmount = currentJob.currentWorkAmount;
-        returnJob.interactionItem = currentJob.interactionItem;
-        returnJob.interactionObject = currentJob.interactionObject;
-        returnJob.jobLocation = currentJob.jobLocation;
-        returnJob.jobName = currentJob.jobName;
-        returnJob.jobType = currentJob.jobType;
-        returnJob.maxWorkAmount = currentJob.maxWorkAmount;
-        returnJob.RequiredItems = currentJob.RequiredItems;
+        try
+        {
+            returnJob.currentWorkAmount = currentJob.currentWorkAmount;
+            returnJob.interactionItem = currentJob.interactionItem;
+            returnJob.interactionObject = currentJob.interactionObject;
+            returnJob.jobLocation = currentJob.jobLocation;
+            returnJob.jobName = currentJob.jobName;
+            returnJob.jobType = currentJob.jobType;
+            returnJob.maxWorkAmount = currentJob.maxWorkAmount;
+            returnJob.RequiredItems = currentJob.RequiredItems;
+        }
+        catch
+        {
+
+        }
         return returnJob;
     }
 
 
     #region Structs
 
-
+    [System.Serializable]
     public struct MonsterData
     {
-        public Transform transform;
+        
         public string monsterType;
+        public MyVec3 Pos;
+        public MyVec3 Rot;
         public float health;
         public float lastMatingTime;
         public float hunger;
         public bool beingHunted;
     }
-
+    [System.Serializable]
     public struct ColonistData
     {
+        public MyVec3 Pos;
+        public MyVec3 Rot;
         public string colonistName;
         public float health;
         public GameTime timeOfNextMeal;
@@ -209,19 +253,21 @@ public class SaveData : MonoBehaviour {
         public string legs;
         public string weapon;
     }
-
+    [System.Serializable]
     public struct TerrainData
     {
         public Transform transform;
         public GameObject gameObject;
+        public string name;
     }
-
+    [System.Serializable]
     public struct Building
     {
         public Transform transform;
         public GameObject building;
+        public string name;
     }
-
+    [System.Serializable]
     public struct InventorySpace
     {
         public int currentRescourceAmount;
@@ -231,22 +277,19 @@ public class SaveData : MonoBehaviour {
         public int currentWearableInventory;
         public int armourySpace;
     }
-
+    [System.Serializable]
     public struct DictionaryEntries
     {
         public string key;
         public int value;
     }
 
-    public struct MyStruct
+    [System.Serializable]
+    public struct MyVec3
     {
-        ItemType type;
-        int value;
+        public float x;
+        public float y;
+        public float z;
     }
-
-
-
-
-
     #endregion
 }

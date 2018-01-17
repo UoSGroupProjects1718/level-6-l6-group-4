@@ -13,7 +13,6 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
 
     public void SpawnMonsterLists()
     {
-
         parentObj = new GameObject();
         parentObj.name = "MonsterPoolParentObj";
         parentObj.transform.position = Vector3.zero;
@@ -38,6 +37,14 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
                 monsterLists.Add(workingList);
             }
             catch { Debug.Log("No mesh"); }
+        }
+    }
+
+    public void NewWorldSpawnMonsters()
+    {
+        for (int i = 0; i < 15; i++)
+        {
+           // SpawnMonster(Utils.RandomNavSphere(Vector3.zero, 90, -1), MonsterTypes.Instance.dictionaryKeys[Random.Range(0, 24)]);
         }
     }
 

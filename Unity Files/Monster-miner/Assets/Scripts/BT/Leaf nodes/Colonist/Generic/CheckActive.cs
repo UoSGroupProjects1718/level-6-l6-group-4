@@ -7,11 +7,8 @@ public class CheckActive : BehaviourBase{
 
     public override Status UpdateFunc(ColonistController Colonist)
     {
-        if (Colonist.gameObject.activeSelf)
-        {
+       
             return Status.SUCCESS;
-        }
-
-        return Status.FAILURE;
+        
     }
 }

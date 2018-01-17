@@ -36,6 +36,7 @@ public class SingletonClass<T> : MonoBehaviour where T : Component {
         }
         else
         {
+            Debug.Log(this);
             Destroy(gameObject);
         }
     }
