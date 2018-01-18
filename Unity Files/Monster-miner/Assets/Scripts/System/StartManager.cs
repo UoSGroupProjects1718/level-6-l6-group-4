@@ -9,7 +9,9 @@ public class StartManager : MonoBehaviour {
     string path = "./";
     // Use this for initialization
     void Start () {
-        
+        /*This will delete the save*/
+        File.Delete(path + "SaveData.dat");
+
         TimeManager.Instance.BeginTime();
         MonsterSpawner.Instance.SpawnMonsterLists();
         ColonistSpawner.Instance.SpawnColonistLists();
@@ -24,8 +26,6 @@ public class StartManager : MonoBehaviour {
             Debug.Log("No Save Found");
             GenerateWorld();
         }
- 
-        
 
         StartCoroutine(BehaviourTreeManager.Instance.BehaviourTrees());
 
@@ -37,13 +37,11 @@ public class StartManager : MonoBehaviour {
         MonsterSpawner.Instance.NewWorldSpawnMonsters();
     }
 
-
     void LoadWorld() {
         StartCoroutine(terrainSpawner.LoadWorld());
         monsterTypes.LoadWorldAwake();
     }
 
-	
 	public bool FileExist()
     {
         return (File.Exists(path + "SaveData.dat")) ;
