@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -235,25 +235,33 @@ public class SaveData : MonoBehaviour {
     ColonistData SaveColonistData(ColonistController colonist)
     {
         ColonistData data = new ColonistData();
+        //save transform position
         data.Pos.x = colonist.transform.position.x;
         data.Pos.y = colonist.transform.position.y;
         data.Pos.z = colonist.transform.position.z;
+        //save transform rotation
         data.Rot.x = colonist.transform.rotation.eulerAngles.x;
         data.Rot.y = colonist.transform.rotation.eulerAngles.y;
         data.Rot.z = colonist.transform.rotation.eulerAngles.z;
+        //save equipped gear
         data.torso = colonist.colonistEquipment.equippedArmour[(int)ArmourSlot.Torso].itemName;
         data.legs = colonist.colonistEquipment.equippedArmour[(int)ArmourSlot.Legs].itemName;
         data.weapon = colonist.colonistEquipment.weapon.itemName;
+        //save colonist's profession
         data.colonistJob = colonist.colonistJob;
+        //save colonist job (if one exists)
         data.currentJob = SaveColonistJob(colonist.currentJob);
+        //save name
         data.colonistName = colonist.colonistName;
+        //save current hp
         data.health = colonist.health;
+        //save the last time the colonist contributed to a job
         data.lastWorked.hours.x = colonist.timeOfNextMeal.hours;
         data.lastWorked.hours.y = colonist.timeOfNextMeal.minutes;
         data.lastWorked.Date.x = colonist.timeOfNextMeal.Date.x;
         data.lastWorked.Date.y = colonist.timeOfNextMeal.Date.y;
         data.lastWorked.Date.z = colonist.timeOfNextMeal.Date.z;
-
+        //save the next time the colonist needs to eat
         MyGameTime nextMeal = new MyGameTime();
         nextMeal.hours.x = colonist.timeOfNextMeal.hours;
         nextMeal.hours.y = colonist.timeOfNextMeal.minutes;
@@ -265,22 +273,38 @@ public class SaveData : MonoBehaviour {
         return data;
     }
 
-    Job SaveColonistJob(Job currentJob)
+    MyJob SaveColonistJob(Job currentJob)
     {
-        Job returnJob = new Job();
-        try //ColonistJob may be null
+        MyJob returnJob = new MyJob();
+        if(currentJob != null)
         {
+            //curr work amount
             returnJob.currentWorkAmount = currentJob.currentWorkAmount;
-            returnJob.interactionItem = currentJob.interactionItem;
-            returnJob.interactionObject = currentJob.interactionObject;
-            returnJob.jobLocation = currentJob.jobLocation;
+            //interaction ITEM name
+            returnJob.interactionItemName = currentJob.interactionItem.itemName;
+            //interaction OBJECT name
+            returnJob.interactionObjectName = currentJob.interactionObject.name;
+            //job location
+            returnJob.jobLocation.x = currentJob.jobLocation.x;
+            returnJob.jobLocation.x = currentJob.jobLocation.y;
+            returnJob.jobLocation.x = currentJob.jobLocation.z;
+            //job type
+            returnJob.jobType = currentJob.jobType.ToString();
+            //job name
             returnJob.jobName = currentJob.jobName;
-            returnJob.jobType = currentJob.jobType;
-            returnJob.maxWorkAmount = currentJob.maxWorkAmount;
-            returnJob.RequiredItems = currentJob.RequiredItems;
+            //required items;
+            MyRequiredItem[] requiredItems = new MyRequiredItem[currentJob.RequiredItems.Length];
+            for(int i = 0; i < currentJob.RequiredItems.Length;i++)
+            {
+                MyRequiredItem requiredItem = new MyRequiredItem();
+                requiredItem.resourceName = currentJob.RequiredItems[i].resource.ToString();
+                requiredItem.requiredAmount = currentJob.RequiredItems[i].requiredAmount;
+                requiredItems[i] = requiredItem;
+            }
+            returnJob.requiredItems = requiredItems;
+
         }
-        catch
-        {}
+
         return returnJob;
     }
 
@@ -306,7 +330,7 @@ public class SaveData : MonoBehaviour {
         public float health;
         public MyGameTime timeOfNextMeal;
         public ColonistJobType colonistJob;
-        public Job currentJob;
+        public MyJob currentJob;
         public MyGameTime lastWorked;
         public string torso;
         public string legs;
@@ -358,6 +382,21 @@ public class SaveData : MonoBehaviour {
     {
         public MyVec3 hours;
         public MyVec3 Date;
+    }
+    public struct MyRequiredItem
+    {
+        public string resourceName;
+        public int requiredAmount;
+    }
+    public struct MyJob
+    {
+        public string jobName;
+        public float currentWorkAmount;
+        public string jobType;
+        public MyVec3 jobLocation;
+        public string interactionObjectName;
+        public string interactionItemName;
+        public MyRequiredItem[] requiredItems;
     }
     #endregion
 }
