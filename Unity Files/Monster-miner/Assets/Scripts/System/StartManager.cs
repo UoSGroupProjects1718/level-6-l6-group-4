@@ -4,13 +4,12 @@ using UnityEngine;
 using System.IO;
 
 public class StartManager : MonoBehaviour {
-    public MonsterTypes monsterTypes;
     public TerrainSpawner terrainSpawner;
     string path = "./";
     // Use this for initialization
-    void Start () {
+    void Start(){
         /*This will delete the save*/
-        File.Delete(path + "SaveData.dat");
+        //File.Delete(path + "SaveData.dat");
 
         TimeManager.Instance.BeginTime();
         MonsterSpawner.Instance.SpawnMonsterLists();
@@ -28,22 +27,21 @@ public class StartManager : MonoBehaviour {
         }
 
         StartCoroutine(BehaviourTreeManager.Instance.BehaviourTrees());
-
+        ColonistSpawner.Instance.SpawnColonist(new Vector3(0,0,0),ColonistJobType.Crafter);
     }
 
     void GenerateWorld() {
         StartCoroutine(terrainSpawner.SpawnNewWorld());
-        monsterTypes.NewWorldAwake();
         MonsterSpawner.Instance.NewWorldSpawnMonsters();
     }
 
     void LoadWorld() {
         StartCoroutine(terrainSpawner.LoadWorld());
-        monsterTypes.LoadWorldAwake();
     }
 
 	public bool FileExist()
     {
-        return (File.Exists(path + "SaveData.dat")) ;
+        return true ;
+       // return (File.Exists(path + "SaveData.dat")) ;
     }
 }

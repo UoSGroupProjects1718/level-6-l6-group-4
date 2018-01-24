@@ -44,11 +44,11 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
     {
         for (int i = 0; i < 15; i++)
         {
-           // SpawnMonster(Utils.RandomNavSphere(Vector3.zero, 90, -1), MonsterTypes.Instance.dictionaryKeys[Random.Range(0, 24)]);
+            SpawnMonster(Utils.RandomNavSphere(Vector3.zero, 90, -1), MonsterTypes.Instance.dictionaryKeys[Random.Range(0, 24)]);
         }
     }
 
-    public void SpawnMonster(Vector3 placement, string type)
+    public MonsterController SpawnMonster(Vector3 placement, string type)
     {
         MonsterController controller = GetController();
         controller.gameObject.transform.position = placement;
@@ -60,6 +60,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
            out controller.numHunters, out controller.viewRange, out controller.monsterType);
         controller.gameObject.name = type;
         controller.GetMonster();
+        return controller;
     }
 
     MonsterController GetController() {

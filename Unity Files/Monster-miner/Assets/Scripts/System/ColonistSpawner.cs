@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ColonistSpawner : SingletonClass<ColonistSpawner>
 {
+    
 
     //Set up all lists
     List<ColonistController> controllers;
@@ -33,12 +34,15 @@ public class ColonistSpawner : SingletonClass<ColonistSpawner>
         
     }
 
-    public void SpawnColonist(Vector3 placement, ColonistJobType type)
+    public ColonistController SpawnColonist(Vector3 placement, ColonistJobType type)
     {
         ColonistController controller = GetController();
         controller.gameObject.transform.position = placement;
+        controller.EquipDefaultGear();
         controller.colonistJob = type;
         controller.colonistName = GetName();
+
+        return controller;
     }
 
     string GetName()

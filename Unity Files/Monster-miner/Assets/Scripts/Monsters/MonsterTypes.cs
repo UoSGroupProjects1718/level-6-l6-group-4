@@ -16,7 +16,7 @@ public class MonsterTypes : SingletonClass<MonsterTypes> {
     public List<string> dictionaryKeys;
 
 
-    public void NewWorldAwake()
+    public void Awake()
     {
         Mons = new Dictionary<string, MonsterType>();
         dictionaryKeys = new List<string>();

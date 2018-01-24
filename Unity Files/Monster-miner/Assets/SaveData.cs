@@ -4,18 +4,21 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Linq;
+using UnityEditor;
 
 /*
  
      JOB NEEDS TO BE SERIALIZABLE, 
      GameObject needs to be changed to the name of the object 
      THEN THIS WILL WORK
-     
+     //SAVE DROPS
      */
 
 public class SaveData : MonoBehaviour {
     string path = "./";
-	public void Save()
+
+    #region Save
+    public void Save()
     {
         Dictionary<string, object> saveData = new Dictionary<string, object>();
         
@@ -38,6 +41,7 @@ public class SaveData : MonoBehaviour {
             DictionaryEntries data = new DictionaryEntries();
             data.key = monsterKeys[i];
             data.value = MonsterTypes.Instance.Mons[monsterKeys[i]].numHuntersRequired;
+            numHunters.Add(data);
         }
         saveData.Add("NumberOfHunters", numHunters);
 
@@ -54,11 +58,13 @@ public class SaveData : MonoBehaviour {
                 colonistData.Add(SaveColonistData(BehaviourTreeManager.Colonists[i]));
             }
         }
-        saveData.Add("Colonists", colonistData);
+        
+        //saveData.Add("Colonists", colonistData);
         #endregion
         #region TerrainData
         GameObject terrainParent = GameObject.Find("Terrain");
         List<TerrainData> terrain = new List<TerrainData>();
+        if(terrainParent!=null)
         for (int i = 0; i < terrainParent.transform.childCount; i++)
         {
             string name = terrainParent.transform.GetChild(i).name;
@@ -76,7 +82,7 @@ public class SaveData : MonoBehaviour {
             terrain.Add(terrainData);
         }
 
-        saveData.Add("Terrain", terrain);
+        //saveData.Add("Terrain", terrain);
         #endregion
         #region BuildingData
         List<Building> buildings = SaveBuildings();
@@ -110,111 +116,6 @@ public class SaveData : MonoBehaviour {
         Debug.Log("Save Complete");
     }
 
-    public void Load()
-    {
-        BinaryFormatter bF = new BinaryFormatter();
-        FileStream file = File.Open(path + "SaveData.dat",FileMode.Open);
-        
-        Dictionary<string, object> saveData = (Dictionary<string, object>)bF.Deserialize(file);        
-    }
-
-    List<Building> SaveBuildings()
-    {
-        List<Building> buildings = new List<Building>();
-        #region Armouries
-        //armoury
-        for (int i = 0; i < BehaviourTreeManager.Armouries.Count;i++)
-        {
-            Building building = new Building();
-            building.building = BehaviourTreeManager.Armouries[i].gameObject;
-            building.pos.x = BehaviourTreeManager.Armouries[i].transform.position.x;
-            building.pos.y = BehaviourTreeManager.Armouries[i].transform.position.y;
-            building.pos.z = BehaviourTreeManager.Armouries[i].transform.position.z;
-            building.rot.x = BehaviourTreeManager.Armouries[i].transform.rotation.eulerAngles.x;
-            building.rot.y = BehaviourTreeManager.Armouries[i].transform.rotation.eulerAngles.y;
-            building.rot.z = BehaviourTreeManager.Armouries[i].transform.rotation.eulerAngles.z;
-            buildings.Add(building);
-        }
-        #endregion
-
-        #region Barracks
-        for (int i = 0; i < BehaviourTreeManager.Barracks.Count; i++)
-        {
-            Building building = new Building();
-            building.building = BehaviourTreeManager.Barracks[i].gameObject;
-            building.pos.x = BehaviourTreeManager.Barracks[i].transform.position.x;
-            building.pos.y = BehaviourTreeManager.Barracks[i].transform.position.y;
-            building.pos.z = BehaviourTreeManager.Barracks[i].transform.position.z;
-            building.rot.x = BehaviourTreeManager.Barracks[i].transform.rotation.eulerAngles.x;
-            building.rot.y = BehaviourTreeManager.Barracks[i].transform.rotation.eulerAngles.y;
-            building.rot.z = BehaviourTreeManager.Barracks[i].transform.rotation.eulerAngles.z;
-            buildings.Add(building);
-        }
-        #endregion
-
-        #region BlackSmith
-        for (int i = 0; i < BehaviourTreeManager.Blacksmiths.Count; i++)
-        {
-            Building building = new Building();
-            building.building = BehaviourTreeManager.Blacksmiths[i].gameObject;
-            building.pos.x = BehaviourTreeManager.Blacksmiths[i].transform.position.x;
-            building.pos.y = BehaviourTreeManager.Blacksmiths[i].transform.position.y;
-            building.pos.z = BehaviourTreeManager.Blacksmiths[i].transform.position.z;
-            building.rot.x = BehaviourTreeManager.Blacksmiths[i].transform.rotation.eulerAngles.x;
-            building.rot.y = BehaviourTreeManager.Blacksmiths[i].transform.rotation.eulerAngles.y;
-            building.rot.z = BehaviourTreeManager.Blacksmiths[i].transform.rotation.eulerAngles.z;
-            buildings.Add(building);
-        }
-        #endregion
-        
-        #region Granary
-        for (int i = 0; i < BehaviourTreeManager.Granaries.Count; i++)
-        {
-            Building building = new Building();
-            building.building = BehaviourTreeManager.Granaries[i].gameObject;
-            building.pos.x = BehaviourTreeManager.Granaries[i].transform.position.x;
-            building.pos.y = BehaviourTreeManager.Granaries[i].transform.position.y;
-            building.pos.z = BehaviourTreeManager.Granaries[i].transform.position.z;
-            building.rot.x = BehaviourTreeManager.Granaries[i].transform.rotation.eulerAngles.x;
-            building.rot.y = BehaviourTreeManager.Granaries[i].transform.rotation.eulerAngles.y;
-            building.rot.z = BehaviourTreeManager.Granaries[i].transform.rotation.eulerAngles.z;
-            buildings.Add(building);
-        }
-        #endregion
-
-        #region House 
-        for (int i = 0; i < BehaviourTreeManager.Houses.Count; i++)
-        {
-            Building building = new Building();
-            building.building = BehaviourTreeManager.Houses[i].gameObject;
-            building.pos.x = BehaviourTreeManager.Houses[i].transform.position.x;
-            building.pos.y = BehaviourTreeManager.Houses[i].transform.position.y;
-            building.pos.z = BehaviourTreeManager.Houses[i].transform.position.z;
-            building.rot.x = BehaviourTreeManager.Houses[i].transform.rotation.eulerAngles.x;
-            building.rot.y = BehaviourTreeManager.Houses[i].transform.rotation.eulerAngles.y;
-            building.rot.z = BehaviourTreeManager.Houses[i].transform.rotation.eulerAngles.z;
-            buildings.Add(building);
-        }
-        #endregion
-
-        #region StockPile
-        for (int i = 0; i < BehaviourTreeManager.Stockpiles.Count; i++)
-        {
-            Building building = new Building();
-            building.building = BehaviourTreeManager.Stockpiles[i].gameObject;
-            building.pos.x = BehaviourTreeManager.Stockpiles[i].transform.position.x;
-            building.pos.y = BehaviourTreeManager.Stockpiles[i].transform.position.y;
-            building.pos.z = BehaviourTreeManager.Stockpiles[i].transform.position.z;
-            building.rot.x = BehaviourTreeManager.Stockpiles[i].transform.rotation.eulerAngles.x;
-            building.rot.y = BehaviourTreeManager.Stockpiles[i].transform.rotation.eulerAngles.y;
-            building.rot.z = BehaviourTreeManager.Stockpiles[i].transform.rotation.eulerAngles.z;
-            buildings.Add(building);
-        }
-        #endregion
-
-        return buildings;
-    }
-
     MonsterData SaveMonsterData(MonsterController monster)
     {
         MonsterData data = new MonsterData();
@@ -222,7 +123,7 @@ public class SaveData : MonoBehaviour {
         data.health = monster.health;
         data.hunger = monster.hunger;
         data.lastMatingTime = monster.lastMatingTime;
-        data.monsterType = monster.monsterType.ToString();
+        data.monsterType = monster.gameObject.name;
         data.Pos.x = monster.transform.position.x;
         data.Pos.y = monster.transform.position.y;
         data.Pos.z = monster.transform.position.z;
@@ -308,6 +209,203 @@ public class SaveData : MonoBehaviour {
         return returnJob;
     }
 
+    List<Building> SaveBuildings()
+    {
+        List<Building> buildings = new List<Building>();
+        #region Armouries
+        //armoury
+        for (int i = 0; i < BehaviourTreeManager.Armouries.Count; i++)
+        {
+            Building building = new Building();
+            building.building = BehaviourTreeManager.Armouries[i].gameObject;
+            building.pos.x = BehaviourTreeManager.Armouries[i].transform.position.x;
+            building.pos.y = BehaviourTreeManager.Armouries[i].transform.position.y;
+            building.pos.z = BehaviourTreeManager.Armouries[i].transform.position.z;
+            building.rot.x = BehaviourTreeManager.Armouries[i].transform.rotation.eulerAngles.x;
+            building.rot.y = BehaviourTreeManager.Armouries[i].transform.rotation.eulerAngles.y;
+            building.rot.z = BehaviourTreeManager.Armouries[i].transform.rotation.eulerAngles.z;
+            buildings.Add(building);
+        }
+        #endregion
+
+        #region Barracks
+        for (int i = 0; i < BehaviourTreeManager.Barracks.Count; i++)
+        {
+            Building building = new Building();
+            building.building = BehaviourTreeManager.Barracks[i].gameObject;
+            building.pos.x = BehaviourTreeManager.Barracks[i].transform.position.x;
+            building.pos.y = BehaviourTreeManager.Barracks[i].transform.position.y;
+            building.pos.z = BehaviourTreeManager.Barracks[i].transform.position.z;
+            building.rot.x = BehaviourTreeManager.Barracks[i].transform.rotation.eulerAngles.x;
+            building.rot.y = BehaviourTreeManager.Barracks[i].transform.rotation.eulerAngles.y;
+            building.rot.z = BehaviourTreeManager.Barracks[i].transform.rotation.eulerAngles.z;
+            buildings.Add(building);
+        }
+        #endregion
+
+        #region BlackSmith
+        for (int i = 0; i < BehaviourTreeManager.Blacksmiths.Count; i++)
+        {
+            Building building = new Building();
+            building.building = BehaviourTreeManager.Blacksmiths[i].gameObject;
+            building.pos.x = BehaviourTreeManager.Blacksmiths[i].transform.position.x;
+            building.pos.y = BehaviourTreeManager.Blacksmiths[i].transform.position.y;
+            building.pos.z = BehaviourTreeManager.Blacksmiths[i].transform.position.z;
+            building.rot.x = BehaviourTreeManager.Blacksmiths[i].transform.rotation.eulerAngles.x;
+            building.rot.y = BehaviourTreeManager.Blacksmiths[i].transform.rotation.eulerAngles.y;
+            building.rot.z = BehaviourTreeManager.Blacksmiths[i].transform.rotation.eulerAngles.z;
+            buildings.Add(building);
+        }
+        #endregion
+
+        #region Granary
+        for (int i = 0; i < BehaviourTreeManager.Granaries.Count; i++)
+        {
+            Building building = new Building();
+            building.building = BehaviourTreeManager.Granaries[i].gameObject;
+            building.pos.x = BehaviourTreeManager.Granaries[i].transform.position.x;
+            building.pos.y = BehaviourTreeManager.Granaries[i].transform.position.y;
+            building.pos.z = BehaviourTreeManager.Granaries[i].transform.position.z;
+            building.rot.x = BehaviourTreeManager.Granaries[i].transform.rotation.eulerAngles.x;
+            building.rot.y = BehaviourTreeManager.Granaries[i].transform.rotation.eulerAngles.y;
+            building.rot.z = BehaviourTreeManager.Granaries[i].transform.rotation.eulerAngles.z;
+            buildings.Add(building);
+        }
+        #endregion
+
+        #region House 
+        for (int i = 0; i < BehaviourTreeManager.Houses.Count; i++)
+        {
+            Building building = new Building();
+            building.building = BehaviourTreeManager.Houses[i].gameObject;
+            building.pos.x = BehaviourTreeManager.Houses[i].transform.position.x;
+            building.pos.y = BehaviourTreeManager.Houses[i].transform.position.y;
+            building.pos.z = BehaviourTreeManager.Houses[i].transform.position.z;
+            building.rot.x = BehaviourTreeManager.Houses[i].transform.rotation.eulerAngles.x;
+            building.rot.y = BehaviourTreeManager.Houses[i].transform.rotation.eulerAngles.y;
+            building.rot.z = BehaviourTreeManager.Houses[i].transform.rotation.eulerAngles.z;
+            buildings.Add(building);
+        }
+        #endregion
+
+        #region StockPile
+        for (int i = 0; i < BehaviourTreeManager.Stockpiles.Count; i++)
+        {
+            Building building = new Building();
+            building.building = BehaviourTreeManager.Stockpiles[i].gameObject;
+            building.pos.x = BehaviourTreeManager.Stockpiles[i].transform.position.x;
+            building.pos.y = BehaviourTreeManager.Stockpiles[i].transform.position.y;
+            building.pos.z = BehaviourTreeManager.Stockpiles[i].transform.position.z;
+            building.rot.x = BehaviourTreeManager.Stockpiles[i].transform.rotation.eulerAngles.x;
+            building.rot.y = BehaviourTreeManager.Stockpiles[i].transform.rotation.eulerAngles.y;
+            building.rot.z = BehaviourTreeManager.Stockpiles[i].transform.rotation.eulerAngles.z;
+            buildings.Add(building);
+        }
+        #endregion
+
+        return buildings;
+    }
+
+    #endregion
+
+    #region Load
+    public void Load()
+    {
+        //GameObject f = Instantiate(PrefabUtility.GetPrefabParent(BehaviourTreeManager.Colonists[0].gameObject), new Vector3(0, 5, 0), Quaternion.identity) as GameObject;
+        //f.GetComponent<ColonistController>().colonistBaseMoveSpeed = 500;
+        BinaryFormatter bF = new BinaryFormatter();
+        FileStream file = File.Open(path + "SaveData.dat", FileMode.Open);
+
+        Dictionary<string, object> saveData = (Dictionary<string, object>)bF.Deserialize(file);
+
+
+        #region Monsters
+        List<DictionaryEntries> numHunters = new List<DictionaryEntries>();
+        numHunters = (List<DictionaryEntries>)saveData["NumberOfHunters"];
+        SetNumHunters(numHunters);
+
+
+        List<MonsterData> monsterData = new List<MonsterData>();
+        monsterData = (List<MonsterData>)saveData["Monsters"];
+        LoadMonsters(monsterData);
+
+        List<ColonistData> colonistData = new List<ColonistData>();
+        //colonistData = (List<ColonistData>)saveData["Colonists"];
+        //LoadColonists(colonistData);
+        #endregion
+
+        file.Close();
+    }
+    void SetNumHunters(List<DictionaryEntries> numHunters)
+    {
+        if (numHunters.Count > 0)
+            for (int i = 0; i < numHunters.Count; i++)
+            {
+                string key = numHunters[i].key;
+                MonsterTypes.Instance.Mons[key].numHuntersRequired = numHunters[i].value;
+            }
+    }
+    void LoadMonsters(List<MonsterData> monsterData)
+    {
+        for (int i = 0; i < monsterData.Count; i++)
+        {
+            MonsterData currentMon = monsterData[i];
+            Vector3 newPos = new Vector3(currentMon.Pos.x, currentMon.Pos.y, currentMon.Pos.z);
+            MonsterController currentController = MonsterSpawner.Instance.SpawnMonster(newPos, monsterData[i].monsterType);
+            currentController.transform.rotation.eulerAngles.Set(currentMon.Rot.x, currentMon.Rot.y, currentMon.Rot.z);
+            currentController.beingHunted = currentMon.beingHunted;
+            currentController.health = currentMon.health;
+            currentController.hunger = currentMon.hunger;
+            currentController.lastMatingTime = currentMon.lastMatingTime;
+        }
+
+    }
+    void LoadColonists(List<ColonistData> colonistData)
+    {
+        for (int i = 0; i < colonistData.Count; i++)
+        {
+            ColonistData currentColonist = colonistData[i];
+
+            Vector3 pos = new Vector3(currentColonist.Pos.x,currentColonist.Pos.y, currentColonist.Pos.z);
+            ColonistJobType type = currentColonist.colonistJob;
+            ColonistController thisController = ColonistSpawner.Instance.SpawnColonist(pos,type);
+            thisController.transform.rotation.eulerAngles.Set(currentColonist.Rot.x, currentColonist.Rot.y, currentColonist.Rot.z);
+            thisController.colonistName = currentColonist.colonistName;
+            thisController.health = currentColonist.health;
+
+            GameTime lastWorked = new GameTime();
+            lastWorked.Date.x = currentColonist.lastWorked.Date.x;
+            lastWorked.Date.y = currentColonist.lastWorked.Date.y;
+            lastWorked.Date.z = currentColonist.lastWorked.Date.z;
+
+            lastWorked.hours = (int)currentColonist.lastWorked.hours.x;
+            lastWorked.minutes = (int)currentColonist.lastWorked.hours.y;
+            thisController.lastWorked =lastWorked;
+
+            thisController.colonistEquipment.EquipWearable(ItemDatabase.GetItem(currentColonist.legs) as Wearable);
+            thisController.colonistEquipment.EquipWearable(ItemDatabase.GetItem(currentColonist.torso) as Wearable);
+            thisController.colonistEquipment.EquipWearable(ItemDatabase.GetItem(currentColonist.weapon) as Wearable);
+
+
+
+
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    #endregion
     #region Structs
 
     [System.Serializable]

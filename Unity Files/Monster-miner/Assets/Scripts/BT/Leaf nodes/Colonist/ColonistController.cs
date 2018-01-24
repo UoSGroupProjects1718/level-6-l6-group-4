@@ -87,9 +87,6 @@ public class ColonistController : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
 
         lastWorked = TimeManager.Instance.IngameTime;
-
-        colonistEquipment = GetComponent<Equipment>();
-
         health = maxHealth;
         colonistMoveSpeed = colonistBaseMoveSpeed;
         colonistWorkSpeed = colonistBaseWorkSpeed;
@@ -97,10 +94,7 @@ public class ColonistController : MonoBehaviour {
         //set the selection cirlce
         selectionCircle = transform.GetChild(0).GetComponent<Projector>();
         selectionCircle.enabled = false;
-        SetTimeOfNextMeal();
-
-        EquipDefaultGear();
-        
+        SetTimeOfNextMeal();        
     }
 
     public void OnDrawGizmos()
@@ -178,7 +172,7 @@ public class ColonistController : MonoBehaviour {
         colonistWorkSpeed = colonistBaseWorkSpeed - diffBaseCurrent;
     }
 
-    private void EquipDefaultGear()
+    public void EquipDefaultGear()
     {
         switch (colonistJob)
         {

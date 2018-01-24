@@ -1,7 +1,7 @@
 //Oliver
 using UnityEngine;
 
-
+[System.Serializable]
 public enum JobType
 {
     Gathering,
@@ -27,7 +27,6 @@ public class Job : ScriptableObject {
 
     [HideInInspector]
     public float currentWorkAmount;
-
 
     public JobType jobType;
 

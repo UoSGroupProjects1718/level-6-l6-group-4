@@ -29,6 +29,10 @@ public class LargeCarnivorState : BehaviourBase
         Transform Closest = null;
         for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
         {
+            if (!BehaviourTreeManager.Colonists[i].isActiveAndEnabled)
+            {
+                continue;
+            }
             float thisDist = (BehaviourTreeManager.Colonists[i].transform.position - pos.position).magnitude;
             if (thisDist < Dist)
             {
@@ -47,9 +51,13 @@ public class LargeCarnivorState : BehaviourBase
             if (Monster.hunger < Monster.maxHunger * Monster.hungerAttackPercentage)
             {
 
-                for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
+                for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
                 {
-                    float thisDist = (BehaviourTreeManager.Monsters[i].transform.position - pos.position).magnitude;
+                    if (!BehaviourTreeManager.Colonists[i].isActiveAndEnabled)
+                    {
+                        continue;
+                    }
+                    float thisDist = (BehaviourTreeManager.Colonists[i].transform.position - pos.position).magnitude;
                     if (thisDist < Dist)
                     {
                         Dist = thisDist;
