@@ -36,7 +36,7 @@ Dinosaurs:			//1 week
 	Metal
 	
 UI:
-	Armoury
+	
 	Main HUD
 	Inventory
 	Smith/Crafting
@@ -58,7 +58,7 @@ Programming:
 
 
 Misc Work:
-	Sprites for UI		//
+	Sprites for UI		//8 hours
 	Music			//
 	Animation		//2 weeks
 	Balancing		//way too long
