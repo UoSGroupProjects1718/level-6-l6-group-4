@@ -174,6 +174,7 @@ public class ColonistController : MonoBehaviour {
 
     public void EquipDefaultGear()
     {
+        
         switch (colonistJob)
         {
             case ColonistJobType.Hunter:

@@ -11,13 +11,13 @@ public class SmallCarnivorState : BehaviourBase
         if (Monster.isDead)
         {
             Monster.currentState = MonsterController.MovementState.Still;
-                       
+
             return Status.SUCCESS;
         }
 
         if (Monster.hunger < 0)
         {
-            Monster.takeDamage(Monster.hungerDamage);
+            Monster.TakeDamage(Monster.hungerDamage);
         }
         else
         {
@@ -25,64 +25,108 @@ public class SmallCarnivorState : BehaviourBase
         }
 
         Transform pos = Monster.transform;
-        float Dist = float.MaxValue;
-        Transform Closest = null;
+
+        //LC = Large Carnivore
+        //SH = Small Herbivore
+        float closeLCDist = float.MaxValue;
+        Transform closestLC = null;
+
+        float closeSHDist = float.MaxValue;
+        Transform closestSH = null;
+
+        for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
+        {
+            MonsterController currentMonster = BehaviourTreeManager.Monsters[i];
+            //intended error. needs to be put into other check functions
+            ERROR;
+            if (currentMonster.isDead)
+                continue;
+
+            if (currentMonster.monsterType == MonsterTypes.TypeOfMonster.LargeCarnivore)
+            {
+                float thisDist = (currentMonster.transform.position - pos.position).magnitude;
+                if (thisDist < closeLCDist)
+                {
+                    closeLCDist = thisDist;
+                    closestLC =currentMonster.transform;
+                }
+            }
+
+            else if (currentMonster.monsterType == MonsterTypes.TypeOfMonster.SmallHerbivore)
+            {
+                float thisDist = (currentMonster.transform.position - pos.position).magnitude;
+                if (thisDist < closeSHDist)
+                {
+                    closeSHDist = thisDist;
+                    closestSH = currentMonster.transform;
+                }
+            }
+        }
+
+
+
+        float closeColonistDist = float.MaxValue;
+        Transform closestColonist = null;
         for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
         {
-            float thisDist = (BehaviourTreeManager.Colonists[i].transform.position - pos.position).magnitude;
-            if (thisDist < Dist)
+            ColonistController currentColonist = BehaviourTreeManager.Colonists[i];
+            float thisDist = (currentColonist.transform.position - pos.position).magnitude;
+            if (thisDist < closeColonistDist)
             {
-                Dist = thisDist;
-                Closest = BehaviourTreeManager.Colonists[i].transform;
+                closeColonistDist = thisDist;
+                closestColonist = currentColonist.transform;
             }
         }
 
-        if (Closest == null || Dist > Monster.viewRange)//if not near enemy, then Wander
+        //hunt for hunger
+
+        if(Monster.hunger < Monster.maxHunger * Monster.hungerAttackPercentage/100f)
         {
-            if (Time.time - Monster.lastMatingTime < Monster.matingCooldown)
+            Monster.currentState = MonsterController.MovementState.Chase;
+            if (closeSHDist < Monster.viewRange)//if close herb, chase it
             {
-                Monster.currentState = MonsterController.MovementState.MakeLove;
+                Monster.currentTarget = closestSH;
                 return Status.SUCCESS;
             }
-            if (Monster.hunger < Monster.maxHunger * Monster.hungerAttackPercentage)
+
+            if(closeColonistDist < Monster.viewRange)//if close colonist, chase it
             {
-
-                for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
-                {
-                    if (!BehaviourTreeManager.Colonists[i].isActiveAndEnabled)
-                    {
-                        continue;
-                    }
-                    float thisDist = (BehaviourTreeManager.Colonists[i].transform.position - pos.position).magnitude;
-                    if (thisDist < Dist)
-                    {
-                        Dist = thisDist;
-                        Closest = BehaviourTreeManager.Colonists[i].transform;
-                    }
-                }
-                if (Closest != null && Dist < Monster.viewRange)
-                {
-                    Monster.currentTarget = Closest;
-                    Monster.currentState = MonsterController.MovementState.Chase;
-                    return Status.SUCCESS;
-                }
-
+                Monster.currentTarget = closestColonist;
+                return Status.SUCCESS;
             }
-            Monster.currentState = MonsterController.MovementState.Wander;
+        }
+
+
+        //flee
+
+        if(Monster.health < Monster.maxHealth / 4)
+        {
+            Monster.currentState = MonsterController.MovementState.Flee;
+            if (closeLCDist < Monster.viewRange)//if close herb, chase it
+            {
+                Monster.currentTarget = closestLC;
+                return Status.SUCCESS;
+            }
+
+            if (closeColonistDist < Monster.viewRange)//if close colonist, chase it
+            {
+                Monster.currentTarget = closestColonist;
+                return Status.SUCCESS;
+            }
+        }
+
+        //love
+
+        if (Time.time - Monster.lastMatingTime < Monster.matingCooldown)
+        {
+            Monster.currentState = MonsterController.MovementState.MakeLove;
             return Status.SUCCESS;
         }
 
-        if (Monster.health < Monster.maxHealth / 4)//If enemy near, but less than quarter health, Flee
-        {
-            Monster.currentTarget = Closest;
-            Monster.currentState = MonsterController.MovementState.Flee;
-            return Status.SUCCESS;
-        }
-        //if enemy near and health>quarterHealth, attack
-        Monster.currentTarget = Closest;
-        Monster.currentState = MonsterController.MovementState.Chase;
+        Monster.currentState = MonsterController.MovementState.Wander;
         return Status.SUCCESS;
+
     }
 
-}    
-
+    
+}

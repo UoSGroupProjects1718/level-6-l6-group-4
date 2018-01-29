@@ -27,7 +27,7 @@ namespace MonsterMiner
                 foreach (MonsterController monster in BehaviourTreeManager.Monsters)
                 {
                     float dist = Vector3.Distance(colonist.position, monster.transform.position);
-                    if (!monster.checkDead())
+                    if (!monster.CheckDead())
                     {
                         if (dist < lowestDist)
                         {

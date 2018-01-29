@@ -23,7 +23,7 @@ public class MonsterController : MonoBehaviour {
     public int numHunters;
 
     public float monsterSpeed;
-    //[HideInInspector]
+    [HideInInspector]
     public float health;
     public float maxHealth;
     public float combatRange;
@@ -31,15 +31,18 @@ public class MonsterController : MonoBehaviour {
     public float damage;
     public float attackSpeed;
     public float nextAttack;
+    [HideInInspector]
     public float lastMatingTime;
     public float matingCooldown;
+    [HideInInspector]
     public float hunger;
     public float maxHunger;
+    [Range(0,1)]
     public float hungerAttackPercentage;
     public float hungerDamage;
     public float hungerLossPerSecond;
     public float naturalRegen;
-
+    [HideInInspector]
     public MonsterMovement Movement;
     [HideInInspector]
     public new Collider collider;
@@ -48,10 +51,15 @@ public class MonsterController : MonoBehaviour {
     public bool isDead;
     [HideInInspector]
     public bool selected;
+    [HideInInspector]
     public bool beingHunted;
-
+    [HideInInspector]
     [Header("Selection Circle must be first child")]
     public Projector SelectionCircle;
+    [HideInInspector]
+    public float wanderTimer;
+    [HideInInspector]
+    public float wanderRepathTimer = 0;
 
     #endregion
 
@@ -65,12 +73,13 @@ public class MonsterController : MonoBehaviour {
         SelectionCircle = transform.GetComponentInChildren<Projector>();
     }
 
-     public void takeDamage(float damage)
+     public void TakeDamage(float damage)
     {
         health -= damage;
+        CheckDead();
     }
 
-    public bool checkDead()
+    public bool CheckDead()
     {
         if (health < 0) { 
             Death();

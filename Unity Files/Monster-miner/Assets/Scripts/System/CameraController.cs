@@ -18,9 +18,9 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Vector2 CameraBounds;
 
-    [Space]
-    [SerializeField]
-    private float CameraScreenBorder = 10;
+    //[Space]
+    //[SerializeField]
+    //private float CameraScreenBorder = 10;
 
     [Space]
     [SerializeField]
@@ -147,7 +147,7 @@ public class CameraController : MonoBehaviour
             distFromFloor = Vector3.Distance(CamPosition, rayHit.point);
         }
 
-        float expectedDistFromFloor = CamPosition.y - distFromFloor;
+       // float expectedDistFromFloor = CamPosition.y - distFromFloor;
         CamPosition.y = expectedYPosition;// + expectedDistFromFloor;
         //CamPosition.y = Mathf.Clamp(CamPosition.y, camMinZoom + expectedDistFromFloor, camMaxZoom + expectedDistFromFloor);
 

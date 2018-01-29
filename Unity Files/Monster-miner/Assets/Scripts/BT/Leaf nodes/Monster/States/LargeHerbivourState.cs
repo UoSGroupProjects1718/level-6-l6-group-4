@@ -11,40 +11,68 @@ public class LargeHerbivourState : BehaviourBase
         if (Monster.isDead)
         {
             Monster.currentState = MonsterController.MovementState.Still;
-            
+
             return Status.SUCCESS;
         }
-     
-
-        if (Monster.health < Monster.maxHealth)//if attacked
-        {
+        if (Monster.health < Monster.maxHealth)
             Monster.health += Monster.naturalRegen * Time.deltaTime;
+
+
+        //check hurt
+        if (Monster.health < Monster.maxHealth)
+        {
             Transform pos = Monster.transform;
-            float Dist = float.MaxValue;
-            Transform Closest = null;
-            for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
+
+            //LC = Large Carnivore
+            //SH = Small Herbivore
+            float closeLCDist = float.MaxValue;
+            Transform closestLC = null;
+
+            for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
             {
-                float thisDist = (BehaviourTreeManager.Colonists[i].transform.position - pos.position).magnitude;
-                if (thisDist < Dist)
+                MonsterController currentMonster = BehaviourTreeManager.Monsters[i];
+                if (currentMonster.monsterType == MonsterTypes.TypeOfMonster.LargeCarnivore)
                 {
-                    Dist = thisDist;
-                    Closest = BehaviourTreeManager.Colonists[i].transform;
+                    float thisDist = (currentMonster.transform.position - pos.position).magnitude;
+                    if (thisDist < closeLCDist)
+                    {
+                        closeLCDist = thisDist;
+                        closestLC = currentMonster.transform;
+                    }
                 }
             }
 
-            if (Closest == null || Dist > Monster.viewRange)//if not near enemy, then Wander
+            float closeColonistDist = float.MaxValue;
+            Transform closestColonist = null;
+            for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
             {
-                if (Time.time - Monster.lastMatingTime < Monster.matingCooldown)
+                ColonistController currentColonist = BehaviourTreeManager.Colonists[i];
+                float thisDist = (currentColonist.transform.position - pos.position).magnitude;
+                if (thisDist < closeColonistDist)
                 {
-                    Monster.currentState = MonsterController.MovementState.MakeLove;
-                    return Status.SUCCESS;
+                    closeColonistDist = thisDist;
+                    closestColonist = currentColonist.transform;
                 }
-                Monster.currentState = MonsterController.MovementState.Wander;
+            }
+
+            Monster.currentState = MonsterController.MovementState.Chase;
+            if (closeLCDist < 5)
+            {
+                Monster.currentTarget = closestLC;
                 return Status.SUCCESS;
             }
 
-            Monster.currentTarget = Closest;//start attacking
-            Monster.currentState = MonsterController.MovementState.Chase;
+            if (closeColonistDist < 25)
+            {
+                Monster.currentTarget = closestColonist;
+                return Status.SUCCESS;
+            }
+        }
+
+        //Check love making
+        if (Time.time - Monster.lastMatingTime < Monster.matingCooldown)
+        {
+            Monster.currentState = MonsterController.MovementState.MakeLove;
             return Status.SUCCESS;
         }
 

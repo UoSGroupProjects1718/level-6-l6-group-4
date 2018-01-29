@@ -8,7 +8,7 @@ public class SelectState : BehaviourBase {
 	public override Status UpdateFunc(MonsterController Monster)
     {
 
-        if(Monster.checkDead())
+        if(Monster.CheckDead())
         {
             Monster.currentState = MonsterController.MovementState.Still;
             return Status.SUCCESS;

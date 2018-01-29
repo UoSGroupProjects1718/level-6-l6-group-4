@@ -28,6 +28,10 @@ public class StartManager : MonoBehaviour {
 
         StartCoroutine(BehaviourTreeManager.Instance.BehaviourTrees());
         ColonistSpawner.Instance.SpawnColonist(new Vector3(0,0,0),ColonistJobType.Crafter);
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(0, 0, 0), "Small Bone Herbivore");
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(0, 0, 0), "Large Bone Herbivore");
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(0, 0, 0), "Small Bone Carnivore");
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(0, 0, 0), "Large Bone Carnivore");
     }
 
     void GenerateWorld() {

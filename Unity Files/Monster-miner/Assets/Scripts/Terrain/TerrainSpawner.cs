@@ -172,9 +172,8 @@ public class TerrainSpawner : MonoBehaviour
             }
             catch
             {
-                int i = 0;
             }
-            Debug.Log("ERROR");
+            
         }
         else
         {

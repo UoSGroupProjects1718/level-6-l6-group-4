@@ -69,7 +69,7 @@ public class SaveData : MonoBehaviour {
         {
             string name = terrainParent.transform.GetChild(i).name;
             string[] test = name.Split('(');
-            string newName = test[0];
+            string newName = test[0];   
 
             TerrainData terrainData = new TerrainData();
             terrainData.gameObject = terrainParent.transform.GetChild(i).gameObject;

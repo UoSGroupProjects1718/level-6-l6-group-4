@@ -13,38 +13,66 @@ public class SmallHerbivourState : BehaviourBase
         if (Monster.isDead)
         {
             Monster.currentState = MonsterController.MovementState.Still;
-            
+
             return Status.SUCCESS;
         }
         if (Monster.health < Monster.maxHealth)
             Monster.health += Monster.naturalRegen * Time.deltaTime;
 
+        Monster.currentState = MonsterController.MovementState.Flee;
+
         Transform pos = Monster.transform;
-        float Dist = float.MaxValue;
-        Transform Closest = null;
-        for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
+
+        //LC = Large Carnivore
+        float closeMonDist = float.MaxValue;
+        Transform closestMon = null;
+
+        for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
         {
-            float thisDist = (BehaviourTreeManager.Colonists[i].transform.position - pos.position).magnitude;
-            if (thisDist < Dist)
+            MonsterController currentMonster = BehaviourTreeManager.Monsters[i];
+            if (currentMonster.monsterType == MonsterTypes.TypeOfMonster.LargeCarnivore || currentMonster.monsterType == MonsterTypes.TypeOfMonster.SmallCarnivore)
             {
-                Dist = thisDist;
-                Closest = BehaviourTreeManager.Colonists[i].transform;
+                float thisDist = (currentMonster.transform.position - pos.position).magnitude;
+                if (thisDist < closeMonDist)
+                {
+                    closeMonDist = thisDist;
+                    closestMon = currentMonster.transform;
+                }
             }
         }
 
-        if (Closest == null || Dist > Monster.viewRange)
+        float closeColonistDist = float.MaxValue;
+        Transform closestColonist = null;
+        for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
         {
-            if(Time.time - Monster.lastMatingTime > Monster.matingCooldown)
+            ColonistController currentColonist = BehaviourTreeManager.Colonists[i];
+            float thisDist = (currentColonist.transform.position - pos.position).magnitude;
+            if (thisDist < closeColonistDist)
             {
-                Monster.currentState = MonsterController.MovementState.MakeLove;
+                closeColonistDist = thisDist;
+                closestColonist = currentColonist.transform;
+            }
+        }
+        //colonist is closer
+        if (closeColonistDist < closeMonDist)
+        {
+            if (closeColonistDist < Monster.viewRange)
+            {
+                Monster.currentTarget = closestColonist;
                 return Status.SUCCESS;
             }
-            Monster.currentState = MonsterController.MovementState.Wander;
-            return Status.SUCCESS;
         }
-        
-        Monster.currentTarget = Closest;
-        Monster.currentState = MonsterController.MovementState.Flee;
+
+        else
+        {
+            if (closeMonDist < Monster.viewRange)
+            {
+                Monster.currentTarget = closestMon;
+                return Status.SUCCESS;
+            }
+        }
+
+        Monster.currentState = MonsterController.MovementState.Wander;
         return Status.SUCCESS;
     }
 }

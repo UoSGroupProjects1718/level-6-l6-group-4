@@ -2527,7 +2527,6 @@ MonoBehaviour:
   camMinZoom: 20
   camMaxZoom: 80
   CameraBounds: {x: 1000, y: 1000}
-  CameraScreenBorder: 3
   floorLayerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -5912,7 +5911,7 @@ Prefab:
     - target: {fileID: 224239011846878090, guid: 7de2abdeee9e9764a80aa5a0fd740f3c,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 114491437994072052, guid: 7de2abdeee9e9764a80aa5a0fd740f3c,
         type: 2}

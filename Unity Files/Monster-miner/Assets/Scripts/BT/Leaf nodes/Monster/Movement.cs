@@ -15,7 +15,7 @@ public class Movement : BehaviourBase
         switch (Monster.currentState)
         {
             case MonsterController.MovementState.Wander:
-                Monster.Movement.MoveToPoint(Wonder(Monster.transform));
+                Wonder(Monster);
                 break;
             case MonsterController.MovementState.Flee:
                 Monster.Movement.MoveToPoint(Flee(Monster));
@@ -36,11 +36,18 @@ public class Movement : BehaviourBase
 
     }
 
-    Vector3 Wonder(Transform transform) {
-        Vector3 circleCentre = transform.forward.normalized * 5 +transform.position;
-        float Angle = Random.Range(0, 2 * Mathf.PI);
-        Vector3 ret = new Vector3(circleCentre.x + WonderRadius * Mathf.Sin(Angle), circleCentre.y, circleCentre.z + WonderRadius * Mathf.Cos(Angle));
-        return ret;
+    void Wonder(MonsterController monster) {
+        monster.wanderTimer += Time.deltaTime;
+        if (monster.wanderTimer >= monster.wanderRepathTimer)
+        {
+            //get a new position
+            Vector3 newPos = Utils.RandomNavSphere(monster.transform.position, 30f, -1);
+            //path there
+            monster.Movement.MoveToPoint(newPos);
+            //and set the timers to defaults
+            monster.wanderTimer = 0;
+            monster.wanderRepathTimer = Random.Range(2f, 6f);
+        }
     }
 
     Vector3 Flee(MonsterController Monster) {

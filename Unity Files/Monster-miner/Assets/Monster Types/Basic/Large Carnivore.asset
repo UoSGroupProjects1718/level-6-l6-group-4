@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Large Carnivore
   monsterType: 2
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 7.1
   maxHealth: 65
   combatRange: 15
