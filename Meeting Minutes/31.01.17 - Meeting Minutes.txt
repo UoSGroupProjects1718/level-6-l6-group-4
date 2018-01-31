@@ -1,0 +1,73 @@
+31/01/18 - 11:00
+
+Members in attendance:- Oliver, Daniel, Ross - 15 minutes late, Douglas
+
+
+
+Discussed assets still to be produced and compiled a rough list:
+
+simplified buildings:
+	Camp fire
+	
+UI:
+	Main HUD
+	Inventory
+	NPC info
+	Task timer
+	Alerts/Info box
+	Job
+	House UI
+
+Programming:
+	EcoSystem
+	Colonist Info
+	Bug fixes
+	Small tweaks
+	Terrain navMesh
+	Save and Load
+
+Misc Work:
+	Sprites for UI		//8 hours
+	Music			//
+	Animation		//2 weeks
+	Balancing		//way too long
+	Random Events		//
+	Presentation
+
+
+
+Discussed altering terrain tiles slightly, removing all "props" from the tiles and making them seperate assets, and then spawning those in randomly along the tile they belong to
+in order to give more variance in the game world.
+
+
+Assigned tasks:
+
+Doug:
+	Camp fire	//1h
+	Balancing	//7h
+
+Ross:
+	Split current UI assets	//3h
+	Create new UI		//7h
+
+Oliver:
+	Colonist Info			//3h
+	Presentation			//3h
+	Insert all art into game	//3h
+	Test to make sure that food consumption is not broken //1h
+
+Daniel:
+	Presentation			//3h
+	Terrain				//2h
+	Bug Fixes			//2h
+	Usable game			//3h
+
+
+
+12:00 - Douglas and Ross left
+
+
+14:00 - Oliver and Daniel have a meeting with Chris to discuss an issue regarding the nav mesh system
+
+Where we were believing that the function used to build the navmeshes was per surface, it was in fact fact building all at once,meaning that
+when we were calling the function for every tile, the function was baking every navmesh 81 times when instantiating a map of 9x9 tiles. 
