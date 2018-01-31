@@ -40,6 +40,7 @@ public class TerrainSpawner : MonoBehaviour
             NextSpawn.RemoveAt(0);
         }
 
+        map[0, 0].GetComponent<NavMeshSurface>().BuildNavMesh();
       //  StartCoroutine(buildNavMesh());
         SpawnTiles = null;
         map = null;

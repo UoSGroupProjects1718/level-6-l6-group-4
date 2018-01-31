@@ -45,7 +45,7 @@ public class StartManager : MonoBehaviour {
 
 	public bool FileExist()
     {
-        return true ;
-       // return (File.Exists(path + "SaveData.dat")) ;
+        
+        return (File.Exists(path + "SaveData.dat")) ;
     }
 }
