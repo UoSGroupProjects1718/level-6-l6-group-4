@@ -38,7 +38,6 @@ public class SmallCarnivorState : BehaviourBase
         {
             MonsterController currentMonster = BehaviourTreeManager.Monsters[i];
             //intended error. needs to be put into other check functions
-            ERROR;
             if (currentMonster.isDead)
                 continue;
 
@@ -70,6 +69,8 @@ public class SmallCarnivorState : BehaviourBase
         for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
         {
             ColonistController currentColonist = BehaviourTreeManager.Colonists[i];
+            if (currentColonist.isDead)
+                continue;
             float thisDist = (currentColonist.transform.position - pos.position).magnitude;
             if (thisDist < closeColonistDist)
             {

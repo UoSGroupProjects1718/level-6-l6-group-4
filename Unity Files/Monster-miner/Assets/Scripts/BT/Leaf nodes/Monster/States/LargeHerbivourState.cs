@@ -31,6 +31,8 @@ public class LargeHerbivourState : BehaviourBase
             for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
             {
                 MonsterController currentMonster = BehaviourTreeManager.Monsters[i];
+                if (currentMonster.isDead)
+                    continue;
                 if (currentMonster.monsterType == MonsterTypes.TypeOfMonster.LargeCarnivore)
                 {
                     float thisDist = (currentMonster.transform.position - pos.position).magnitude;
@@ -47,6 +49,8 @@ public class LargeHerbivourState : BehaviourBase
             for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
             {
                 ColonistController currentColonist = BehaviourTreeManager.Colonists[i];
+                if (currentColonist.isDead)
+                    continue;
                 float thisDist = (currentColonist.transform.position - pos.position).magnitude;
                 if (thisDist < closeColonistDist)
                 {

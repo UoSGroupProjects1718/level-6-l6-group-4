@@ -1,65 +1,28 @@
-simplified buildings:		//1 week
-	Armory
-	Barracks
-	Forge
-	Granary
-	House
-	Storage yard
-	Town/camp fire
-
-NPCS:				//2 hours
-	Peg Base
-	Cloaks (Smith - blue, Hunter - Red, Gatherer - green)
-
-Armour:				//2 hours
-	Wood
-	Bone
-	Stone	
-	Metal
-	Crystal
-
-Terrain:			//1 week
-	Themes:
-		Grass land
-		Forrest
-		Dessert
-		Rock
-		Savannah
-		Water (Marshland & pond)
-		Steppes (part Savannah, part rocks(GOOGLE))
-	4 of each
-	PLEASE MAKE A LIST OF WHAT CAN TILE TO WHAT
-
-Dinosaurs:			//1 week
-	Crystal
-	Stone
-	Metal
+simplified buildings:
+	Camp fire
 	
 UI:
-	
 	Main HUD
 	Inventory
-	Smith/Crafting
 	NPC info
-	Dino info
 	Task timer
 	Alerts/Info box
-	Campfire
 	Job
 	House UI
 
 Programming:
-	Armoury
-	Blacksmith
-	Recruit Colonists
-	Random Events (create these)
 	EcoSystem
-	relevent UI
-
+	Colonist Info
+	Bug fixes
+	Small tweaks
+	Terrain navMesh
+	Save and Load
 
 Misc Work:
 	Sprites for UI		//8 hours
 	Music			//
 	Animation		//2 weeks
 	Balancing		//way too long
-
+	Random Events		//
+	Presentation
+n

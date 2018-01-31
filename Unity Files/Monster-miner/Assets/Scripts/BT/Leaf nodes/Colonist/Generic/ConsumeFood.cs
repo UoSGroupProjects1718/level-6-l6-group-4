@@ -25,11 +25,11 @@ namespace MonsterMiner
                         //if not, figure out the amount we can take out, eat that and then reduce colonist health by 1 for each nutrition they could not consume
                         else
                         {
-                            int AmountAvailable = Colonist.requiredNutritionPerDay - Stockpile.Instance.inventoryDictionary[ItemType.Nutrition];
-                            Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] -= AmountAvailable;
+                            float nerfMultiplier = 1 - ((float)Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] / (float)Colonist.requiredNutritionPerDay);
+                            Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] =0;
                             Colonist.health -= Colonist.maxHealth / 10;
-                            Colonist.colonistWorkSpeed -= Colonist.colonistBaseWorkSpeed / 10;
-                            Colonist.colonistMoveSpeed -= Colonist.colonistBaseMoveSpeed / 10;
+                            Colonist.colonistWorkSpeed -= (Colonist.colonistBaseWorkSpeed / 10) * nerfMultiplier;
+                            Colonist.colonistMoveSpeed -= (Colonist.colonistBaseMoveSpeed / 10) * nerfMultiplier;
                             Colonist.SetTimeOfNextMeal();
                             UIController.Instance.UpdateStockpile();
                             return Status.SUCCESS;

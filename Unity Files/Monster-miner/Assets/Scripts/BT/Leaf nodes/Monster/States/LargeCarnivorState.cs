@@ -33,6 +33,8 @@ public class LargeCarnivorState : BehaviourBase
             for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
             {
                 MonsterController currentMonster = BehaviourTreeManager.Monsters[i];
+                if (currentMonster.isDead)
+                    continue;
                 if (!currentMonster.isActiveAndEnabled || currentMonster.monsterType ==Monster.monsterType)
                     continue;
                 float thisDist = (currentMonster.transform.position - pos.position).magnitude;
@@ -54,6 +56,8 @@ public class LargeCarnivorState : BehaviourBase
             for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
             {
                 ColonistController currentColonist = BehaviourTreeManager.Colonists[i];
+                if (currentColonist.isDead)
+                    continue;
                 if (!currentColonist.isActiveAndEnabled)
                 {
                     continue;

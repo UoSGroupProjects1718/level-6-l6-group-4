@@ -26,6 +26,7 @@ public class ColonistController : MonoBehaviour {
 
     public int requiredNutritionPerDay = 25;
     public GameTime timeOfNextMeal;
+    public bool isDead = false;
     #endregion
     #region Job
     public ColonistJobType colonistJob;
@@ -144,6 +145,7 @@ public class ColonistController : MonoBehaviour {
 
     void Death()
     {
+        isDead = true;
         Debug.Log(colonistName + " has died.");
     }
 

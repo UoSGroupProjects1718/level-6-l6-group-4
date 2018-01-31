@@ -29,7 +29,10 @@ public class SmallHerbivourState : BehaviourBase
 
         for (int i = 0; i < BehaviourTreeManager.Monsters.Count; i++)
         {
+            
             MonsterController currentMonster = BehaviourTreeManager.Monsters[i];
+            if (currentMonster.isDead)
+                continue;
             if (currentMonster.monsterType == MonsterTypes.TypeOfMonster.LargeCarnivore || currentMonster.monsterType == MonsterTypes.TypeOfMonster.SmallCarnivore)
             {
                 float thisDist = (currentMonster.transform.position - pos.position).magnitude;
@@ -45,7 +48,10 @@ public class SmallHerbivourState : BehaviourBase
         Transform closestColonist = null;
         for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
         {
+
             ColonistController currentColonist = BehaviourTreeManager.Colonists[i];
+            if (currentColonist.isDead)
+                continue;
             float thisDist = (currentColonist.transform.position - pos.position).magnitude;
             if (thisDist < closeColonistDist)
             {
