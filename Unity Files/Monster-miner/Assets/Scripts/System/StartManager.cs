@@ -7,9 +7,11 @@ public class StartManager : MonoBehaviour {
     public TerrainSpawner terrainSpawner;
     string path = "./";
     // Use this for initialization
+
+
     void Start(){
         /*This will delete the save*/
-        //File.Delete(path + "SaveData.dat");
+        File.Delete(path + "SaveData.dat");
 
         TimeManager.Instance.BeginTime();
         MonsterSpawner.Instance.SpawnMonsterLists();
@@ -27,16 +29,16 @@ public class StartManager : MonoBehaviour {
         }
 
         StartCoroutine(BehaviourTreeManager.Instance.BehaviourTrees());
-        ColonistSpawner.Instance.SpawnColonist(new Vector3(0,0,0),ColonistJobType.Crafter);
-        MonsterSpawner.Instance.SpawnMonster(new Vector3(0, 0, 0), "Small Bone Herbivore");
-        MonsterSpawner.Instance.SpawnMonster(new Vector3(0, 0, 0), "Large Bone Herbivore");
-        MonsterSpawner.Instance.SpawnMonster(new Vector3(0, 0, 0), "Small Bone Carnivore");
-        MonsterSpawner.Instance.SpawnMonster(new Vector3(0, 0, 0), "Large Bone Carnivore");
+        ColonistSpawner.Instance.SpawnColonist(new Vector3(1,0,0),ColonistJobType.Crafter);
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(-1, 0, 0), "Small Bone Herbivore");
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(-1, 0, 1), "Large Bone Herbivore");
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(1, 0, -1), "Small Bone Carnivore");
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(1, 0, 1), "Large Bone Carnivore");
     }
 
     void GenerateWorld() {
         StartCoroutine(terrainSpawner.SpawnNewWorld());
-        MonsterSpawner.Instance.NewWorldSpawnMonsters();
+        //MonsterSpawner.Instance.NewWorldSpawnMonsters();
     }
 
     void LoadWorld() {

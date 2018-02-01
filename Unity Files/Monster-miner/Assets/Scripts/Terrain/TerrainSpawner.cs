@@ -21,27 +21,26 @@ public class TerrainSpawner : MonoBehaviour
 
     public IEnumerator SpawnNewWorld()
     {
+        //create parent object to make hierachy look nicer to read/use
         parentObj = new GameObject();
         parentObj.name = "Terrain";
+        //create int for array size
         int ArraySize = tilesToSpawn * 2;
-        ArraySize += 1;
-        //+1 centre 
+        ArraySize += 1; //+1 centre 
         map = new MapTileList[ArraySize, ArraySize];
-
+        //spawn centre of the world
         SpawnOrigin(tilesToSpawn + 1);
+        //add (0,0) neighbours to list.
         AddNeighboursToList(tilesToSpawn + 1, tilesToSpawn + 1);
+        //begin flood fill
         while (NextSpawn.Count > 0)
         {
-            if(NextSpawn.Count > 1000)
-            {
-                break;//sometimes breaks
-            }
             SpawnTile(NextSpawn[0]);
             NextSpawn.RemoveAt(0);
         }
-
+        //build the navmesh
         map[0, 0].GetComponent<NavMeshSurface>().BuildNavMesh();
-      //  StartCoroutine(buildNavMesh());
+        //memory clean up
         SpawnTiles = null;
         map = null;
         yield return null;
@@ -49,11 +48,13 @@ public class TerrainSpawner : MonoBehaviour
 
     public IEnumerator LoadWorld()
     {
+        //currently not important task
         yield return null;
     }
 
     void AddNeighboursToList(int x, int y)
-    {
+    {   //checks if neighbours are able to be added to list
+        //try catch loops are used to see if index is out of range of map array
         if(x > tilesToSpawn*2 || x<0 || y > tilesToSpawn * 2 || y < 0)
         {
             return;
@@ -65,7 +66,7 @@ public class TerrainSpawner : MonoBehaviour
                 NextSpawn.Add(new Vector2(x + 1, y));
             }
         }
-        catch { }
+        catch {}
         try
         {
             if (map[x - 1, y] == null)
@@ -73,7 +74,7 @@ public class TerrainSpawner : MonoBehaviour
                 NextSpawn.Add(new Vector2(x - 1, y));
             }
         }
-        catch { }
+        catch {}
 
         try
         {
@@ -82,7 +83,7 @@ public class TerrainSpawner : MonoBehaviour
                 NextSpawn.Add(new Vector2(x, y - 1));
             }
         }
-        catch { }
+        catch {}
         try
         {
             if (map[x, y + 1] == null)
@@ -90,32 +91,23 @@ public class TerrainSpawner : MonoBehaviour
                 NextSpawn.Add(new Vector2(x, y + 1));
             }
         }
-        catch { }
+        catch {}
     }
 
     void SpawnOrigin(int Middle)
     {
+        //pick a random spawn tile and centre it at 0,0
         map[Middle, Middle] = Instantiate(SpawnTiles[Random.Range(0, SpawnTiles.Length - 1)], new Vector3(0, 0, 0), transform.rotation, parentObj.transform).GetComponent<MapTileList>();
     }
 
     void SpawnTile(Vector2 gridPos)
     {
-
         int x = (int)gridPos.x;
         int y = (int)gridPos.y;
-        try
-        {
         if (map[x, y] != null)
         {
             return;
         }
-        }
-
-        catch
-        {
-            return;
-        }
-
         List<GameObject> UpList, DownList, LeftList, RightList;
         UpList = DownList = LeftList = RightList = new List<GameObject>();
         try
@@ -135,12 +127,8 @@ public class TerrainSpawner : MonoBehaviour
         catch { }
         try { RightList = map[x + 1, y].GetWest(); }
         catch { }
-
-
-
-        List<GameObject> PossibleList = GetPossibleList(UpList, DownList, LeftList, RightList);
-
         
+        List<GameObject> PossibleList = GetPossibleList(UpList, DownList, LeftList, RightList);
         if (PossibleList.Count == 0)
         {
             Debug.Log("No Neighbours at spawn. Problems have occoured at " + x + ", "+ y);
@@ -184,33 +172,18 @@ public class TerrainSpawner : MonoBehaviour
         AddNeighboursToList(x, y);
     }
 
-    IEnumerator buildNavMesh()
-    {
-        int limit = tilesToSpawn * 2 + 1;
-        for (int i = 0; i < limit; i++)
-        {
-            for (int j = 0; j < limit; j++)
-            {
-                map[i, j].GetComponent<NavMeshSurface>().BuildNavMesh();
-            }
-        }
-        yield return null;
-    }
-
     List<GameObject> GetPossibleList(List<GameObject> Up, List<GameObject> Down, List<GameObject> Left, List<GameObject> Right)
     {   
-        
+        //returns a list of gameobjects that are able to be spawned in the requested location
        
         List<GameObject> ReturnList = new List<GameObject>();// Up;
         if (Up == null)
         {
-
             foreach  (GameObject tile in GlobalList)
             {
                 ReturnList.Add(tile);
             }
         }
-
 
         else
         {
@@ -226,14 +199,10 @@ public class TerrainSpawner : MonoBehaviour
         }
 
         int forloopLimit = ReturnList.Count;
-        //foreach (GameObject tile in ReturnList)//check each tile in up. if not in Let, Right or down, remove it.
-        //{ }
-
+        
         for (int i = 0; i < forloopLimit; i++)
         {
             GameObject tile = ReturnList[i];
-        
-
             if (Down != null)
             {
                 if (!ListContains(Down,tile.name) && Down.Count > 0)
@@ -266,9 +235,7 @@ public class TerrainSpawner : MonoBehaviour
                 }
             }
         }
-
         return ReturnList;
-
     }
 
     bool ListContains(List<GameObject> list, string name)
@@ -279,8 +246,6 @@ public class TerrainSpawner : MonoBehaviour
                 return true;
         }
         return false;
-    }
-
-    
+    }   
 }
 
