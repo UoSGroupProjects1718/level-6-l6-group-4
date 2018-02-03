@@ -6,16 +6,33 @@ public class Equipment : MonoBehaviour
 {
     public Weapon weapon;
     public Armour[] equippedArmour;
-    public SkinnedMeshRenderer[] equippedItemMeshes;
+    public MeshFilter[] equippedItemFilters;
+    public MeshRenderer[] equippedItemRenderers;
+
     public float damageReduction = 0;
 
-    public SkinnedMeshRenderer colonistBodyMesh;
+    //public SkinnedMeshRenderer colonistBodyMesh;
+
+    private Transform headTransform;
+    private Transform torsoTransform;
+    private Transform legTransform;
 
     private void Awake()
     {
+
         equippedArmour = new Armour[Enum.GetNames(typeof(ArmourSlot)).Length - 1];
-        equippedItemMeshes = new SkinnedMeshRenderer[Enum.GetNames(typeof(ArmourSlot)).Length - 1];
-        colonistBodyMesh = gameObject.transform.Find("Graphics").Find("BodyMesh").GetComponent<SkinnedMeshRenderer>();
+        //setup the item mesh filter references
+        equippedItemFilters = new MeshFilter[Enum.GetNames(typeof(ArmourSlot)).Length - 1];
+        equippedItemFilters[(int)ArmourSlot.Head] = transform.Find("Graphics").Find("HeadSlot").GetComponent<MeshFilter>();
+        equippedItemFilters[(int)ArmourSlot.Torso] = transform.Find("Graphics").Find("TorsoSlot").GetComponent<MeshFilter>();
+        equippedItemFilters[(int)ArmourSlot.Legs] = transform.Find("Graphics").Find("LegSlot").GetComponent<MeshFilter>();
+        //set the mesh renderers
+        equippedItemRenderers = new MeshRenderer[Enum.GetNames(typeof(ArmourSlot)).Length - 1];
+        equippedItemRenderers[(int)ArmourSlot.Head] = transform.Find("Graphics").Find("HeadSlot").GetComponent<MeshRenderer>();
+        equippedItemRenderers[(int)ArmourSlot.Torso] = transform.Find("Graphics").Find("TorsoSlot").GetComponent<MeshRenderer>();
+        equippedItemRenderers[(int)ArmourSlot.Legs] = transform.Find("Graphics").Find("LegSlot").GetComponent<MeshRenderer>();
+
+        //colonistBodyMesh = gameObject.transform.Find("Graphics").Find("BodyMesh").GetComponent<SkinnedMeshRenderer>();
     }
 
     public void UpdateDamageResistance(Armour oldArmour, Armour newArmour)
@@ -43,13 +60,21 @@ public class Equipment : MonoBehaviour
                 //if so get the new DR
                 UpdateDamageResistance(equippedArmour[slotIndex], wearable as Armour);
             }
-            //then just make the corresponding slot contain the new armour info
-            equippedArmour[slotIndex] = ItemDatabase.GetItem(wearable.itemName) as Armour;
-            SkinnedMeshRenderer newMesh = ItemDatabase.GetItemSkinnedMeshRenderer(wearable.itemName);
-            newMesh.transform.parent = colonistBodyMesh.transform;
-            newMesh.bones = colonistBodyMesh.bones;
-            newMesh.rootBone = colonistBodyMesh.rootBone;
-            equippedItemMeshes[slotIndex] = newMesh;
+
+            
+            //then make the corresponding slot contain the new armour info
+            equippedArmour[slotIndex] = wearable as Armour;
+            //now assign the correct graphic to the correct slot
+            equippedItemFilters[slotIndex].mesh = wearable.itemMesh;
+            equippedItemRenderers[slotIndex].materials = wearable.itemRenderer.sharedMaterials;
+
+
+
+            //SkinnedMeshRenderer newMesh = ItemDatabase.GetItemSkinnedMeshRenderer(wearable.itemName);
+            //newMesh.transform.parent = colonistBodyMesh.transform;
+            //newMesh.bones = colonistBodyMesh.bones;
+            //newMesh.rootBone = colonistBodyMesh.rootBone;
+            //equippedItemMeshes[slotIndex] = newMesh;
 
 
         }
@@ -71,10 +96,14 @@ public class Equipment : MonoBehaviour
         //if there is no armour, we shouldnt be unequipping anyway
         if (equippedArmour[slotIndex] != null)
         {
-            if (equippedItemMeshes[slotIndex] != null)
-            {
-                ItemDatabase.ReturnSkinnedMeshRenderer(equippedItemMeshes[slotIndex]);
-            }
+            //if (equippedItemFilters[slotIndex] != null)
+            //{
+            //    //set the equipped mesh to null
+            //    equippedItemFilters[slotIndex] = null;
+            //    equippedItemRenderers[slotIndex] = null;
+            //   // ItemDatabase.ReturnSkinnedMeshRenderer(equippedItemMeshes[slotIndex]);
+            //}
+            //update the damage resistance
             UpdateDamageResistance(equippedArmour[slotIndex], null);
             equippedArmour[slotIndex] = null;
         }

@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 114607793795645866}
   - component: {fileID: 114783642072164964}
   - component: {fileID: 114469119595408754}
-  m_Layer: 0
+  - component: {fileID: 64171498201797244}
+  m_Layer: 8
   m_Name: Desert II
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,6 +86,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1283482234322088}
+  m_Mesh: {fileID: 4300000, guid: 99bcdcb62e34a08428b37c27848aefc7, type: 3}
+--- !u!64 &64171498201797244
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283482234322088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 99bcdcb62e34a08428b37c27848aefc7, type: 3}
 --- !u!114 &114285010464862010
 MonoBehaviour:

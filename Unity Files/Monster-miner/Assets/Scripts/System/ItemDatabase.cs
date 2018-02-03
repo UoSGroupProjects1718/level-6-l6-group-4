@@ -17,17 +17,18 @@ public class ItemDatabase : SingletonClass<ItemDatabase>
     [SerializeField]
     private int ObjectPoolSize = 20;
     private static Dictionary<string,ItemInfo> itemDatabase;
-    private static Dictionary<string, List<SkinnedMeshRenderer>> skinnedMeshRendererPools;
+    //private static Dictionary<string, List<SkinnedMeshRenderer>> skinnedMeshRendererPools;
     private static Dictionary<string, List<GameObject>> WorldItemPool;
 
 
     public void Awake()
     {
+        base.Awake();
         if (databaseItems.Length == 0)
             Debug.LogError("Database has not been assigned");
         itemDatabase = new Dictionary<string, ItemInfo>();
         WorldItemPool = new Dictionary<string, List<GameObject>>();
-        skinnedMeshRendererPools = new Dictionary<string, List<SkinnedMeshRenderer>>();
+        //skinnedMeshRendererPools = new Dictionary<string, List<SkinnedMeshRenderer>>();
 
         GameObject Item = new GameObject();
         Item.name = "Item Pools";
@@ -39,6 +40,10 @@ public class ItemDatabase : SingletonClass<ItemDatabase>
         //populate the database
         for(int i = 0; i < databaseItems.Length; i++)
         {
+            if(databaseItems[i].type == ItemType.Wearable)
+            {
+                numWearables++;
+            }
             //add the item reference to the database
             itemDatabase.Add(databaseItems[i].itemName,databaseItems[i]);
 
@@ -63,20 +68,20 @@ public class ItemDatabase : SingletonClass<ItemDatabase>
                 WorldItemPool.Add(databaseItems[i].itemName, itemPool);
             }
 
-            if(databaseItems[i].type == ItemType.Wearable && (databaseItems[i] as Wearable).equippableMesh)
-            {
-                numWearables++;
-                //create pool for wearableMesh
-                List<SkinnedMeshRenderer> skinnedMeshPool = new List<SkinnedMeshRenderer>();
-                for(int j =0; j < ObjectPoolSize; j++)
-                {
-                    SkinnedMeshRenderer newMeshRenderer = Instantiate((databaseItems[i] as Wearable).equippableMesh) as SkinnedMeshRenderer;
-                    newMeshRenderer.transform.parent = SkinnedMeshParent.transform;
-                    newMeshRenderer.gameObject.SetActive(false);
-                    skinnedMeshPool.Add(newMeshRenderer);
-                }
-                skinnedMeshRendererPools.Add(databaseItems[i].itemName, skinnedMeshPool);
-            }
+            //if(databaseItems[i].type == ItemType.Wearable && (databaseItems[i] as Wearable).equippableMesh)
+            //{
+            //    numWearables++;
+            //    //create pool for wearableMesh
+            //    List<SkinnedMeshRenderer> skinnedMeshPool = new List<SkinnedMeshRenderer>();
+            //    for(int j =0; j < ObjectPoolSize; j++)
+            //    {
+            //        SkinnedMeshRenderer newMeshRenderer = Instantiate((databaseItems[i] as Wearable).equippableMesh) as SkinnedMeshRenderer;
+            //        newMeshRenderer.transform.parent = SkinnedMeshParent.transform;
+            //        newMeshRenderer.gameObject.SetActive(false);
+            //        skinnedMeshPool.Add(newMeshRenderer);
+            //    }
+            //    //skinnedMeshRendererPools.Add(databaseItems[i].itemName, skinnedMeshPool);
+            //}
 
         }
     }
@@ -96,23 +101,23 @@ public class ItemDatabase : SingletonClass<ItemDatabase>
         return itemDatabase[slug];
     }
 
-    public static SkinnedMeshRenderer GetItemSkinnedMeshRenderer(string slug)
-    {
-        if (!skinnedMeshRendererPools.ContainsKey(slug))
-            return null;
+    //public static SkinnedMeshRenderer GetItemSkinnedMeshRenderer(string slug)
+    //{
+    //    if (!skinnedMeshRendererPools.ContainsKey(slug))
+    //        return null;
 
 
-        for(int i = 0; i < skinnedMeshRendererPools[slug].Count; i++)
-        {
-            if(!skinnedMeshRendererPools[slug][i].gameObject.activeSelf)
-            {
-                skinnedMeshRendererPools[slug][i].gameObject.SetActive(true);
-                return skinnedMeshRendererPools[slug][i];
-            }
-        }
-        return null;
+    //    for(int i = 0; i < skinnedMeshRendererPools[slug].Count; i++)
+    //    {
+    //        if(!skinnedMeshRendererPools[slug][i].gameObject.activeSelf)
+    //        {
+    //            skinnedMeshRendererPools[slug][i].gameObject.SetActive(true);
+    //            return skinnedMeshRendererPools[slug][i];
+    //        }
+    //    }
+    //    return null;
 
-    }
+    //}
     public static GameObject SpawnItemToWorld(string slug)
     {
         if (!WorldItemPool.ContainsKey(slug))

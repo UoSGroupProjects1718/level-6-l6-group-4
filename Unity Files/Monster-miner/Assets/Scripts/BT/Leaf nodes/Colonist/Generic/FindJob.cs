@@ -99,6 +99,11 @@ namespace MonsterMiner
                                     if (enoughResources > 0)
                                     {
                                         Transform closestBlacksmith = FindClosestBlacksmith(Colonist.transform);
+                                        //if there is no closest available blacksmith, return failure
+                                        if (closestBlacksmith == null)
+                                        {
+                                            return Status.FAILURE;
+                                        }
                                         JobManager.Instance.JobDocket[i].interactionObject = closestBlacksmith.gameObject;
                                         //then set the job's location to that blacksmiths location
                                         JobManager.Instance.JobDocket[i].jobLocation = closestBlacksmith.position;

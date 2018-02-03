@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,8 +39,8 @@ public class ColonistSpawner : SingletonClass<ColonistSpawner>
         ColonistController controller = GetController();
         controller.gameObject.transform.position = placement;
         controller.colonistEquipment = controller.GetComponent<Equipment>();
-        controller.EquipDefaultGear();
         controller.colonistJob = type;
+        controller.EquipDefaultGear();
         controller.colonistName = GetName();
 
         return controller;

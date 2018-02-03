@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 114458240204942576}
   - component: {fileID: 114991440583720512}
   - component: {fileID: 114775162035310680}
-  m_Layer: 0
+  - component: {fileID: 64041349476899006}
+  m_Layer: 8
   m_Name: Mountain II
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +88,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1229379433634408}
+  m_Mesh: {fileID: 4300000, guid: b4bbe132cfe3a7c49a6353f4c10bdf6b, type: 3}
+--- !u!64 &64041349476899006
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1229379433634408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b4bbe132cfe3a7c49a6353f4c10bdf6b, type: 3}
 --- !u!114 &114083735510900620
 MonoBehaviour:

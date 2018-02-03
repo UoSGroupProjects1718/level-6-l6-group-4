@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 114607825678405756}
   - component: {fileID: 114845823257587452}
   - component: {fileID: 114860553527691686}
-  m_Layer: 0
+  - component: {fileID: 64230975365121434}
+  m_Layer: 8
   m_Name: Marshland III
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,6 +89,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651542984207006}
+  m_Mesh: {fileID: 4300000, guid: 73e69c339a1f16c449f02b6edd5996f0, type: 3}
+--- !u!64 &64230975365121434
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651542984207006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 73e69c339a1f16c449f02b6edd5996f0, type: 3}
 --- !u!114 &114166457216394456
 MonoBehaviour:

@@ -19,10 +19,10 @@ MonoBehaviour:
   currentStackAmount: 0
   GatherWorkPerItem: 5
   uiSprite: {fileID: 21300016, guid: e2e9ee5165ac9c34e9faab0f79f8ba36, type: 3}
-  itemMesh: {fileID: 4300000, guid: b5b3e541bb1d038458eac57353060c2d, type: 3}
-  type: 6
-  equippableMesh: {fileID: 137787521940546366, guid: 0d1c1393666cd5d4aa8caa18d4940aca,
+  itemMesh: {fileID: 4300000, guid: 037edf63a29f0db4c8ec7954fcd8a96f, type: 3}
+  itemRenderer: {fileID: 23679795248442898, guid: 74860bdcf0ce5de449f6f21f6610763e,
     type: 2}
+  type: 6
   armourSlot: 0
   walkSpeedModifier: 0.5
   workSpeedModifier: 0.5

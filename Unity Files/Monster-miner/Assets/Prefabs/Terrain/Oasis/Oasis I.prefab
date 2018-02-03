@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 114642522496067138}
   - component: {fileID: 114119715937141990}
   - component: {fileID: 114574516575419822}
-  m_Layer: 0
+  - component: {fileID: 64948774604243166}
+  m_Layer: 8
   m_Name: Oasis I
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,6 +89,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1085398125473236}
+  m_Mesh: {fileID: 4300000, guid: efb1825a98c4c63468cfc2a12fd96b09, type: 3}
+--- !u!64 &64948774604243166
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1085398125473236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: efb1825a98c4c63468cfc2a12fd96b09, type: 3}
 --- !u!114 &114119715937141990
 MonoBehaviour:

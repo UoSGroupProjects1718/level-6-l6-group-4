@@ -9,7 +9,7 @@ public enum ArmourSlot
 }
 public class Wearable : ItemInfo {
 
-    public SkinnedMeshRenderer equippableMesh;
+    // public SkinnedMeshRenderer equippableMesh;
     public ArmourSlot armourSlot;
     public float walkSpeedModifier;
     public float workSpeedModifier;

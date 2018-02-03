@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 114972821880098884}
   - component: {fileID: 114771792895490630}
   - component: {fileID: 114009246122341748}
-  m_Layer: 0
+  - component: {fileID: 64557713416285866}
+  m_Layer: 8
   m_Name: Rocks I
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +87,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301017407957878}
+  m_Mesh: {fileID: 4300000, guid: 909e26ccdb638bf4a840f49b30a63a3f, type: 3}
+--- !u!64 &64557713416285866
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301017407957878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 909e26ccdb638bf4a840f49b30a63a3f, type: 3}
 --- !u!114 &114009246122341748
 MonoBehaviour:

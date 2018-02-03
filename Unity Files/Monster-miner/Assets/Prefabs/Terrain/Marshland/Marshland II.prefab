@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 114448047538129086}
   - component: {fileID: 114256745121671658}
   - component: {fileID: 114222358550931722}
-  m_Layer: 0
+  - component: {fileID: 64465286722882206}
+  m_Layer: 8
   m_Name: Marshland II
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,6 +89,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1043541372899314}
+  m_Mesh: {fileID: 4300000, guid: 649597f9b0674b847ad3682ed2a93670, type: 3}
+--- !u!64 &64465286722882206
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043541372899314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 649597f9b0674b847ad3682ed2a93670, type: 3}
 --- !u!114 &114036818752536064
 MonoBehaviour:

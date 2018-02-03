@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 114805112469188392}
   - component: {fileID: 114088100430666946}
   - component: {fileID: 114703949532702098}
-  m_Layer: 0
+  - component: {fileID: 64532765888745200}
+  m_Layer: 8
   m_Name: Plains IV
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,6 +86,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1340774751332372}
+  m_Mesh: {fileID: 4300000, guid: c0a3a97383ebb464795d349fcda2ffa5, type: 3}
+--- !u!64 &64532765888745200
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1340774751332372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: c0a3a97383ebb464795d349fcda2ffa5, type: 3}
 --- !u!114 &114088100430666946
 MonoBehaviour:

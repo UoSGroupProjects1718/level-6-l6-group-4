@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 114565308943067336}
   - component: {fileID: 114957822270904914}
   - component: {fileID: 114740092897595204}
-  m_Layer: 0
+  - component: {fileID: 64545847907502870}
+  m_Layer: 8
   m_Name: Rocks III
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +87,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1496752093666548}
+  m_Mesh: {fileID: 4300000, guid: 507e0a1d66ce29148a00df17a77e97a4, type: 3}
+--- !u!64 &64545847907502870
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496752093666548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 507e0a1d66ce29148a00df17a77e97a4, type: 3}
 --- !u!114 &114039262500741396
 MonoBehaviour:

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4587304967362826}
   - component: {fileID: 33364629063097310}
   - component: {fileID: 23151360027313188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Forest IV Tree Layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4630551369165294}
   - component: {fileID: 33073889139537746}
   - component: {fileID: 23539532775405690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Forest IV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,9 +59,10 @@ GameObject:
   - component: {fileID: 114132496264302702}
   - component: {fileID: 114090345434325716}
   - component: {fileID: 114030833783627608}
-  m_Layer: 0
+  - component: {fileID: 64643292681375214}
+  m_Layer: 8
   m_Name: Forest IV
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,6 +188,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413496250478636}
   m_Mesh: {fileID: 4300000, guid: 33dea7a0f0a22a4409529cbca15fd0f7, type: 3}
+--- !u!64 &64643292681375214
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819553370597160}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!114 &114030833783627608
 MonoBehaviour:
   m_ObjectHideFlags: 1

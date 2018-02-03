@@ -36,31 +36,20 @@ public class ArmouryJobPanel : MonoBehaviour
 
         wearablePicPoolParent = new GameObject().transform;
         wearablePicPoolParent.name = "WearablePicturePool";
-
-
-        colonistPicturePool = new List<GameObject>();
-        for (int i = 0; i < poolSize; i++)
-        {
-            GameObject panel = Instantiate(colonistButton, colonistPicPoolParent) as GameObject;
-            colonistPicturePool.Add(panel);
-            panel.GetComponentInChildren<Button>().onClick.AddListener(ColonistButtonClick);
-            panel.SetActive(false);
-        }
-        wearablePicturePool = new List<GameObject>();
-        for (int i = 0; i < ItemDatabase.NumWearables; i++)
-        {
-            GameObject panel = Instantiate(wearableButton, wearablePicPoolParent) as GameObject;
-            wearablePicturePool.Add(panel);
-            panel.GetComponentInChildren<Button>().onClick.AddListener(WearableButtonClick);
-            panel.SetActive(false);
-
-        }
-
-
-
     }
     private GameObject GetColonistPicture()
     {
+        if(colonistPicturePool == null)
+        {
+            colonistPicturePool = new List<GameObject>();
+            for (int i = 0; i < poolSize; i++)
+            {
+                GameObject panel = Instantiate(colonistButton, colonistPicPoolParent) as GameObject;
+                colonistPicturePool.Add(panel);
+                panel.GetComponentInChildren<Button>().onClick.AddListener(ColonistButtonClick);
+                panel.SetActive(false);
+            }
+        }
         for (int i = 0; i < colonistPicturePool.Count; i++)
         {
             if (!colonistPicturePool[i].activeSelf)
@@ -75,6 +64,19 @@ public class ArmouryJobPanel : MonoBehaviour
 
     private GameObject GetWearablePicture()
     {
+        if(wearablePicturePool == null)
+        {
+            wearablePicturePool = new List<GameObject>();
+            for (int i = 0; i < ItemDatabase.NumWearables; i++)
+            {
+                GameObject panel = Instantiate(wearableButton, wearablePicPoolParent) as GameObject;
+                wearablePicturePool.Add(panel);
+                panel.GetComponentInChildren<Button>().onClick.AddListener(WearableButtonClick);
+                panel.SetActive(false);
+
+            }
+        }
+
         for (int i = 0; i < wearablePicturePool.Count; i++)
         {
             if (!wearablePicturePool[i].activeSelf)
