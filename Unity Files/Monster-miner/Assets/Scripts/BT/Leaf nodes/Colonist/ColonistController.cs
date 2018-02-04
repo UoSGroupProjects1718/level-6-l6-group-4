@@ -134,6 +134,10 @@ public class ColonistController : MonoBehaviour {
 
         if (CheckDead())
             Death();
+        if(UIController.Instance.focusedColonist == this)
+        {
+            UIController.Instance.UpdateColonistInfoPanel(this);
+        }
     }
 
     public bool CheckDead()

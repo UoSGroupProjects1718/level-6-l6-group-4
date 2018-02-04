@@ -69,7 +69,14 @@ public class Equipment : MonoBehaviour
             equippedItemRenderers[slotIndex].materials = wearable.itemRenderer.sharedMaterials;
 
 
-
+            //update the colonist information panel
+            if (UIController.Instance.focusedColonist == GetComponent<ColonistController>())
+            {
+                UIController.Instance.UpdateColonistInfoPanel(UIController.Instance.focusedColonist);
+            }
+           
+            
+            
             //SkinnedMeshRenderer newMesh = ItemDatabase.GetItemSkinnedMeshRenderer(wearable.itemName);
             //newMesh.transform.parent = colonistBodyMesh.transform;
             //newMesh.bones = colonistBodyMesh.bones;

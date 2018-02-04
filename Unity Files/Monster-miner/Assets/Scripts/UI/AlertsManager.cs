@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -79,8 +79,10 @@ public class AlertsManager : SingletonClass<AlertsManager>
     }
     public void ShowHouseCompletion()
     {
-        //get the currnent button index
+        //get the current button index
         currentAlertButtonIndex = EventSystem.current.currentSelectedGameObject.transform.GetSiblingIndex();
+        //find where the colonists should be spawned
+        UIPanels.Instance.houseCompletionPanel.GetComponent<HouseUI>().focusedHouse = FindNonCompletedHouse();
         //and activate it
         UIPanels.Instance.houseCompletionPanel.SetActive(true);
     }
@@ -111,6 +113,21 @@ public class AlertsManager : SingletonClass<AlertsManager>
     {
         alertButton.SetActive(false);
         alertButton.transform.parent = alertsButtonPoolParent;
+    }
+
+    public HouseFunction FindNonCompletedHouse()
+    {
+        //loop through all of the houses
+        for (int i = 0; i < BehaviourTreeManager.Houses.Count; i++)
+        {
+            //if the house has not spawned it's colonists yet
+            if(!BehaviourTreeManager.Houses[i].colonistsSpawned)
+            {
+                return BehaviourTreeManager.Houses[i];
+            }
+        }
+        Debug.LogWarning("Tried to find a house to spawn colonists where none exists");
+        return null;
     }
     
     

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,13 +14,11 @@ public enum HousePanelEditMode
 
 public class HouseUI : MonoBehaviour {
 
-    [SerializeField]
-    private GameObject colonistPrefab;
-
+    [HideInInspector]
+    public HouseFunction focusedHouse;
 
     private InputField[] inputFields;
-    [SerializeField]
-    private int currSelectedColonists;
+
 
     HousePanelEditMode mode;
 
@@ -139,23 +137,25 @@ public class HouseUI : MonoBehaviour {
         //spawn the required number of hunters
         for(int h = 0; h < hunter; h++)
         {
-            ColonistController colonist = Instantiate(colonistPrefab).GetComponent<ColonistController>();
-            colonist.colonistJob = ColonistJobType.Hunter;
+            ColonistController colonist =ColonistSpawner.Instance.SpawnColonist(focusedHouse.transform.position,ColonistJobType.Hunter);
+
         }
         //spawn the required number of scouts
         for(int s = 0; s < scout; s++)
         {
-            ColonistController colonist = Instantiate(colonistPrefab).GetComponent<ColonistController>();
-            colonist.colonistJob = ColonistJobType.Scout;
+            ColonistController colonist = ColonistSpawner.Instance.SpawnColonist(focusedHouse.transform.position, ColonistJobType.Scout);
+
         }
         //spawn the required number of crafters
         for(int c = 0; c < crafter; c++)
         {
-            ColonistController colonist = Instantiate(colonistPrefab).GetComponent<ColonistController>();
-            colonist.colonistJob = ColonistJobType.Crafter;
+            ColonistController colonist = ColonistSpawner.Instance.SpawnColonist(focusedHouse.transform.position, ColonistJobType.Crafter);
+
         }
         //then return the recently used button
         AlertsManager.Instance.ReturnAlertButton(UIPanels.Instance.alertsHolder.GetChild(AlertsManager.Instance.currentAlertButtonIndex).gameObject);
+        //and set the focused house to having spawned colonists
+        focusedHouse.colonistsSpawned = true;
     }
 
     public void ResetHouseUI()

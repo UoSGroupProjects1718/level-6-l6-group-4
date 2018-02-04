@@ -1,9 +1,12 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HouseFunction : BuildingFunction {
+
+    [HideInInspector]
+    public bool colonistsSpawned;
 
     public override void Function()
     {
