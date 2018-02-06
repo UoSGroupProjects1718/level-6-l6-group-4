@@ -5,7 +5,6 @@ UI:
 	Main HUD
 	Inventory
 	NPC info
-	Task timer
 	Alerts/Info box
 	Job
 	House UI
