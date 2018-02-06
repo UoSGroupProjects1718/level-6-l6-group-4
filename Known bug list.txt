@@ -4,3 +4,6 @@
  - Armoury UI needs to update when a new item enters the inventory
  - Blacksmith number of items to make needs to be reset to 1 each time the panel is opened 
  - The agent's damage reduction from armour is not updated when they initially put on armour - when the armour slot is null to begin with
+ - Houses have no scaffold when being built (Doug)
+ - Some of the resource drops are missing some or all materials (Doug)
+ - Weapons cannot be equpped (Doug)
