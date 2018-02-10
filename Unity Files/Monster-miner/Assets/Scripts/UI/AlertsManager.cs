@@ -102,7 +102,7 @@ public class AlertsManager : SingletonClass<AlertsManager>
             //make it active
             alertButton.SetActive(true);
             //and set its transform parent
-            alertButton.transform.SetParent(alertsContentParent);
+            alertButton.transform.parent = alertsContentParent;
             alertButton.transform.localScale = Vector2.one;
             return alertButton;
         }
@@ -112,7 +112,7 @@ public class AlertsManager : SingletonClass<AlertsManager>
     public void ReturnAlertButton(GameObject alertButton)
     {
         alertButton.SetActive(false);
-        alertButton.transform.SetParent(alertsButtonPoolParent);
+        alertButton.transform.parent = alertsButtonPoolParent;
     }
 
     public HouseFunction FindNonCompletedHouse()

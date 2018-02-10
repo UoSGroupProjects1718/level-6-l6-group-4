@@ -98,7 +98,7 @@ public class TimeManager : SingletonClass<TimeManager> {
     private void Update()
     {
         string timeOfDay = (IngameTime.hours > 12) ? " pm" : " am";
-        dateText.text = IngameTime.hours + " : " + Mathf.RoundToInt(IngameTime.minutes) + timeOfDay + "\n" + IngameTime.Date.x + ", " + IngameTime.Date.y + ", " + IngameTime.Date.z;
+        dateText.text = IngameTime.hours + " : " + Mathf.RoundToInt(IngameTime.minutes) + timeOfDay + "  " + IngameTime.Date.x + ", " + IngameTime.Date.y + ", " + IngameTime.Date.z;
     }
 
     public void SetGameTime(GameTime newGameTime) {

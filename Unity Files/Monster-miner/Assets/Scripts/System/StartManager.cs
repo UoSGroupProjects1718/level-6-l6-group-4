@@ -33,12 +33,15 @@ public class StartManager : MonoBehaviour {
         ColonistSpawner.Instance.SpawnColonist(new Vector3(1,0,0),ColonistJobType.Crafter);
         ColonistSpawner.Instance.SpawnColonist(new Vector3(-4, 0, 0), ColonistJobType.Scout);
         ColonistSpawner.Instance.SpawnColonist(new Vector3(-2, 0, -2), ColonistJobType.Hunter);
-
-        MonsterSpawner.Instance.NewWorldSpawnMonsters();
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(-1, 0, 0), "Small Bone Herbivore");
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(-1, 0, 1), "Large Bone Herbivore");
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(1, 0, -1), "Small Bone Carnivore");
+        MonsterSpawner.Instance.SpawnMonster(new Vector3(1, 0, 1), "Large Bone Carnivore");
     }
 
     void GenerateWorld() {
         StartCoroutine(terrainSpawner.SpawnNewWorld());
+        //MonsterSpawner.Instance.NewWorldSpawnMonsters();
     }
 
     void LoadWorld() {
