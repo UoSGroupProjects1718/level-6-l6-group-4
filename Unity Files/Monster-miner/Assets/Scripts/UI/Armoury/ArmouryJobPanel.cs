@@ -205,27 +205,12 @@ public class ArmouryJobPanel : MonoBehaviour
 
             //then we want to set the equipped item information and the colonist picture
             Transform equippedItemImages = tertiaryPanel.transform.GetChild(1);
-            //set the colour of the image (this will be replaced with sprites for each job type)
-            switch (colonist.colonistJob)
-            {
-                case ColonistJobType.Crafter:
-                    equippedItemImages.GetChild(0).GetComponent<Image>().color = Color.blue;
-                    break;
-                case ColonistJobType.Hunter:
-                    equippedItemImages.GetChild(0).GetComponent<Image>().color = Color.red;
-                    break;
-                case ColonistJobType.Scout:
-                    equippedItemImages.GetChild(0).GetComponent<Image>().color = Color.green;
-                    break;
-                default:
-                    Debug.Log("Colonist is not of valid job type");
-                    break;
-            }
+
             //then get each of the images and apply the item's ui sprite to them.
-            equippedItemImages.GetChild(1).GetComponent<Image>().sprite = colonist.colonistEquipment.equippedArmour[0].uiSprite;
-            equippedItemImages.GetChild(2).GetComponent<Image>().sprite = colonist.colonistEquipment.equippedArmour[1].uiSprite;
-            equippedItemImages.GetChild(3).GetComponent<Image>().sprite = colonist.colonistEquipment.equippedArmour[2].uiSprite;
-            equippedItemImages.GetChild(4).GetComponent<Image>().sprite = colonist.colonistEquipment.weapon.uiSprite;
+            equippedItemImages.GetChild(0).GetComponent<Image>().sprite = colonist.colonistEquipment.equippedArmour[0].uiSprite;
+            equippedItemImages.GetChild(1).GetComponent<Image>().sprite = colonist.colonistEquipment.equippedArmour[1].uiSprite;
+            equippedItemImages.GetChild(2).GetComponent<Image>().sprite = colonist.colonistEquipment.equippedArmour[2].uiSprite;
+            equippedItemImages.GetChild(3).GetComponent<Image>().sprite = colonist.colonistEquipment.weapon.uiSprite;
             //then activate the panel
             tertiaryPanel.SetActive(true);
         }
@@ -260,7 +245,7 @@ public class ArmouryJobPanel : MonoBehaviour
             focusedColonist.colonistEquipment.EquipWearable(correspondingWearable);
 
             //and set the equipped item image
-            UIPanels.Instance.armouryPanel.transform.GetChild(1).GetChild(1).GetChild((int)correspondingWearable.armourSlot + 1).GetComponent<Image>().sprite = correspondingWearable.uiSprite;
+            UIPanels.Instance.armouryPanel.transform.GetChild(1).GetChild(1).GetChild((int)correspondingWearable.armourSlot).GetComponent<Image>().sprite = correspondingWearable.uiSprite;
 
             //and remove the corresponding button and get a new one 
             if (!Stockpile.Instance.wearableInventoryDictionary.ContainsKey(correspondingWearable))
