@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Small Bone Herbivore
   monsterType: 1
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 8.1
   maxHealth: 45
   combatRange: 4
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 3
   nextAttack: 0
   matingCooldown: 90
-  monsterMeshAndBones: {fileID: 1122385307861184, guid: c8bcd408ca756a64ebc3af5de8332767,
+  monsterMeshAndBones: {fileID: 1122385307861184, guid: 56ef96565d04e704babb117653019ec2,
     type: 2}
   dropTable: {fileID: 11400000, guid: f0d09c7df608ac44d9860fb76e281332, type: 2}

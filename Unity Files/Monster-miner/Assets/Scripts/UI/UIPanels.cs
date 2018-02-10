@@ -72,8 +72,13 @@ public class UIPanels : SingletonClass<UIPanels> {
 
     public void ResetPanel(Transform panel)
     {
+        //set the tertiary panel to false
         panel.GetChild(1).gameObject.SetActive(false);
-        panel.GetChild(2).gameObject.SetActive(false);
+        //set the close tertiary button to false
+        if(panel.childCount > 2)
+        {
+            panel.GetChild(2).gameObject.SetActive(false);
+        }
         panel.GetComponent<RectTransform>().anchoredPosition = panelSharedAnchorPoint;
     }
 

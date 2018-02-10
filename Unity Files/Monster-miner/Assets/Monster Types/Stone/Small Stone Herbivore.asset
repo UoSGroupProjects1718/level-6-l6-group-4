@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Small Stone Herbivore
   monsterType: 1
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 7
   maxHealth: 56
   combatRange: 4
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 3
   nextAttack: 0
   matingCooldown: 90
-  monsterMeshAndBones: {fileID: 1074049412140016, guid: df7f6209856ebfe4ab8fd24770b43616,
+  monsterMeshAndBones: {fileID: 1074049412140016, guid: 38af2ddf6baf9ab4d8d6b3602e609f0e,
     type: 2}
   dropTable: {fileID: 11400000, guid: f79fdfa3483ba014182aa211201fa7b5, type: 2}

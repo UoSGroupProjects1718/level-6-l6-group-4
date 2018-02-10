@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Large Stone Carnivore
   monsterType: 2
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 6.7
   maxHealth: 101
   combatRange: 15
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 0
   nextAttack: 0
   matingCooldown: 180
-  monsterMeshAndBones: {fileID: 1890045635543584, guid: 29ec84347908061498eb53d35c31b8a3,
+  monsterMeshAndBones: {fileID: 1890045635543584, guid: f0a9d6d2133cb06408cfddb58bc5024d,
     type: 2}
   dropTable: {fileID: 11400000, guid: 3f22523240ec40841b2549a9e76001da, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Large Stone Herbivore
   monsterType: 3
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 5
   maxHealth: 175
   combatRange: 10
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 1
   nextAttack: 0
   matingCooldown: 300
-  monsterMeshAndBones: {fileID: 1839860248496744, guid: 54cbc1f2cd63cca41bc55ebb9217a5f4,
+  monsterMeshAndBones: {fileID: 1839860248496744, guid: a0d06ae70b95e9a498deb278688eb391,
     type: 2}
   dropTable: {fileID: 11400000, guid: 47e6517a876d7b3499f0467c63b49dd9, type: 2}

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jobName: Build House
   maxWorkAmount: 40
-  currentWorkAmount: 0
+  currentWorkAmount: 40
   jobType: 3
   jobLocation: {x: 0, y: 0, z: 0}
-  interactionObject: {fileID: 1006396104650416, guid: 4404fdfc25430b444ae1209b7dfbba05,
+  interactionObject: {fileID: 1006396104650416, guid: c9722d3f79172a240a90e74809f05fcb,
     type: 2}
   interactionItem: {fileID: 0}
   RequiredItems:

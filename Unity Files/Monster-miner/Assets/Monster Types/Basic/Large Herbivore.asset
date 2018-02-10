@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Large Herbivore
   monsterType: 3
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 5.9
   maxHealth: 100
   combatRange: 10
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 10
   nextAttack: 0
   matingCooldown: 300
-  monsterMeshAndBones: {fileID: 1036133119104658, guid: bb18e3daaf6f7d84fa3eac20606cd483,
+  monsterMeshAndBones: {fileID: 1036133119104658, guid: 772b8309ea9d3ff42b2d3bf593432cc1,
     type: 2}
   dropTable: {fileID: 11400000, guid: 1602999173a4e9845bde83a7fe445bcd, type: 2}

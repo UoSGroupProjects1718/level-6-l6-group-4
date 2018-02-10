@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Large Iron Herbivore
   monsterType: 3
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 5.6
   maxHealth: 160
   combatRange: 10
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 1
   nextAttack: 0
   matingCooldown: 300
-  monsterMeshAndBones: {fileID: 1349453669409676, guid: a69c71b123ede984fa2d3e756225baf9,
+  monsterMeshAndBones: {fileID: 1349453669409676, guid: 4645e52b081076e41846bb411af22a54,
     type: 2}
   dropTable: {fileID: 11400000, guid: d6f80fdb47d20ba41a287115cd537d01, type: 2}

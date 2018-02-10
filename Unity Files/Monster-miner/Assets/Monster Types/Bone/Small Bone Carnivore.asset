@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Small Bone Carnivore
   monsterType: 0
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 8.55
   maxHealth: 50
   combatRange: 5
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 0
   nextAttack: 0
   matingCooldown: 180
-  monsterMeshAndBones: {fileID: 1254877088806880, guid: a0d9f724047211f469ab9c8a91522bbe,
+  monsterMeshAndBones: {fileID: 1254877088806880, guid: 3e39db42af9cd0441be78c89b8ec2ca3,
     type: 2}
   dropTable: {fileID: 11400000, guid: bf38ece7e74a852419c36e48f2b8038f, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Small Stone Carnivore
   monsterType: 0
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 8.3
   maxHealth: 50
   combatRange: 5
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 0
   nextAttack: 0
   matingCooldown: 180
-  monsterMeshAndBones: {fileID: 1819039465734844, guid: 0fdf7067cef862141b25c7978f7f0d03,
+  monsterMeshAndBones: {fileID: 1819039465734844, guid: 538b7e7fbcecf2440bb6326fd373e6b5,
     type: 2}
   dropTable: {fileID: 11400000, guid: 53ac60da9cc194d4ca19d9fe8aea02bc, type: 2}

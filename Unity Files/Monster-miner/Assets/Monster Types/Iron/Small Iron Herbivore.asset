@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Small Iron Herbivore
   monsterType: 1
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 6.5
   maxHealth: 49
   combatRange: 4
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 3
   nextAttack: 0
   matingCooldown: 90
-  monsterMeshAndBones: {fileID: 1731603737830046, guid: dc7970094bf933740a6d42157230b00f,
+  monsterMeshAndBones: {fileID: 1731603737830046, guid: 1d71ed96f68912745b4afdfaf192ecb3,
     type: 2}
   dropTable: {fileID: 11400000, guid: 2072f8b2651dc6e4781d2699903994bd, type: 2}

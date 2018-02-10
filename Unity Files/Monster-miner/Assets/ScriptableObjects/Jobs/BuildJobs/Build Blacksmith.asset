@@ -16,7 +16,7 @@ MonoBehaviour:
   currentWorkAmount: 100
   jobType: 3
   jobLocation: {x: 0, y: 0, z: 0}
-  interactionObject: {fileID: 1207041932570270, guid: 6b10c66753c3f2145b862a885d30c64e,
+  interactionObject: {fileID: 1207041932570270, guid: 48cd6b4efe4c45946b176df3e181c292,
     type: 2}
   interactionItem: {fileID: 0}
   RequiredItems:

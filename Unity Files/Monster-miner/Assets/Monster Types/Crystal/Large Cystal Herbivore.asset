@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Large Crystal Carnivore
   monsterType: 3
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 5.4
   maxHealth: 200
   combatRange: 10
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 1
   nextAttack: 0
   matingCooldown: 300
-  monsterMeshAndBones: {fileID: 1071403159750074, guid: a4fbe8045a105974f95745146fae1928,
+  monsterMeshAndBones: {fileID: 1071403159750074, guid: 080a205e13e3fa345a280d01c7bc1671,
     type: 2}
   dropTable: {fileID: 11400000, guid: 9f488b970494da34dacacd9ca40db1a7, type: 2}

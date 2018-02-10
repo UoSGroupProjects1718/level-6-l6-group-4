@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Large Bone Carnivore
   monsterType: 2
-  numHuntersRequired: 0
+  numHuntersRequired: 1
   monsterSpeed: 6.8
   maxHealth: 85
   combatRange: 15
@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 0
   nextAttack: 0
   matingCooldown: 180
-  monsterMeshAndBones: {fileID: 1034468777459636, guid: 6386d63b15b5f6949b9de0942c2bbe53,
+  monsterMeshAndBones: {fileID: 1034468777459636, guid: 98f1c0c093268b74f88890e32be1558f,
     type: 2}
   dropTable: {fileID: 11400000, guid: b47d8196f8d90d34abae9a9c840f6718, type: 2}

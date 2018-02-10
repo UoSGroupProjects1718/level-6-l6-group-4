@@ -27,6 +27,6 @@ MonoBehaviour:
   naturalRegeneration: 0
   nextAttack: 0
   matingCooldown: 180
-  monsterMeshAndBones: {fileID: 1534380976066500, guid: e3193e713098f3f40a7c6800ba988a79,
+  monsterMeshAndBones: {fileID: 1534380976066500, guid: cc617853fb4bc66448cecfdda72a4bd1,
     type: 2}
   dropTable: {fileID: 11400000, guid: a408c1ee996fc534a85c906c26d37f2d, type: 2}
