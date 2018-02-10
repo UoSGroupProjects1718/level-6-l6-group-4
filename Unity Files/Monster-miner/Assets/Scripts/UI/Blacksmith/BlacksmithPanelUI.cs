@@ -72,6 +72,7 @@ public class BlacksmithPanelUI : MonoBehaviour {
 
             //activate the tertiary panel
             tertiaryPanel.gameObject.SetActive(true);
+            UIPanels.Instance.blacksmithPanel.transform.Find("CloseTertiaryButton").gameObject.SetActive(true);
         }
 
         

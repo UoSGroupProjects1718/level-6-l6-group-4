@@ -42,9 +42,10 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
 
     public void NewWorldSpawnMonsters()
     {
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 24; i++)
         {
-            SpawnMonster(Utils.RandomNavSphere(Vector3.zero, 90, -1), MonsterTypes.Instance.dictionaryKeys[Random.Range(0, 24)]);
+            SpawnMonster(Utils.RandomNavSphere(Vector3.zero, 800, -1), MonsterTypes.Instance.dictionaryKeys[i]);
+            SpawnMonster(Utils.RandomNavSphere(Vector3.zero, 800, -1), MonsterTypes.Instance.dictionaryKeys[i]);
         }
     }
 
