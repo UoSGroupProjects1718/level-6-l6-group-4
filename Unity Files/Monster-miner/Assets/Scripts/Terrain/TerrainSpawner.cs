@@ -242,8 +242,15 @@ public class TerrainSpawner : MonoBehaviour
     {
         foreach  (GameObject tile in list)
         {
-            if (tile.name == name || tile.name + "(Clone)"==name || tile.name == name + "(Clone)")
-                return true;
+            try
+            {
+                if (tile.name == name || tile.name + "(Clone)" == name || tile.name == name + "(Clone)")
+                    return true;
+            }
+            catch
+            {
+                Debug.LogError("A terrain spawning error has occoured. please contact Daniel");
+            }
         }
         return false;
     }   
