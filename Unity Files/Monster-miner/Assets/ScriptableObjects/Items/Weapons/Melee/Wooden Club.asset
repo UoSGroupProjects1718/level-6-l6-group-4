@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece5e7d9d29505845aae30f8927a643d, type: 3}
+  m_Name: Wooden Club
+  m_EditorClassIdentifier: 
+  attachedGameObject: {fileID: 0}
+  itemName: Wooden Club
+  itemDescription: 
+  decayPerHour: 0
+  maxItemDurability: 0
+  currentStackAmount: 0
+  GatherWorkPerItem: 0
+  uiSprite: {fileID: 0}
+  itemMesh: {fileID: 4300010, guid: 4bb2a8aeb1980ea42b80f811a6713fae, type: 3}
+  itemRenderer: {fileID: 23357997188857592, guid: 7294500bb323da84f9760ba268319a0b,
+    type: 2}
+  type: 6
+  armourSlot: 3
+  walkSpeedModifier: 0
+  workSpeedModifier: 0
+  Damage: 0
+  Range: 0
+  AttackSpeed: 0
+  Accuracy: 0

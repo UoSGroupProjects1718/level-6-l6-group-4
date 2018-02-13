@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: 2637587203cfec544944e83f6bb116b0
+timeCreated: 1518523979
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Melee Weapon Bone
+    100002: Melee Weapon Crystal
+    100004: Melee Weapon Metal
+    100006: Melee Weapon Stone
+    100008: Melee Weapon Wood
+    100010: //RootNode
+    100012: Ranged Weapon Bone
+    100014: Ranged Weapon Crystal
+    100016: Ranged Weapon Metal
+    100018: Ranged Weapon Stone
+    100020: Ranged Weapon Wood
+    100022: Unequipped Human
+    400000: Melee Weapon Bone
+    400002: Melee Weapon Crystal
+    400004: Melee Weapon Metal
+    400006: Melee Weapon Stone
+    400008: Melee Weapon Wood
+    400010: //RootNode
+    400012: Ranged Weapon Bone
+    400014: Ranged Weapon Crystal
+    400016: Ranged Weapon Metal
+    400018: Ranged Weapon Stone
+    400020: Ranged Weapon Wood
+    400022: Unequipped Human
+    2300000: Melee Weapon Bone
+    2300002: Melee Weapon Crystal
+    2300004: Melee Weapon Metal
+    2300006: Melee Weapon Stone
+    2300008: Melee Weapon Wood
+    2300010: Ranged Weapon Bone
+    2300012: Ranged Weapon Crystal
+    2300014: Ranged Weapon Metal
+    2300016: Ranged Weapon Stone
+    2300018: Ranged Weapon Wood
+    2300020: Unequipped Human
+    2300022: //RootNode
+    3300000: Melee Weapon Bone
+    3300002: Melee Weapon Crystal
+    3300004: Melee Weapon Metal
+    3300006: Melee Weapon Stone
+    3300008: Melee Weapon Wood
+    3300010: Ranged Weapon Bone
+    3300012: Ranged Weapon Crystal
+    3300014: Ranged Weapon Metal
+    3300016: Ranged Weapon Stone
+    3300018: Ranged Weapon Wood
+    3300020: Unequipped Human
+    3300022: //RootNode
+    4300000: Unequipped Human
+    4300002: Melee Weapon Bone
+    4300004: Melee Weapon Crystal
+    4300006: Melee Weapon Metal
+    4300008: Melee Weapon Stone
+    4300010: Melee Weapon Wood
+    4300012: Ranged Weapon Bone
+    4300014: Ranged Weapon Crystal
+    4300016: Ranged Weapon Metal
+    4300018: Ranged Weapon Stone
+    4300020: Ranged Weapon Wood
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

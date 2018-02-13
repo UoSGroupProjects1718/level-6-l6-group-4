@@ -187,19 +187,19 @@ public class ColonistController : MonoBehaviour {
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Head") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Chest") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Hunter Legs") as Wearable);
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Wood Crossbow") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Wooden Bow") as Wearable);
                 break;
             case ColonistJobType.Crafter:
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Head") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Chest") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Crafter Legs") as Wearable);
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Wood Crossbow") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Wooden Bow") as Wearable);
                 break;
             case ColonistJobType.Scout:
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Scout Head") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Scout Chest") as Wearable);
                 colonistEquipment.EquipWearable(ItemDatabase.GetItem("Scout Legs") as Wearable);
-                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Wood Crossbow") as Wearable);
+                colonistEquipment.EquipWearable(ItemDatabase.GetItem("Wooden Bow") as Wearable);
                 break;
             default:
                 break;
