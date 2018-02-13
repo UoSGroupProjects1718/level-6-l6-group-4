@@ -21,7 +21,15 @@ public class BuildingManager : SingletonClass<BuildingManager>
     private GameObject CurrentlySelectedBuilding;
     private Job currentJob;
 
-    private bool hasPlaced;
+    private bool _hasPlaced;
+
+    public bool HasPlaced
+    {
+        get
+        {
+            return _hasPlaced;
+        }
+    }
 
     private Vector3 BuildingLastPlaceHovered;
 
@@ -44,7 +52,7 @@ public class BuildingManager : SingletonClass<BuildingManager>
     private void Update()
     {
 
-        if (CurrentlySelectedBuilding && !hasPlaced)
+        if (CurrentlySelectedBuilding && !_hasPlaced)
         {
             //if we are mousing over ui, return
             if (EventSystem.current.IsPointerOverGameObject())
@@ -77,14 +85,14 @@ public class BuildingManager : SingletonClass<BuildingManager>
             if (Input.GetKeyDown(Keybinds.Instance.PrimaryActionKey) && IsLegalPosition())
             {
                 //stop the building from following the mouse
-                hasPlaced = true;
+                _hasPlaced = true;
                 //and then we queue a job
                 Job job = Instantiate(currentJob);
                 job.jobLocation = CurrentlySelectedBuilding.transform.position;
                 job.interactionObject = CurrentlySelectedBuilding;
                 JobManager.Instance.QueueJob(job);
                 CurrentlySelectedBuilding.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled = true;
-                CurrentlySelectedBuilding.GetComponent<Collider>().enabled = true;
+                //CurrentlySelectedBuilding.GetComponent<Collider>().enabled = true;
             }
 
         }
@@ -92,10 +100,10 @@ public class BuildingManager : SingletonClass<BuildingManager>
     }
     public void BuildingOnClick(int BuildingIndex)
     {
-        hasPlaced = false;
+        _hasPlaced = false;
         CurrentlySelectedBuilding = Instantiate(Buildings[BuildingIndex].interactionObject);
         SelectedBuildingFunction = CurrentlySelectedBuilding.GetComponent<BuildingFunction>();
-        CurrentlySelectedBuilding.GetComponent<Collider>().enabled = false;
+        //CurrentlySelectedBuilding.GetComponent<Collider>().enabled = false;
         CurrentlySelectedBuilding.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled = false;
         currentJob = Buildings[BuildingIndex];
     }
@@ -107,7 +115,7 @@ public class BuildingManager : SingletonClass<BuildingManager>
 
     private void ResetBuildingSelections()
     {
-        hasPlaced = false;
+        _hasPlaced = false;
         Destroy(CurrentlySelectedBuilding);
         CurrentlySelectedBuilding = null;
         SelectedBuildingFunction = null;

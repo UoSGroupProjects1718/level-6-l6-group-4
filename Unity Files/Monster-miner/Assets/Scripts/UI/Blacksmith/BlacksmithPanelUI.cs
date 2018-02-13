@@ -56,6 +56,7 @@ public class BlacksmithPanelUI : MonoBehaviour {
         else
         {
 
+            UIPanels.Instance.blacksmithInputField.text = "0";
             //set the focused recipe so we know what to do when we click on the button again
             focusedRecipe = correspondingRecipe;
             //set the sprite and text of the corresponding recipe

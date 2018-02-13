@@ -30,7 +30,7 @@ public abstract class BuildingFunction : MonoBehaviour {
     }
     public virtual void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject() || !BuildingManager.Instance.HasPlaced)
             return;
         if (Built)
         {
