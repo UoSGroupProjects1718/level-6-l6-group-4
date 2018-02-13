@@ -1,0 +1,16 @@
+13/02/18 - 10:00
+
+Members in attendance: Oliver, Douglas, Daniel
+
+Ross sent a message saying that his parents had turned up, and was unable to make it.
+
+Discussed next steps for the next few weeks regarding balancing
+
+Discussed how the 3d models are implemented in the game so that Douglas understood.
+
+Told douglas how to change number of resources for his use while testing.
+
+Set up jira sprint, similar to the previous week.
+
+
+10:30 meeting end
