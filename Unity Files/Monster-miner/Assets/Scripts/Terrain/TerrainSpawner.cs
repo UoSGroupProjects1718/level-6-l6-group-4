@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -19,7 +19,7 @@ public class TerrainSpawner : MonoBehaviour
     List<Vector2> NextSpawn = new List<Vector2>();
     GameObject parentObj;
 
-    public IEnumerator SpawnNewWorld()
+    public void SpawnNewWorld()
     {
         //create parent object to make hierachy look nicer to read/use
         parentObj = new GameObject();
@@ -43,7 +43,6 @@ public class TerrainSpawner : MonoBehaviour
         //memory clean up
         SpawnTiles = null;
         map = null;
-        yield return null;
     }
 
     public IEnumerator LoadWorld()

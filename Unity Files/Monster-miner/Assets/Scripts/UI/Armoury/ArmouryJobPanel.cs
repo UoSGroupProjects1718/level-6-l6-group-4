@@ -192,13 +192,11 @@ public class ArmouryJobPanel : MonoBehaviour
         {
             //if it is, we simply need to close it
             tertiaryPanel.SetActive(false);
-            UIPanels.Instance.armouryPanel.transform.GetChild(2).gameObject.SetActive(false);
         }
         //otherwise if it isnt active
         else
         {
 
-            UIPanels.Instance.armouryPanel.transform.GetChild(2).gameObject.SetActive(true);
             focusedColonist = colonist;
             //and set the name text
             tertiaryPanel.transform.GetChild(0).GetComponent<Text>().text =colonist.colonistName;
@@ -236,7 +234,7 @@ public class ArmouryJobPanel : MonoBehaviour
                 newButton.transform.localScale = Vector3.one;
             }
             //then add the item to the stockpile (check if the armour slot is weapon, if it is, then replace the weapon, if not then use the corresponding armour
-            Stockpile.Instance.AddWearable((correspondingWearable.armourSlot == ArmourSlot.Weapon) ? focusedColonist.colonistEquipment.weapon as Wearable:focusedColonist.colonistEquipment.equippedArmour[(int)correspondingWearable.armourSlot]);
+            Stockpile.Instance.AddWearable((correspondingWearable.armourSlot == ArmourSlot.Weapon) ? focusedColonist.colonistEquipment.weapon as Wearable : focusedColonist.colonistEquipment.equippedArmour[(int)correspondingWearable.armourSlot]);
 
             //then unequip the item in the item slot's spot
             focusedColonist.colonistEquipment.UnequipArmour(correspondingWearable.armourSlot);
@@ -245,7 +243,7 @@ public class ArmouryJobPanel : MonoBehaviour
             focusedColonist.colonistEquipment.EquipWearable(correspondingWearable);
 
             //and set the equipped item image
-            UIPanels.Instance.armouryPanel.transform.GetChild(1).GetChild(1).GetChild((int)correspondingWearable.armourSlot + 1).GetComponent<Image>().sprite = correspondingWearable.uiSprite;
+            UIPanels.Instance.armouryPanel.transform.GetChild(1).GetChild(1).GetChild((int)correspondingWearable.armourSlot).GetComponent<Image>().sprite = correspondingWearable.uiSprite;
 
             //and remove the corresponding button and get a new one 
             if (!Stockpile.Instance.wearableInventoryDictionary.ContainsKey(correspondingWearable))

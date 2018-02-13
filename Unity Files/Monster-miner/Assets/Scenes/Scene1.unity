@@ -2874,7 +2874,7 @@ Prefab:
     - target: {fileID: 224397163201473836, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -32.5
       objectReference: {fileID: 0}
     - target: {fileID: 224704701850355602, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -2894,7 +2894,7 @@ Prefab:
     - target: {fileID: 224704701850355602, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -74.815
       objectReference: {fileID: 0}
     - target: {fileID: 224296560404226642, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -2914,7 +2914,7 @@ Prefab:
     - target: {fileID: 224296560404226642, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -32.5
       objectReference: {fileID: 0}
     - target: {fileID: 224099310984636968, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -2934,7 +2934,7 @@ Prefab:
     - target: {fileID: 224099310984636968, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -74.815
       objectReference: {fileID: 0}
     - target: {fileID: 224660188681532628, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -2954,7 +2954,7 @@ Prefab:
     - target: {fileID: 224660188681532628, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -32.5
       objectReference: {fileID: 0}
     - target: {fileID: 224158892908163824, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -2974,7 +2974,7 @@ Prefab:
     - target: {fileID: 224158892908163824, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -74.815
       objectReference: {fileID: 0}
     - target: {fileID: 224830571497904898, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -3036,6 +3036,12 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114290415906102226, guid: d3826cc262d959e42b5827a242d0f6f0,
+        type: 2}
+      propertyPath: recipeButton
+      value: 
+      objectReference: {fileID: 1037835552974340, guid: e20984c0e3c494d4f929d686262d44b3,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3826cc262d959e42b5827a242d0f6f0, type: 2}
   m_IsPrefabParent: 0
@@ -3974,12 +3980,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4b5735d5552c442488cbe24d6ef1f9f9, type: 2}
   focusedPanel: {fileID: 0}
   resourceSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 1fecb224e7b8f404bbbade1dc6238668, type: 3}
+  - {fileID: 21300002, guid: 1fecb224e7b8f404bbbade1dc6238668, type: 3}
+  - {fileID: 21300004, guid: 1fecb224e7b8f404bbbade1dc6238668, type: 3}
+  - {fileID: 21300010, guid: 1fecb224e7b8f404bbbade1dc6238668, type: 3}
+  - {fileID: 21300008, guid: 1fecb224e7b8f404bbbade1dc6238668, type: 3}
+  - {fileID: 21300006, guid: 1fecb224e7b8f404bbbade1dc6238668, type: 3}
 --- !u!114 &824090732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5894,6 +5900,42 @@ Prefab:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114435919792271580, guid: 9d96a9cf95ad6014bbecadf139236d2d,
+        type: 2}
+      propertyPath: Content
+      value: 
+      objectReference: {fileID: 1522481581243246, guid: 62e1bcd7d5812cb469f31f6a0f169770,
+        type: 2}
+    - target: {fileID: 114124858339932152, guid: 9d96a9cf95ad6014bbecadf139236d2d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 824090733}
+    - target: {fileID: 114124858339932152, guid: 9d96a9cf95ad6014bbecadf139236d2d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncrementBarracksInputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 114946815181549092, guid: 9d96a9cf95ad6014bbecadf139236d2d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 824090733}
+    - target: {fileID: 114946815181549092, guid: 9d96a9cf95ad6014bbecadf139236d2d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecrementBarracksInputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 114424659346861996, guid: 9d96a9cf95ad6014bbecadf139236d2d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 824090733}
+    - target: {fileID: 114424659346861996, guid: 9d96a9cf95ad6014bbecadf139236d2d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BarracksConfirmButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d96a9cf95ad6014bbecadf139236d2d, type: 2}
   m_IsPrefabParent: 0
@@ -7311,6 +7353,18 @@ Prefab:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114550963040884740, guid: 39b509ba58f13c249a61a9f5ee6a3786,
+        type: 2}
+      propertyPath: colonistButton
+      value: 
+      objectReference: {fileID: 1813787759497278, guid: 8d407f7a84ed5624e9311a4e24354bb2,
+        type: 2}
+    - target: {fileID: 114550963040884740, guid: 39b509ba58f13c249a61a9f5ee6a3786,
+        type: 2}
+      propertyPath: wearableButton
+      value: 
+      objectReference: {fileID: 1156559608641412, guid: 36b40141d699bb947ab462b1b87a05d8,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39b509ba58f13c249a61a9f5ee6a3786, type: 2}
   m_IsPrefabParent: 0

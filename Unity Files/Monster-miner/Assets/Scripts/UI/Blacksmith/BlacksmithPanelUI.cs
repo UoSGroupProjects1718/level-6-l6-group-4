@@ -10,8 +10,7 @@ public class BlacksmithPanelUI : MonoBehaviour {
 
     private Transform tertiaryPanel;
     private Craftable focusedRecipe;
-    [SerializeField]
-    private Sprite requiredResourcesBaseSprite;
+
 
     public void Start()
     {
@@ -43,7 +42,7 @@ public class BlacksmithPanelUI : MonoBehaviour {
 
             for(int i = 0; i < requiredResources.childCount; i++)
             {
-                requiredResources.GetChild(i).GetChild(0).GetComponent<Image>().sprite = requiredResourcesBaseSprite;
+                requiredResources.GetChild(i).GetChild(0).GetComponent<Image>().sprite = null;
                 requiredResources.GetChild(i).GetComponentInChildren<Text>().text = string.Empty;
             }
         //if the tertiary panel is open and the focused recipe is the current one (we are pressing the same button again)

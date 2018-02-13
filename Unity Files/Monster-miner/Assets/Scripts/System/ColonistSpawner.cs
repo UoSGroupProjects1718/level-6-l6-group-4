@@ -1,4 +1,4 @@
-using System.Collections;
+using UnityEngine.AI;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,9 +26,17 @@ public class ColonistSpawner : SingletonClass<ColonistSpawner>
         controllers = new List<ColonistController>();
         for (int i = 0; i < defaultNumberOfColonists; i++)
         {
-            GameObject newColonist = Instantiate(ColonistPrefab, ParentObj.transform);
-            controllers.Add(newColonist.GetComponent<ColonistController>());
-            newColonist.SetActive(false);
+            NavMeshHit navHit;
+            if (NavMesh.SamplePosition(Vector3.zero, out navHit, 10f, -1))
+            {
+                GameObject newColonist = Instantiate(ColonistPrefab,navHit.position,Quaternion.identity, ParentObj.transform);
+                controllers.Add(newColonist.GetComponent<ColonistController>());
+                newColonist.SetActive(false);
+            }
+            else
+            {
+                Debug.LogError("Colonist pool spawning failed at " + i);
+            }
         }
 
         
@@ -56,18 +64,23 @@ public class ColonistSpawner : SingletonClass<ColonistSpawner>
     {
         foreach (ColonistController checkingController in controllers)
         {
-            if (checkingController.enabled == false)
+            if (checkingController.gameObject.activeSelf == false)
             {
                 checkingController.gameObject.SetActive(true);
                 return checkingController;
             }
         }
 
-
-        GameObject gObject = Instantiate(ColonistPrefab, ParentObj.transform);
-        ColonistController returnController = gObject.GetComponent<ColonistController>();
-        controllers.Add(returnController);
-        return returnController;
+        NavMeshHit navHit;
+        if (NavMesh.SamplePosition(Vector3.zero, out navHit, 10f, -1))
+        {
+            GameObject gObject = Instantiate(ColonistPrefab, ParentObj.transform);
+            ColonistController returnController = gObject.GetComponent<ColonistController>();
+            controllers.Add(returnController);
+            return returnController;
+        }
+        Debug.LogError("Colonist could not be spawned");
+        return null;
     }
     
 }

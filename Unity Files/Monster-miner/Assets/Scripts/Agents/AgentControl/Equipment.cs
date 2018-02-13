@@ -104,7 +104,6 @@ public class Equipment : MonoBehaviour
 
             weapon = null;
             equippedItemFilters[slotIndex].mesh = null;
-            equippedItemRenderers[slotIndex].materials = null;
             return;
         }
         //if there is no armour, we shouldnt be unequipping anyway
@@ -115,7 +114,6 @@ public class Equipment : MonoBehaviour
             //nullify the armour variables
             equippedArmour[slotIndex] = null;
             equippedItemFilters[slotIndex].mesh = null;
-            equippedItemRenderers[slotIndex].materials = null;
         }
     }
 
