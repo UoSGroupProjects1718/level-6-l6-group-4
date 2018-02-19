@@ -6,4 +6,6 @@
  - The agent's damage reduction from armour is not updated when they initially put on armour - when the armour slot is null to begin with
  - Houses have no scaffold when being built (Doug)
  - Some of the resource drops are missing some or all materials (Doug)
- 
+ - Granary scaffold spawns about twice as high off the ground as it's supposed to (the building once finished is fine) (Doug)
+ - Using W/S to control the camera also scrolls the UI if you've clicked on the scrollbar (Doug)
+ - The number for how many of an item are being made in the smith is not visible (Doug)
