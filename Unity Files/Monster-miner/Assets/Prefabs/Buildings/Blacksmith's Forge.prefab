@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 4612634421465356}
   - component: {fileID: 33827879780798684}
   - component: {fileID: 23441930077842376}
-  - component: {fileID: 65786201785954670}
   m_Layer: 11
   m_Name: Forge TI
   m_TagString: Building
@@ -56,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1207041932570270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.37, y: 3.03, z: -40.31}
+  m_LocalPosition: {x: -0.05493927, y: 13.75, z: -30.670414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4612634421465356}
@@ -70,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1786005004279264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.905052, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4021061775699762}
@@ -147,18 +146,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 17.7, y: 9.4, z: 17.58}
   m_Center: {x: 0.00000023841858, y: 4.95, z: -0.015934944}
---- !u!65 &65786201785954670
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1786005004279264}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 16.68947, y: 8.718534, z: 16.94066}
-  m_Center: {x: 0.00000023841858, y: -2.080976, z: -0.015934944}
 --- !u!114 &114847661239081106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scafoldingMesh: {fileID: 4300000, guid: 3612b32e4b385a842bcb3c1d7bb83c7b, type: 3}
+  scafoldingMesh: {fileID: 4300000, guid: 98aa0f920d3afcc4db240c83aa221aa9, type: 3}
 --- !u!208 &208720927884913684
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -194,7 +181,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 7.85, y: 4.9, z: 7.85}
+  m_Extents: {x: 7.9, y: 4.9, z: 7.85}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1

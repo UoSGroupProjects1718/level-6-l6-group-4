@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4802965713551658}
   - component: {fileID: 33581144372932370}
   - component: {fileID: 23274727480459832}
-  - component: {fileID: 65518065687056204}
   m_Layer: 11
   m_Name: Storage Yard TI
   m_TagString: Building
@@ -56,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1768753147500134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.7, y: 0, z: 0}
+  m_LocalPosition: {x: 23.297104, y: 10.27, z: 37.98553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4802965713551658}
@@ -70,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1180769719945120}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.3, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4055481833898176}
@@ -145,20 +144,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 16, y: 6.361136, z: 16}
+  m_Size: {x: 17.4, y: 6.361136, z: 17.42}
   m_Center: {x: 0, y: 3.54, z: 0}
---- !u!65 &65518065687056204
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1180769719945120}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 17, y: 6.361136, z: 17}
-  m_Center: {x: 0, y: 3.180568, z: 0}
 --- !u!114 &114314278700353768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scafoldingMesh: {fileID: 4300000, guid: 3612b32e4b385a842bcb3c1d7bb83c7b, type: 3}
+  scafoldingMesh: {fileID: 4300000, guid: 98aa0f920d3afcc4db240c83aa221aa9, type: 3}
 --- !u!114 &114938894742663706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,7 +181,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 7.62, y: 2.75, z: 7.67}
+  m_Extents: {x: 7.95, y: 2.75, z: 8.15}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1

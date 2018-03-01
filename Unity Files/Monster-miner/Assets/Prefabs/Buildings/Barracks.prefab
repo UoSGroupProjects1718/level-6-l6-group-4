@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 4912476731425154}
   - component: {fileID: 33756352771624052}
   - component: {fileID: 23495362853386030}
-  - component: {fileID: 65839487565062136}
   m_Layer: 11
   m_Name: Barracks TI
   m_TagString: Building
@@ -56,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690739389680340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.40234, y: 10.451273, z: -15.746609}
+  m_LocalPosition: {x: -23.737638, y: 10.66, z: 18.419525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4912476731425154}
@@ -70,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1954737038667934}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.51, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4768201924709564}
@@ -146,19 +145,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 17.61, y: 7.7, z: 17.15}
-  m_Center: {x: -2.96, y: 3.5, z: -3.45}
---- !u!65 &65839487565062136
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1954737038667934}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 16.54766, y: 7.0272017, z: 16.7236}
-  m_Center: {x: -2.8605578, y: 1.0334889, z: -3.4128785}
+  m_Center: {x: 0.6, y: 3.5, z: 0.1}
 --- !u!114 &114353636055006024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scafoldingMesh: {fileID: 4300000, guid: 3612b32e4b385a842bcb3c1d7bb83c7b, type: 3}
+  scafoldingMesh: {fileID: 4300000, guid: 98aa0f920d3afcc4db240c83aa221aa9, type: 3}
 --- !u!208 &208765738249277366
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -193,9 +180,9 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 7.985, y: 3.5, z: 8.2}
+  m_Extents: {x: 8, y: 3.5, z: 7.9}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -2.9, y: 3.27, z: -3.6}
+  m_Center: {x: 0.54, y: 3.27, z: 0.25}
   m_TimeToStationary: 0.5

@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 33379363359483928}
   - component: {fileID: 23254301150475400}
   - component: {fileID: 95414514081389348}
-  - component: {fileID: 65122554636913392}
   m_Layer: 11
   m_Name: House TI
   m_TagString: Building
@@ -70,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006396104650416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.91, y: -1.870414e-18, z: 2.5270789}
+  m_LocalPosition: {x: -91.06741, y: -2.3010454, z: -35.703903}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4295569875163928}
@@ -137,18 +136,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &65122554636913392
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1572665779260160}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 14.687893, y: 8.738664, z: 15.060951}
-  m_Center: {x: -0.23670578, y: 3.8693318, z: -1.0718977}
 --- !u!65 &65414632632548136
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -159,8 +146,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 14.9, y: 9, z: 14}
-  m_Center: {x: -0.27, y: 4.45, z: -1.34}
+  m_Size: {x: 15.9, y: 9, z: 16.1}
+  m_Center: {x: -0.27, y: 4.45, z: -0.7}
 --- !u!95 &95414514081389348
 Animator:
   serializedVersion: 3
@@ -189,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scafoldingMesh: {fileID: 4300000, guid: 3612b32e4b385a842bcb3c1d7bb83c7b, type: 3}
+  scafoldingMesh: {fileID: 4300000, guid: 98aa0f920d3afcc4db240c83aa221aa9, type: 3}
 --- !u!114 &114784331018041396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,9 +200,9 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 7.405, y: 3.84, z: 7.25}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.21, y: 3.27, z: -0.73}
   m_TimeToStationary: 0.5

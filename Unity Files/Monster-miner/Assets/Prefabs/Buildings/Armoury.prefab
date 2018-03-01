@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 4214411719153480}
   - component: {fileID: 33635885351169472}
   - component: {fileID: 23026167675888362}
-  - component: {fileID: 65943476363779914}
   m_Layer: 11
   m_Name: Building Armory T1
   m_TagString: Building
@@ -69,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585109613272100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.16477, y: 5.539255e-17, z: -74.83975}
+  m_LocalPosition: {x: -13.765604, y: 7.05, z: 44.570763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4214411719153480}
@@ -145,20 +144,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 16.3, y: 9, z: 17.36}
+  m_Size: {x: 16.3, y: 9, z: 16.6}
   m_Center: {x: 0, y: 4.1, z: 0}
---- !u!65 &65943476363779914
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1702500813145524}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 15.9, y: 8.79, z: 16.77}
-  m_Center: {x: 0, y: 3.95, z: 0}
 --- !u!114 &114468531129385020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scafoldingMesh: {fileID: 4300000, guid: 3612b32e4b385a842bcb3c1d7bb83c7b, type: 3}
+  scafoldingMesh: {fileID: 4300000, guid: 98aa0f920d3afcc4db240c83aa221aa9, type: 3}
 --- !u!208 &208581035097696630
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -194,7 +181,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 7.285, y: 4.515, z: 7.93}
+  m_Extents: {x: 7.3, y: 4.515, z: 7.65}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1

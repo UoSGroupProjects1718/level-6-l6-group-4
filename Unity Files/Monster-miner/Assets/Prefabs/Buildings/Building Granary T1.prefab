@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 4634971570262474}
   - component: {fileID: 33278589529596472}
   - component: {fileID: 23713154440723452}
-  - component: {fileID: 65740175587588458}
   m_Layer: 11
   m_Name: Granary TI
   m_TagString: Building
@@ -56,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1797977713699390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 4.085027, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4984222804164894}
@@ -69,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429845595509982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.9, y: 5.4308477e-17, z: 1.7}
+  m_LocalPosition: {x: 44.923935, y: 5.87, z: 19.877289}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4634971570262474}
@@ -141,20 +140,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.59, y: 6.708004, z: 14.109856}
+  m_Size: {x: 11.2, y: 6.708004, z: 15.2}
   m_Center: {x: 0.87286854, y: 3.17, z: 0}
---- !u!65 &65740175587588458
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1797977713699390}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 13.36412, y: 6.708004, z: 15.10986}
-  m_Center: {x: 0.87286854, y: -1.2310252, z: 0}
 --- !u!114 &114176009841562338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fbb28c71a160a45bd7ea369a4d7459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scafoldingMesh: {fileID: 4300000, guid: 3612b32e4b385a842bcb3c1d7bb83c7b, type: 3}
+  scafoldingMesh: {fileID: 4300000, guid: 98aa0f920d3afcc4db240c83aa221aa9, type: 3}
 --- !u!208 &208676760748278588
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -190,7 +177,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 6.6, y: 2.92, z: 7}
+  m_Extents: {x: 6.45, y: 2.92, z: 6.9}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1

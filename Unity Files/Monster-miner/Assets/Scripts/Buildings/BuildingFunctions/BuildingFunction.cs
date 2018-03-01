@@ -30,6 +30,7 @@ public abstract class BuildingFunction : MonoBehaviour {
     }
     public virtual void OnMouseDown()
     {
+        //ensure that the building isnt clicked on if a building is currently being placed or the pointer is over UI
         if (EventSystem.current.IsPointerOverGameObject() || !BuildingManager.Instance.HasPlaced)
             return;
         if (Built)

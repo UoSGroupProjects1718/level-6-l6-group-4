@@ -17,10 +17,12 @@ namespace MonsterMiner
 
                
                 Debug.DrawRay(Colonist.transform.position, Colonist.currentJob.jobLocation - Colonist.transform.position, Color.red);
+                //if the colonist doesnt have a path, repath it
                 if(Colonist.hasPath == false)
                 {
                     Colonist.NavMeshAgent.SetDestination(Colonist.currentJob.jobLocation);
                 }
+                //otherwise, check to see if it is currently at it's destination
                 if(!Colonist.NavMeshAgent.pathPending)
                 {
                     Colonist.hasPath = true;
@@ -33,6 +35,7 @@ namespace MonsterMiner
                 return Status.RUNNING;
             }
 
+            //returns true if the colonist is at it's destination
             private bool pathComplete(ColonistController colonist)
             {
                     if(Mathf.RoundToInt(Vector3.Distance(colonist.NavMeshAgent.destination,colonist.transform.position)) <= colonist.NavMeshAgent.stoppingDistance)
