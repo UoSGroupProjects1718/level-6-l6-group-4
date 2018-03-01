@@ -581,7 +581,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4649561a85deb8142a932ffbde6aa02d, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224161514988544816}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1050,7 +1050,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4649561a85deb8142a932ffbde6aa02d, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1076,9 +1076,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colonistContentParent: {fileID: 224935263394749712}
   wearableContentParent: {fileID: 224104659339710044}
-  colonistButton: {fileID: 1813787759497278, guid: 431646431d7abab44a434a777c6d2007,
+  colonistButton: {fileID: 1813787759497278, guid: 8d407f7a84ed5624e9311a4e24354bb2,
     type: 2}
-  wearableButton: {fileID: 1156559608641412, guid: 373ed3dea30005b45b136d649cc01e48,
+  wearableButton: {fileID: 1156559608641412, guid: 36b40141d699bb947ab462b1b87a05d8,
     type: 2}
   poolSize: 40
 --- !u!114 &114566067093157678
@@ -1165,8 +1165,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114250681709200030}
   m_HandleRect: {fileID: 224239011846878090}
   m_Direction: 2
-  m_Value: 0.9999966
-  m_Size: 0.9773999
+  m_Value: 0.99998647
+  m_Size: 0.97740006
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1864,7 +1864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 585, y: -266}
+  m_AnchoredPosition: {x: 380, y: 125}
   m_SizeDelta: {x: 816.79, y: 500}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224756890557468472

@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 86eea5b0d7e0949479637226063b45cc
-timeCreated: 1518260896
+guid: dbb53348f367adf43934d6860ccaa955
+timeCreated: 1519898676
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: HuntSelectedButtonSprite_0
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -39,12 +40,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 188, z: 0, w: 368}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -81,7 +82,21 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HuntSelectedButtonSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 745
+        height: 464
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

@@ -18,7 +18,7 @@ MonoBehaviour:
   maxItemDurability: 0
   currentStackAmount: 0
   GatherWorkPerItem: 0
-  uiSprite: {fileID: 0}
+  uiSprite: {fileID: 21300014, guid: a5d7dcd888187ee45ae5be651dae26b9, type: 3}
   itemMesh: {fileID: 4300010, guid: 4bb2a8aeb1980ea42b80f811a6713fae, type: 3}
   itemRenderer: {fileID: 23357997188857592, guid: 7294500bb323da84f9760ba268319a0b,
     type: 2}

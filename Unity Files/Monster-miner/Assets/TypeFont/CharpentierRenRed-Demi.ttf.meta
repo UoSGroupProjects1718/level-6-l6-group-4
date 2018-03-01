@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 4649561a85deb8142a932ffbde6aa02d
+timeCreated: 1519899413
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Charpentier Renaissance Demi Re
+  fontNames:
+  - Charpentier Renaissance Demi Re
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
