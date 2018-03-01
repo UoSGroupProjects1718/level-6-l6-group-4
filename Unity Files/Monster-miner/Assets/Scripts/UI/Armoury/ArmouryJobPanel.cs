@@ -147,8 +147,23 @@ public class ArmouryJobPanel : MonoBehaviour
             }
         }
     }
-    //on disable reset the pictures
-    public void OnDisable()
+    private void ResetTertiaryPanel()
+    {
+        while (wearableContentParent.transform.childCount > 0)
+        {
+
+            if (wearablePicPoolParent != null)
+            {
+                wearableContentParent.transform.GetChild(0).gameObject.SetActive(false);
+                wearableContentParent.transform.GetChild(0).SetParent(wearablePicPoolParent.transform);
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    private void ResetMainPanel()
     {
         while (colonistContentParent.transform.childCount > 0)
         {
@@ -163,19 +178,20 @@ public class ArmouryJobPanel : MonoBehaviour
                 break;
             }
         }
-        while (wearableContentParent.transform.childCount > 0)
-        {
+    }
+    public void UpdateArmouryTertiaryPanel()
+    {
 
-            if (wearablePicPoolParent != null)
-            {
-                wearableContentParent.transform.GetChild(0).gameObject.SetActive(false);
-                wearableContentParent.transform.GetChild(0).SetParent(wearablePicPoolParent.transform);
-            }
-            else
-            {
-                break;
-            }
-        }
+        ResetTertiaryPanel();
+
+        OnTertiaryPanelOpen();
+    }
+
+    //on disable reset the pictures
+    public void OnDisable()
+    {
+        ResetTertiaryPanel();
+        ResetMainPanel();
     }
 
     public void ColonistButtonClick()

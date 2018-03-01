@@ -18,6 +18,11 @@ namespace MonsterMiner
                         Colonist.currentJob.interactionObject.GetComponent<Item>().pickedUp = false;
                         Colonist.currentJob.interactionObject.SetActive(false);
                         Colonist.currentJob = null;
+                        //update colonist ui
+                        if (UIController.Instance.focusedColonist == Colonist)
+                        {
+                            UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                        }
                         Colonist.gathererStockpile = null;
                     }
                     //otherwise put what we can into the stockpile and create a new job, and put the item on the colonist's position
@@ -29,6 +34,11 @@ namespace MonsterMiner
                         ItemInfo item = Colonist.currentJob.interactionObject.GetComponent<Item>().item;
                         JobManager.CreateJob(JobType.Gathering, (item as Resource).GatherWorkPerItem * item.currentStackAmount, item.attachedGameObject, item.attachedGameObject.transform.position, Colonist.currentJob.jobName);
                         Colonist.currentJob = null;
+                        //update colonist UI
+                        if (UIController.Instance.focusedColonist == Colonist)
+                        {
+                            UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                        }
                         Colonist.gathererStockpile = null;
 
                     }
@@ -42,6 +52,11 @@ namespace MonsterMiner
                             
                         Colonist.currentJob.interactionObject.GetComponent<BlacksmithFunction>().beingWorked = false;
                         Colonist.currentJob = null;
+                        //update colonist UI
+                        if (UIController.Instance.focusedColonist == Colonist)
+                        {
+                            UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                        }
                         Colonist.gathererStockpile = null;
                       }
                       else
@@ -52,10 +67,18 @@ namespace MonsterMiner
                         //we will give a base of 5 work amount to pick up one piece of armour
                         JobManager.CreateJob(JobType.Gathering, 5, newItem.GetComponent<Item>().item,newItem, newItem.transform.position, "Gather" + Colonist.currentJob.interactionItem.itemName);
                         Colonist.currentJob = null;
+                        //update colonist UI
+                        if (UIController.Instance.focusedColonist == Colonist)
+                        {
+                            UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                        }
                         Colonist.gathererStockpile = null;
                     }
                 }
-                
+                if(UIPanels.Instance.armouryPanel.activeSelf)
+                {
+                    UIPanels.Instance.armouryPanel.GetComponent<ArmouryJobPanel>().UpdateArmouryTertiaryPanel();
+                }
                 UIController.Instance.UpdateStockpile();
                 return Status.SUCCESS;
             }

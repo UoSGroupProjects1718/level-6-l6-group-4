@@ -134,6 +134,7 @@ public class ColonistController : MonoBehaviour {
 
         if (CheckDead())
             Death();
+        //update colonist info panel
         if(UIController.Instance.focusedColonist == this)
         {
             UIController.Instance.UpdateColonistInfoPanel(this);
@@ -153,19 +154,13 @@ public class ColonistController : MonoBehaviour {
         Debug.Log(colonistName + " has died.");
     }
 
-    public void UpdateMoveSpeed(float MoveSpeed)
+    public void UpdateMoveSpeed(float modifier)
     {
-        //store the old move base move speed
-        float OldBase = colonistBaseMoveSpeed;
-        //then update the move speed
-        colonistBaseMoveSpeed = MoveSpeed;
-        //figure out the difference between the old and current move speeds
-        float diffBaseCurrent = OldBase - colonistMoveSpeed;
-        //then apply the new move speed with the current move speed penalty enacted
-        colonistMoveSpeed = colonistBaseMoveSpeed - diffBaseCurrent;
-        //and update the navmeshagent
+        colonistMoveSpeed += modifier;
+        colonistMoveSpeed = Mathf.Clamp(colonistMoveSpeed, colonistBaseMoveSpeed, 100);
         GetComponent<NavMeshAgent>().speed = colonistMoveSpeed;
     }
+
     public void UpdateWorkSpeed(float WorkSpeed)
     {
         //store the old base work speed

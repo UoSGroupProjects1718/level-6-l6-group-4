@@ -30,6 +30,11 @@ namespace MonsterMiner
                         JobManager.CreateJob(JobType.Gathering, gatherWork, Colonist.currentJob.interactionItem, newItem, newItem.transform.position, "Gather " + Colonist.currentJob.interactionItem.itemName);
                         Colonist.currentJob.interactionObject.GetComponent<BlacksmithFunction>().beingWorked = false;
                         Colonist.currentJob = null;
+                        //update colonist UI
+                        if (UIController.Instance.focusedColonist == Colonist)
+                        {
+                            UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                        }
                         return Status.FAILURE;
 
                     }
@@ -40,6 +45,11 @@ namespace MonsterMiner
                         int gatherWork = Colonist.currentJob.interactionItem.GatherWorkPerItem * Colonist.currentJob.interactionItem.currentStackAmount;
                         JobManager.CreateJob(JobType.Crafting, gatherWork, Colonist.currentJob.interactionItem, Colonist.currentJob.interactionObject, Colonist.currentJob.interactionObject.transform.position, "Gather " + Colonist.currentJob.interactionItem.itemName);
                         Colonist.currentJob = null;
+                        //update colonist UI
+                        if (UIController.Instance.focusedColonist == Colonist)
+                        {
+                            UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                        }
                         Colonist.currentJob.interactionObject.transform.position = Colonist.transform.position;
                         return Status.FAILURE;
                     }

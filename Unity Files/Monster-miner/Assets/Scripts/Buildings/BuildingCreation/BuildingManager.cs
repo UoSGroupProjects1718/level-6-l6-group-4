@@ -41,6 +41,7 @@ public class BuildingManager : SingletonClass<BuildingManager>
         {
             //instantiate a new button under the parent object, which holds a grid layout group
             GameObject button = Instantiate(ButtonPrefab, BuildingUIParent) as GameObject;
+            button.transform.localScale = Vector3.one;
             //change the text component of the button (until we get an actual button to use as a prefab)
             button.GetComponentInChildren<Text>().text = (Buildings[i]).interactionObject.name;
             //then add an onclick event to the button using a delegate

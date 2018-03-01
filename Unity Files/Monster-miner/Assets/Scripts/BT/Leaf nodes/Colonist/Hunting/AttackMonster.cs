@@ -29,6 +29,11 @@ namespace MonsterMiner
                             BehaviourTreeManager.Monsters.Remove(Colonist.target);
                             Colonist.target = null;
                             Colonist.currentJob = null;
+                            //update colonist UI
+                            if (UIController.Instance.focusedColonist == Colonist)
+                            {
+                                UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                            }
                         }
                     }
                    

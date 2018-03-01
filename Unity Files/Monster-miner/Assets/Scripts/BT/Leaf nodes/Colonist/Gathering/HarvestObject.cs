@@ -26,6 +26,11 @@ namespace MonsterMiner
                 }
                 Colonist.currentJob.interactionObject.transform.DetachChildren();
                 Colonist.currentJob = null;
+                //update colonist UI
+                if (UIController.Instance.focusedColonist == Colonist)
+                {
+                    UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                }
                 return Status.SUCCESS;
    
             }

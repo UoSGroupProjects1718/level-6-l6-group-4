@@ -12,11 +12,6 @@ public class Equipment : MonoBehaviour
 
     public float damageReduction = 0;
 
-    //public SkinnedMeshRenderer colonistBodyMesh;
-
-    private Transform headTransform;
-    private Transform torsoTransform;
-    private Transform legTransform;
 
     private void Awake()
     {
@@ -40,15 +35,25 @@ public class Equipment : MonoBehaviour
 
     public void UpdateDamageResistance(Armour oldArmour, Armour newArmour)
     {
-        //regardless of if we have a new armour piece we need to be reducing the DR of the old piece
-        damageReduction -= oldArmour.DamageReduction;
+
+        if(oldArmour != null)
+        {
+            //regardless of if we have a new armour piece we need to be reducing the DR of the old piece
+            damageReduction -= oldArmour.DamageReduction;
+            //update the walk speed modifier.
+            GetComponent<ColonistController>().UpdateMoveSpeed(-oldArmour.walkSpeedModifier);
+        }
+
         //then if we have new armour to swap out
         if (newArmour != null)
         {
-            //we increase the DR again
+            //we increase the DR
             damageReduction += newArmour.DamageReduction;
+            //update the walk speed modifier
+            GetComponent<ColonistController>().UpdateMoveSpeed(newArmour.walkSpeedModifier);
         }
-        Mathf.Clamp(damageReduction, 0, 100);
+        damageReduction = Mathf.Clamp(damageReduction, 0, 100);
+
     }
 
     //inspired by https://www.youtube.com/watch?v=ZBLvKR2E62Q&t=401s
@@ -57,13 +62,9 @@ public class Equipment : MonoBehaviour
         int slotIndex = (int)wearable.armourSlot;
         if (slotIndex != (int)ArmourSlot.Weapon)
         {
-            //check to see if the colonist is wearing armour
-            if (equippedArmour[slotIndex] != null)
-            {
-                //if so get the new DR
-                UpdateDamageResistance(equippedArmour[slotIndex], wearable as Armour);
-            }
 
+                //update damage resistance
+                UpdateDamageResistance(equippedArmour[slotIndex], wearable as Armour);
             
             //then make the corresponding slot contain the new armour info
             equippedArmour[slotIndex] = wearable as Armour;
@@ -77,15 +78,6 @@ public class Equipment : MonoBehaviour
             {
                 UIController.Instance.UpdateColonistInfoPanel(UIController.Instance.focusedColonist);
             }
-           
-            
-            
-            //SkinnedMeshRenderer newMesh = ItemDatabase.GetItemSkinnedMeshRenderer(wearable.itemName);
-            //newMesh.transform.parent = colonistBodyMesh.transform;
-            //newMesh.bones = colonistBodyMesh.bones;
-            //newMesh.rootBone = colonistBodyMesh.rootBone;
-            //equippedItemMeshes[slotIndex] = newMesh;
-
 
         }
         else

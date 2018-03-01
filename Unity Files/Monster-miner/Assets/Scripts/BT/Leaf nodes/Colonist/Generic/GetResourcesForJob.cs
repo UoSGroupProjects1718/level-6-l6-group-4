@@ -38,6 +38,11 @@ namespace MonsterMiner
                 //if this is not true, then we add the job back to the list, set the current job to null and return failure
                 JobManager.Instance.JobDocket.Add(Colonist.currentJob);
                 Colonist.currentJob = null;
+                //update colonist UI
+                if (UIController.Instance.focusedColonist == Colonist)
+                {
+                    UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                }
                 return Status.FAILURE;
             }
 
