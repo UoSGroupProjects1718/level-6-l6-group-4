@@ -3665,6 +3665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DaysPerHour: 50
   dateText: {fileID: 1744796963}
+  gameStartHour: 7
+  gameStartDate: {x: 1, y: 6, z: 1492}
 --- !u!114 &824090729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3718,11 +3720,11 @@ MonoBehaviour:
     _HashCodes: 03000000010000000200000004000000050000000000000000000000
     _Next: ffffffffffffffffffffffffffffffffffffffffffffffff00000000
     _Count: 6
-    _Version: 54
+    _Version: 56
     _FreeList: -1
     _FreeCount: 0
     _Keys: 03000000010000000200000004000000050000000000000000000000
-    _Values: f4010000f4010000f4010000f401000096000000f401000000000000
+    _Values: f4010000f4010000f4010000f401000019000000f401000000000000
   currResourceAmount: 150
   resourceSpace: 200
   nutritionSpace: 200
@@ -5716,6 +5718,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224805512403841854, guid: 9d96a9cf95ad6014bbecadf139236d2d,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d96a9cf95ad6014bbecadf139236d2d, type: 2}
   m_IsPrefabParent: 0
@@ -6985,7 +6992,7 @@ Prefab:
     - target: {fileID: 224935263394749712, guid: 39b509ba58f13c249a61a9f5ee6a3786,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -237.55255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224104659339710044, guid: 39b509ba58f13c249a61a9f5ee6a3786,
         type: 2}
@@ -6995,7 +7002,7 @@ Prefab:
     - target: {fileID: 224104659339710044, guid: 39b509ba58f13c249a61a9f5ee6a3786,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114626603795035950, guid: 39b509ba58f13c249a61a9f5ee6a3786,
         type: 2}

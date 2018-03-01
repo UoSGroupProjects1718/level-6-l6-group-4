@@ -41,11 +41,11 @@ public class BuildingManager : SingletonClass<BuildingManager>
         {
             //instantiate a new button under the parent object, which holds a grid layout group
             GameObject button = Instantiate(ButtonPrefab, BuildingUIParent) as GameObject;
-            button.transform.localScale = Vector3.one;
             //change the text component of the button (until we get an actual button to use as a prefab)
             button.GetComponentInChildren<Text>().text = (Buildings[i]).interactionObject.name;
             //then add an onclick event to the button using a delegate
             button.GetComponent<Button>().onClick.AddListener(delegate { BuildingOnClick(button.transform.GetSiblingIndex()); });
+            button.transform.localScale = Vector3.one;
         }
 
     }
@@ -93,7 +93,6 @@ public class BuildingManager : SingletonClass<BuildingManager>
                 job.interactionObject = CurrentlySelectedBuilding;
                 JobManager.Instance.QueueJob(job);
                 CurrentlySelectedBuilding.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled = true;
-                //CurrentlySelectedBuilding.GetComponent<Collider>().enabled = true;
             }
 
         }
@@ -104,7 +103,6 @@ public class BuildingManager : SingletonClass<BuildingManager>
         _hasPlaced = false;
         CurrentlySelectedBuilding = Instantiate(Buildings[BuildingIndex].interactionObject);
         SelectedBuildingFunction = CurrentlySelectedBuilding.GetComponent<BuildingFunction>();
-        //CurrentlySelectedBuilding.GetComponent<Collider>().enabled = false;
         CurrentlySelectedBuilding.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled = false;
         currentJob = Buildings[BuildingIndex];
     }

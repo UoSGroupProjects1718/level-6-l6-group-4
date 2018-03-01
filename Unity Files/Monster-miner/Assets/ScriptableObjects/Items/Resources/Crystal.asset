@@ -20,7 +20,7 @@ MonoBehaviour:
   GatherWorkPerItem: 10
   uiSprite: {fileID: 21300008, guid: 1fecb224e7b8f404bbbade1dc6238668, type: 3}
   itemMesh: {fileID: 4300000, guid: f0b2edd5710888c43a9178963568b58b, type: 3}
-  itemRenderer: {fileID: 23338170479975906, guid: 6ab42245bd15c4146a9d6880122b0a0e,
+  itemRenderer: {fileID: 23338170479975906, guid: 0b23f867db65eb246a096a898c63bb42,
     type: 2}
   type: 4
   minDropAmount: 5

@@ -20,18 +20,38 @@ namespace MonsterMiner
                             Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] -= Colonist.requiredNutritionPerDay;
                             Colonist.SetTimeOfNextMeal();
                             UIController.Instance.UpdateStockpile();
+                            //heal colonists once per day
+                            if(Colonist.health + Colonist.maxHealth/10 < Colonist.maxHealth)
+                            {
+                                Colonist.health += Colonist.maxHealth / 10;
+                            }
+                            if(Colonist.health + Colonist.maxHealth/10 >= Colonist.maxHealth)
+                            {
+                                Colonist.health = Colonist.maxHealth;
+                            }
+                            //update colonist info panel
+                            if (UIController.Instance.focusedColonist == Colonist)
+                            {
+                                UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                            }
+
                             return Status.SUCCESS;
+
                         }
                         //if not, figure out the amount we can take out, eat that and then reduce colonist health by 1 for each nutrition they could not consume
                         else
                         {
-                            float nerfMultiplier = 1 - ((float)Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] / (float)Colonist.requiredNutritionPerDay);
+   
                             Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] =0;
                             Colonist.health -= Colonist.maxHealth / 10;
-                            Colonist.colonistWorkSpeed -= (Colonist.colonistBaseWorkSpeed / 10) * nerfMultiplier;
-                            Colonist.colonistMoveSpeed -= (Colonist.colonistBaseMoveSpeed / 10) * nerfMultiplier;
+                            
                             Colonist.SetTimeOfNextMeal();
                             UIController.Instance.UpdateStockpile();
+                            //update colonist info panel
+                            if (UIController.Instance.focusedColonist == Colonist)
+                            {
+                                UIController.Instance.UpdateColonistInfoPanel(Colonist);
+                            }
                             return Status.SUCCESS;
                         }
                     }

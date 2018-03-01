@@ -15,18 +15,23 @@ public class TimeManager : SingletonClass<TimeManager> {
     [SerializeField]
     private Text dateText;
 
+    [SerializeField]
+    private int gameStartHour = 7;
+    [SerializeField]
+    private Vector3 gameStartDate = new Vector3(1,1,1492);
+
     public void BeginTime()
     {
         IngameTimeDisplay = new GameTime();
         //the amount of ingame minutes per second to inccrease the minute counter by
         //the amount of in game days to pass per real time hour multiplied by the amount of hours in the day, divided by the amount of minutes in an hour
         timeDelta = (( DaysPerHour * 24) / 60);
-        IngameTimeDisplay.Date = new Vector3(1, 1, 1492);
+        IngameTimeDisplay.Date = gameStartDate;
+        IngameTimeDisplay.hours = gameStartHour;
     }
     public void Start()
     {
        StartCoroutine("PassTime");
-       // StartCoroutine(PassTime());
     }
     
     public GameTime IngameTime
@@ -97,7 +102,7 @@ public class TimeManager : SingletonClass<TimeManager> {
     }
     private void Update()
     {
-        string timeOfDay = (IngameTime.hours > 12) ? " pm" : " am";
+        string timeOfDay = (IngameTime.hours >= 12) ? " pm" : " am";
         dateText.text = IngameTime.hours + " : " + Mathf.RoundToInt(IngameTime.minutes) + timeOfDay + "\n" + IngameTime.Date.x + ", " + IngameTime.Date.y + ", " + IngameTime.Date.z;
     }
 

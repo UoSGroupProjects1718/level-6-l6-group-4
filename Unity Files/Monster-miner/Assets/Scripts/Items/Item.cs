@@ -24,12 +24,16 @@ public class Item : MonoBehaviour {
         item.attachedGameObject = gameObject;
         currentItemDurability = item.maxItemDurability;
     }
-
+    private void OnEnable()
+    {
+        if(item != null)
+        currentItemDurability = item.maxItemDurability;
+    }
     private void FixedUpdate()
     {
        if(timeSpawned.hours != TimeManager.Instance.IngameTime.hours)
         {
-            if(!pickedUp)
+            if(!pickedUp && gameObject.activeSelf)
             {
                 currentItemDurability -= item.decayPerHour;
                 timeSpawned = TimeManager.Instance.IngameTime;
