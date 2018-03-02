@@ -14,12 +14,12 @@ MonoBehaviour:
   monsterName: Small Carnivore
   monsterType: 0
   numHuntersRequired: 1
-  monsterSpeed: 8.85
-  maxHealth: 35
+  monsterSpeed: 9
+  maxHealth: 75
   combatRange: 5
   viewRange: 40
-  damage: 15
-  attackSpeed: 2
+  damage: 25
+  attackSpeed: 3
   maxHunger: 50
   attackHungerPercentage: 40
   hungerLossPerSecond: 1

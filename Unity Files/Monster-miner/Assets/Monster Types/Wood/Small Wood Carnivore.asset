@@ -14,12 +14,12 @@ MonoBehaviour:
   monsterName: Small Wood Carnivore
   monsterType: 0
   numHuntersRequired: 1
-  monsterSpeed: 8.6
-  maxHealth: 47
+  monsterSpeed: 8.5
+  maxHealth: 100
   combatRange: 5
   viewRange: 40
-  damage: 15
-  attackSpeed: 2
+  damage: 30
+  attackSpeed: 3
   maxHunger: 100
   attackHungerPercentage: 40
   hungerLossPerSecond: 1

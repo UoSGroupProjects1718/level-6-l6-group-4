@@ -14,12 +14,12 @@ MonoBehaviour:
   monsterName: Large Iron Carnivore
   monsterType: 2
   numHuntersRequired: 1
-  monsterSpeed: 6
-  maxHealth: 120
+  monsterSpeed: 5
+  maxHealth: 550
   combatRange: 15
   viewRange: 65
-  damage: 30
-  attackSpeed: 6
+  damage: 85
+  attackSpeed: 5
   maxHunger: 100
   attackHungerPercentage: 25
   hungerLossPerSecond: 0.5

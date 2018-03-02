@@ -14,12 +14,12 @@ MonoBehaviour:
   monsterName: Small Stone Carnivore
   monsterType: 0
   numHuntersRequired: 1
-  monsterSpeed: 8.3
-  maxHealth: 50
+  monsterSpeed: 7
+  maxHealth: 300
   combatRange: 5
   viewRange: 40
-  damage: 20
-  attackSpeed: 3.5
+  damage: 50
+  attackSpeed: 5
   maxHunger: 100
   attackHungerPercentage: 40
   hungerLossPerSecond: 1

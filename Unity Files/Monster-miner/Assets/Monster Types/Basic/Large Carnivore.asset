@@ -14,11 +14,11 @@ MonoBehaviour:
   monsterName: Large Carnivore
   monsterType: 2
   numHuntersRequired: 1
-  monsterSpeed: 7.1
-  maxHealth: 65
+  monsterSpeed: 7
+  maxHealth: 200
   combatRange: 15
   viewRange: 65
-  damage: 25
+  damage: 42
   attackSpeed: 4
   maxHunger: 100
   attackHungerPercentage: 25

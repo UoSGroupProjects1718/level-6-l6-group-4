@@ -14,10 +14,10 @@ MonoBehaviour:
   monsterName: Small Stone Herbivore
   monsterType: 1
   numHuntersRequired: 1
-  monsterSpeed: 7
-  maxHealth: 56
+  monsterSpeed: 5
+  maxHealth: 500
   combatRange: 4
-  viewRange: 30
+  viewRange: 50
   damage: 0
   attackSpeed: 0
   maxHunger: 100

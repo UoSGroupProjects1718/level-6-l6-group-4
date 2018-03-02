@@ -14,10 +14,10 @@ MonoBehaviour:
   monsterName: Small Bone Herbivore
   monsterType: 1
   numHuntersRequired: 1
-  monsterSpeed: 8.1
-  maxHealth: 45
+  monsterSpeed: 10
+  maxHealth: 200
   combatRange: 4
-  viewRange: 30
+  viewRange: 50
   damage: 0
   attackSpeed: 0
   maxHunger: 100

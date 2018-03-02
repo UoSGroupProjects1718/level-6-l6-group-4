@@ -24,6 +24,6 @@ MonoBehaviour:
     type: 2}
   type: 6
   armourSlot: 1
-  walkSpeedModifier: -2
-  workSpeedModifier: -2
-  DamageReduction: 10
+  walkSpeedModifier: 0.75
+  workSpeedModifier: 0
+  DamageReduction: 15

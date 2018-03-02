@@ -14,12 +14,12 @@ MonoBehaviour:
   monsterName: Large Iron Herbivore
   monsterType: 3
   numHuntersRequired: 1
-  monsterSpeed: 5.6
-  maxHealth: 160
+  monsterSpeed: 4.5
+  maxHealth: 1100
   combatRange: 10
   viewRange: 100
-  damage: 30
-  attackSpeed: 6
+  damage: 95
+  attackSpeed: 9
   maxHunger: 100
   attackHungerPercentage: 10
   hungerLossPerSecond: 0.5

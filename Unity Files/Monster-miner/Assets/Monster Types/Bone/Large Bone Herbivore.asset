@@ -14,11 +14,11 @@ MonoBehaviour:
   monsterName: Large Bone Herbivore
   monsterType: 3
   numHuntersRequired: 1
-  monsterSpeed: 5.4
-  maxHealth: 135
+  monsterSpeed: 6
+  maxHealth: 600
   combatRange: 10
   viewRange: 100
-  damage: 25
+  damage: 50
   attackSpeed: 5
   maxHunger: 100
   attackHungerPercentage: 10

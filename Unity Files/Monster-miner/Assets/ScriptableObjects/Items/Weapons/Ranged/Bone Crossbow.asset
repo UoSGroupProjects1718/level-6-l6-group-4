@@ -24,9 +24,9 @@ MonoBehaviour:
     type: 2}
   type: 6
   armourSlot: 3
-  walkSpeedModifier: 0
+  walkSpeedModifier: 0.25
   workSpeedModifier: 0
   Damage: 30
-  Range: 30
-  AttackSpeed: 2
-  Accuracy: 87
+  Range: 48
+  AttackSpeed: 5
+  Accuracy: 75

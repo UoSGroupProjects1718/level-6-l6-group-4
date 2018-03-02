@@ -15,11 +15,11 @@ MonoBehaviour:
   monsterType: 3
   numHuntersRequired: 1
   monsterSpeed: 5.9
-  maxHealth: 100
+  maxHealth: 300
   combatRange: 10
   viewRange: 100
-  damage: 20
-  attackSpeed: 5
+  damage: 45
+  attackSpeed: 6
   maxHunger: 150
   attackHungerPercentage: 15
   hungerLossPerSecond: 0.5

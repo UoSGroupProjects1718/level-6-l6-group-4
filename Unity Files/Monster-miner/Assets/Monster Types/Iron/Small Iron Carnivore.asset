@@ -14,12 +14,12 @@ MonoBehaviour:
   monsterName: Small Iron Carnivore
   monsterType: 0
   numHuntersRequired: 1
-  monsterSpeed: 7.3
-  maxHealth: 65
+  monsterSpeed: 8
+  maxHealth: 225
   combatRange: 5
   viewRange: 40
-  damage: 25
-  attackSpeed: 3.5
+  damage: 65
+  attackSpeed: 4
   maxHunger: 180
   attackHungerPercentage: 40
   hungerLossPerSecond: 1

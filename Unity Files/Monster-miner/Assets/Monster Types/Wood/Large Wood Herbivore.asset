@@ -14,12 +14,12 @@ MonoBehaviour:
   monsterName: Large Wood Carnivore
   monsterType: 3
   numHuntersRequired: 1
-  monsterSpeed: 5.35
-  maxHealth: 130
+  monsterSpeed: 4.5
+  maxHealth: 400
   combatRange: 10
   viewRange: 100
-  damage: 20
-  attackSpeed: 5
+  damage: 50
+  attackSpeed: 6
   maxHunger: 100
   attackHungerPercentage: 10
   hungerLossPerSecond: 0.5

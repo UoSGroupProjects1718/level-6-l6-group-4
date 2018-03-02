@@ -14,10 +14,10 @@ MonoBehaviour:
   monsterName: Large Crystal Carnivore
   monsterType: 3
   numHuntersRequired: 1
-  monsterSpeed: 6
-  maxHealth: 80
+  monsterSpeed: 8
+  maxHealth: 600
   combatRange: 4
-  viewRange: 30
+  viewRange: 60
   damage: 0
   attackSpeed: 0
   maxHunger: 100

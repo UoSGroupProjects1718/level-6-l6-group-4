@@ -14,12 +14,12 @@ MonoBehaviour:
   monsterName: Large Stone Carnivore
   monsterType: 2
   numHuntersRequired: 1
-  monsterSpeed: 6.7
-  maxHealth: 101
+  monsterSpeed: 3
+  maxHealth: 600
   combatRange: 15
   viewRange: 65
-  damage: 35
-  attackSpeed: 5
+  damage: 65
+  attackSpeed: 6
   maxHunger: 100
   attackHungerPercentage: 25
   hungerLossPerSecond: 0.5

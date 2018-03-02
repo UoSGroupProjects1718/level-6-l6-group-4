@@ -15,10 +15,10 @@ MonoBehaviour:
   monsterType: 2
   numHuntersRequired: 1
   monsterSpeed: 6.5
-  maxHealth: 78
+  maxHealth: 200
   combatRange: 15
   viewRange: 65
-  damage: 25
+  damage: 50
   attackSpeed: 4
   maxHunger: 100
   attackHungerPercentage: 25
