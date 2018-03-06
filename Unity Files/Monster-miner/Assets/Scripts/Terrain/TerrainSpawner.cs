@@ -10,7 +10,6 @@ public class TerrainSpawner : MonoBehaviour
     List<GameObject> GlobalList;
     [SerializeField]
     int tilesToSpawn = 3;
-    
     [SerializeField]
     float SpawnXDiff = 100;
     [SerializeField]
@@ -29,9 +28,9 @@ public class TerrainSpawner : MonoBehaviour
         ArraySize += 1; //+1 centre 
         map = new MapTileList[ArraySize, ArraySize];
         //spawn centre of the world
-        SpawnOrigin(tilesToSpawn + 1);
+        SpawnOrigin(tilesToSpawn);
         //add (0,0) neighbours to list.
-        AddNeighboursToList(tilesToSpawn + 1, tilesToSpawn + 1);
+        AddNeighboursToList(tilesToSpawn, tilesToSpawn);
         //begin flood fill
         while (NextSpawn.Count > 0)
         {
@@ -154,7 +153,7 @@ public class TerrainSpawner : MonoBehaviour
             int temp = Random.Range(0, GlobalList.Count);
             try
             {
-                GameObject tempObj = Instantiate(GlobalList[temp], new Vector3((x - tilesToSpawn - 1) * SpawnXDiff, 0, (y - tilesToSpawn - 1) * SpawnYDiff), Quaternion.identity, parentObj.transform);
+                GameObject tempObj = Instantiate(GlobalList[temp], new Vector3((x - tilesToSpawn) * SpawnXDiff, 0, (y - tilesToSpawn ) * SpawnYDiff), Quaternion.identity, parentObj.transform);
             
                 map[x, y] = tempObj.GetComponent<MapTileList>();
             }
@@ -165,7 +164,7 @@ public class TerrainSpawner : MonoBehaviour
         }
         else
         {
-            map[x, y] = Instantiate(PossibleList[Random.Range(0, PossibleList.Count)], new Vector3((x - tilesToSpawn-1) * SpawnXDiff, 0, (y- tilesToSpawn-1) *SpawnYDiff), Quaternion.identity, parentObj.transform).GetComponent<MapTileList>();
+            map[x, y] = Instantiate(PossibleList[Random.Range(0, PossibleList.Count)], new Vector3((x - tilesToSpawn) * SpawnXDiff, 0, (y- tilesToSpawn) *SpawnYDiff), Quaternion.identity, parentObj.transform).GetComponent<MapTileList>();
            
         }
         AddNeighboursToList(x, y);
