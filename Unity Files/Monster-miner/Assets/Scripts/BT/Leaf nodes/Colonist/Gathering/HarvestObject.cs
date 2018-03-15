@@ -44,7 +44,7 @@ namespace MonsterMiner
                     Item item = newItem.GetComponent<Item>();
                     newItem.transform.localScale = new Vector3(1, 1, 1);
                     newItem.transform.position = job.jobLocation;
-                    //newItem.GetComponent<MeshRenderer>().material.color = Color.white;
+                   
 
                     //if it is not a wearable, set a random stack amount
                     if (item.item.type != ItemType.Wearable)

@@ -26,6 +26,12 @@ public class ArmouryJobPanel : MonoBehaviour
    [SerializeField]
     private int poolSize = 40;
 
+    [SerializeField]
+    private Sprite hunterImg;
+    [SerializeField]
+    private Sprite crafterImg;
+    [SerializeField]
+    private Sprite gathererImg;
 
     void Awake()
     {
@@ -101,13 +107,13 @@ public class ArmouryJobPanel : MonoBehaviour
                 switch (BehaviourTreeManager.Colonists[i].colonistJob)
                 {
                     case ColonistJobType.Crafter:
-                        picture.transform.GetChild(0).GetComponent<Image>().color = Color.blue;
+                        picture.transform.GetChild(0).GetComponent<Image>().sprite = crafterImg;
                         break;
                     case ColonistJobType.Hunter:
-                        picture.transform.GetChild(0).GetComponent<Image>().color = Color.red;
+                        picture.transform.GetChild(0).GetComponent<Image>().sprite = hunterImg;
                         break;
                     case ColonistJobType.Scout:
-                        picture.transform.GetChild(0).GetComponent<Image>().color = Color.green;
+                        picture.transform.GetChild(0).GetComponent<Image>().sprite = gathererImg;
                         break;
                     default:
                         Debug.Log("Colonist is not of valid job type");
