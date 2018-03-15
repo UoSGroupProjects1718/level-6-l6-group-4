@@ -106,7 +106,7 @@ public class HouseUI : MonoBehaviour {
                 break;
         }
         //then basedon the summed values, figure out how much the current value can be.
-        maxAllowed = UIPanels.Instance.currHouseColonistAmount - sum;
+        maxAllowed = focusedHouse.colonistsToSpawn - sum;
 
         //then if it is above that value, make it the max possible value.
         if (val > maxAllowed)
@@ -114,10 +114,10 @@ public class HouseUI : MonoBehaviour {
 
         //update the total text to show the currently queued requested jobs
         int currentTotal = scout + hunter + crafter;
-        UIPanels.Instance.houseCompletionPanel.transform.Find("TotalChosenText").GetComponent<Text>().text = currentTotal.ToString() + "/" + UIPanels.Instance.currHouseColonistAmount;
+        UIPanels.Instance.houseCompletionPanel.transform.Find("TotalChosenText").GetComponent<Text>().text = currentTotal.ToString() + "/" + focusedHouse.colonistsToSpawn;
 
         //and check to see if the confirm button should be active
-        if (scout+hunter+crafter == UIPanels.Instance.currHouseColonistAmount)
+        if (scout+hunter+crafter == focusedHouse.colonistsToSpawn)
         {
             UIPanels.Instance.houseCompletionPanel.transform.Find("ConfirmButton").GetComponent<Button>().interactable = true;
         }
@@ -134,26 +134,7 @@ public class HouseUI : MonoBehaviour {
 
     public void ConfirmButton()
     {
-        //spawn the required number of hunters
-        for(int h = 0; h < hunter; h++)
-        {
-            ColonistController colonist =ColonistSpawner.Instance.SpawnColonist(focusedHouse.transform.position,ColonistJobType.Hunter);
-
-        }
-        //spawn the required number of scouts
-        for(int s = 0; s < scout; s++)
-        {
-            ColonistController colonist = ColonistSpawner.Instance.SpawnColonist(focusedHouse.transform.position, ColonistJobType.Scout);
-
-        }
-        //spawn the required number of crafters
-        for(int c = 0; c < crafter; c++)
-        {
-            ColonistController colonist = ColonistSpawner.Instance.SpawnColonist(focusedHouse.transform.position, ColonistJobType.Crafter);
-
-        }
-        //then return the recently used button
-        AlertsManager.Instance.ReturnAlertButton(UIPanels.Instance.alertsHolder.GetChild(AlertsManager.Instance.currentAlertButtonIndex).gameObject);
+        focusedHouse.SpawnColonists(hunter, scout, crafter);
         //and set the focused house to having spawned colonists
         focusedHouse.colonistsSpawned = true;
     }
@@ -171,7 +152,7 @@ public class HouseUI : MonoBehaviour {
         }
 
         UIPanels.Instance.houseCompletionPanel.transform.Find("ConfirmButton").GetComponent<Button>().interactable = false;
-        UIPanels.Instance.houseCompletionPanel.transform.Find("TotalChosenText").GetComponent<Text>().text = 0.ToString() + "/" + UIPanels.Instance.currHouseColonistAmount;
+        UIPanels.Instance.houseCompletionPanel.transform.Find("TotalChosenText").GetComponent<Text>().text = 0.ToString() + "/" + focusedHouse.colonistsToSpawn;
 
     }
 }

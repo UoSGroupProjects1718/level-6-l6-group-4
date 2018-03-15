@@ -3294,7 +3294,7 @@ Prefab:
     - target: {fileID: 224397163201473836, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -32.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224704701850355602, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -3314,7 +3314,7 @@ Prefab:
     - target: {fileID: 224704701850355602, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -74.815
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224296560404226642, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -3334,7 +3334,7 @@ Prefab:
     - target: {fileID: 224296560404226642, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -32.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224099310984636968, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -3354,7 +3354,7 @@ Prefab:
     - target: {fileID: 224099310984636968, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -74.815
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224660188681532628, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -3374,7 +3374,7 @@ Prefab:
     - target: {fileID: 224660188681532628, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -32.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224158892908163824, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -3394,7 +3394,7 @@ Prefab:
     - target: {fileID: 224158892908163824, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -74.815
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224830571497904898, guid: d3826cc262d959e42b5827a242d0f6f0,
         type: 2}
@@ -3642,7 +3642,6 @@ MonoBehaviour:
   panelSharedAnchorPoint: {x: 330, y: 187}
   textAlertPanel: {fileID: 1292559751}
   houseCompletionPanel: {fileID: 490638475}
-  currHouseColonistAmount: 4
   alertsHolder: {fileID: 0}
   barracksInputField: {fileID: 0}
   barracksPanel: {fileID: 0}
@@ -5673,7 +5672,7 @@ Prefab:
     - target: {fileID: 224935263394749712, guid: 39b509ba58f13c249a61a9f5ee6a3786,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -237.55255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224104659339710044, guid: 39b509ba58f13c249a61a9f5ee6a3786,
         type: 2}
@@ -5683,7 +5682,7 @@ Prefab:
     - target: {fileID: 224104659339710044, guid: 39b509ba58f13c249a61a9f5ee6a3786,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224253780799651530, guid: 39b509ba58f13c249a61a9f5ee6a3786,
         type: 2}

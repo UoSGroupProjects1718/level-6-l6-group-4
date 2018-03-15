@@ -88,9 +88,13 @@ public class UIController : SingletonClass<UIController>
     }
     public void UpdateStockpile()
     {
+        //reset the current resource amount
+        Stockpile.Instance.currResourceAmount = 0;
+
        for(int i = 0; i < (int)ItemType.Nutrition; i++)
         {
             stockpilePanel.transform.GetChild(i).GetComponent<Text>().text = (ItemType)i +": " +  Stockpile.Instance.inventoryDictionary[(ItemType)i].ToString();
+            Stockpile.Instance.currResourceAmount += Stockpile.Instance.inventoryDictionary[(ItemType)i];
         }
         stockpilePanel.transform.GetChild(stockpilePanel.transform.childCount - 2).GetComponent<Text>().text = "Total: " + Stockpile.Instance.currResourceAmount + " / " + Stockpile.Instance.resourceSpace;
         stockpilePanel.transform.GetChild(stockpilePanel.transform.childCount - 1).GetComponent<Text>().text = "Food: " + Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] + " / " + Stockpile.Instance.nutritionSpace;

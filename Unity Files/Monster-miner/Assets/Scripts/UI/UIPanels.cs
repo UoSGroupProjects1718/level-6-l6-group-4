@@ -8,7 +8,7 @@ public class UIPanels : SingletonClass<UIPanels> {
 
     public GameObject textAlertPanel;
     public GameObject houseCompletionPanel;
-    public int currHouseColonistAmount;
+ 
     public Transform alertsHolder;
 
 

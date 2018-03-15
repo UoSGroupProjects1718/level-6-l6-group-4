@@ -191,6 +191,7 @@ MonoBehaviour:
   Built: 0
   colliders: []
   colonistsSpawned: 0
+  colonistsToSpawn: 7
 --- !u!208 &208891099126462950
 NavMeshObstacle:
   m_ObjectHideFlags: 1
