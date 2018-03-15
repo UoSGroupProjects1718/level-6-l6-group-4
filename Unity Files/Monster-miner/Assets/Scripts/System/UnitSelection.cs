@@ -46,6 +46,7 @@ public class UnitSelection : MonoBehaviour {
         if (Input.GetKeyUp(Keybinds.Instance.PrimaryActionKey))
         {
             isSelecting = false;
+            CheckButtonActivate();
         }
         //check both lists, if the unit is within the bounds, select them.
         if (isSelecting)
@@ -86,6 +87,28 @@ public class UnitSelection : MonoBehaviour {
             }
         }
     }
+    private void CheckButtonActivate()
+    {
+        //if there is a selected colonist, show the button
+        if(SelectedColonists.Count > 0)
+        {
+            UIPanels.Instance.clearHuntButton.SetActive(true);
+        }
+        else
+        {
+            UIPanels.Instance.clearHuntButton.SetActive(false);
+        }
+        //if there is a selected monster, show the hunt button
+        if(SelectedMonsters.Count > 0)
+        {
+            UIPanels.Instance.huntSelectedButton.SetActive(true);
+        }
+        else
+        {
+            UIPanels.Instance.huntSelectedButton.SetActive(false);
+        }
+    }
+
     public bool IsWithinBounds(GameObject gameObject)
     {
         if (!isSelecting)

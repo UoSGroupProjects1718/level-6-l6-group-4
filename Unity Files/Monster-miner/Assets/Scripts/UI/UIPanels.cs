@@ -45,7 +45,11 @@ public class UIPanels : SingletonClass<UIPanels> {
     [SerializeField]
     private Sprite[] resourceSprites;
 
+    [HideInInspector]
+    public GameObject huntSelectedButton;
 
+    [HideInInspector]
+    public GameObject clearHuntButton;
 
 	public override void Awake ()
     {
@@ -67,6 +71,12 @@ public class UIPanels : SingletonClass<UIPanels> {
         blacksmithInputField = blacksmithPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<InputField>();
         ResetPanel(blacksmithPanel.transform);
         blacksmithPanel.SetActive(false);
+
+        huntSelectedButton = GameObject.Find("Hunt Selected");
+        clearHuntButton = GameObject.Find("ReturnFromHunt");
+        huntSelectedButton.SetActive(false);
+        clearHuntButton.SetActive(false);
+
     }
 
 

@@ -121,7 +121,13 @@ public class UIController : SingletonClass<UIController>
     {
         UIPanels.Instance.barracksPanel.transform.GetChild(1).gameObject.SetActive(!UIPanels.Instance.barracksPanel.transform.GetChild(1).gameObject.activeSelf);
     }
-
+    public void ReturnFromHuntOnClick()
+    {
+        for(int i = 0; i < UnitSelection.SelectedColonists.Count; i++)
+        {
+            UnitSelection.SelectedColonists[i].currentJob = null;
+        }
+    }
    
     public void IncrementBarracksInputField()
     {
