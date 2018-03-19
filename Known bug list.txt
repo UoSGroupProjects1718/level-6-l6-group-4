@@ -10,4 +10,4 @@
  - Using W/S to control the camera also scrolls the UI if you've clicked on the scrollbar (Doug)
  - The number for how many of an item are being made in the smith is not visible (Doug)
  - A grace period between being in combat and starting to regenerate is needed as dinosaurs can currently heal mid fight (Doug)
- 
+ - The return from hunt feature needs to remove the hunting job from the list entirely (Doug)
