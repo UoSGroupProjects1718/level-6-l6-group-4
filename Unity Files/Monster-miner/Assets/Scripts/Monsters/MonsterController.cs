@@ -23,7 +23,7 @@ public class MonsterController : MonoBehaviour {
     public int numHunters;
 
     public float monsterSpeed;
-    [HideInInspector]
+
     public float health;
     public float maxHealth;
     public float combatRange;

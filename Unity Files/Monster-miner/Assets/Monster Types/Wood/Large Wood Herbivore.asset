@@ -24,7 +24,7 @@ MonoBehaviour:
   attackHungerPercentage: 10
   hungerLossPerSecond: 0.5
   hungerDamage: 1
-  naturalRegeneration: 1
+  naturalRegeneration: 0
   nextAttack: 0
   matingCooldown: 300
   monsterMeshAndBones: {fileID: 1286493392418560, guid: 6538fc4ba97dc6f40a768eab390f53bb,
