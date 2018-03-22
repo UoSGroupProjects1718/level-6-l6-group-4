@@ -10,6 +10,15 @@ namespace MonsterMiner
         {
             public override Status UpdateFunc(ColonistController Colonist)
             {
+
+                //if the colonist is dead, stop it from wandering
+                if(Colonist.isDead)
+                {
+                    Colonist.NavMeshAgent.isStopped = true;
+                    Colonist.NavMeshAgent.ResetPath();
+                }
+
+
                 Colonist.wanderTimer += Time.deltaTime;
                 if (Colonist.wanderTimer >= Colonist.wanderRepathTimer)
                 {

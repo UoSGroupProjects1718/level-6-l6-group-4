@@ -54,12 +54,20 @@ public class ColonistSpawner : SingletonClass<ColonistSpawner>
         return controller;
     }
 
+    //return colonist back to pool
+    public void ReturnColonistToPool(GameObject colonist)
+    {
+        colonist.SetActive(false);
+    }
+
+
     string GetName()
     {
         currentColonist++;
         return "Steve " + currentColonist.ToString();
     }
 
+    //find an inactive controller
     ColonistController GetController()
     {
         foreach (ColonistController checkingController in controllers)

@@ -15,7 +15,15 @@ namespace MonsterMiner
                 if (Colonist.currentJob == null)
                     return Status.FAILURE;
 
-               
+               //if the colonist is dead, stop it from moving
+               if(Colonist.isDead)
+                {
+                    Colonist.NavMeshAgent.isStopped = true;
+                    Colonist.NavMeshAgent.ResetPath();
+                    return Status.FAILURE;
+                }
+
+
                 Debug.DrawRay(Colonist.transform.position, Colonist.currentJob.jobLocation - Colonist.transform.position, Color.red);
                 //if the colonist doesnt have a path, repath it
                 if(Colonist.hasPath == false)

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public enum ColonistJobType
 {
@@ -40,9 +41,12 @@ public class ColonistController : MonoBehaviour {
   
 
     public Equipment colonistEquipment;
-    
+
     #endregion
     #region misc
+    [SerializeField]
+    private float corpseCleanupDelay = 2.0f;
+
     [HideInInspector]
     public bool hasPath;
 
@@ -152,7 +156,45 @@ public class ColonistController : MonoBehaviour {
     {
         isDead = true;
         Debug.Log(colonistName + " has died.");
+
+        if (currentJob != null)
+        {
+            //return colonist job back to pool
+            switch (currentJob.jobType)
+            {
+                case JobType.Gathering:
+                    JobManager.CreateJob(currentJob.jobType, (int)currentJob.currentWorkAmount, currentJob.interactionItem, currentJob.interactionObject, currentJob.jobLocation, currentJob.jobName);
+                    break;
+                case JobType.Harvesting:
+                    JobManager.CreateJob(currentJob.jobType, (int)currentJob.currentWorkAmount, currentJob.interactionObject, currentJob.jobLocation, currentJob.jobName);
+                    break;
+                case JobType.Crafting:
+                    JobManager.CreateJob(currentJob.jobType, currentJob.RequiredItems, (int)currentJob.currentWorkAmount, currentJob.interactionItem, currentJob.jobLocation, currentJob.jobName);
+                    break;
+                case JobType.Building:
+                    JobManager.CreateJob(currentJob.jobType, currentJob.RequiredItems, (int)currentJob.currentWorkAmount, currentJob.interactionObject, currentJob.jobLocation, currentJob.jobName);
+                    break;
+                case JobType.Hunter:
+                    JobManager.CreateJob(currentJob.jobType, (int)currentJob.currentWorkAmount, currentJob.interactionObject, currentJob.interactionObject.transform.position, currentJob.jobName);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        //put the colonist on its side
+        transform.localEulerAngles = new Vector3(226, -132, -85); 
+
+        //start the corpse cleanup enumerator
+        StartCoroutine(CorpseCleanup(corpseCleanupDelay));
     }
+
+    private IEnumerator CorpseCleanup(float cleanupDelay)
+    {
+        yield return new WaitForSeconds(cleanupDelay);
+        ColonistSpawner.Instance.ReturnColonistToPool(gameObject);
+    }
+
 
     public void UpdateMoveSpeed(float modifier)
     {

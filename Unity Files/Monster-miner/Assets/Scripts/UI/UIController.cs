@@ -129,7 +129,10 @@ public class UIController : SingletonClass<UIController>
     {
         for(int i = 0; i < UnitSelection.SelectedColonists.Count; i++)
         {
-            UnitSelection.SelectedColonists[i].currentJob = null;
+            if(UnitSelection.SelectedColonists[i].currentJob.jobType == JobType.Hunter)
+            {
+                UnitSelection.SelectedColonists[i].currentJob = null;
+            }
         }
     }
    
