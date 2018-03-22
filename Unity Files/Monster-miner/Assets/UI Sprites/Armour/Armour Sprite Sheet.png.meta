@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 5b81b56d73e2ff3458bb242d67a9ba26
-timeCreated: 1518259633
+timeCreated: 1521728868
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -19,6 +19,25 @@ TextureImporter:
     21300024: Armour Sprite Sheet_27
     21300026: Armour Sprite Sheet_28
     21300028: Armour Sprite Sheet_29
+    21300030: Armour Sprite Sheet_34
+    21300032: Armour Sprite Sheet_35
+    21300034: Armour Sprite Sheet_37
+    21300036: Armour Sprite Sheet_38
+    21300038: Armour Sprite Sheet_39
+    21300040: Armour Sprite Sheet_40
+    21300042: Armour Sprite Sheet_41
+    21300044: Armour Sprite Sheet_43
+    21300046: Armour Sprite Sheet_44
+    21300048: Armour Sprite Sheet_46
+    21300050: Armour Sprite Sheet_47
+    21300052: Armour Sprite Sheet_48
+    21300054: Armour Sprite Sheet_49
+    21300056: Armour Sprite Sheet_50
+    21300058: Armour Sprite Sheet_52
+    21300060: Armour Sprite Sheet_53
+    21300062: Armour Sprite Sheet_0
+    21300064: Armour Sprite Sheet_1
+    21300066: Armour Sprite Sheet_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -98,141 +117,267 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Armour Sprite Sheet_20
+      name: Armour Sprite Sheet_34
       rect:
         serializedVersion: 2
-        x: 54
-        y: 250
-        width: 197
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Armour Sprite Sheet_21
-      rect:
-        serializedVersion: 2
-        x: 261
-        y: 248
+        x: 1700
+        y: 455
         width: 201
         height: 204
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Armour Sprite Sheet_22
+      name: Armour Sprite Sheet_35
       rect:
         serializedVersion: 2
-        x: 473
-        y: 249
-        width: 199
-        height: 202
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Armour Sprite Sheet_23
-      rect:
-        serializedVersion: 2
-        x: 684
-        y: 248
+        x: 1916
+        y: 455
         width: 201
         height: 204
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Armour Sprite Sheet_24
+      name: Armour Sprite Sheet_37
       rect:
         serializedVersion: 2
-        x: 899
-        y: 249
+        x: 422
+        y: 245
         width: 199
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 243
+        width: 202
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 244
+        width: 200
         height: 202
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Armour Sprite Sheet_25
+      name: Armour Sprite Sheet_40
       rect:
         serializedVersion: 2
-        x: 54
-        y: 39
+        x: 1053
+        y: 243
+        width: 202
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 244
+        width: 200
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 244
+        width: 201
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1916
+        y: 244
+        width: 201
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 34
+        width: 199
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 33
+        width: 200
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 33
+        width: 200
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 33
+        width: 200
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 33
+        width: 200
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 33
+        width: 201
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 1916
+        y: 33
+        width: 201
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armour Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 456
         width: 197
         height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Armour Sprite Sheet_26
+      name: Armour Sprite Sheet_1
       rect:
         serializedVersion: 2
-        x: 262
-        y: 38
-        width: 199
-        height: 202
+        x: 206
+        y: 245
+        width: 197
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Armour Sprite Sheet_27
+      name: Armour Sprite Sheet_2
       rect:
         serializedVersion: 2
-        x: 473
-        y: 38
-        width: 199
-        height: 202
+        x: 205
+        y: 34
+        width: 198
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Armour Sprite Sheet_28
-      rect:
-        serializedVersion: 2
-        x: 685
-        y: 38
-        width: 199
-        height: 202
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Armour Sprite Sheet_29
-      rect:
-        serializedVersion: 2
-        x: 899
-        y: 38
-        width: 199
-        height: 202
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

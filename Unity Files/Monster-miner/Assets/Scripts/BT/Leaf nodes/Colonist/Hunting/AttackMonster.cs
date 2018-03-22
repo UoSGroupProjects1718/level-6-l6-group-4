@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 namespace MonsterMiner
@@ -14,10 +13,13 @@ namespace MonsterMiner
                 if (Colonist.target == null)
                     return Status.FAILURE;
 
+                Colonist.transform.LookAt(Colonist.target.transform);
+
                 if(Time.time > Colonist.nextAttack)
                 {
                     if(HasHit(Colonist))
                     {
+                        
                         Colonist.nextAttack = Time.time + Colonist.colonistEquipment.weapon.AttackSpeed;
                         Colonist.target.TakeDamage(Colonist.colonistEquipment.weapon.Damage);
                         if (Colonist.target.CheckDead())

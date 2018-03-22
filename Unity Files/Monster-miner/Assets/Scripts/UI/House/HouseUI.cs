@@ -138,7 +138,7 @@ public class HouseUI : MonoBehaviour {
         //and set the focused house to having spawned colonists
         focusedHouse.colonistsSpawned = true;
     }
-
+    
     public void ResetHouseUI()
     {
         //reset the desired job variables
