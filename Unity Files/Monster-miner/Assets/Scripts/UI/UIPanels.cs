@@ -34,7 +34,9 @@ public class UIPanels : SingletonClass<UIPanels> {
     public GameObject blacksmithFocusedJob;
     public Craftable[] blacksmithCraftingRecipes;
 
-
+    //tooltip
+    [HideInInspector]
+    public GameObject tooltipPanel;
 
 
 
@@ -77,6 +79,8 @@ public class UIPanels : SingletonClass<UIPanels> {
         huntSelectedButton.SetActive(false);
         clearHuntButton.SetActive(false);
 
+        tooltipPanel = GameObject.Find("Item Tooltip");
+        tooltipPanel.SetActive(false);
     }
 
 

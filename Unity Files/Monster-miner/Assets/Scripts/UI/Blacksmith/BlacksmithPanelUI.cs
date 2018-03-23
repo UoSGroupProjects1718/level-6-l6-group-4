@@ -21,12 +21,26 @@ public class BlacksmithPanelUI : MonoBehaviour {
         //loop through all of the crafting recipes
         for (int i = 0; i < UIPanels.Instance.blacksmithCraftingRecipes.Length; i++)
         {
-            //and make a new button, then set the image and text of the button and add a listener.
+            //and make a new button and add a listener.
             GameObject button = Instantiate(recipeButton, contentParent);
-            button.transform.localScale = Vector3.one;
+            button.transform.localScale = Vector3.one; //have to reset the scale to one otherwise unity automatically re-scales the object
             button.GetComponent<Button>().onClick.AddListener(OnRecipeButtonPress);
+            //then set the image
             button.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = UIPanels.Instance.blacksmithCraftingRecipes[i].craftedItem.uiSprite;
+            //and text of the button
             button.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = UIPanels.Instance.blacksmithCraftingRecipes[i].craftedItem.itemName;
+
+            if((UIPanels.Instance.blacksmithCraftingRecipes[i].craftedItem as Wearable).armourSlot == ArmourSlot.Weapon)
+            {
+                button.AddComponent<WeaponTooltip>();
+            }
+            else
+            {
+                button.AddComponent<ArmourTooltip>();
+            }
+
+            //then let the tooltip class know which item to reference
+            button.GetComponent<ItemTooltip>().referenceItem = UIPanels.Instance.blacksmithCraftingRecipes[i].craftedItem;
         }
     }
     public void OnRecipeButtonPress()
