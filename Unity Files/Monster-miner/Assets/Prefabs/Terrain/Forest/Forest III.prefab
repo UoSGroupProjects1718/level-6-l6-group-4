@@ -43,6 +43,9 @@ GameObject:
   - component: {fileID: 114475636477937600}
   - component: {fileID: 114118419408397070}
   - component: {fileID: 64920643176486442}
+  - component: {fileID: 114255666103415490}
+  - component: {fileID: 114995833193289270}
+  - component: {fileID: 114105976357692146}
   m_Layer: 8
   m_Name: Forest III
   m_TagString: Floor
@@ -100,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817870032922604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 465}
+  m_LocalPosition: {x: -100, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4841542197675694}
@@ -202,6 +205,21 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!114 &114105976357692146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817870032922604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 52.422997, y: 3, z: 20.37268}
+  m_Center: {x: -10.752872, y: 1, z: -38.017174}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!114 &114118419408397070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,9 +245,24 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.33333334
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: d08664afc49a3df409ecdc9aefff2f5f, type: 2}
+--- !u!114 &114255666103415490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817870032922604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 30.778397, y: 3, z: 34.385963}
+  m_Center: {x: 0.34693146, y: 1, z: -0.069438934}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!114 &114331919428133494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -353,3 +386,18 @@ MonoBehaviour:
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
   m_Area: 0
+--- !u!114 &114995833193289270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817870032922604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 91.82754, y: 3, z: 24.534477}
+  m_Center: {x: -0.069187164, y: 1, z: 37.184612}
+  m_Area: 1
+  m_AffectedAgents: ffffffff

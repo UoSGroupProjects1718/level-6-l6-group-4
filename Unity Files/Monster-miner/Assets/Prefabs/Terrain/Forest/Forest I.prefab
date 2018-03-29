@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114143005812119128}
   - component: {fileID: 114917795779850812}
   - component: {fileID: 64540649865485820}
+  - component: {fileID: 114501789046577398}
   m_Layer: 8
   m_Name: Forest I
   m_TagString: Floor
@@ -42,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1182358080585296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 465}
+  m_LocalPosition: {x: -100, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -203,6 +204,21 @@ MonoBehaviour:
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
   m_Area: 0
+--- !u!114 &114501789046577398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182358080585296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 49.09729, y: 3, z: 54.807755}
+  m_Center: {x: -2.6356506, y: 1, z: -1.6837692}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!114 &114614349093137410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,6 +263,6 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.33333334
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}

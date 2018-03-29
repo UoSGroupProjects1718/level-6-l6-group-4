@@ -28,6 +28,8 @@ GameObject:
   - component: {fileID: 114890423509430388}
   - component: {fileID: 114590854060890592}
   - component: {fileID: 64420059102092952}
+  - component: {fileID: 114243795244505416}
+  - component: {fileID: 114674302705239514}
   m_Layer: 8
   m_Name: Oasis II
   m_TagString: Floor
@@ -42,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784098723332148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 465}
+  m_LocalPosition: {x: -200, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -170,6 +172,21 @@ MonoBehaviour:
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
   m_Area: 0
+--- !u!114 &114243795244505416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784098723332148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 102.78226, y: 30.20108, z: 95.105286}
+  m_Center: {x: 1.3292084, y: 20.22483, z: 0.4189663}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!114 &114362453364022740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,9 +231,24 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.33333334
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &114674302705239514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784098723332148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 67.11839, y: 3.1915016, z: 67.194565}
+  m_Center: {x: -0.9149246, y: 0.363966, z: 4.040779}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!114 &114695228541446298
 MonoBehaviour:
   m_ObjectHideFlags: 1

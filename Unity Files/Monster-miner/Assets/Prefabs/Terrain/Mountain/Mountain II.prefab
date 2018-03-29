@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114991440583720512}
   - component: {fileID: 114775162035310680}
   - component: {fileID: 64041349476899006}
+  - component: {fileID: 114786247914391156}
   m_Layer: 8
   m_Name: Mountain II
   m_TagString: Floor
@@ -42,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1229379433634408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 465}
+  m_LocalPosition: {x: -100, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -185,9 +186,24 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.33333334
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &114786247914391156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1229379433634408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 89.11064, y: 20.828056, z: 96.40857}
+  m_Center: {x: 3.4572678, y: 12.285503, z: 0.57232666}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!114 &114909236364287738
 MonoBehaviour:
   m_ObjectHideFlags: 1
