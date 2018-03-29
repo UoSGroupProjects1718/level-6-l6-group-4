@@ -1,0 +1,15 @@
+29/03/18 - 11:00
+
+Members in attendance - Oliver, Daniel, Douglas
+
+Ross arrived 1 hour late.
+
+- Douglas has completed his task to summarise playtesting from the previous week but has not uploaded it, this task was moved back to to-do
+- Douglas has not completed his playtesting + balancing task from this week without reason.
+- Ross has not completed his playtesting + balancing task from this week without reason.
+
+
+- Discussed the playtesting from two weeks before with ross
+- Discussed how to add some more player feedback to the game
+- Discussed missing UI assets and how to iterate on current UI assets
+- Agreed that due to playtesting feedback, the barracks building requires iteration

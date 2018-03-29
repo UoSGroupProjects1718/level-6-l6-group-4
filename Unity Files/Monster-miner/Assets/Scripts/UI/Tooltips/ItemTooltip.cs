@@ -18,7 +18,7 @@ public class ItemTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         UIPanels.Instance.tooltipPanel.SetActive(true);
         
         UpdateTooltip();
-        UIPanels.Instance.tooltipPanel.transform.position = Input.mousePosition;
+        UIPanels.Instance.tooltipPanel.transform.position = Input.mousePosition + new Vector3(2,0,0);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
