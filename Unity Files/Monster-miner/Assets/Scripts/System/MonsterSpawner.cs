@@ -7,9 +7,14 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
     //Set up all lists
     List<MonsterController> controllers;
     List<List<GameObject>> monsterLists;
+    private List<GameObject> bloodSplatter;//list of particle systems for blood splatter on hit
     GameObject parentObj;
 
-    int numberPerList = 20;
+    [SerializeField]
+    private GameObject bloodSplatterFX;
+    [HideInInspector]
+    public GameObject bloodSplatterParent;
+    public int numberPerList = 20;
 
     public void SpawnMonsterLists()
     {
@@ -21,6 +26,8 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
 
         monsterLists = new List<List<GameObject>>();
         controllers = new List<MonsterController>();
+        bloodSplatter = new List<GameObject>();
+
         foreach (string key in MonsterTypes.Instance.dictionaryKeys)
         {
             try
@@ -38,7 +45,11 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
             }
             catch { Debug.Log("No mesh"); }
         }
+        //initialise blood splatter list
+        InitialiseBloodSplatterList(numberPerList);
     }
+
+    
 
     public void NewWorldSpawnMonsters()
     {
@@ -52,6 +63,9 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
     {
         MonsterController controller = GetController();
         controller.gameObject.transform.position = placement;
+        //add the blood splatter to the monster.
+        GameObject splatterFX = GetBloodSplatter();
+
         GetMesh(type, controller);
 
         MonsterTypes.Instance.getMonsterData(
@@ -60,6 +74,9 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
            out controller.numHunters, out controller.viewRange, out controller.monsterType);
         controller.gameObject.name = type;
         controller.GetMonster();
+
+        splatterFX.transform.SetParent(controller.transform.GetChild(0));
+        splatterFX.transform.position = controller.GetComponentInChildren<Renderer>().bounds.center;
         return controller;
     }
 
@@ -73,6 +90,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
             }
         }
         GameObject gObject = new GameObject();
+
         MonsterController returnController = gObject.AddComponent(typeof(MonsterController)) as MonsterController;
         gObject.AddComponent(typeof(MonsterMovement));
         gObject.transform.SetParent(parentObj.transform);
@@ -99,7 +117,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
                     }
                 }
                 GameObject createdMeshAndBones = Instantiate(wantedMeshAndBones, parent.transform);
-                createdMeshAndBones.transform.GetChild(createdMeshAndBones.transform.childCount-1).transform.localEulerAngles = new Vector3(0,0,90);
+                createdMeshAndBones.transform.GetChild(createdMeshAndBones.transform.childCount - 1).transform.localEulerAngles = new Vector3(0, 0, 90);
                 createdMeshAndBones.transform.SetParent(parent.transform);
                 searchingList.Add(createdMeshAndBones);
                 return;
@@ -107,15 +125,32 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
         }
 
         Debug.Log("THERE IS NO DINO YOU ARE LOOKING FOR");
-
-
-        //find the type of monster
-        //check the appropriate list
-        //if not found usable mesh and bones, create a new one
-        //active mesh & bones
-        //set parent as MonsterController
-
-
     }
 
+    private GameObject GetBloodSplatter()
+    {
+        for(int i = 0; i < bloodSplatter.Count; i++)
+        {
+            if(!bloodSplatter[i].activeSelf)
+            {
+                bloodSplatter[i].SetActive(true);
+                return bloodSplatter[i];
+            }
+        }
+        //fallback
+        GameObject splatter = Instantiate(bloodSplatterFX);
+        bloodSplatter.Add(splatter);
+        return splatter;
+    }
+    private void InitialiseBloodSplatterList(int listSize)
+    {
+        bloodSplatterParent = new GameObject();
+        bloodSplatterParent.name = "Blood splatter objects";
+
+        for(int i = 0; i < listSize; i++)
+        {
+            bloodSplatter.Add(Instantiate(bloodSplatterFX, bloodSplatterParent.transform));
+            bloodSplatter[bloodSplatter.Count - 1].SetActive(false);
+        }
+    }
 }

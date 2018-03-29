@@ -61,6 +61,7 @@ public class MonsterController : MonoBehaviour {
     [HideInInspector]
     public float wanderRepathTimer = 0;
 
+    private ParticleSystem damageTakenFX;
     #endregion
 
     void Start () {
@@ -71,11 +72,13 @@ public class MonsterController : MonoBehaviour {
         Movement.navMeshAgent.speed = monsterSpeed;
         //set the selection cirlce
         SelectionCircle = transform.GetComponentInChildren<Projector>();
+        damageTakenFX = transform.GetChild(0).Find("Blood splatter FX" + "(Clone)").GetComponent<ParticleSystem>();
     }
 
      public void TakeDamage(float damage)
     {
         health -= damage;
+        damageTakenFX.Play();
         CheckDead();
     }
 
@@ -90,6 +93,9 @@ public class MonsterController : MonoBehaviour {
 
     public void Death() {
         isDead = true;
+        //return the particle system back to the pool
+       damageTakenFX.gameObject.SetActive(false);
+        damageTakenFX.transform.SetParent(MonsterSpawner.Instance.bloodSplatterParent.transform);
         Debug.Log(monsterName + " has died.");
     }
     
