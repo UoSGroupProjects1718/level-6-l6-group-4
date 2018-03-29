@@ -36,16 +36,41 @@ public class UnitSelection : MonoBehaviour {
 
         if (Input.GetKeyDown(Keybinds.Instance.PrimaryActionKey))
         {
+ 
             isSelecting = true;
             mousePosition1 = Input.mousePosition;
             SelectedColonists.Clear();
             SelectedMonsters.Clear();
 
+            //send out a ray
+            RaycastHit rayhit = new RaycastHit();
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out rayhit))
+            {
+                //and if they hit something
+                if (rayhit.collider != null)
+                {
+                    //check to see if there is a colonist controller attached to the object
+                    ColonistController colonist = rayhit.collider.GetComponent<ColonistController>();
+                    //if there is
+                    if (colonist != null)
+                    {
+                        //add it to the list
+                        SelectedColonists.Add(colonist);
+                        colonist.selected = true;
+                        colonist.selectionCircle.enabled = true;
+                        // and do the things that mouse up would normally do in order for the selection to seem responsive
+                        isSelecting = false;
+                    }
+                }
+            }
+            CheckButtonActivate();
         }
 
         if (Input.GetKeyUp(Keybinds.Instance.PrimaryActionKey))
         {
             isSelecting = false;
+
             CheckButtonActivate();
         }
         //check both lists, if the unit is within the bounds, select them.

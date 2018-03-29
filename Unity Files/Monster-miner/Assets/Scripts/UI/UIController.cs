@@ -10,7 +10,7 @@ public class UIController : SingletonClass<UIController>
     private GameObject stockpilePanel;
 
     [SerializeField]
-    private GameObject colonistInfoPanel;
+    public GameObject colonistInfoPanel;
 
     [HideInInspector]
     public ColonistController focusedColonist;
@@ -49,7 +49,6 @@ public class UIController : SingletonClass<UIController>
                         colonistInfoPanel.SetActive(false);
                     }
                 }
-
             }
         }
     }
