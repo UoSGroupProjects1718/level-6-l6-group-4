@@ -516,6 +516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4410732784827240}
   - component: {fileID: 95709984428758538}
+  - component: {fileID: 65580621028933432}
   m_Layer: 0
   m_Name: Small Carnivore Stone
   m_TagString: Untagged
@@ -984,7 +985,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819039465734844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -86.13231, y: 5.4556327e-17, z: -73.70995}
+  m_LocalPosition: {x: 43.47758, y: 23.08859, z: -220.71608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4553206604763092}
@@ -1465,6 +1466,18 @@ Transform:
   m_Father: {fileID: 4367372982327188}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65580621028933432
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819039465734844}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.4274254, z: 3.035675}
+  m_Center: {x: 0, y: 1.8237667, z: 0.587677}
 --- !u!95 &95709984428758538
 Animator:
   serializedVersion: 3

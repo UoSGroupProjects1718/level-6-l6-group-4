@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4108464043722124}
   - component: {fileID: 95186809911272526}
+  - component: {fileID: 65091469536982644}
   m_Layer: 0
   m_Name: Large Carnivore Bone
   m_TagString: Untagged
@@ -783,7 +784,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1034468777459636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -60.268528, y: 6.7255746e-17, z: -90.86787}
+  m_LocalPosition: {x: 41.159893, y: 24.08481, z: -216.95815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4300720182254428}
@@ -1436,6 +1437,18 @@ Transform:
   m_Father: {fileID: 4885391509651060}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65091469536982644
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1034468777459636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2062721, y: 7.076679, z: 11.995422}
+  m_Center: {x: -0.06557274, y: 3.0383396, z: -0.32365417}
 --- !u!95 &95186809911272526
 Animator:
   serializedVersion: 3

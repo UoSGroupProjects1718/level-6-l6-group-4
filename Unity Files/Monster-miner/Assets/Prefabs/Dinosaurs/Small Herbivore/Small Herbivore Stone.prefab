@@ -95,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4692279645024622}
   - component: {fileID: 95628683185150902}
+  - component: {fileID: 65472131539605932}
   m_Layer: 0
   m_Name: Small Herbivore Stone
   m_TagString: Untagged
@@ -1235,7 +1236,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1074049412140016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -71.3119, y: 5.307001e-17, z: -71.70181}
+  m_LocalPosition: {x: 48.81959, y: 18.522383, z: -216.84761}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4693664945856546}
@@ -1463,6 +1464,18 @@ Transform:
   m_Father: {fileID: 4136742973223414}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65472131539605932
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1074049412140016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.0707016, z: 3.3955994}
+  m_Center: {x: 0, y: 1.3617516, z: 0.22038269}
 --- !u!95 &95628683185150902
 Animator:
   serializedVersion: 3

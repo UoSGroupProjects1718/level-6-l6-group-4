@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MonsterMiner.BehaviourTree;
@@ -17,7 +17,7 @@ public class SmallCarnivorState : BehaviourBase
 
         if (Monster.hunger < 0)
         {
-            Monster.TakeDamage(Monster.hungerDamage);
+            Monster.TakeDamage(Monster.hungerDamage,true);
         }
         else
         {

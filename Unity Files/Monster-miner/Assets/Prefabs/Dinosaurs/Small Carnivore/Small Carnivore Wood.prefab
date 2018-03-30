@@ -66,6 +66,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4047368677623672}
   - component: {fileID: 95581091610740192}
+  - component: {fileID: 65569431371558370}
   m_Layer: 0
   m_Name: Small Carnivore Wood
   m_TagString: Untagged
@@ -799,7 +800,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032921096816702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -76.843704, y: 5.5117513e-17, z: -74.468155}
+  m_LocalPosition: {x: 43.225586, y: 22.424341, z: -220.84435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4069705792343260}
@@ -1465,6 +1466,18 @@ Transform:
   m_Father: {fileID: 4688039051022988}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65569431371558370
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032921096816702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.4274254, z: 3.035675}
+  m_Center: {x: 0, y: 1.8237667, z: 0.587677}
 --- !u!95 &95581091610740192
 Animator:
   serializedVersion: 3

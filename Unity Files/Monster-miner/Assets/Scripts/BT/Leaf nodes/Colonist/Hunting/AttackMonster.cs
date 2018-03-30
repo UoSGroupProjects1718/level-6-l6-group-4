@@ -21,7 +21,7 @@ namespace MonsterMiner
                     {
                         
                         Colonist.nextAttack = Time.time + Colonist.colonistEquipment.weapon.AttackSpeed;
-                        Colonist.target.TakeDamage(Colonist.colonistEquipment.weapon.Damage);
+                        Colonist.target.TakeDamage(Colonist.colonistEquipment.weapon.Damage,false);
                         if (Colonist.target.CheckDead())
                         {
                             Colonist.target.transform.GetChild(Colonist.target.transform.childCount - 1).Rotate(new Vector3(0, 0, 90));

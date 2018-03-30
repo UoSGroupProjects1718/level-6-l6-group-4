@@ -75,10 +75,14 @@ public class MonsterController : MonoBehaviour {
         damageTakenFX = transform.GetChild(0).Find("Blood splatter FX" + "(Clone)").GetComponent<ParticleSystem>();
     }
 
-     public void TakeDamage(float damage)
+     public void TakeDamage(float damage, bool takenFromHunger)
     {
         health -= damage;
-        damageTakenFX.Play();
+
+        if(!takenFromHunger)
+        {
+            damageTakenFX.Play();
+        }
         CheckDead();
     }
 

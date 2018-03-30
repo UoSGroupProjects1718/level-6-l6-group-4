@@ -62,6 +62,17 @@ public class UnitSelection : MonoBehaviour {
                         // and do the things that mouse up would normally do in order for the selection to seem responsive
                         isSelecting = false;
                     }
+                    else
+                    {
+                        MonsterController monster = rayhit.collider.transform.parent.GetComponent<MonsterController>();
+                        if(monster != null)
+                        {
+                            SelectedMonsters.Add(monster);
+                            monster.selected = true;
+                            monster.SelectionCircle.enabled = true;
+                            isSelecting = false;
+                        }
+                    }
                 }
             }
             CheckButtonActivate();

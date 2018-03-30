@@ -15,6 +15,7 @@ public class ColonistController : MonoBehaviour {
 
     #region Variables
     #region basic info
+    [Header("Basic info")]
     public string colonistName;
     public float colonistBaseMoveSpeed = 5f;
     public float colonistMoveSpeed;
@@ -30,11 +31,13 @@ public class ColonistController : MonoBehaviour {
     public bool isDead = false;
     #endregion
     #region Job
+    [Header("Job info")]
     public ColonistJobType colonistJob;
     public Job currentJob;
     public GameTime lastWorked;
     #endregion
     #region Equipment and combat
+    [Header("Equipment and combat")]
     public float nextAttack;
     public MonsterController target;
 
@@ -44,8 +47,13 @@ public class ColonistController : MonoBehaviour {
 
     #endregion
     #region misc
+    [Header("Misc")]
     [SerializeField]
     private float corpseCleanupDelay = 2.0f;
+    [SerializeField]
+    private ParticleSystem damageBloodFX;
+    [SerializeField]
+    private ParticleSystem deathBloodFX;
 
     [HideInInspector]
     public bool hasPath;
@@ -135,6 +143,7 @@ public class ColonistController : MonoBehaviour {
         float resistedDamage = damage * (colonistEquipment.damageReduction / 100);
 
         health -= (damage - resistedDamage);
+        damageBloodFX.Play();
 
         if (CheckDead())
             Death();
@@ -155,6 +164,7 @@ public class ColonistController : MonoBehaviour {
     void Death()
     {
         isDead = true;
+        deathBloodFX.Play();
         Debug.Log(colonistName + " has died.");
 
         if (currentJob != null)
@@ -183,7 +193,7 @@ public class ColonistController : MonoBehaviour {
         }
 
         //put the colonist on its side
-        transform.localEulerAngles = new Vector3(226, -132, -85); 
+        transform.Rotate(90, 0, 90);
 
         //start the corpse cleanup enumerator
         StartCoroutine(CorpseCleanup(corpseCleanupDelay));

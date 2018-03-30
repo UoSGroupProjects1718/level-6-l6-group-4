@@ -16,7 +16,7 @@ public class LargeCarnivorState : BehaviourBase
 
         if (Monster.hunger < 0)
         {
-            Monster.TakeDamage(Monster.hungerDamage * Time.deltaTime); //this was removing hunger damage every frame rather than every second so I multiplied by deltatime
+            Monster.TakeDamage(Monster.hungerDamage * Time.deltaTime,true); //this was removing hunger damage every frame rather than every second so I multiplied by deltatime
         }
         else
         {

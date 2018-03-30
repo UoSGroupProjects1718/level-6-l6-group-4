@@ -25,7 +25,7 @@ public class AttackColonist : BehaviourBase
             }
             else if (targetMonster != null)
             {
-                targetMonster.TakeDamage(Monster.damage);
+                targetMonster.TakeDamage(Monster.damage,false);
             }
             else
             {

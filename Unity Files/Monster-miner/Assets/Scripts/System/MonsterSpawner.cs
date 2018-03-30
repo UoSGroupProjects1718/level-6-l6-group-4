@@ -63,6 +63,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
     {
         MonsterController controller = GetController();
         controller.gameObject.transform.position = placement;
+
         //add the blood splatter to the monster.
         GameObject splatterFX = GetBloodSplatter();
 
@@ -117,6 +118,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
                     }
                 }
                 GameObject createdMeshAndBones = Instantiate(wantedMeshAndBones, parent.transform);
+
                 createdMeshAndBones.transform.GetChild(createdMeshAndBones.transform.childCount - 1).transform.localEulerAngles = new Vector3(0, 0, 90);
                 createdMeshAndBones.transform.SetParent(parent.transform);
                 searchingList.Add(createdMeshAndBones);

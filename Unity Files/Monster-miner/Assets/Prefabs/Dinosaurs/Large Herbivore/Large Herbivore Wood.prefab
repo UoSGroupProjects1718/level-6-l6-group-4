@@ -200,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4606794387438592}
   - component: {fileID: 95354118581076800}
+  - component: {fileID: 65866822239570954}
   m_Layer: 0
   m_Name: Large Herbivore Wood
   m_TagString: Untagged
@@ -1010,7 +1011,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1196042214273036}
-  m_LocalRotation: {x: 0.70710665, y: -0.0006597356, z: 0.7071063, w: 0.00065973593}
+  m_LocalRotation: {x: 0.7071067, y: -0.00065973564, z: 0.70710635, w: 0.000659736}
   m_LocalPosition: {x: 0.0040344736, y: 0.011248058, z: 0.017243002}
   m_LocalScale: {x: 1.0000018, y: 0.99999994, z: 1}
   m_Children:
@@ -1249,7 +1250,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1286493392418560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -87.59344, y: 4.3912186e-17, z: -59.32887}
+  m_LocalPosition: {x: 41.02166, y: 24.588818, z: -221.19527}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4294641348526268}
@@ -1374,7 +1375,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299680024309146}
-  m_LocalRotation: {x: 0.70710665, y: -0.0006597356, z: 0.7071063, w: 0.00065973593}
+  m_LocalRotation: {x: 0.7071067, y: -0.00065973564, z: 0.70710635, w: 0.000659736}
   m_LocalPosition: {x: 0.004034454, y: 0.011248058, z: -0.01712518}
   m_LocalScale: {x: 1.0000018, y: 0.99999994, z: 1}
   m_Children:
@@ -1464,6 +1465,18 @@ Transform:
   m_Father: {fileID: 4053292091994104}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65866822239570954
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1286493392418560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.183529, y: 10.30854, z: 8.572983}
+  m_Center: {x: -0.03274727, y: 4.65427, z: 0.04459381}
 --- !u!95 &95354118581076800
 Animator:
   serializedVersion: 3

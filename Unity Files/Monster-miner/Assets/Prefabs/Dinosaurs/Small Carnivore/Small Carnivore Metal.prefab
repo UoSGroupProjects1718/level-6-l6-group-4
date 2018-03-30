@@ -697,6 +697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4703341232624148}
   - component: {fileID: 95416749869868382}
+  - component: {fileID: 65383544849653408}
   m_Layer: 0
   m_Name: Small Carnivore Metal
   m_TagString: Untagged
@@ -1235,7 +1236,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1918491503144512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -96.63682, y: 5.138581e-17, z: -69.42633}
+  m_LocalPosition: {x: 43.188747, y: 22.982058, z: -221.9757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4148174931140960}
@@ -1465,6 +1466,18 @@ Transform:
   m_Father: {fileID: 4069683969602598}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65383544849653408
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1918491503144512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.4274254, z: 3.035675}
+  m_Center: {x: 0, y: 1.8237667, z: 0.587677}
 --- !u!95 &95416749869868382
 Animator:
   serializedVersion: 3

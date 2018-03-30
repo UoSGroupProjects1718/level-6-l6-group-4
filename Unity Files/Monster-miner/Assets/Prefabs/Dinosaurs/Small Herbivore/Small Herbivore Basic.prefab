@@ -80,6 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4284262632859066}
   - component: {fileID: 95264856649262632}
+  - component: {fileID: 65201148047501866}
   m_Layer: 0
   m_Name: Small Herbivore Basic
   m_TagString: Untagged
@@ -1009,7 +1010,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059623514651182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -85.793045, y: 5.4075315e-17, z: -73.06007}
+  m_LocalPosition: {x: 43.459637, y: 23.097244, z: -220.8545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4077039034669264}
@@ -1463,6 +1464,18 @@ Transform:
   m_Father: {fileID: 4027352316634832}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65201148047501866
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059623514651182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.0707016, z: 3.3955994}
+  m_Center: {x: 0, y: 1.3617516, z: 0.22038269}
 --- !u!95 &95264856649262632
 Animator:
   serializedVersion: 3
