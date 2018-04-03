@@ -23,7 +23,7 @@ MonoBehaviour:
   itemRenderer: {fileID: 23640475488133798, guid: 868a47984fcb5684a9561e28f2b8c0a3,
     type: 2}
   type: 6
-  armourSlot: 0
+  armourSlot: 1
   walkSpeedModifier: 0.25
   workSpeedModifier: 0
   DamageReduction: 45
