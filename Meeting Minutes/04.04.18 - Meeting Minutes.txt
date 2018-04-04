@@ -1,0 +1,13 @@
+Meeting minutes 04/04/18 - 11am
+
+Discussed previous weeks playtesting feedback + bugs
+
+discussed changing the barracks building, possibly removing it in favour of context buttons appearing when clicking to hunt dinosaurs. This should
+be more intuitive.
+
+went through previous weeks work and finished off previous sprint.
+
+Although a full weeks sprint has been created, due to the deadline for final project being only a week away, we do not expect that all of the
+work from members will be completed.
+
+Meeting end 11:00
