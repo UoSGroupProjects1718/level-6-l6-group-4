@@ -48,7 +48,7 @@ public class UnitSelection : MonoBehaviour {
             if (Physics.Raycast(ray, out rayhit))
             {
                 //and if they hit something
-                if (rayhit.collider != null)
+                if (rayhit.collider != null && rayhit.collider.tag != "Building")
                 {
                     //check to see if there is a colonist controller attached to the object
                     ColonistController colonist = rayhit.collider.GetComponent<ColonistController>();

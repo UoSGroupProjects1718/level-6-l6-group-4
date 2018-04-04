@@ -93,6 +93,7 @@ public class BuildingManager : SingletonClass<BuildingManager>
                 job.interactionObject = CurrentlySelectedBuilding;
                 JobManager.Instance.QueueJob(job);
                 CurrentlySelectedBuilding.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled = true;
+                CurrentlySelectedBuilding = null;
             }
 
         }
@@ -100,8 +101,8 @@ public class BuildingManager : SingletonClass<BuildingManager>
     }
     public void BuildingOnClick(int BuildingIndex)
     {
-        _hasPlaced = false;
-        CurrentlySelectedBuilding = Instantiate(Buildings[BuildingIndex].interactionObject);
+        ResetBuildingSelections();
+        CurrentlySelectedBuilding = Instantiate(Buildings[BuildingIndex].interactionObject,new Vector3(0,5000,0),Quaternion.identity);
         SelectedBuildingFunction = CurrentlySelectedBuilding.GetComponent<BuildingFunction>();
         CurrentlySelectedBuilding.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled = false;
         currentJob = Buildings[BuildingIndex];
