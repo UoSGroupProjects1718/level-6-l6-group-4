@@ -8,12 +8,18 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
     List<MonsterController> controllers;
     List<List<GameObject>> monsterLists;
     private List<GameObject> bloodSplatter;//list of particle systems for blood splatter on hit
+    private List<GameObject> largeBloodSplatter;//list of particle systems for blood splatter on hit
     GameObject parentObj;
 
     [SerializeField]
     private GameObject bloodSplatterFX;
+    [SerializeField]
+    private GameObject largeBloodSplatterFX;
     [HideInInspector]
     public GameObject bloodSplatterParent;
+    [HideInInspector]
+    public GameObject largeBloodSplatterParent;
+
     public int numberPerList = 20;
 
     public void SpawnMonsterLists()
@@ -27,6 +33,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
         monsterLists = new List<List<GameObject>>();
         controllers = new List<MonsterController>();
         bloodSplatter = new List<GameObject>();
+        largeBloodSplatter = new List<GameObject>();
 
         foreach (string key in MonsterTypes.Instance.dictionaryKeys)
         {
@@ -47,6 +54,7 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
         }
         //initialise blood splatter list
         InitialiseBloodSplatterList(numberPerList);
+        InitialiseLargeBloodSplatterList(numberPerList);
     }
 
     
@@ -63,9 +71,8 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
     {
         MonsterController controller = GetController();
         controller.gameObject.transform.position = placement;
-
-        //add the blood splatter to the monster.
-        GameObject splatterFX = GetBloodSplatter();
+        controller.gameObject.transform.rotation = Quaternion.identity;
+       
 
         GetMesh(type, controller);
 
@@ -76,8 +83,20 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
         controller.gameObject.name = type;
         controller.GetMonster();
 
-        splatterFX.transform.SetParent(controller.transform.GetChild(0));
-        splatterFX.transform.position = controller.GetComponentInChildren<Renderer>().bounds.center;
+        if(controller.monsterType == MonsterTypes.TypeOfMonster.LargeHerbivore)
+        {
+            //add the blood splatter to the monster.
+            GameObject splatterFX = GetLargeBloodSplatter();
+            splatterFX.transform.SetParent(controller.transform.GetChild(0));
+            splatterFX.transform.position = controller.GetComponentInChildren<Renderer>().bounds.center;
+        }
+        else
+        {
+            //add the blood splatter to the monster.
+            GameObject splatterFX = GetBloodSplatter();
+            splatterFX.transform.SetParent(controller.transform.GetChild(0));
+            splatterFX.transform.position = controller.GetComponentInChildren<Renderer>().bounds.center;
+        }
         return controller;
     }
 
@@ -144,6 +163,21 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
         bloodSplatter.Add(splatter);
         return splatter;
     }
+    private GameObject GetLargeBloodSplatter()
+    {
+        for (int i = 0; i < largeBloodSplatter.Count; i++)
+        {
+            if (!largeBloodSplatter[i].activeSelf)
+            {
+                largeBloodSplatter[i].SetActive(true);
+                return largeBloodSplatter[i];
+            }
+        }
+        //fallback
+        GameObject splatter = Instantiate(largeBloodSplatterFX);
+        largeBloodSplatter.Add(splatter);
+        return splatter;
+    }
     private void InitialiseBloodSplatterList(int listSize)
     {
         bloodSplatterParent = new GameObject();
@@ -153,6 +187,17 @@ public class MonsterSpawner : SingletonClass<MonsterSpawner> {
         {
             bloodSplatter.Add(Instantiate(bloodSplatterFX, bloodSplatterParent.transform));
             bloodSplatter[bloodSplatter.Count - 1].SetActive(false);
+        }
+    }
+    private void InitialiseLargeBloodSplatterList(int listSize)
+    {
+        largeBloodSplatterParent = new GameObject();
+        largeBloodSplatterParent.name = "Large blood splatter objects";
+
+        for (int i = 0; i < listSize; i++)
+        {
+            largeBloodSplatter.Add(Instantiate(largeBloodSplatterFX, largeBloodSplatterParent.transform));
+            largeBloodSplatter[largeBloodSplatter.Count - 1].SetActive(false);
         }
     }
 }

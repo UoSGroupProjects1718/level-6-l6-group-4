@@ -72,7 +72,15 @@ public class MonsterController : MonoBehaviour {
         Movement.navMeshAgent.speed = monsterSpeed;
         //set the selection cirlce
         SelectionCircle = transform.GetComponentInChildren<Projector>();
-        damageTakenFX = transform.GetChild(0).Find("Blood splatter FX" + "(Clone)").GetComponent<ParticleSystem>();
+        if (monsterType == MonsterTypes.TypeOfMonster.LargeHerbivore)
+        {
+            damageTakenFX = transform.GetChild(0).Find("Blood splatter FX - Large" + "(Clone)").GetComponent<ParticleSystem>();
+
+        }
+        else
+        {
+            damageTakenFX = transform.GetChild(0).Find("Blood splatter FX" + "(Clone)").GetComponent<ParticleSystem>();
+        }
     }
 
      public void TakeDamage(float damage, bool takenFromHunger)
@@ -98,9 +106,23 @@ public class MonsterController : MonoBehaviour {
     public void Death() {
         isDead = true;
         //return the particle system back to the pool
-       damageTakenFX.gameObject.SetActive(false);
-        damageTakenFX.transform.SetParent(MonsterSpawner.Instance.bloodSplatterParent.transform);
+        if (monsterType == MonsterTypes.TypeOfMonster.LargeHerbivore)
+        {
+            damageTakenFX.gameObject.SetActive(false);
+            damageTakenFX.transform.SetParent(MonsterSpawner.Instance.largeBloodSplatterParent.transform);
+        }
+        else
+        {
+            damageTakenFX.gameObject.SetActive(false);
+            damageTakenFX.transform.SetParent(MonsterSpawner.Instance.bloodSplatterParent.transform);
+        }
+        transform.GetChild(transform.childCount - 1).Rotate(new Vector3(0, 0, 90));
+        JobManager.CreateJob(JobType.Harvesting, 50, gameObject, transform.position, "Harvest" + monsterName);
+        Movement.navMeshAgent.isStopped = true;
+        BehaviourTreeManager.Monsters.Remove(this);
+
         Debug.Log(monsterName + " has died.");
+
     }
     
     public void GetMonster()

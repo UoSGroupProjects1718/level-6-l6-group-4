@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4122938373889012}
   - component: {fileID: 33473629251577826}
   - component: {fileID: 23774453267285946}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LegSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4656861659095380}
   - component: {fileID: 33078070219795056}
   - component: {fileID: 23482348751012806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HeadSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114209466588003350}
   - component: {fileID: 114502534663712918}
   - component: {fileID: 65382711679806628}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Colonist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4600742302339004}
   - component: {fileID: 119974095050672568}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SelectionCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4262799889872942}
   - component: {fileID: 198742579807753562}
   - component: {fileID: 199989711695039502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blood splatter FX - Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 4844193615617752}
   - component: {fileID: 198518829442729932}
   - component: {fileID: 199993635446064880}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blood splatter FX - Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4345341906932344}
   - component: {fileID: 33104898956117822}
   - component: {fileID: 23786068691116468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 4794385930509506}
   - component: {fileID: 33462028605876720}
   - component: {fileID: 23524182924869378}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TorsoSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 4235690730626224}
   - component: {fileID: 33455067849958914}
   - component: {fileID: 23437963130042730}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

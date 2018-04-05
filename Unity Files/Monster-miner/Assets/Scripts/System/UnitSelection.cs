@@ -8,11 +8,15 @@ using UnityEngine.EventSystems;
 
 public class UnitSelection : MonoBehaviour {
 
-    bool isSelecting = false;
-    Vector3 mousePosition1;
 
     public static List<ColonistController> SelectedColonists = new List<ColonistController>();
     public static List<MonsterController> SelectedMonsters = new List<MonsterController>();
+    
+    bool isSelecting = false;
+    Vector3 mousePosition1;
+    [SerializeField]
+    private LayerMask clickSelectCollisionLayers;
+
     private void Start()
     {
         for (int i = 0; i < BehaviourTreeManager.Colonists.Count; i++)
@@ -45,7 +49,7 @@ public class UnitSelection : MonoBehaviour {
             //send out a ray
             RaycastHit rayhit = new RaycastHit();
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out rayhit))
+            if (Physics.Raycast(ray, out rayhit,float.MaxValue,clickSelectCollisionLayers))
             {
                 //and if they hit something
                 if (rayhit.collider != null && rayhit.collider.tag != "Building")

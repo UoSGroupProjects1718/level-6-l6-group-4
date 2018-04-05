@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4855050789226336}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm R Target_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4069705792343260}
   - component: {fileID: 119260956520227776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SelectionCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4069188942800874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm R Forearm_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 4047368677623672}
   - component: {fileID: 95581091610740192}
   - component: {fileID: 65569431371558370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Small Carnivore Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4219366764365622}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm L Claws_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4688039051022988}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4313671499581336}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg L IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4907066665345706}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg L Target_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4395865398866000}
   - component: {fileID: 137312080721183108}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Small Carnivore Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4726290067617348}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm R Midsection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4858555606554910}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg L Shin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4304859853651284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg R Shin_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4626125971868122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg R IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4674898439543508}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm L Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4783156848412380}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tail Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4374361082272354}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4954621100304326}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg R Foot_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4005473153179652}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm R Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4402019099464574}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4877886548695028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg R Shin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4761039219932606}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Neck Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4114275366393040}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg R Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4866492434163984}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm L Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4221835748948282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tail Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4209928880696388}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg L Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4346484326665082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg L Midsection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4578702545736012}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm L Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4043768062174028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg L Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4907252993978800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Torso Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4380204786816862}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm R Claws_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4159298809360832}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm R Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4896324433233060}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg R Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4676792459457658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm L Claws
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4955583961811320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm R IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4413522732777550}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tail Lower_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4226678077686892}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg L Shin_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4587685934232710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg L Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4351070222768676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Neck Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4630446123831932}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Small Carnivore Wood Armeture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4335229743787676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg R Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4578300689558956}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg R Target_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4411621719788402}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm L IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +653,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4408675215638502}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm L Forearm_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4066977587435768}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm L Midsection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -683,7 +683,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4567796577475962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg L Foot_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4467424015583370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Torso Rear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,7 +713,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4352688143758670}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm L Target_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4303920507419972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm R Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +743,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4724703436102070}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg R Midsection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4824609921851288}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm R Claws
   m_TagString: Untagged
   m_Icon: {fileID: 0}

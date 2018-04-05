@@ -46,6 +46,7 @@ public class ColonistSpawner : SingletonClass<ColonistSpawner>
     {
         ColonistController controller = GetController();
         controller.gameObject.transform.position = placement;
+        controller.gameObject.transform.rotation = Quaternion.identity;
         controller.colonistEquipment = controller.GetComponent<Equipment>();
         controller.colonistJob = type;
         controller.EquipDefaultGear();

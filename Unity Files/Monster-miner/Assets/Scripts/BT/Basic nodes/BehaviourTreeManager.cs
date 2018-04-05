@@ -33,16 +33,29 @@ public class BehaviourTreeManager : SingletonClass<BehaviourTreeManager>
     {
         while (true)
         {
-            for (int i = 0; i < Colonists.Count; i++)
+            try
             {
-                if (Colonists[i].isActiveAndEnabled)
-                    ColonistTree.UpdateFunc(Colonists[i]);
+                for (int i = 0; i < Colonists.Count; i++)
+                {
+                    if (Colonists[i].isActiveAndEnabled)
+                        ColonistTree.UpdateFunc(Colonists[i]);
+                }
             }
-
-            for (int i = 0; i < Monsters.Count; i++)
+            catch
             {
-                if (Monsters[i].isActiveAndEnabled)
-                    MonsterTree.UpdateFunc(Monsters[i]);
+                Debug.LogError("Colonist tree errored out");
+            }
+            try
+            {
+                for (int i = 0; i < Monsters.Count; i++)
+                {
+                    if (Monsters[i].isActiveAndEnabled)
+                        MonsterTree.UpdateFunc(Monsters[i]);
+                }
+            }
+            catch
+            {
+                Debug.LogError("Monster tree errored out");
             }
             yield return new WaitForFixedUpdate();
         }

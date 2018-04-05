@@ -163,6 +163,12 @@ public class ColonistController : MonoBehaviour {
 
     void Death()
     {
+        if(UIController.Instance.focusedColonist == this)
+        {
+            UIController.Instance.colonistInfoPanel.SetActive(false);
+            UIController.Instance.focusedColonist = null;
+        }
+
         isDead = true;
         deathBloodFX.Play();
         Debug.Log(colonistName + " has died.");
@@ -193,7 +199,7 @@ public class ColonistController : MonoBehaviour {
         }
 
         //put the colonist on its side
-        transform.Rotate(90, 0, 90);
+       transform.Rotate(new Vector3(0, 0, 90));
 
         //start the corpse cleanup enumerator
         StartCoroutine(CorpseCleanup(corpseCleanupDelay));
