@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public enum HousePanelEditMode
@@ -114,7 +113,7 @@ public class HouseUI : MonoBehaviour {
 
         //update the total text to show the currently queued requested jobs
         int currentTotal = scout + hunter + crafter;
-        UIPanels.Instance.houseCompletionPanel.transform.Find("TotalChosenText").GetComponent<Text>().text = currentTotal.ToString() + "/" + focusedHouse.colonistsToSpawn;
+        UIPanels.Instance.houseCompletionPanel.transform.Find("TotalChosenText").GetComponent<TextMeshProUGUI>().text = currentTotal.ToString() + "/" + focusedHouse.colonistsToSpawn;
 
         //and check to see if the confirm button should be active
         if (scout+hunter+crafter == focusedHouse.colonistsToSpawn)
@@ -152,7 +151,7 @@ public class HouseUI : MonoBehaviour {
         }
 
         UIPanels.Instance.houseCompletionPanel.transform.Find("ConfirmButton").GetComponent<Button>().interactable = false;
-        UIPanels.Instance.houseCompletionPanel.transform.Find("TotalChosenText").GetComponent<Text>().text = 0.ToString() + "/" + focusedHouse.colonistsToSpawn;
+        UIPanels.Instance.houseCompletionPanel.transform.Find("TotalChosenText").GetComponent<TextMeshProUGUI>().text = 0.ToString() + "/" + focusedHouse.colonistsToSpawn;
 
     }
 }

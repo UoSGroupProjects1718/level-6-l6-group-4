@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class ArmouryJobPanel : MonoBehaviour
 {
@@ -221,7 +222,7 @@ public class ArmouryJobPanel : MonoBehaviour
 
             focusedColonist = colonist;
             //and set the name text
-            tertiaryPanel.transform.GetChild(0).GetComponent<Text>().text =colonist.colonistName;
+            tertiaryPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text =colonist.colonistName;
 
             //then we want to set the equipped item information and the colonist picture
             Transform equippedItemImages = tertiaryPanel.transform.GetChild(1);

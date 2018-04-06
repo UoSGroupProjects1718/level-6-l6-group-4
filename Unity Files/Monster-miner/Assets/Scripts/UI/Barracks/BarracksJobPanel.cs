@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BarracksJobPanel : MonoBehaviour
 {
@@ -21,13 +22,13 @@ public class BarracksJobPanel : MonoBehaviour
         if(TertiaryPanel.activeSelf)
         {
             //TertiaryPanel.transform.GetChild(0).GetComponent<Image>().sprite = monster.UISprite;
-            TertiaryPanel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = monster.monsterName;
+            TertiaryPanel.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = monster.monsterName;
             UIPanels.Instance.barracksTertiaryFocusedMonster = monster;
             UIPanels.Instance.barracksInputField.text = monster.numHuntersRequired.ToString();
         }
         else
         {
-            TertiaryPanel.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = monster.monsterName;
+            TertiaryPanel.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = monster.monsterName;
             UIPanels.Instance.barracksPanel.transform.GetChild(2).gameObject.SetActive(true);
             UIPanels.Instance.barracksTertiaryFocusedMonster = monster;
             UIPanels.Instance.barracksInputField.text = monster.numHuntersRequired.ToString();

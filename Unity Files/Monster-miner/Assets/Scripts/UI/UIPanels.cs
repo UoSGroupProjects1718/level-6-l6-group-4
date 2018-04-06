@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
+
 public class UIPanels : SingletonClass<UIPanels> {
     [Header("The point on the screen each panel is docked")]
     [SerializeField]
@@ -15,7 +16,7 @@ public class UIPanels : SingletonClass<UIPanels> {
 
     //barracks info
     [HideInInspector]
-    public InputField barracksInputField;
+    public TMP_InputField barracksInputField;
     [HideInInspector]
     public GameObject barracksPanel;
     [HideInInspector]
@@ -29,7 +30,7 @@ public class UIPanels : SingletonClass<UIPanels> {
     [HideInInspector]
     public GameObject blacksmithPanel;
     [HideInInspector]
-    public InputField blacksmithInputField;
+    public TMP_InputField blacksmithInputField;
     [HideInInspector]
     public GameObject blacksmithFocusedJob;
     public Craftable[] blacksmithCraftingRecipes;
@@ -61,7 +62,7 @@ public class UIPanels : SingletonClass<UIPanels> {
 
 
         barracksPanel = GameObject.Find("Barracks panel");
-        barracksInputField = barracksPanel.transform.GetChild(1).GetChild(1).GetChild(1).GetComponent<InputField>();
+        barracksInputField = barracksPanel.transform.GetChild(1).GetChild(1).GetChild(2).GetComponent<TMP_InputField>();
         ResetPanel(barracksPanel.transform);
         barracksPanel.SetActive(false);
 
@@ -70,7 +71,7 @@ public class UIPanels : SingletonClass<UIPanels> {
         armouryPanel.SetActive(false);
 
         blacksmithPanel = GameObject.Find("Blacksmith panel");
-        blacksmithInputField = blacksmithPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<InputField>();
+        blacksmithInputField = blacksmithPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<TMP_InputField>();
         ResetPanel(blacksmithPanel.transform);
         blacksmithPanel.SetActive(false);
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIController : SingletonClass<UIController>
 {
@@ -92,11 +93,11 @@ public class UIController : SingletonClass<UIController>
 
        for(int i = 0; i < (int)ItemType.Nutrition; i++)
         {
-            stockpilePanel.transform.GetChild(i).GetComponent<Text>().text = (ItemType)i +": " +  Stockpile.Instance.inventoryDictionary[(ItemType)i].ToString();
+            stockpilePanel.transform.GetChild(i).GetComponent<TextMeshProUGUI>().text = (ItemType)i +": " +  Stockpile.Instance.inventoryDictionary[(ItemType)i].ToString();
             Stockpile.Instance.currResourceAmount += Stockpile.Instance.inventoryDictionary[(ItemType)i];
         }
-        stockpilePanel.transform.GetChild(stockpilePanel.transform.childCount - 2).GetComponent<Text>().text = "Total: " + Stockpile.Instance.currResourceAmount + " / " + Stockpile.Instance.resourceSpace;
-        stockpilePanel.transform.GetChild(stockpilePanel.transform.childCount - 1).GetComponent<Text>().text = "Food: " + Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] + " / " + Stockpile.Instance.nutritionSpace;
+        stockpilePanel.transform.GetChild(stockpilePanel.transform.childCount - 2).GetComponent<TextMeshProUGUI>().text = "Total: " + Stockpile.Instance.currResourceAmount + " / " + Stockpile.Instance.resourceSpace;
+        stockpilePanel.transform.GetChild(stockpilePanel.transform.childCount - 1).GetComponent<TextMeshProUGUI>().text = "Food: " + Stockpile.Instance.inventoryDictionary[ItemType.Nutrition] + " / " + Stockpile.Instance.nutritionSpace;
     }
 
     //when multiple hunters are supposed to hunt one monster, multiple jobs for the same monster must be queued up, just make as many jobs as required

@@ -1,6 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class BlacksmithPanelUI : MonoBehaviour {
 
@@ -24,7 +25,7 @@ public class BlacksmithPanelUI : MonoBehaviour {
             //and make a new button and add a listener.
             GameObject button = Instantiate(recipeButton, contentParent);
             button.transform.localScale = Vector3.one; //have to reset the scale to one otherwise unity automatically re-scales the object
-            button.GetComponent<Button>().onClick.AddListener(OnRecipeButtonPress);
+            button.GetComponent<Button>().onClick.AddListener(delegate { OnRecipeButtonPress(); });
             //then set the image
             button.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = UIPanels.Instance.blacksmithCraftingRecipes[i].craftedItem.uiSprite;
             //and text of the button
@@ -75,7 +76,7 @@ public class BlacksmithPanelUI : MonoBehaviour {
             focusedRecipe = correspondingRecipe;
             //set the sprite and text of the corresponding recipe
             tertiaryPanel.GetChild(0).GetComponent<Image>().sprite = correspondingRecipe.craftedItem.uiSprite;
-            tertiaryPanel.GetChild(1).GetComponent<Text>().text = correspondingRecipe.craftedItem.itemName;
+            tertiaryPanel.GetChild(1).GetComponent<TextMeshProUGUI>().text = correspondingRecipe.craftedItem.itemName;
             //loop through the images for the required items
             for(int j = 0; j < correspondingRecipe.requiredItems.Length; j++ )
             {
