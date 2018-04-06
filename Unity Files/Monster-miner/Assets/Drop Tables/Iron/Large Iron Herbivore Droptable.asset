@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Name: Large Iron Herbivore Droptable
   m_EditorClassIdentifier: 
   Drops:
-  - {fileID: 11400000, guid: 1c75f5762b3bda14f98e8ddd6ad4b63f, type: 2}
-  - {fileID: 11400000, guid: 7e86d8907b88d74449b673beb6ff1fcc, type: 2}
+  - {fileID: 11400000, guid: 2a54c622a7a48b047a2db74cc726efca, type: 2}
+  - {fileID: 11400000, guid: 2a54c622a7a48b047a2db74cc726efca, type: 2}
+  - {fileID: 11400000, guid: 2a54c622a7a48b047a2db74cc726efca, type: 2}
+  - {fileID: 11400000, guid: d43f2e5aa24b3ce478e0fb83d45e9ff2, type: 2}
+  - {fileID: 11400000, guid: e7ea063302908964696ecb20d5685032, type: 2}
+  - {fileID: 11400000, guid: 36bab5ac25ff0aa4ba111ff7e195b30c, type: 2}

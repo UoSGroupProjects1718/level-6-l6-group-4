@@ -23,5 +23,5 @@ MonoBehaviour:
   itemRenderer: {fileID: 23307086673017142, guid: c348c79edd2df2448aef48f746989942,
     type: 2}
   type: 3
-  minDropAmount: 25
-  maxDropAmount: 35
+  minDropAmount: 40
+  maxDropAmount: 50

@@ -21,4 +21,6 @@ MonoBehaviour:
   interactionItem: {fileID: 0}
   RequiredItems:
   - resource: 0
-    requiredAmount: 20
+    requiredAmount: 360
+  - resource: 3
+    requiredAmount: 50

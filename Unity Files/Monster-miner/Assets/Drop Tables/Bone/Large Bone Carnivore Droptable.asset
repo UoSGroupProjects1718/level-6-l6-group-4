@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Name: Large Bone Carnivore Droptable
   m_EditorClassIdentifier: 
   Drops:
-  - {fileID: 11400000, guid: 7e86d8907b88d74449b673beb6ff1fcc, type: 2}
-  - {fileID: 11400000, guid: d43f2e5aa24b3ce478e0fb83d45e9ff2, type: 2}
+  - {fileID: 11400000, guid: f9f97ff348089984d98d5a9d1dede7e6, type: 2}
+  - {fileID: 11400000, guid: f9f97ff348089984d98d5a9d1dede7e6, type: 2}
+  - {fileID: 11400000, guid: 2a54c622a7a48b047a2db74cc726efca, type: 2}
+  - {fileID: 11400000, guid: 2a54c622a7a48b047a2db74cc726efca, type: 2}

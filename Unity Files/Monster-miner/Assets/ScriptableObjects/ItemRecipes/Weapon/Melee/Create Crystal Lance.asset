@@ -15,4 +15,8 @@ MonoBehaviour:
   craftedItem: {fileID: 11400000, guid: ecfd27b72eb213f4bb3a98a48c0fff3f, type: 2}
   requiredItems:
   - resource: 4
-    requiredAmount: 25
+    requiredAmount: 150
+  - resource: 2
+    requiredAmount: 45
+  - resource: 0
+    requiredAmount: 75
