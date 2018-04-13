@@ -1,0 +1,16 @@
+14/04/17 - 13:30
+
+Members in attendance: Oliver, Daniel, Douglas, Ross
+
+Discussed previous weeks work. 
+Douglas had completed his balancing tasks
+Ross had completed most of his tasks however the barracks re-design has not been completed due to the final project
+deadline on friday. His task to create the being hunted Icon was finished but passed to Douglas in order to create a 3d model of this.
+Daniel has not completed any of his work again this week due to focusing on final project.
+All of Oliver's work was completed this week.
+
+Discussed re-designing how different UI menus are accessed, created tasks to this effect.
+
+Re-design of some UI elements will be effected this week and further playtesting will be completed. Daniel and Oliver intend to have
+their tasks finished by Sunday afternoon. Daniel believes that his tasks will be completed by Saturday evening and Oliver will then
+complete his when Daniel is finished. This will allow Douglas ample time to playtest the game.
