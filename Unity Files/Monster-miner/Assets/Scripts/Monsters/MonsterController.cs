@@ -60,7 +60,9 @@ public class MonsterController : MonoBehaviour {
     public float wanderTimer;
     [HideInInspector]
     public float wanderRepathTimer = 0;
-
+    [HideInInspector]
+    public float lastDamageTime=0;
+    public static float attackTimeAfterDamage = 30;
     private ParticleSystem damageTakenFX;
     #endregion
 
@@ -90,6 +92,7 @@ public class MonsterController : MonoBehaviour {
         if(!takenFromHunger)
         {
             damageTakenFX.Play();
+            lastDamageTime = Time.time;
         }
         CheckDead();
     }
@@ -119,7 +122,7 @@ public class MonsterController : MonoBehaviour {
         transform.GetChild(transform.childCount - 1).Rotate(new Vector3(0, 0, 90));
         JobManager.CreateJob(JobType.Harvesting, 50, gameObject, transform.position, "Harvest" + monsterName);
         Movement.navMeshAgent.isStopped = true;
-        BehaviourTreeManager.Monsters.Remove(this);
+        this.enabled=false;
 
         Debug.Log(monsterName + " has died.");
 

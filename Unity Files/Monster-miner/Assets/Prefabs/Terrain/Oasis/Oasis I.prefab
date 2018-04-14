@@ -142,6 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4875958352134984}
   - component: {fileID: 65340204230068318}
+  - component: {fileID: 208407876960423352}
   m_Layer: 11
   m_Name: Building blocker
   m_TagString: Building
@@ -581,3 +582,18 @@ MonoBehaviour:
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
   m_Area: 0
+--- !u!208 &208407876960423352
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927099530297332}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 30.23, y: 0.5, z: 30.23}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -9.72, z: 0}
+  m_TimeToStationary: 0.5
