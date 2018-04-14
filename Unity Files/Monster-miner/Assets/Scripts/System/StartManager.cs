@@ -20,6 +20,14 @@ public class StartManager : MonoBehaviour {
     float minMonsterYOffset = -20f;
     [SerializeField]
     float maxMonsterYOffset = 20f;
+    [SerializeField]
+    int minMonstersToSpawn = 4;
+    [SerializeField]
+    int maxMonstersToSpawn = 10;
+    [SerializeField]
+    int minMonstersPerGroup = 4;
+    [SerializeField]
+    int maxMonstersPerGroup = 4;
 
     void Start(){
         /*This will delete the save*/
@@ -75,8 +83,8 @@ public class StartManager : MonoBehaviour {
         {
             usableKeys.Add(key);
         }
-        int monstersToSpawn = Random.Range(4, 10);
-
+        int monstersToSpawn = Random.Range(minMonstersToSpawn, maxMonstersToSpawn);
+        
         for (int i = 0; i < monstersToSpawn; i++)
         {
             int keyInt =Random.Range(0, usableKeys.Count - 1);
@@ -85,7 +93,8 @@ public class StartManager : MonoBehaviour {
             Vector2 Pos = new Vector2(Range * Mathf.Sin(Angle), Range * Mathf.Cos(Angle));
             string Key = usableKeys[keyInt];
             usableKeys.Remove(Key);
-            for(int j=0; j < 4; j++) {
+            int monstersPerGroup = Random.Range(minMonstersPerGroup, maxMonstersPerGroup);
+            for (int j=0; j < monstersPerGroup; j++) {
                 Vector2 Offset = new Vector2(
                     Random.Range(minMonsterXOffset, maxMonsterXOffset),
                     Random.Range(minMonsterYOffset, maxMonsterYOffset)
