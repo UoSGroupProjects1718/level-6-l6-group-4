@@ -158,6 +158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Built: 0
+  buildingName: Armoury
+  buildingDescription: A place for your colonists to store and equip their armour
+    and weaponry.
   colliders: []
   armourySpaceIncrease: 20
 --- !u!114 &114718315458877394

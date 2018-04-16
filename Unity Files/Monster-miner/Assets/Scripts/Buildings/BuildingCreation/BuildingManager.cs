@@ -6,8 +6,7 @@ using UnityEngine.EventSystems;
 
 public class BuildingManager : SingletonClass<BuildingManager>
 {
-    [SerializeField]
-    private Job[] Buildings;
+    public Job[] Buildings;
     [SerializeField]
     private float CreationDistance;
     [SerializeField]
@@ -42,7 +41,7 @@ public class BuildingManager : SingletonClass<BuildingManager>
             //instantiate a new button under the parent object, which holds a grid layout group
             GameObject button = Instantiate(ButtonPrefab, BuildingUIParent) as GameObject;
             //change the text component of the button (until we get an actual button to use as a prefab)
-            button.GetComponentInChildren<Text>().text = (Buildings[i]).interactionObject.name;
+            button.GetComponentInChildren<Text>().text = (Buildings[i]).interactionObject.GetComponent<BuildingFunction>().buildingName;
             //then add an onclick event to the button using a delegate
             button.GetComponent<Button>().onClick.AddListener(delegate { BuildingOnClick(button.transform.GetSiblingIndex()); });
             button.transform.localScale = Vector3.one;

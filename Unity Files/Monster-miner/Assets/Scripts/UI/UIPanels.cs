@@ -12,7 +12,8 @@ public class UIPanels : SingletonClass<UIPanels> {
  
     public Transform alertsHolder;
 
-
+    [SerializeField]
+    public GameObject buildingPanel;
 
     //barracks info
     [HideInInspector]
@@ -38,8 +39,8 @@ public class UIPanels : SingletonClass<UIPanels> {
     //tooltip
     [HideInInspector]
     public GameObject blacksmithTooltipPanel;
-
-
+    [HideInInspector]
+    public GameObject buildingTooltipPanel;
 
     [HideInInspector]
     public GameObject focusedPanel;
@@ -80,8 +81,13 @@ public class UIPanels : SingletonClass<UIPanels> {
         huntSelectedButton.SetActive(false);
         clearHuntButton.SetActive(false);
 
+        buildingPanel = GameObject.Find("BuildingCreationPanelBG");
+
         blacksmithTooltipPanel = blacksmithPanel.transform.Find("Item Tooltip").gameObject;
         blacksmithTooltipPanel.SetActive(false);
+
+        buildingTooltipPanel = buildingPanel.transform.Find("BuildingTooltip").gameObject;
+        buildingTooltipPanel.SetActive(false);
     }
 
 

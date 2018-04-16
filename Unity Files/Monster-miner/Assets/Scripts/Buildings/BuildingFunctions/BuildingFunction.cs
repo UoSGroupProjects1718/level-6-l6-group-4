@@ -8,7 +8,9 @@ public abstract class BuildingFunction : MonoBehaviour {
 
     [HideInInspector]
     public bool Built;
-    
+    public string buildingName;
+    [TextArea]
+    public string buildingDescription;
     public List<Collider> colliders = new List<Collider>();
     
 

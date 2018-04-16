@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Built: 0
+  buildingName: Granary
+  buildingDescription: A place to store food gathered by your colonists.
   colliders: []
   ResourceSpaceIncrease: 50
 --- !u!114 &114919396105104824

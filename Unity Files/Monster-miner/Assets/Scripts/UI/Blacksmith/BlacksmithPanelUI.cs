@@ -89,6 +89,7 @@ public class BlacksmithPanelUI : MonoBehaviour {
                 }
                 else
                 {
+                    //otherwise set the image to 0 alpha so it is transparent
                     requiredResources.GetChild(j).GetChild(0).GetComponent<Image>().color = new Color(0, 0, 0, 0);
                 }
             }

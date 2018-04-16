@@ -158,6 +158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Built: 0
+  buildingName: Barracks
+  buildingDescription: A place for your colonists to plan strategies to take down
+    even stronger dinosaurs.
   colliders: []
 --- !u!114 &114508547387237880
 MonoBehaviour:

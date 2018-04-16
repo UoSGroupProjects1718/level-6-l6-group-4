@@ -158,6 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Built: 0
+  buildingName: Blacksmith's forge
+  buildingDescription: A place for the local blacksmith to create armour and weaponry.
   colliders: []
   beingWorked: 0
 --- !u!114 &114998424086659430

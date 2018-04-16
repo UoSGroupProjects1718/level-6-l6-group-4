@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Built: 0
+  buildingName: Stockpile
+  buildingDescription: A place for your colonists to store gathered non-food resources.
   colliders: []
   ResourceIncreaseAmount: 50
 --- !u!208 &208765332339406672

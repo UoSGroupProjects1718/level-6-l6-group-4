@@ -4,8 +4,7 @@ using TMPro;
 
 public class UIController : SingletonClass<UIController>
 {
-    [SerializeField]
-    private GameObject buildingPanel;
+
 
     [SerializeField]
     private GameObject stockpilePanel;
@@ -118,7 +117,7 @@ public class UIController : SingletonClass<UIController>
     }
     public void ToggleBuildingPanel()
     {
-        buildingPanel.SetActive(!buildingPanel.activeSelf);
+        UIPanels.Instance.buildingPanel.SetActive(!UIPanels.Instance.buildingPanel.activeSelf);
     }
     public void BarracksTertiaryActivate()
     {
