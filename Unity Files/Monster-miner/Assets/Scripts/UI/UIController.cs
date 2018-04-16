@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 
@@ -6,8 +7,7 @@ public class UIController : SingletonClass<UIController>
 {
 
 
-    [SerializeField]
-    private GameObject stockpilePanel;
+    public GameObject stockpilePanel;
 
     [SerializeField]
     public GameObject colonistInfoPanel;
@@ -18,6 +18,7 @@ public class UIController : SingletonClass<UIController>
     public void Start()
     {
         UpdateStockpile();
+       
     }
 
     public void Update()
@@ -153,4 +154,6 @@ public class UIController : SingletonClass<UIController>
     {
         UIPanels.Instance.barracksTertiaryFocusedMonster.numHuntersRequired = int.Parse(UIPanels.Instance.barracksInputField.text);
     }
+
+   
 }

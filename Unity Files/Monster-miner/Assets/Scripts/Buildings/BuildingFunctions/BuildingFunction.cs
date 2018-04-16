@@ -30,17 +30,6 @@ public abstract class BuildingFunction : MonoBehaviour {
             colliders.Remove(collision.collider);
         }
     }
-    public virtual void OnMouseDown()
-    {
-        //ensure that the building isnt clicked on if a building is currently being placed or the pointer is over UI
-        if (EventSystem.current.IsPointerOverGameObject() || !BuildingManager.Instance.HasPlaced)
-            return;
-        if (Built)
-        {
-            
-            Function();
-        }
-    }
     public abstract void Function();
     public virtual void OnBuilt()
     {

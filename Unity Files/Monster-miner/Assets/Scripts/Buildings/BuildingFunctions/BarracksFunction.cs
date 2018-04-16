@@ -1,3 +1,4 @@
+using UnityEngine.UI;
 
 public class BarracksFunction : BuildingFunction {
 
@@ -23,5 +24,9 @@ public class BarracksFunction : BuildingFunction {
             //and remove it as the focused panel
             UIPanels.Instance.focusedPanel = null;
         }
+    }
+    public override void OnBuilt()
+    {
+        UIPanels.Instance.hudMainBar.transform.Find("BuildingButtons").Find("barracks").GetComponent<Button>().interactable = true;
     }
 }

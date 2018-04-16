@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class HouseFunction : BuildingFunction {
@@ -8,6 +6,7 @@ public class HouseFunction : BuildingFunction {
 
     [HideInInspector]
     public bool colonistsSpawned;
+    private GameObject currentHouseCompletionButton;
 
     public int colonistsToSpawn = 4;
 
@@ -17,7 +16,15 @@ public class HouseFunction : BuildingFunction {
     }
     public override void OnBuilt()
     {
-        AlertsManager.Instance.CreateAlert("House has been completed, click to confirm", AlertType.HouseCompletion);
+        //AlertsManager.Instance.CreateAlert("House has been completed, click to confirm", AlertType.HouseCompletion);
+        transform.Find("HouseCompletionButton").gameObject.SetActive(true);
+        transform.Find("HouseCompletionButton").GetComponent<Canvas>().worldCamera = Camera.main;
+    }
+    
+    public void ShowHouseCompletion()
+    {
+        UIPanels.Instance.houseCompletionPanel.GetComponent<HouseUI>().focusedHouse = this;
+        UIPanels.Instance.houseCompletionPanel.SetActive(true);
     }
     public void SpawnColonists(int hunters, int gatherers, int crafters)
     {
@@ -41,6 +48,6 @@ public class HouseFunction : BuildingFunction {
 
         }
         //then return the recently used button
-        AlertsManager.Instance.ReturnAlertButton(UIPanels.Instance.alertsHolder.GetChild(AlertsManager.Instance.currentAlertButtonIndex).gameObject);
+        //AlertsManager.Instance.ReturnAlertButton(UIPanels.Instance.alertsHolder.GetChild(AlertsManager.Instance.currentAlertButtonIndex).gameObject);
     }
 }

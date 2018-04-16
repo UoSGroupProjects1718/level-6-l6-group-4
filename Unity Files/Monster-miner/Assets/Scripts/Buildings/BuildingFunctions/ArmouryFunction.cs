@@ -1,3 +1,4 @@
+using UnityEngine.UI;
 
 public class ArmouryFunction : BuildingFunction {
 
@@ -36,5 +37,6 @@ public class ArmouryFunction : BuildingFunction {
     public override void OnBuilt()
     {
         Stockpile.Instance.armourySpace += armourySpaceIncrease;
+        UIPanels.Instance.hudMainBar.transform.Find("BuildingButtons").Find("armoury").GetComponent<Button>().interactable = true;
     }
 }

@@ -18,7 +18,6 @@ public class HouseUI : MonoBehaviour {
 
     private InputField[] inputFields;
 
-
     HousePanelEditMode mode;
 
     int hunter, scout, crafter;
@@ -79,7 +78,6 @@ public class HouseUI : MonoBehaviour {
         inputFields[(int)mode].text = val.ToString();
     }
 
-    
     private void ValidateNumber(ref int val)
     {
         //if the value is less than 0, return it to zero
@@ -129,13 +127,12 @@ public class HouseUI : MonoBehaviour {
 
     }
 
-
-
     public void ConfirmButton()
     {
         focusedHouse.SpawnColonists(hunter, scout, crafter);
         //and set the focused house to having spawned colonists
         focusedHouse.colonistsSpawned = true;
+        focusedHouse.transform.Find("HouseCompletionButton").gameObject.SetActive(false);
     }
     
     public void ResetHouseUI()

@@ -1,7 +1,4 @@
-//Oliver
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
+using UnityEngine.UI;
 
 public class BlacksmithFunction : BuildingFunction {
 
@@ -34,5 +31,8 @@ public class BlacksmithFunction : BuildingFunction {
         }
 
     }
-
+    public override void OnBuilt()
+    {
+        UIPanels.Instance.hudMainBar.transform.Find("BuildingButtons").Find("blacksmith").GetComponent<Button>().interactable = true;
+    }
 }

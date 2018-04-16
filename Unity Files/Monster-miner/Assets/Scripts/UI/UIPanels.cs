@@ -6,7 +6,7 @@ public class UIPanels : SingletonClass<UIPanels> {
     [SerializeField]
     private Vector2 panelSharedAnchorPoint;
 
-
+    public Transform screenSpaceCanvas;
     public GameObject textAlertPanel;
     public GameObject houseCompletionPanel;
  
@@ -22,6 +22,8 @@ public class UIPanels : SingletonClass<UIPanels> {
     public GameObject barracksPanel;
     [HideInInspector]
     public MonsterType barracksTertiaryFocusedMonster;
+    [HideInInspector]
+    public HUDMainBar hudMainBar;
 
     //armoury info
     [HideInInspector]
@@ -88,6 +90,8 @@ public class UIPanels : SingletonClass<UIPanels> {
 
         buildingTooltipPanel = buildingPanel.transform.Find("BuildingTooltip").gameObject;
         buildingTooltipPanel.SetActive(false);
+
+        hudMainBar = FindObjectOfType<HUDMainBar>();
     }
 
 

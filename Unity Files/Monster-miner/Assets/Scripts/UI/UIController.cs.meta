@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: b8c854e5ad3033543b481ca633d5969a
-timeCreated: 1508424636
+timeCreated: 1523896561
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - stockpilePanel: {instanceID: 0}
+  - colonistInfoPanel: {instanceID: 0}
+  - focusedColonist: {instanceID: 0}
+  - houseCompletionButtonPrefab: {fileID: 1312602339380504, guid: 5e808cec47fc39847bc7b8051ff4dba9,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

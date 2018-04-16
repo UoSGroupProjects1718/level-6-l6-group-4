@@ -1,6 +1,6 @@
 using System.Collections;
-using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class TimeManager : SingletonClass<TimeManager> {
 
@@ -13,7 +13,7 @@ public class TimeManager : SingletonClass<TimeManager> {
     static GameTime IngameTimeDisplay;
 
     [SerializeField]
-    private Text dateText;
+    private TextMeshProUGUI dateText;
 
     [SerializeField]
     private int gameStartHour = 7;
