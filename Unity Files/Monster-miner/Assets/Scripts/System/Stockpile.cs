@@ -15,6 +15,20 @@ public class Stockpile : SingletonClass<Stockpile>
     public int currWearablesInInventory;
     public int armourySpace;
 
+    public override void Awake()
+    {
+        base.Awake();
+#if UNITY_EDITOR
+        //give unlimited resources when in unity editor for easy testing 
+        inventoryDictionary[ItemType.Wood] = 9999;
+        inventoryDictionary[ItemType.Stone] = 9999;
+        inventoryDictionary[ItemType.Nutrition] = 9999;
+        inventoryDictionary[ItemType.Iron] = 9999;
+        inventoryDictionary[ItemType.Bone] = 9999;
+        inventoryDictionary[ItemType.Crystal] = 9999;
+#endif
+    }
+
     #region Resource inventory
     public bool AddResource(Resource res)
     {

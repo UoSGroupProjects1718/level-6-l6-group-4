@@ -37,7 +37,7 @@ public class UIPanels : SingletonClass<UIPanels> {
 
     //tooltip
     [HideInInspector]
-    public GameObject tooltipPanel;
+    public GameObject blacksmithTooltipPanel;
 
 
 
@@ -71,7 +71,7 @@ public class UIPanels : SingletonClass<UIPanels> {
         armouryPanel.SetActive(false);
 
         blacksmithPanel = GameObject.Find("Blacksmith panel");
-        blacksmithInputField = blacksmithPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<TMP_InputField>();
+        blacksmithInputField = blacksmithPanel.transform.GetChild(1).GetChild(2).GetChild(1).GetComponent<TMP_InputField>();
         ResetPanel(blacksmithPanel.transform);
         blacksmithPanel.SetActive(false);
 
@@ -80,8 +80,8 @@ public class UIPanels : SingletonClass<UIPanels> {
         huntSelectedButton.SetActive(false);
         clearHuntButton.SetActive(false);
 
-        tooltipPanel = GameObject.Find("Item Tooltip");
-        tooltipPanel.SetActive(false);
+        blacksmithTooltipPanel = blacksmithPanel.transform.Find("Item Tooltip").gameObject;
+        blacksmithTooltipPanel.SetActive(false);
     }
 
 

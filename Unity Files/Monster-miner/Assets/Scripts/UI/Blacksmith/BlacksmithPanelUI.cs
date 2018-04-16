@@ -78,13 +78,21 @@ public class BlacksmithPanelUI : MonoBehaviour {
             tertiaryPanel.GetChild(0).GetComponent<Image>().sprite = correspondingRecipe.craftedItem.uiSprite;
             tertiaryPanel.GetChild(1).GetComponent<TextMeshProUGUI>().text = correspondingRecipe.craftedItem.itemName;
             //loop through the images for the required items
-            for(int j = 0; j < correspondingRecipe.requiredItems.Length; j++ )
+            for(int j = 0; j < 3; j++ )
             {
-                //and set the sprite and number required
-                requiredResources.GetChild(j).GetChild(0).GetComponent<Image>().sprite = UIPanels.Instance.GetResourceSprite(correspondingRecipe.requiredItems[j].resource);
-                requiredResources.GetChild(j).GetChild(1).GetComponent<Text>().text = correspondingRecipe.requiredItems[j].requiredAmount.ToString();
+                if(j < correspondingRecipe.requiredItems.Length)
+                {
+                    //and set the sprite and number required
+                    requiredResources.GetChild(j).GetChild(0).GetComponent<Image>().sprite = UIPanels.Instance.GetResourceSprite(correspondingRecipe.requiredItems[j].resource);
+                    requiredResources.GetChild(j).GetChild(0).GetComponent<Image>().color = Color.white;
+                    requiredResources.GetChild(j).GetChild(1).GetComponent<Text>().text = correspondingRecipe.requiredItems[j].requiredAmount.ToString();
+                }
+                else
+                {
+                    requiredResources.GetChild(j).GetChild(0).GetComponent<Image>().color = new Color(0, 0, 0, 0);
+                }
             }
-
+     
             //activate the tertiary panel
             tertiaryPanel.gameObject.SetActive(true);
         }

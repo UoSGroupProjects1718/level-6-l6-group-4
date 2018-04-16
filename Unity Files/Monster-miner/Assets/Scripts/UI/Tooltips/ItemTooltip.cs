@@ -15,31 +15,31 @@ public class ItemTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void OnPointerEnter(PointerEventData eventData)
     {
         //show the tooltip panel and update it
-        UIPanels.Instance.tooltipPanel.SetActive(true);
+        UIPanels.Instance.blacksmithTooltipPanel.SetActive(true);
         
         UpdateTooltip();
-        UIPanels.Instance.tooltipPanel.transform.position = Input.mousePosition + new Vector3(2,0,0);
+       
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         //hide and reset the tooltip panel
         ResetTooltip();
-        UIPanels.Instance.tooltipPanel.SetActive(false);
+        UIPanels.Instance.blacksmithTooltipPanel.SetActive(false);
     }
 
 
 
     protected void ResetTooltip()
     {
-        for(int i = 1; i < UIPanels.Instance.tooltipPanel.transform.childCount;i++)
+        for(int i = 1; i < UIPanels.Instance.blacksmithTooltipPanel.transform.childCount;i++)
         {
-            UIPanels.Instance.tooltipPanel.transform.GetChild(i).gameObject.SetActive(false);
+            UIPanels.Instance.blacksmithTooltipPanel.transform.GetChild(i).gameObject.SetActive(false);
         }
     }
     protected void SetElementText(int childIndex, string text)
     {
-        UIPanels.Instance.tooltipPanel.transform.GetChild(childIndex).gameObject.SetActive(true);
-        UIPanels.Instance.tooltipPanel.transform.GetChild(childIndex).GetComponent<TextMeshProUGUI>().text = text;
+        UIPanels.Instance.blacksmithTooltipPanel.transform.GetChild(childIndex).gameObject.SetActive(true);
+        UIPanels.Instance.blacksmithTooltipPanel.transform.GetChild(childIndex).GetComponent<TextMeshProUGUI>().text = text;
     }
 
     protected virtual void UpdateTooltip() { throw new System.NotImplementedException("Update tooltip not implemented"); }

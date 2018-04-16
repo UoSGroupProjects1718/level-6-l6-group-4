@@ -78,7 +78,6 @@ public class UIController : SingletonClass<UIController>
             colonistInfoPanel.transform.Find("TextStats/CurrentJob").GetComponent<Text>().text = "Job: ";
         }
         colonistInfoPanel.transform.Find("TextStats/Move speed").GetComponent<Text>().text = "Movement speed: " + colonist.colonistMoveSpeed.ToString();
-        colonistInfoPanel.transform.Find("TextStats/Work speed").GetComponent<Text>().text = "Work speed: " + colonist.colonistWorkSpeed.ToString();
         colonistInfoPanel.transform.Find("TextStats/Food requirement").GetComponent<Text>().text = "Food requirement: " + colonist.requiredNutritionPerDay.ToString();
         colonistInfoPanel.transform.Find("TextStats/Damage reduction").GetComponent<Text>().text = "Armour: " + colonistEquipment.damageReduction.ToString();
         colonistInfoPanel.transform.Find("TextStats/Attack speed").GetComponent<Text>().text = "Attack speed: " + colonistEquipment.weapon.AttackSpeed.ToString();
