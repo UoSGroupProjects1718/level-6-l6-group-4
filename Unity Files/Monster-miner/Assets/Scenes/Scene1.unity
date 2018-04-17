@@ -1914,7 +1914,7 @@ Prefab:
     - target: {fileID: 224822721182646316, guid: 9d96a9cf95ad6014bbecadf139236d2d,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -183.26518
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224811078233924766, guid: 9d96a9cf95ad6014bbecadf139236d2d,
         type: 2}
@@ -4133,12 +4133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9ba9c608975d74897e7a39b10f14e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alertsContentParent: {fileID: 0}
-  alertsButtonPoolParent: {fileID: 0}
-  currentAlertButtonIndex: 0
-  buttonPoolSize: 20
-  alertButtonPrefab: {fileID: 1292663983957662, guid: b141ef6277b914a449e5320cc104361e,
-    type: 2}
 --- !u!1 &735126010
 GameObject:
   m_ObjectHideFlags: 0
@@ -8947,8 +8941,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1378636423}
   m_HandleRect: {fileID: 1378636422}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 0.99999064
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -84,6 +84,7 @@ public class UIPanels : SingletonClass<UIPanels> {
         clearHuntButton.SetActive(false);
 
         buildingPanel = GameObject.Find("BuildingCreationPanelBG");
+        buildingPanel.SetActive(false);
 
         blacksmithTooltipPanel = blacksmithPanel.transform.Find("Item Tooltip").gameObject;
         blacksmithTooltipPanel.SetActive(false);
