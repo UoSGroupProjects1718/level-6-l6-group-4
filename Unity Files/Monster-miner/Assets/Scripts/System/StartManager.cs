@@ -70,9 +70,11 @@ public class StartManager : MonoBehaviour {
     }
 
     void SpawnColonists() {
-        ColonistSpawner.Instance.SpawnColonist(new Vector3(100, 1, -100), ColonistJobType.Crafter);
+        ColonistSpawner.Instance.SpawnColonist(new Vector3(1, 1, -1), ColonistJobType.Crafter);
         ColonistSpawner.Instance.SpawnColonist(new Vector3(-4, 1, 0), ColonistJobType.Scout);
-        ColonistSpawner.Instance.SpawnColonist(new Vector3(-2, 1, -2), ColonistJobType.Hunter);
+        ColonistSpawner.Instance.SpawnColonist(new Vector3(-2, 1, -1), ColonistJobType.Hunter);
+        ColonistSpawner.Instance.SpawnColonist(new Vector3(-5, 1, -2), ColonistJobType.Hunter);
+        ColonistSpawner.Instance.SpawnColonist(new Vector3(-2, 1, -5), ColonistJobType.Hunter);
     }
 
     void SpawnMonsters()

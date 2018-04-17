@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1208,7 +1208,7 @@ Prefab:
     - target: {fileID: 224239011846878090, guid: 39b509ba58f13c249a61a9f5ee6a3786,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.022600107
+      value: 0.022599919
       objectReference: {fileID: 0}
     - target: {fileID: 224239011846878090, guid: 39b509ba58f13c249a61a9f5ee6a3786,
         type: 2}
@@ -1914,7 +1914,7 @@ Prefab:
     - target: {fileID: 224822721182646316, guid: 9d96a9cf95ad6014bbecadf139236d2d,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -183.26518
       objectReference: {fileID: 0}
     - target: {fileID: 224811078233924766, guid: 9d96a9cf95ad6014bbecadf139236d2d,
         type: 2}
@@ -8941,7 +8941,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1378636423}
   m_HandleRect: {fileID: 1378636422}
   m_Direction: 2
-  m_Value: 0.99999064
+  m_Value: 0.99999857
   m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:

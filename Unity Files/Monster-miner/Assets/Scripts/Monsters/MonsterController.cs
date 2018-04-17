@@ -122,9 +122,10 @@ public class MonsterController : MonoBehaviour {
         transform.GetChild(transform.childCount - 1).Rotate(new Vector3(0, 0, 90));
         JobManager.CreateJob(JobType.Harvesting, 50, gameObject, transform.position, "Harvest" + monsterName);
         Movement.navMeshAgent.isStopped = true;
-        this.enabled=false;
+        
 
         Debug.Log(monsterName + " has died.");
+        this.enabled = false;
 
     }
     
