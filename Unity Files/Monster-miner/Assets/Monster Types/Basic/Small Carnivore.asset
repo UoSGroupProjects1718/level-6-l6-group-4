@@ -20,9 +20,9 @@ MonoBehaviour:
   viewRange: 40
   damage: 25
   attackSpeed: 3
-  maxHunger: 50
-  attackHungerPercentage: 40
-  hungerLossPerSecond: 1
+  maxHunger: 100
+  attackHungerPercentage: 10
+  hungerLossPerSecond: 0.35
   hungerDamage: 5
   naturalRegeneration: 0
   nextAttack: 0

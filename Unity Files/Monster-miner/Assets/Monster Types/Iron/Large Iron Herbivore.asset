@@ -22,7 +22,7 @@ MonoBehaviour:
   attackSpeed: 9
   maxHunger: 100
   attackHungerPercentage: 10
-  hungerLossPerSecond: 0.5
+  hungerLossPerSecond: 0
   hungerDamage: 1
   naturalRegeneration: 0
   nextAttack: 0

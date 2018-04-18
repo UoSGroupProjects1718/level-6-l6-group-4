@@ -22,11 +22,11 @@ MonoBehaviour:
   attackSpeed: 0
   maxHunger: 100
   attackHungerPercentage: 5
-  hungerLossPerSecond: 1
+  hungerLossPerSecond: 0
   hungerDamage: 1
   naturalRegeneration: 0
   nextAttack: 0
-  matingCooldown: 90
+  matingCooldown: 60
   monsterMeshAndBones: {fileID: 1731603737830046, guid: 1d71ed96f68912745b4afdfaf192ecb3,
     type: 2}
   dropTable: {fileID: 11400000, guid: 2072f8b2651dc6e4781d2699903994bd, type: 2}
