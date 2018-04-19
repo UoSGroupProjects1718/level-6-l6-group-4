@@ -1,0 +1,15 @@
+19/04/18 meeting minutes - 14:00
+
+Members in attendance: Oliver, Ross, Daniel, Douglas
+
+
+Discussed the previous weeks work and discussed the recent changes to the UI bar at the top of the screen and how that interfaces with buildings and have decided
+that this was a beneficial change and will be kept in the game as it is currently implemented. 
+
+Discussed Ross' changed barracks design theory. Decided not to implement any more major changes to the game due to the time constraint of the project.
+
+Discussed the previous weeks playtesting feedback and balancing considerations going forward.
+
+Discussed what parts of the project need to be re-visited to ensure that everything is up to a reasonable quality
+
+Meeting end: 15:00
