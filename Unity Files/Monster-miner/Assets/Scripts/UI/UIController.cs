@@ -56,8 +56,8 @@ public class UIController : SingletonClass<UIController>
     public void UpdateColonistInfoPanel(ColonistController colonist)
     {
         //first set the most basic information
-        colonistInfoPanel.transform.Find("Name").GetComponent<Text>().text = colonist.colonistName;
-        colonistInfoPanel.transform.Find("Job type").GetComponent<Text>().text = colonist.colonistJob.ToString();
+        colonistInfoPanel.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = colonist.colonistName;
+        colonistInfoPanel.transform.Find("Job type").GetComponent<TextMeshProUGUI>().text = colonist.colonistJob.ToString();
         //then set the armour sprites
         Equipment colonistEquipment = colonist.GetComponent<Equipment>();
         if(colonistEquipment != null)
@@ -68,21 +68,21 @@ public class UIController : SingletonClass<UIController>
         }
 
         //then set the other information
-        colonistInfoPanel.transform.Find("TextStats/Health").GetComponent<Text>().text = "Health: " + colonist.health.ToString();
+        colonistInfoPanel.transform.Find("TextStats/Health").GetComponent<TextMeshProUGUI>().text = "Health: " + colonist.health.ToString();
         if(colonist.currentJob != null)
         {
-            colonistInfoPanel.transform.Find("TextStats/CurrentJob").GetComponent<Text>().text = "Job: " + colonist.currentJob.jobName;
+            colonistInfoPanel.transform.Find("TextStats/CurrentJob").GetComponent<TextMeshProUGUI>().text = "Job: " + colonist.currentJob.jobName;
         }
         else
         {
-            colonistInfoPanel.transform.Find("TextStats/CurrentJob").GetComponent<Text>().text = "Job: ";
+            colonistInfoPanel.transform.Find("TextStats/CurrentJob").GetComponent<TextMeshProUGUI>().text = "Job: ";
         }
-        colonistInfoPanel.transform.Find("TextStats/Move speed").GetComponent<Text>().text = "Movement speed: " + colonist.colonistMoveSpeed.ToString();
-        colonistInfoPanel.transform.Find("TextStats/Food requirement").GetComponent<Text>().text = "Food requirement: " + colonist.requiredNutritionPerDay.ToString();
-        colonistInfoPanel.transform.Find("TextStats/Damage reduction").GetComponent<Text>().text = "Armour: " + colonistEquipment.damageReduction.ToString();
-        colonistInfoPanel.transform.Find("TextStats/Attack speed").GetComponent<Text>().text = "Attack speed: " + colonistEquipment.weapon.AttackSpeed.ToString();
-        colonistInfoPanel.transform.Find("TextStats/Weapon damage").GetComponent<Text>().text = "Weapon damage: " + colonistEquipment.weapon.Damage.ToString();
-        colonistInfoPanel.transform.Find("TextStats/Weapon range").GetComponent<Text>().text = "Weapon range: " + colonistEquipment.weapon.Range.ToString();
+        colonistInfoPanel.transform.Find("TextStats/Move speed").GetComponent<TextMeshProUGUI>().text = "Movement speed: " + colonist.colonistMoveSpeed.ToString();
+        colonistInfoPanel.transform.Find("TextStats/Food requirement").GetComponent<TextMeshProUGUI>().text = "Food requirement: " + colonist.requiredNutritionPerDay.ToString();
+        colonistInfoPanel.transform.Find("TextStats/Damage reduction").GetComponent<TextMeshProUGUI>().text = "Armour: " + colonistEquipment.damageReduction.ToString();
+        colonistInfoPanel.transform.Find("TextStats/Attack speed").GetComponent<TextMeshProUGUI>().text = "Attack speed: " + colonistEquipment.weapon.AttackSpeed.ToString();
+        colonistInfoPanel.transform.Find("TextStats/Weapon damage").GetComponent<TextMeshProUGUI>().text = "Weapon damage: " + colonistEquipment.weapon.Damage.ToString();
+        colonistInfoPanel.transform.Find("TextStats/Weapon range").GetComponent<TextMeshProUGUI>().text = "Weapon range: " + colonistEquipment.weapon.Range.ToString();
 
     }
     public void UpdateStockpile()

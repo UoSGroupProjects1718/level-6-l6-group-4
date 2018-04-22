@@ -10,8 +10,6 @@ public class UIPanels : SingletonClass<UIPanels> {
     public GameObject textAlertPanel;
     public GameObject houseCompletionPanel;
  
-    public Transform alertsHolder;
-
     [SerializeField]
     public GameObject buildingPanel;
 
@@ -60,8 +58,6 @@ public class UIPanels : SingletonClass<UIPanels> {
 	public override void Awake ()
     {
         base.Awake();
-
-        alertsHolder = GameObject.Find("Alerts").transform.GetChild(0);
 
 
         barracksPanel = GameObject.Find("Barracks panel");
