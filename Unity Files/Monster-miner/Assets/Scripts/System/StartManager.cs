@@ -9,9 +9,21 @@ public class StartManager : MonoBehaviour {
     // Use this for initialization
     [Header("Monster spawning editor")]
     [SerializeField]
-    float minMonsterSpawnRange = 200;
+    float smallCarnivourMinMonsterSpawnRange = 100;
     [SerializeField]
-    float maxMonsterSpawnRange = 800;
+    float smallCarnivourMaxMonsterSpawnRange = 400;
+    [SerializeField]
+    float smallHerbivourMinMonsterSpawnRange = 10;
+    [SerializeField]
+    float smallHerbivourMaxMonsterSpawnRange = 100;
+    [SerializeField]
+    float largeCarnivourMinMonsterSpawnRange = 400;
+    [SerializeField]
+    float largeCarnivourMaxMonsterSpawnRange = 600;
+    [SerializeField]
+    float largeHerbivourMinMonsterSpawnRange = 600;
+    [SerializeField]
+    float largeHerbivourMaxMonsterSpawnRange = 800;
     [SerializeField]
     float minMonsterXOffset = -20f;
     [SerializeField]
@@ -79,31 +91,132 @@ public class StartManager : MonoBehaviour {
 
     void SpawnMonsters()
     {
-        
         List<string> usableKeys = new List<string>();
+
         foreach (string key in MonsterTypes.Instance.dictionaryKeys)
         {
             usableKeys.Add(key);
         }
         int monstersToSpawn = Random.Range(minMonstersToSpawn, maxMonstersToSpawn);
+
+        List<string> meatMonsters = new List<string>();
+        for (int i = 0; i < 4; i++)
+        {
+            meatMonsters.Add(usableKeys[i]);
+        }
+
         
+
+        List<string> boneMonsters = new List<string>();
+        for (int i = 0; i < 4; i++)
+        {
+            boneMonsters.Add(usableKeys[i+4]);
+        }
+
+        
+
+        List<string> crystalMonsters = new List<string>();
+        for (int i = 0; i < 4; i++)
+        {
+            crystalMonsters.Add(usableKeys[i+8]);
+        }
+        
+
+        List<string> ironMonsters = new List<string>();
+        for (int i = 0; i < 4; i++)
+        {
+            ironMonsters.Add(usableKeys[i+12]);
+        }
+        
+
+        List<string> stoneMonsters = new List<string>();
+        for (int i = 0; i < 4; i++)
+        {
+            stoneMonsters.Add(usableKeys[i+16]);
+        }
+        
+
+        List<string> woodMonsters = new List<string>();
+        for (int i = 0; i < 4; i++)
+        {
+            woodMonsters.Add(usableKeys[i+20]);
+        }
+        
+
+        int monSpawn = Random.Range(0, 4);
+        SpawnMonsterGroup(meatMonsters[monSpawn]);
+        usableKeys.Remove(meatMonsters[monSpawn]);
+
+        monSpawn = Random.Range(0, 4);
+        SpawnMonsterGroup(boneMonsters[monSpawn]);
+        usableKeys.Remove(boneMonsters[monSpawn]);
+
+        monSpawn = Random.Range(0, 4);
+        SpawnMonsterGroup(crystalMonsters[monSpawn]);
+        usableKeys.Remove(crystalMonsters[monSpawn]);
+
+        monSpawn = Random.Range(0, 4);
+        SpawnMonsterGroup(ironMonsters[monSpawn]);
+        usableKeys.Remove(ironMonsters[monSpawn]);
+
+        monSpawn = Random.Range(0, 4);
+        SpawnMonsterGroup(stoneMonsters[monSpawn]);
+        usableKeys.Remove(stoneMonsters[monSpawn]);
+
+        monSpawn = Random.Range(0, 4);
+        SpawnMonsterGroup(woodMonsters[monSpawn]);
+        usableKeys.Remove(woodMonsters[monSpawn]);
+
+        monstersToSpawn -= 6;
+        if (monstersToSpawn < 1) {
+            return;
+        }
+
         for (int i = 0; i < monstersToSpawn; i++)
         {
             int keyInt =Random.Range(0, usableKeys.Count - 1);
-            float Range = Random.Range(minMonsterSpawnRange, maxMonsterSpawnRange);
-            float Angle = Random.Range(0f, 2*Mathf.PI);
-            Vector2 Pos = new Vector2(Range * Mathf.Sin(Angle), Range * Mathf.Cos(Angle));
+            
             string Key = usableKeys[keyInt];
             usableKeys.Remove(Key);
-            int monstersPerGroup = Random.Range(minMonstersPerGroup, maxMonstersPerGroup);
-            for (int j=0; j < monstersPerGroup; j++) {
-                Vector2 Offset = new Vector2(
-                    Random.Range(minMonsterXOffset, maxMonsterXOffset),
-                    Random.Range(minMonsterYOffset, maxMonsterYOffset)
-                );
-                Vector3 Spawnpos = new Vector3(Pos.x + Offset.x, 1, Pos.y + Offset.y);
-                MonsterSpawner.Instance.SpawnMonster(Spawnpos, Key);
-            }           
+            SpawnMonsterGroup(Key);
+        }
+    }
+
+
+    void SpawnMonsterGroup(string key)
+    {
+
+        float Range=0;
+        switch (MonsterTypes.Instance.Mons[key].monsterType)
+        {
+            case MonsterTypes.TypeOfMonster.SmallCarnivore:
+                Range= Random.Range(smallCarnivourMinMonsterSpawnRange, smallCarnivourMaxMonsterSpawnRange);
+                break;
+            case MonsterTypes.TypeOfMonster.SmallHerbivore:
+                Range = Random.Range(smallHerbivourMinMonsterSpawnRange, smallHerbivourMaxMonsterSpawnRange);
+                break;
+            case MonsterTypes.TypeOfMonster.LargeCarnivore:
+                Range = Random.Range(largeCarnivourMinMonsterSpawnRange, largeCarnivourMaxMonsterSpawnRange);
+                break;
+            case MonsterTypes.TypeOfMonster.LargeHerbivore:
+                Range = Random.Range(largeHerbivourMinMonsterSpawnRange, largeHerbivourMaxMonsterSpawnRange);
+                break;
+            default:
+                Range = 500;
+                Debug.LogError("Dino unknown");
+                return;
+        }
+        float Angle = Random.Range(0f, 2 * Mathf.PI);
+        Vector2 Pos = new Vector2(Range * Mathf.Sin(Angle), Range * Mathf.Cos(Angle));
+        int monstersPerGroup = Random.Range(minMonstersPerGroup, maxMonstersPerGroup);
+        for (int j = 0; j < monstersPerGroup; j++)
+        {
+            Vector2 Offset = new Vector2(
+                Random.Range(minMonsterXOffset, maxMonsterXOffset),
+                Random.Range(minMonsterYOffset, maxMonsterYOffset)
+            );
+            Vector3 Spawnpos = new Vector3(Pos.x + Offset.x, 1, Pos.y + Offset.y);
+            MonsterSpawner.Instance.SpawnMonster(Spawnpos, key);
         }
     }
 }
