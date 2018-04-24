@@ -60,9 +60,9 @@ public class MonsterController : MonoBehaviour {
     public float wanderTimer;
     [HideInInspector]
     public float wanderRepathTimer = 0;
-    [HideInInspector]
-    public float lastDamageTime=0;
     public static float attackTimeAfterDamage = 30;
+    [HideInInspector]
+    public float lastDamageTime = -attackTimeAfterDamage;
     private ParticleSystem damageTakenFX;
     #endregion
 
