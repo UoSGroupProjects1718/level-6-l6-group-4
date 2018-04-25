@@ -81,7 +81,7 @@ public class SmallCarnivorState : BehaviourBase
 
         //hunt for hunger
 
-        if(Monster.hunger < Monster.maxHunger * Monster.hungerAttackPercentage/100f || (Time.time - Monster.lastDamageTime) > MonsterController.attackTimeAfterDamage)
+        if(Monster.hunger < Monster.maxHunger * Monster.hungerAttackPercentage/100f || (Time.time - Monster.lastDamageTime) < MonsterController.attackTimeAfterDamage)
         {
             Monster.currentState = MonsterController.MovementState.Chase;
             if (closeSHDist < Monster.viewRange)//if close herb, chase it

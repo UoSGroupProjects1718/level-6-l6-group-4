@@ -19,7 +19,7 @@ public class LargeHerbivourState : BehaviourBase
 
 
         //check hurt
-        if (Monster.health < Monster.maxHealth || (Time.time - Monster.lastDamageTime) > MonsterController.attackTimeAfterDamage)
+        if (Monster.health < Monster.maxHealth || (Time.time - Monster.lastDamageTime) < MonsterController.attackTimeAfterDamage)
         {
             Transform pos = Monster.transform;
 

@@ -24,7 +24,7 @@ public class LargeCarnivorState : BehaviourBase
         }
 
         //check hunger var
-        if(Monster.hunger < Monster.maxHunger * Monster.hungerAttackPercentage/100f || (Time.time-Monster.lastDamageTime ) > MonsterController.attackTimeAfterDamage)
+        if(Monster.hunger < Monster.maxHunger * Monster.hungerAttackPercentage/100f || (Time.time-Monster.lastDamageTime ) < MonsterController.attackTimeAfterDamage)
         {
             Transform pos = Monster.transform;
             float Dist = float.MaxValue;
