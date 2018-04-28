@@ -12,8 +12,11 @@ public class ColonistSpawner : SingletonClass<ColonistSpawner>
     public GameObject ColonistPrefab;
 
     int defaultNumberOfColonists = 20;
-    int currentColonist =0;
 
+    [SerializeField]
+    private string[] firstNames;
+    [SerializeField]
+    private string[] lastNames;
 
     public void SpawnColonistLists()
     {
@@ -64,8 +67,14 @@ public class ColonistSpawner : SingletonClass<ColonistSpawner>
 
     string GetName()
     {
-        currentColonist++;
-        return "Steve " + currentColonist.ToString();
+        string colonistName = "";
+
+        //add the first name
+        colonistName += firstNames[Random.Range(0, firstNames.Length - 1)] + " ";
+        //add the last name
+        colonistName += lastNames[Random.Range(0, lastNames.Length - 1)];
+       
+        return colonistName;
     }
 
     //find an inactive controller

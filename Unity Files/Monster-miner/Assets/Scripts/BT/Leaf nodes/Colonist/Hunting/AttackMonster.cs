@@ -23,7 +23,8 @@ namespace MonsterMiner
                         Colonist.nextAttack = Time.time + Colonist.colonistEquipment.weapon.AttackSpeed;
                         Colonist.target.TakeDamage(Colonist.colonistEquipment.weapon.Damage,false);
                         if (Colonist.target.CheckDead())
-                        {                             
+                        {
+                            Colonist.target.beingHuntedIcon.SetActive(false);
                             Colonist.target = null;
                             Colonist.currentJob = null;
                             //update colonist UI

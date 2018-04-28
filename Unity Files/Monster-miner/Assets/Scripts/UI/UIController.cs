@@ -112,7 +112,8 @@ public class UIController : SingletonClass<UIController>
                     JobManager.CreateJob(JobType.Hunter, 0, UnitSelection.SelectedMonsters[i].gameObject, UnitSelection.SelectedMonsters[i].transform.position, "Hunt" + UnitSelection.SelectedMonsters[i].monsterName);
                 }
              
-                    UnitSelection.SelectedMonsters[i].beingHunted = true;
+                UnitSelection.SelectedMonsters[i].beingHunted = true;
+                UnitSelection.SelectedMonsters[i].beingHuntedIcon.SetActive(true);
             }
         }
     }
@@ -128,8 +129,10 @@ public class UIController : SingletonClass<UIController>
     {
         for(int i = 0; i < UnitSelection.SelectedColonists.Count; i++)
         {
-            if(UnitSelection.SelectedColonists[i].currentJob.jobType == JobType.Hunter)
+            if(UnitSelection.SelectedColonists[i].currentJob != null && UnitSelection.SelectedColonists[i].currentJob.jobType == JobType.Hunter)
             {
+                UnitSelection.SelectedColonists[i].target.beingHunted = false;
+                UnitSelection.SelectedColonists[i].target.beingHuntedIcon.SetActive(false);
                 UnitSelection.SelectedColonists[i].currentJob = null;
             }
         }

@@ -17,8 +17,9 @@ public class BarracksPanelUI : MonoBehaviour {
             GameObject newElement =  Instantiate(Content, ContentParent) as GameObject;
             newElement.transform.GetComponent<BarracksJobPanel>().monster = MonsterTypes.Instance.Mons[keys[i]];
             //when added
-            //newElement.transform.GetChild(0).GetComponent<Image>().sprite =  MonsterTypes.Instance.Mons[keys[i]].UISprite;
+            newElement.transform.GetChild(0).GetComponent<Image>().sprite =  MonsterTypes.Instance.Mons[keys[i]].monsterSprite;
             newElement.transform.GetChild(1).GetComponent<Text>().text = MonsterTypes.Instance.Mons[keys[i]].monsterName;
+            
            
         }
 	}

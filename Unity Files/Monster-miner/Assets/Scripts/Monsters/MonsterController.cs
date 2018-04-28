@@ -64,6 +64,8 @@ public class MonsterController : MonoBehaviour {
     [HideInInspector]
     public float lastDamageTime = -attackTimeAfterDamage;
     private ParticleSystem damageTakenFX;
+    [HideInInspector]
+    public GameObject beingHuntedIcon;
     #endregion
 
     void Start () {
@@ -83,6 +85,8 @@ public class MonsterController : MonoBehaviour {
         {
             damageTakenFX = transform.GetChild(0).Find("Blood splatter FX" + "(Clone)").GetComponent<ParticleSystem>();
         }
+        beingHuntedIcon = transform.GetChild(0).Find("Combat_Logo").gameObject;
+        beingHuntedIcon.SetActive(false);
     }
 
      public void TakeDamage(float damage, bool takenFromHunger)

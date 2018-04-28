@@ -30,3 +30,4 @@ MonoBehaviour:
   monsterMeshAndBones: {fileID: 1286493392418560, guid: 6538fc4ba97dc6f40a768eab390f53bb,
     type: 2}
   dropTable: {fileID: 11400000, guid: 6299787f85f2d7648959244fbff1d142, type: 2}
+  monsterSprite: {fileID: 21300000, guid: 7af6665e5e33c4f41a8293076a26fb8e, type: 3}

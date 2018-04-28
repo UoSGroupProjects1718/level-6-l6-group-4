@@ -26,5 +26,6 @@ public class MonsterType : ScriptableObject {
     public float matingCooldown;
     public GameObject monsterMeshAndBones;
     public DropTable dropTable;
+    public Sprite monsterSprite;
     
 }
